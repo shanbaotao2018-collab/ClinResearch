@@ -1,9 +1,0 @@
-fastapi<1.0,>=0.115
-uvicorn[standard]<1.0,>=0.30
-sqlmodel<1.0,>=0.0.22
-pydantic-settings<3.0,>=2.3
-httpx<1.0,>=0.27
-
-[dev]
-pytest<9.0,>=8.2
-pytest-cov<6.0,>=5.0
