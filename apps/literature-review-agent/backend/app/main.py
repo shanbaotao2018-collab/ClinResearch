@@ -3,8 +3,9 @@ from sqlmodel import Session, select
 
 from .config import settings
 from .db import get_session, init_db
-from .models import AuditLog, Project, ProjectStatus, SearchStrategyVersion
+from .models import AuditLog, Citation, Project, ProjectStatus, SearchStrategyVersion
 from .schemas import ProjectCreate, ProjectRead, SearchStrategyRead
+from .services.citations import CitationImportPayload
 from .services.search_strategy import build_pubmed_query
 
 app = FastAPI(title=settings.app_name)
@@ -101,3 +102,40 @@ def generate_search_strategy(
     session.commit()
     session.refresh(strategy)
     return SearchStrategyRead.model_validate(strategy).model_dump()
+
+
+@app.post(
+    "/projects/{project_id}/citations/import-manual",
+    status_code=status.HTTP_201_CREATED,
+)
+def import_manual_citations(
+    project_id: int,
+    payload: CitationImportPayload,
+    session: Session = Depends(get_session),
+):
+    project = session.get(Project, project_id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+
+    imported_count = 0
+    for item in payload.citations:
+        citation = Citation(
+            project_id=project_id,
+            source=payload.source,
+            **item.model_dump(),
+        )
+        session.add(citation)
+        imported_count += 1
+
+    project.status = ProjectStatus.SEARCH_EXECUTED
+    session.add(project)
+    session.add(
+        AuditLog(
+            project_id=project_id,
+            action="citations.imported",
+            actor="system",
+            summary=f"Imported {imported_count} citations from {payload.source}",
+        )
+    )
+    session.commit()
+    return {"imported_count": imported_count}

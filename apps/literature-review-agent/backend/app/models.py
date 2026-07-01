@@ -41,6 +41,21 @@ class SearchStrategyVersion(SQLModel, table=True):
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
+class Citation(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    source: str
+    external_id: Optional[str] = Field(default=None, index=True)
+    title: str
+    abstract: Optional[str] = None
+    authors: Optional[str] = None
+    publication_year: Optional[int] = None
+    doi: Optional[str] = None
+    is_deduplicated: bool = False
+    dedup_group: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
 class AuditLog(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     project_id: int = Field(index=True)
