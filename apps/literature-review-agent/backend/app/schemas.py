@@ -25,3 +25,14 @@ class SearchStrategyCreate(BaseModel):
     source: str
     query_text: str
     rationale: str
+
+
+class SearchStrategyRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    project_id: int
+    source: str
+    query_text: str
+    version_number: int
+    rationale: str | None = None
