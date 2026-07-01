@@ -56,6 +56,27 @@ class Citation(SQLModel, table=True):
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
+class ScreeningDecision(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    citation_id: int = Field(index=True)
+    decision: str
+    reason: str
+    actor: str
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class PrismaCount(SQLModel, table=True):
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True, unique=True)
+    identified_count: int = 0
+    deduplicated_count: int = 0
+    screened_count: int = 0
+    included_count: int = 0
+    excluded_count: int = 0
+    full_text_assessed_count: int = 0
+
+
 class AuditLog(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     project_id: int = Field(index=True)

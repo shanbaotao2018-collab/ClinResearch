@@ -1,15 +1,32 @@
+from pydantic import BaseModel
 from fastapi import Depends, FastAPI, HTTPException, status
 from sqlmodel import Session, select
 
 from .config import settings
 from .db import get_session, init_db
-from .models import AuditLog, Citation, Project, ProjectStatus, SearchStrategyVersion
-from .schemas import ProjectCreate, ProjectRead, SearchStrategyRead
+from .models import (
+    AuditLog,
+    Citation,
+    PrismaCount,
+    Project,
+    ProjectStatus,
+    ScreeningDecision,
+    SearchStrategyVersion,
+)
+from .schemas import PrismaRead, ProjectCreate, ProjectRead, SearchStrategyRead
 from .services.citations import CitationImportPayload
+from .services.screening import deduplicate_citations, rebuild_prisma_counts
 from .services.search_strategy import build_pubmed_query
 
 app = FastAPI(title=settings.app_name)
 init_db()
+
+
+class ScreeningDecisionCreate(BaseModel):
+    citation_id: int
+    decision: str
+    reason: str
+    actor: str
 
 
 @app.on_event("startup")
@@ -139,3 +156,59 @@ def import_manual_citations(
     )
     session.commit()
     return {"imported_count": imported_count}
+
+
+@app.post("/projects/{project_id}/deduplicate")
+def deduplicate(
+    project_id: int,
+    session: Session = Depends(get_session),
+):
+    project = session.get(Project, project_id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+
+    removed_count = deduplicate_citations(session, project_id)
+    project.status = ProjectStatus.CITATIONS_DEDUPLICATED
+    session.add(project)
+    session.add(
+        AuditLog(
+            project_id=project_id,
+            action="citations.deduplicated",
+            actor="system",
+            summary=f"Removed {removed_count} duplicates",
+        )
+    )
+    session.commit()
+    return {"removed_count": removed_count}
+
+
+@app.post(
+    "/projects/{project_id}/screening-decisions",
+    status_code=status.HTTP_201_CREATED,
+)
+def create_screening_decision(
+    project_id: int,
+    payload: ScreeningDecisionCreate,
+    session: Session = Depends(get_session),
+):
+    decision = ScreeningDecision(project_id=project_id, **payload.model_dump())
+    session.add(decision)
+    project = session.get(Project, project_id)
+    if project:
+        project.status = ProjectStatus.SCREENING_IN_PROGRESS
+        session.add(project)
+    session.commit()
+    prisma = rebuild_prisma_counts(session, project_id)
+    return {
+        "decision_id": decision.id,
+        "prisma": PrismaRead.model_validate(prisma).model_dump(),
+    }
+
+
+@app.get("/projects/{project_id}/prisma")
+def get_prisma(
+    project_id: int,
+    session: Session = Depends(get_session),
+):
+    record = rebuild_prisma_counts(session, project_id)
+    return PrismaRead.model_validate(record).model_dump()

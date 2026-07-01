@@ -36,3 +36,15 @@ class SearchStrategyRead(BaseModel):
     query_text: str
     version_number: int
     rationale: str | None = None
+
+
+class PrismaRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    project_id: int
+    identified_count: int
+    deduplicated_count: int
+    screened_count: int
+    included_count: int
+    excluded_count: int
+    full_text_assessed_count: int
