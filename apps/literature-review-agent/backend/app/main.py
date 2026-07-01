@@ -14,6 +14,7 @@ from .models import (
     SearchStrategyVersion,
 )
 from .schemas import PrismaRead, ProjectCreate, ProjectRead, SearchStrategyRead
+from .schemas import AuditLogRead, CitationRead
 from .services.citations import CitationImportPayload
 from .services.screening import deduplicate_citations, rebuild_prisma_counts
 from .services.search_strategy import build_pubmed_query
@@ -212,3 +213,36 @@ def get_prisma(
 ):
     record = rebuild_prisma_counts(session, project_id)
     return PrismaRead.model_validate(record).model_dump()
+
+
+@app.get("/projects/{project_id}/audit-logs")
+def get_audit_logs(
+    project_id: int,
+    session: Session = Depends(get_session),
+):
+    audit_logs = session.exec(select(AuditLog).where(AuditLog.project_id == project_id)).all()
+    return [AuditLogRead.model_validate(item).model_dump() for item in audit_logs]
+
+
+@app.get("/projects/{project_id}/export")
+def export_project_bundle(
+    project_id: int,
+    session: Session = Depends(get_session),
+):
+    project = session.get(Project, project_id)
+    if not project:
+        raise HTTPException(status_code=404, detail="Project not found")
+
+    citations = session.exec(select(Citation).where(Citation.project_id == project_id)).all()
+    audit_logs = session.exec(select(AuditLog).where(AuditLog.project_id == project_id)).all()
+    prisma = rebuild_prisma_counts(session, project_id)
+    project.status = ProjectStatus.EXPORTED
+    session.add(project)
+    session.commit()
+
+    return {
+        "project": ProjectRead.model_validate(project).model_dump(),
+        "citations": [CitationRead.model_validate(item).model_dump() for item in citations],
+        "prisma": PrismaRead.model_validate(prisma).model_dump(),
+        "audit_logs": [AuditLogRead.model_validate(item).model_dump() for item in audit_logs],
+    }

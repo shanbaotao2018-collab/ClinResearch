@@ -48,3 +48,29 @@ class PrismaRead(BaseModel):
     included_count: int
     excluded_count: int
     full_text_assessed_count: int
+
+
+class CitationRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    project_id: int
+    source: str
+    external_id: str | None = None
+    title: str
+    abstract: str | None = None
+    authors: str | None = None
+    publication_year: int | None = None
+    doi: str | None = None
+    is_deduplicated: bool
+    dedup_group: str | None = None
+
+
+class AuditLogRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    project_id: int
+    action: str
+    actor: str
+    summary: str
