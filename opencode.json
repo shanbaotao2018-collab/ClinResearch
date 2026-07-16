@@ -1,0 +1,32 @@
+{
+  "$schema": "https://opencode.ai/config.json",
+  "mcp": {
+    "literature_review": {
+      "type": "local",
+      "enabled": true,
+      "command": ["bash", "scripts/opencode/run-literature-review-mcp.sh"]
+    }
+  },
+  "provider": {
+    "model-port": {
+      "npm": "@ai-sdk/openai-compatible",
+      "name": "Model Port",
+      "options": {
+        "baseURL": "https://api.model-port.xyz/v1",
+        "apiKey": "{env:MODEL_PORT_API_KEY}",
+        "timeout": 90000,
+        "chunkTimeout": 90000
+      },
+      "models": {
+        "gpt-5.4": {
+          "name": "gpt-5.4"
+        }
+      }
+    }
+  },
+  "model": "model-port/gpt-5.4",
+  "small_model": "model-port/gpt-5.4",
+  "plugin": [
+    "file:///Users/shanbaotao/Documents/agent%202/.opencode/plugins/medical-skill-receipts.mjs"
+  ]
+}

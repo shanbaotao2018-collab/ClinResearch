@@ -1,0 +1,105 @@
+<h2>文献综述智能体 MVP：工具层、数据流与系统边界</h2>
+<p class="subtitle">原则：专业能力尽量复用现成组件，项目状态与审计数据必须收口到你们自己的私有系统</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">推荐工具层</div>
+    <div class="mockup-body">
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px">
+        <div style="border:1px solid #ddd;border-radius:10px;padding:12px;background:#fff8ef">
+          <div class="label">检索工具</div>
+          <p><strong>PubMed / Europe PMC 接入</strong></p>
+          <p>负责英文医学题录检索、摘要获取、元数据补全。</p>
+        </div>
+        <div style="border:1px solid #ddd;border-radius:10px;padding:12px;background:#eef7ff">
+          <div class="label">导入工具</div>
+          <p><strong>RIS / NBIB / BibTeX / CSV 导入器</strong></p>
+          <p>负责中文数据库题录文件导入，避免第一版直接碰授权接入难题。</p>
+        </div>
+        <div style="border:1px solid #ddd;border-radius:10px;padding:12px;background:#f2fff3">
+          <div class="label">筛选工具</div>
+          <p><strong>ASReview 或 AiReview</strong></p>
+          <p>负责标题摘要筛选建议、优先级排序、人工复核协助。</p>
+        </div>
+        <div style="border:1px solid #ddd;border-radius:10px;padding:12px;background:#f7f7f7">
+          <div class="label">统计工具</div>
+          <p><strong>PRISMA 统计与出图服务</strong></p>
+          <p>负责根据规则流累计的计数生成标准结果。</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">系统边界内：必须自己掌控</div>
+    <div class="mockup-body">
+      <p>项目库</p>
+      <p>研究问题与纳排标准</p>
+      <p>检索式版本记录</p>
+      <p>题录主表</p>
+      <p>去重结果</p>
+      <p>纳排决策与理由</p>
+      <p>PRISMA 计数表</p>
+      <p>审计日志</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">系统边界外：优先复用</div>
+    <div class="mockup-body">
+      <p>PubMed / Europe PMC 检索 API</p>
+      <p>题录格式解析器</p>
+      <p>ASReview / AiReview 筛选引擎</p>
+      <p>PRISMA 绘图组件</p>
+      <p>后续阶段的 PDF 解析器</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">最小数据流</div>
+    <div class="mockup-body">
+      <p><strong>1.</strong> 用户输入研究问题，创建项目。</p>
+      <p><strong>2.</strong> 检索式 Agent 生成查询式，保存版本。</p>
+      <p><strong>3.</strong> 检索执行 Agent 调 PubMed / Europe PMC，结果入题录主表。</p>
+      <p><strong>4.</strong> 用户可追加上传中文题录文件，统一入同一题录主表。</p>
+      <p><strong>5.</strong> 规则流执行去重，生成唯一题录集。</p>
+      <p><strong>6.</strong> 去重筛选 Agent 调筛选引擎，产出纳排建议。</p>
+      <p><strong>7.</strong> 人工确认纳排后，规则流累计各阶段计数。</p>
+      <p><strong>8.</strong> PRISMA 汇总 Agent 读取计数表，生成图和过程摘要。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">三个必须坚持的约束</div>
+    <div class="mockup-body">
+      <p><strong>约束 1：</strong> 外部工具只能处理“任务”，不能成为项目事实来源；事实来源只能是你们自己的项目数据库。</p>
+      <p><strong>约束 2：</strong> PRISMA 计数必须来自规则流累计，不能由 Agent 自己口述统计。</p>
+      <p><strong>约束 3：</strong> 第一版不把全文 PDF、偏倚评价、综述写作揉进来，避免范围失控。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="options">
+    <div class="option" data-choice="boundary-ok" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>接受这版工具层和边界</h3>
+        <p>进入实施路线与里程碑设计</p>
+      </div>
+    </div>
+    <div class="option" data-choice="boundary-adjust" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>要调整</h3>
+        <p>我在终端里告诉你哪个工具或边界要变</p>
+      </div>
+    </div>
+  </div>
+</div>

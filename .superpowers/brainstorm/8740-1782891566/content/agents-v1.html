@@ -1,0 +1,106 @@
+<h2>文献综述智能体 MVP：Agent 分工与职责边界</h2>
+<p class="subtitle">原则：让 Agent 负责“需要医学语言理解和解释”的部分，让规则流负责“确定性的流程状态和统计记账”</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">推荐模式：1 个总控 Agent + 4 个专用子 Agent</div>
+    <div class="mockup-body">
+      <p><strong>总控 Agent</strong> 负责流程推进、状态切换、人工确认节点、结果汇总。</p>
+      <p><strong>子 Agent</strong> 只做单一任务，不跨越职责边界。</p>
+    </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card" data-choice="agent1" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>1. 选题拆解 / 检索式 Agent</h3>
+      <p><strong>输入：</strong>研究问题、PICO、纳排标准草稿</p>
+      <p><strong>输出：</strong>PubMed 检索式、中文关键词串、检索说明</p>
+      <p><strong>适合 Agent 的原因：</strong>需要医学概念拆解、同义词扩展、布尔逻辑解释</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="agent2" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>2. 检索执行 Agent</h3>
+      <p><strong>输入：</strong>确认后的检索式、目标数据库</p>
+      <p><strong>输出：</strong>题录集合、来源标签、时间戳、检索报告</p>
+      <p><strong>适合 Agent 的原因：</strong>负责调工具并解释结果差异，但不做自由决策</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="agent3" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>3. 去重筛选 Agent</h3>
+      <p><strong>输入：</strong>题录集合、纳排标准</p>
+      <p><strong>输出：</strong>候选纳入/排除建议、排除理由草稿、待人工复核列表</p>
+      <p><strong>适合 Agent 的原因：</strong>标题摘要的语义判断需要模型，但最终结论要留给人工</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="agent4" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>4. PRISMA 汇总 Agent</h3>
+      <p><strong>输入：</strong>各阶段计数、纳排日志</p>
+      <p><strong>输出：</strong>PRISMA 数据表、流程图说明、过程摘要</p>
+      <p><strong>适合 Agent 的原因：</strong>负责把确定性统计结果解释成人能读懂的项目总结</p>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">哪些交给 Agent</div>
+    <div class="mockup-body">
+      <p>研究问题拆解</p>
+      <p>同义词/主题词扩展</p>
+      <p>检索式解释与优化建议</p>
+      <p>标题摘要语义判断建议</p>
+      <p>排除理由草稿生成</p>
+      <p>PRISMA 过程摘要解释</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">哪些必须固定成规则流</div>
+    <div class="mockup-body">
+      <p>项目状态机</p>
+      <p>题录去重规则</p>
+      <p>筛选阶段计数</p>
+      <p>纳排日志记账</p>
+      <p>导出文件结构</p>
+      <p>审计日志</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">关键设计原则</div>
+    <div class="mockup-body">
+      <p><strong>原则 1：</strong>Agent 只提供“建议”和“解释”，不直接替代研究者做最终纳排决策。</p>
+      <p><strong>原则 2：</strong>凡是会进入 PRISMA 统计和审计日志的数据，都必须由规则流记录，不由 LLM 自己记忆。</p>
+      <p><strong>原则 3：</strong>子 Agent 彼此之间不共享自由文本状态，只共享结构化项目状态。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="options">
+    <div class="option" data-choice="roles-ok" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>接受这版 Agent 分工</h3>
+        <p>继续细化工具层、数据流和边界</p>
+      </div>
+    </div>
+    <div class="option" data-choice="roles-adjust" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>要调整 Agent 数量或边界</h3>
+        <p>我在终端里告诉你改哪里</p>
+      </div>
+    </div>
+  </div>
+</div>

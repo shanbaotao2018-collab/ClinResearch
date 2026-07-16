@@ -1,4 +1,4 @@
-from typing import Optional
+from typing import Literal, Optional
 
 from pydantic import BaseModel, ConfigDict
 
@@ -38,6 +38,13 @@ class SearchStrategyRead(BaseModel):
     rationale: str | None = None
 
 
+class ScreeningDecisionCreate(BaseModel):
+    citation_id: int
+    decision: Literal["include", "exclude", "human_review"]
+    reason: str
+    actor: str
+
+
 class PrismaRead(BaseModel):
     model_config = ConfigDict(from_attributes=True)
 
@@ -74,3 +81,121 @@ class AuditLogRead(BaseModel):
     action: str
     actor: str
     summary: str
+
+
+class StudyDesignProjectCreate(BaseModel):
+    title: str
+    research_question: str
+    study_type: Literal["diagnostic", "efficacy", "etiology", "prognosis"]
+    study_design: str
+    population: str
+    outcome: str
+    intervention: Optional[str] = None
+    comparator: Optional[str] = None
+    department: Optional[str] = None
+    resource_summary: Optional[str] = None
+
+
+class StudyDesignProjectRead(StudyDesignProjectCreate):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    protocol_standard: str | None = None
+    inclusion_criteria: str | None = None
+    exclusion_criteria: str | None = None
+    primary_outcome: str | None = None
+    secondary_outcomes: str | None = None
+    innovation_notes: str | None = None
+    feasibility_notes: str | None = None
+    proposal_outline: str | None = None
+    sample_size_method: str | None = None
+    sample_size_inputs_json: str | None = None
+    sample_size_result_json: str | None = None
+    randomization_seed: int | None = None
+    randomization_schedule_json: str | None = None
+    human_confirmed_by: str | None = None
+    status: str
+
+
+class StudyDesignContentUpdate(BaseModel):
+    inclusion_criteria: str
+    exclusion_criteria: str
+    primary_outcome: str
+    secondary_outcomes: str | None = None
+    innovation_notes: str | None = None
+    feasibility_notes: str | None = None
+    proposal_outline: str
+
+
+class StudyDesignAuditLogRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    study_design_project_id: int
+    action: str
+    actor: str
+    summary: str
+
+
+class StudyDesignApprovalRequest(BaseModel):
+    approved_by: str
+
+
+class StudyDesignRandomizationPlanCreate(BaseModel):
+    total_subjects: int
+    groups: list[str]
+    block_size: int
+
+
+class StudyDesignApprovalRead(BaseModel):
+    project_id: int
+    project_status: str
+    approval: dict | None = None
+
+
+class StudyDesignWorkflowEventRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    id: int
+    workflow_run_id: str
+    study_design_project_id: int
+    operation: str
+    input_digest: str
+    output_digest: str
+
+
+class EvidenceExtractionCreate(BaseModel):
+    citation_id: int
+    study_design: str | None = None
+    population: str | None = None
+    sample_size: str | None = None
+    intervention_or_exposure: str | None = None
+    comparator: str | None = None
+    outcomes: str | None = None
+    effect_estimates: str | None = None
+    methods_summary: str | None = None
+    evidence_basis: Literal["metadata", "abstract", "full_text_excerpt"]
+    missing_fields: list[str] = []
+    needs_human_review: bool = True
+
+
+class CitationSafetyCheckRead(BaseModel):
+    model_config = ConfigDict(from_attributes=True)
+
+    citation_id: int
+    status: str
+    check_source: str
+    details: str | None = None
+    needs_human_review: bool
+
+
+class ResearchWritingDraftCreate(BaseModel):
+    title: str
+    target_audience: str | None = None
+    source_manifest: list[dict[str, str]]
+    outline: str
+    methods_draft: str | None = None
+    discussion_framework: str | None = None
+    proposal_draft: str | None = None
+    limitations: str
+    unresolved_items: str

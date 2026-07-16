@@ -1,0 +1,85 @@
+<h2>文献综述智能体 MVP：总体架构</h2>
+<p class="subtitle">推荐方案：Dify 作为 B/S 宿主，外接专业工具服务，采用编排型 Agent</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">总体分层</div>
+    <div class="mockup-body">
+      <div style="display:flex;flex-direction:column;gap:14px">
+        <div style="border:1px solid #d8d8d8;border-radius:12px;padding:14px;background:#fff8ef">
+          <div class="label">第 1 层</div>
+          <h3 style="margin:4px 0 8px">B/S 工作台宿主</h3>
+          <p>Dify 应用界面、项目列表、任务入口、结果展示、权限控制</p>
+        </div>
+
+        <div style="border:1px solid #d8d8d8;border-radius:12px;padding:14px;background:#eef7ff">
+          <div class="label">第 2 层</div>
+          <h3 style="margin:4px 0 8px">编排型 Agent 层</h3>
+          <p>总控 Agent 负责调度 4 个子 Agent，控制流程、状态和人工确认节点</p>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-top:10px">
+            <div style="border:1px solid #c7dff6;border-radius:10px;padding:10px;background:white">1. 选题拆解 / 检索式 Agent</div>
+            <div style="border:1px solid #c7dff6;border-radius:10px;padding:10px;background:white">2. 检索执行 Agent</div>
+            <div style="border:1px solid #c7dff6;border-radius:10px;padding:10px;background:white">3. 去重筛选 Agent</div>
+            <div style="border:1px solid #c7dff6;border-radius:10px;padding:10px;background:white">4. PRISMA 汇总 Agent</div>
+          </div>
+        </div>
+
+        <div style="border:1px solid #d8d8d8;border-radius:12px;padding:14px;background:#f2fff3">
+          <div class="label">第 3 层</div>
+          <h3 style="margin:4px 0 8px">专业工具服务层</h3>
+          <p>PubMed / Europe PMC、中文题录导入、ASReview 或 AiReview、PRISMA 统计服务</p>
+        </div>
+
+        <div style="border:1px solid #d8d8d8;border-radius:12px;padding:14px;background:#f7f7f7">
+          <div class="label">第 4 层</div>
+          <h3 style="margin:4px 0 8px">院内部署数据层</h3>
+          <p>项目库、题录库、筛选决策、纳排理由、审计日志，全量留在私有环境</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="split">
+  <div class="mockup">
+    <div class="mockup-header">主流程</div>
+    <div class="mockup-body">
+      <p><strong>Step 1</strong> 研究者输入研究问题</p>
+      <p><strong>Step 2</strong> 检索式 Agent 生成 PubMed 检索式</p>
+      <p><strong>Step 3</strong> 人工确认后执行检索</p>
+      <p><strong>Step 4</strong> 题录入库、去重、初筛</p>
+      <p><strong>Step 5</strong> 记录纳排决策与理由</p>
+      <p><strong>Step 6</strong> 自动生成 PRISMA 统计与图</p>
+      <p><strong>Step 7</strong> 输出结果包与审计痕迹</p>
+    </div>
+  </div>
+
+  <div class="mockup">
+    <div class="mockup-header">必须保留的人机协同点</div>
+    <div class="mockup-body">
+      <p><strong>人工确认点 A</strong> 检索式执行前</p>
+      <p><strong>人工确认点 B</strong> 标题摘要纳排时</p>
+      <p><strong>人工确认点 C</strong> PRISMA 最终出图前</p>
+      <p style="margin-top:12px">原因：第一版不是全自动科研代理，而是“可追溯、可复核”的科研工作台。</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="options">
+    <div class="option" data-choice="ok" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>整体架构 OK</h3>
+        <p>继续细化功能模块与页面结构</p>
+      </div>
+    </div>
+    <div class="option" data-choice="adjust" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>要调整</h3>
+        <p>我在终端里告诉你哪层或哪个 Agent 要改</p>
+      </div>
+    </div>
+  </div>
+</div>

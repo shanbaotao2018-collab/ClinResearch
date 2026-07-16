@@ -1,9 +1,22 @@
+import pytest
+from pydantic import ValidationError
 from fastapi.testclient import TestClient
 
 from app.main import app
+from app.schemas import ScreeningDecisionCreate
 
 
 client = TestClient(app)
+
+
+def test_screening_decision_rejects_undefined_decision_value():
+    with pytest.raises(ValidationError):
+        ScreeningDecisionCreate(
+            citation_id=1,
+            decision="maybe",
+            reason="Not an allowed decision value.",
+            actor="reviewer_a",
+        )
 
 
 def test_deduplicate_and_screening_updates_prisma_counts():

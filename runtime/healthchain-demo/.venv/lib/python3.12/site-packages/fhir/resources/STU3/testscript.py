@@ -1,0 +1,2925 @@
+from __future__ import annotations as _annotations
+
+"""
+Profile: http://hl7.org/fhir/StructureDefinition/TestScript
+Release: STU3
+Version: 3.0.2
+Revision: 11917
+Last updated: 2019-10-24T11:53:00+11:00
+"""
+import typing
+
+from pydantic import Field
+
+from . import backboneelement, domainresource, fhirtypes
+
+
+class TestScript(domainresource.DomainResource):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Describes a set of tests.
+    A structured set of tests against a FHIR server implementation to determine
+    compliance against the FHIR specification.
+    """
+
+    __resource_type__ = "TestScript"
+
+    contact: typing.List[fhirtypes.ContactDetailType] | None = Field(  # type: ignore
+        default=None,
+        alias="contact",
+        title="Contact details for the publisher",
+        description=(
+            "Contact details to assist a user in finding and communicating with the"
+            " publisher."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    copyright: fhirtypes.MarkdownType | None = Field(  # type: ignore
+        default=None,
+        alias="copyright",
+        title="Use and/or publishing restrictions",
+        description=(
+            "A copyright statement relating to the test script and/or its contents."
+            " Copyright statements are generally legal restrictions on the use and "
+            "publishing of the test script."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    copyright__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_copyright", title="Extension field for ``copyright``."
+    )
+
+    date: fhirtypes.DateTimeType | None = Field(  # type: ignore
+        default=None,
+        alias="date",
+        title="Date this was last changed",
+        description=(
+            "The date  (and optionally time) when the test script was published. "
+            "The date must change if and when the business version changes and it "
+            "must change if the status code changes. In addition, it should change "
+            "when the substantive content of the test script changes."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_date", title="Extension field for ``date``."
+    )
+
+    description: fhirtypes.MarkdownType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="Natural language description of the test script",
+        description=(
+            "A free text natural language description of the test script from a "
+            "consumer's perspective."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    destination: typing.List[fhirtypes.TestScriptDestinationType] | None = Field(  # type: ignore
+        default=None,
+        alias="destination",
+        title=(
+            "An abstract server representing a destination or receiver in a message"
+            " exchange"
+        ),
+        description=(
+            "An abstract server used in operations within this test script in the "
+            "destination element."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    experimental: bool | None = Field(  # type: ignore
+        default=None,
+        alias="experimental",
+        title="For testing purposes, not real usage",
+        description=(
+            "A boolean value to indicate that this test script is authored for "
+            "testing purposes (or education/evaluation/marketing), and is not "
+            "intended to be used for genuine usage."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    experimental__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_experimental",
+        title="Extension field for ``experimental``.",
+    )
+
+    fixture: typing.List[fhirtypes.TestScriptFixtureType] | None = Field(  # type: ignore
+        default=None,
+        alias="fixture",
+        title="Fixture in the test script - by reference (uri)",
+        description=(
+            "Fixture in the test script - by reference (uri). All fixtures are "
+            "required for the test script to execute."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
+        default=None,
+        alias="identifier",
+        title="Additional identifier for the test script",
+        description=(
+            "A formal identifier that is used to identify this test script when it "
+            "is represented in other formats, or referenced in a specification, "
+            "model, design or an instance."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    jurisdiction: typing.List[fhirtypes.CodeableConceptType] | None = Field(  # type: ignore
+        default=None,
+        alias="jurisdiction",
+        title="Intended jurisdiction for test script (if applicable)",
+        description=(
+            "A legal or geographic region in which the test script is intended to "
+            "be used."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    metadata: fhirtypes.TestScriptMetadataType | None = Field(  # type: ignore
+        default=None,
+        alias="metadata",
+        title=(
+            "Required capability that is assumed to function correctly on the FHIR "
+            "server being tested"
+        ),
+        description=(
+            "The required capability must exist and are assumed to function "
+            "correctly on the FHIR server being tested."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Name for this test script (computer friendly)",
+        description=(
+            "A natural language name identifying the test script. This name should "
+            "be usable as an identifier for the module by machine processing "
+            "applications such as code generation."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            "element_required": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    origin: typing.List[fhirtypes.TestScriptOriginType] | None = Field(  # type: ignore
+        default=None,
+        alias="origin",
+        title=(
+            "An abstract server representing a client or sender in a message "
+            "exchange"
+        ),
+        description=(
+            "An abstract server used in operations within this test script in the "
+            "origin element."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    profile: typing.List[fhirtypes.ReferenceType] | None = Field(  # type: ignore
+        default=None,
+        alias="profile",
+        title="Reference of the validation profile",
+        description="Reference to the profile to be used for validation.",
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Resource"],
+        },
+    )
+
+    publisher: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="publisher",
+        title="Name of the publisher (organization or individual)",
+        description=(
+            "The name of the individual or organization that published the test "
+            "script."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    publisher__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_publisher", title="Extension field for ``publisher``."
+    )
+
+    purpose: fhirtypes.MarkdownType | None = Field(  # type: ignore
+        default=None,
+        alias="purpose",
+        title="Why this test script is defined",
+        description=(
+            "Explaination of why this test script is needed and why it has been "
+            "designed as it has."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    purpose__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_purpose", title="Extension field for ``purpose``."
+    )
+
+    rule: typing.List[fhirtypes.TestScriptRuleType] | None = Field(  # type: ignore
+        default=None,
+        alias="rule",
+        title="Assert rule used within the test script",
+        description="Assert rule to be used in one or more asserts within the test script.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    ruleset: typing.List[fhirtypes.TestScriptRulesetType] | None = Field(  # type: ignore
+        default=None,
+        alias="ruleset",
+        title="Assert ruleset used within the test script",
+        description=(
+            "Contains one or more rules.  Offers a way to group rules so assertions"
+            " could reference the group of rules and have them all applied."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    setup: fhirtypes.TestScriptSetupType | None = Field(  # type: ignore
+        default=None,
+        alias="setup",
+        title="A series of required setup operations before tests are executed",
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    status: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="status",
+        title="draft | active | retired | unknown",
+        description=(
+            "The status of this test script. Enables tracking the life-cycle of the"
+            " content."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            "element_required": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["draft", "active", "retired", "unknown"],
+        },
+    )
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_status", title="Extension field for ``status``."
+    )
+
+    teardown: fhirtypes.TestScriptTeardownType | None = Field(  # type: ignore
+        default=None,
+        alias="teardown",
+        title="A series of required clean up steps",
+        description=(
+            "A series of operations required to clean up after the all the tests "
+            "are executed (successfully or otherwise)."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    test: typing.List[fhirtypes.TestScriptTestType] | None = Field(  # type: ignore
+        default=None,
+        alias="test",
+        title="A test in this script",
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    title: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="title",
+        title="Name for this test script (human friendly)",
+        description="A short, descriptive, user-friendly title for the test script.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    title__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_title", title="Extension field for ``title``."
+    )
+
+    url: fhirtypes.UriType | None = Field(  # type: ignore
+        default=None,
+        alias="url",
+        title="Logical URI to reference this test script (globally unique)",
+        description=(
+            "An absolute URI that is used to identify this test script when it is "
+            "referenced in a specification, model, design or an instance. This "
+            "SHALL be a URL, SHOULD be globally unique, and SHOULD be an address at"
+            " which this test script is (or will be) published. The URL SHOULD "
+            "include the major version of the test script. For more information see"
+            " [Technical and Business Versions](resource.html#versions)."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            "element_required": True,
+        },
+    )
+    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_url", title="Extension field for ``url``."
+    )
+
+    useContext: typing.List[fhirtypes.UsageContextType] | None = Field(  # type: ignore
+        default=None,
+        alias="useContext",
+        title="Context the content is intended to support",
+        description=(
+            "The content was developed with a focus and intent of supporting the "
+            "contexts that are listed. These terms may be used to assist with "
+            "indexing and searching for appropriate test script instances."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    variable: typing.List[fhirtypes.TestScriptVariableType] | None = Field(  # type: ignore
+        default=None,
+        alias="variable",
+        title="Placeholder for evaluated elements",
+        description=(
+            "Variable is set based either on element value in response body or on "
+            "header field value in the response headers."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    version: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="version",
+        title="Business version of the test script",
+        description=(
+            "The identifier that is used to identify this version of the test "
+            "script when it is referenced in a specification, model, design or "
+            "instance. This is an arbitrary value managed by the test script author"
+            " and is not expected to be globally unique. For example, it might be a"
+            " timestamp (e.g. yyyymmdd) if a managed version is not available. "
+            "There is also no expectation that versions can be placed in a "
+            "lexicographical sequence."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    version__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_version", title="Extension field for ``version``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScript`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "language",
+            "text",
+            "contained",
+            "extension",
+            "modifierExtension",
+            "url",
+            "identifier",
+            "version",
+            "name",
+            "title",
+            "status",
+            "experimental",
+            "date",
+            "publisher",
+            "contact",
+            "description",
+            "useContext",
+            "jurisdiction",
+            "purpose",
+            "copyright",
+            "origin",
+            "destination",
+            "metadata",
+            "fixture",
+            "profile",
+            "variable",
+            "rule",
+            "ruleset",
+            "setup",
+            "test",
+            "teardown",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScript`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "url",
+            "identifier",
+            "version",
+            "name",
+            "title",
+            "status",
+            "experimental",
+            "date",
+            "publisher",
+            "contact",
+            "useContext",
+            "jurisdiction",
+        ]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [
+            ("name", "name__ext"),
+            ("status", "status__ext"),
+            ("url", "url__ext"),
+        ]
+        return required_fields
+
+
+class TestScriptDestination(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    An abstract server representing a destination or receiver in a message
+    exchange.
+    An abstract server used in operations within this test script in the
+    destination element.
+    """
+
+    __resource_type__ = "TestScriptDestination"
+
+    index: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="index",
+        title="The index of the abstract destination server starting at 1",
+        description=(
+            "Abstract name given to a destination server in this test script.  The "
+            "name is provided as a number starting at 1."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    index__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_index", title="Extension field for ``index``."
+    )
+
+    profile: fhirtypes.CodingType = Field(  # type: ignore
+        default=...,
+        alias="profile",
+        title=(
+            "FHIR-Server | FHIR-SDC-FormManager | FHIR-SDC-FormReceiver | FHIR-SDC-"
+            "FormProcessor"
+        ),
+        description="The type of destination profile the test system supports.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptDestination`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "index", "profile"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptDestination`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("index", "index__ext")]
+        return required_fields
+
+
+class TestScriptFixture(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Fixture in the test script - by reference (uri).
+    Fixture in the test script - by reference (uri). All fixtures are required
+    for the test script to execute.
+    """
+
+    __resource_type__ = "TestScriptFixture"
+
+    autocreate: bool | None = Field(  # type: ignore
+        default=None,
+        alias="autocreate",
+        title="Whether or not to implicitly create the fixture during setup",
+        description=(
+            "Whether or not to implicitly create the fixture during setup. If true,"
+            " the fixture is automatically created on each server being tested "
+            "during setup, therefore no create operation is required for this "
+            "fixture in the TestScript.setup section."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    autocreate__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_autocreate", title="Extension field for ``autocreate``."
+    )
+
+    autodelete: bool | None = Field(  # type: ignore
+        default=None,
+        alias="autodelete",
+        title="Whether or not to implicitly delete the fixture during teardown",
+        description=(
+            "Whether or not to implicitly delete the fixture during teardown. If "
+            "true, the fixture is automatically deleted on each server being tested"
+            " during teardown, therefore no delete operation is required for this "
+            "fixture in the TestScript.teardown section."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    autodelete__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_autodelete", title="Extension field for ``autodelete``."
+    )
+
+    resource: fhirtypes.ReferenceType | None = Field(  # type: ignore
+        default=None,
+        alias="resource",
+        title="Reference of the resource",
+        description=(
+            "Reference to the resource (containing the contents of the resource "
+            "needed for operations)."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Resource"],
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptFixture`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "autocreate",
+            "autodelete",
+            "resource",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptFixture`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptMetadata(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Required capability that is assumed to function correctly on the FHIR
+    server being tested.
+    The required capability must exist and are assumed to function correctly on
+    the FHIR server being tested.
+    """
+
+    __resource_type__ = "TestScriptMetadata"
+
+    capability: typing.List[fhirtypes.TestScriptMetadataCapabilityType] = Field(  # type: ignore
+        default=...,
+        alias="capability",
+        title=(
+            "Capabilities  that are assumed to function correctly on the FHIR "
+            "server being tested"
+        ),
+        description=(
+            "Capabilities that must exist and are assumed to function correctly on "
+            "the FHIR server being tested."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    link: typing.List[fhirtypes.TestScriptMetadataLinkType] | None = Field(  # type: ignore
+        default=None,
+        alias="link",
+        title="Links to the FHIR specification",
+        description="A link to the FHIR specification that this test is covering.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptMetadata`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "link", "capability"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptMetadata`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptMetadataCapability(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Capabilities  that are assumed to function correctly on the FHIR server
+    being tested.
+    Capabilities that must exist and are assumed to function correctly on the
+    FHIR server being tested.
+    """
+
+    __resource_type__ = "TestScriptMetadataCapability"
+
+    capabilities: fhirtypes.ReferenceType = Field(  # type: ignore
+        default=...,
+        alias="capabilities",
+        title="Required Capability Statement",
+        description=(
+            "Minimum capabilities required of server for test script to execute "
+            "successfully.   If server does not meet at a minimum the referenced "
+            "capability statement, then all tests in this script are skipped."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["CapabilityStatement"],
+        },
+    )
+
+    description: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="The expected capabilities of the server",
+        description=(
+            "Description of the capabilities that this test script is requiring the"
+            " server to support."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    destination: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="destination",
+        title="Which server these requirements apply to",
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    destination__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_destination", title="Extension field for ``destination``."
+    )
+
+    link: typing.List[fhirtypes.UriType | None] | None = Field(  # type: ignore
+        default=None,
+        alias="link",
+        title="Links to the FHIR specification",
+        description=(
+            "Links to the FHIR specification that describes this interaction and "
+            "the resources involved in more detail."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    link__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
+        default=None, alias="_link", title="Extension field for ``link``."
+    )
+
+    origin: typing.List[fhirtypes.IntegerType | None] | None = Field(  # type: ignore
+        default=None,
+        alias="origin",
+        title="Which origin server these requirements apply to",
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    origin__ext: typing.List[fhirtypes.FHIRPrimitiveExtensionType | None] | None = Field(  # type: ignore
+        default=None, alias="_origin", title="Extension field for ``origin``."
+    )
+
+    required: bool | None = Field(  # type: ignore
+        default=None,
+        alias="required",
+        title="Are the capabilities required?",
+        description=(
+            "Whether or not the test execution will require the given capabilities "
+            "of the server in order for this test script to execute."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    required__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_required", title="Extension field for ``required``."
+    )
+
+    validated: bool | None = Field(  # type: ignore
+        default=None,
+        alias="validated",
+        title="Are the capabilities validated?",
+        description=(
+            "Whether or not the test execution will validate the given capabilities"
+            " of the server in order for this test script to execute."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    validated__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_validated", title="Extension field for ``validated``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptMetadataCapability`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "required",
+            "validated",
+            "description",
+            "origin",
+            "destination",
+            "link",
+            "capabilities",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptMetadataCapability`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptMetadataLink(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Links to the FHIR specification.
+    A link to the FHIR specification that this test is covering.
+    """
+
+    __resource_type__ = "TestScriptMetadataLink"
+
+    description: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="Short description",
+        description="Short description of the link.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    url: fhirtypes.UriType | None = Field(  # type: ignore
+        default=None,
+        alias="url",
+        title="URL to the specification",
+        description=(
+            "URL to a particular requirement or feature within the FHIR "
+            "specification."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_url", title="Extension field for ``url``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptMetadataLink`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "url", "description"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptMetadataLink`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("url", "url__ext")]
+        return required_fields
+
+
+class TestScriptOrigin(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    An abstract server representing a client or sender in a message exchange.
+    An abstract server used in operations within this test script in the origin
+    element.
+    """
+
+    __resource_type__ = "TestScriptOrigin"
+
+    index: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="index",
+        title="The index of the abstract origin server starting at 1",
+        description=(
+            "Abstract name given to an origin server in this test script.  The name"
+            " is provided as a number starting at 1."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    index__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_index", title="Extension field for ``index``."
+    )
+
+    profile: fhirtypes.CodingType = Field(  # type: ignore
+        default=...,
+        alias="profile",
+        title="FHIR-Client | FHIR-SDC-FormFiller",
+        description="The type of origin profile the test system supports.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptOrigin`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "index", "profile"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptOrigin`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("index", "index__ext")]
+        return required_fields
+
+
+class TestScriptRule(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Assert rule used within the test script.
+    Assert rule to be used in one or more asserts within the test script.
+    """
+
+    __resource_type__ = "TestScriptRule"
+
+    param: typing.List[fhirtypes.TestScriptRuleParamType] | None = Field(  # type: ignore
+        default=None,
+        alias="param",
+        title="Rule parameter template",
+        description=(
+            "Each rule template can take one or more parameters for rule " "evaluation."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    resource: fhirtypes.ReferenceType = Field(  # type: ignore
+        default=...,
+        alias="resource",
+        title="Assert rule resource reference",
+        description=(
+            "Reference to the resource (containing the contents of the rule needed "
+            "for assertions)."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Resource"],
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "resource", "param"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptRuleParam(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Rule parameter template.
+    Each rule template can take one or more parameters for rule evaluation.
+    """
+
+    __resource_type__ = "TestScriptRuleParam"
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Parameter name matching external assert rule parameter",
+        description=(
+            "Descriptive name for this parameter that matches the external assert "
+            "rule parameter name."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="Parameter value defined either explicitly or dynamically",
+        description=(
+            "The explicit or dynamic value for the parameter that will be passed on"
+            " to the external rule template."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "name", "value"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("name", "name__ext")]
+        return required_fields
+
+
+class TestScriptRuleset(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Assert ruleset used within the test script.
+    Contains one or more rules.  Offers a way to group rules so assertions
+    could reference the group of rules and have them all applied.
+    """
+
+    __resource_type__ = "TestScriptRuleset"
+
+    resource: fhirtypes.ReferenceType = Field(  # type: ignore
+        default=...,
+        alias="resource",
+        title="Assert ruleset resource reference",
+        description=(
+            "Reference to the resource (containing the contents of the ruleset "
+            "needed for assertions)."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Resource"],
+        },
+    )
+
+    rule: typing.List[fhirtypes.TestScriptRulesetRuleType] = Field(  # type: ignore
+        default=...,
+        alias="rule",
+        title="The referenced rule within the ruleset",
+        description="The referenced rule within the external ruleset template.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptRuleset`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "resource", "rule"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptRuleset`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptRulesetRule(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The referenced rule within the ruleset.
+    The referenced rule within the external ruleset template.
+    """
+
+    __resource_type__ = "TestScriptRulesetRule"
+
+    param: typing.List[fhirtypes.TestScriptRulesetRuleParamType] | None = Field(  # type: ignore
+        default=None,
+        alias="param",
+        title="Ruleset rule parameter template",
+        description=(
+            "Each rule template can take one or more parameters for rule " "evaluation."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    ruleId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="ruleId",
+        title="Id of referenced rule within the ruleset",
+        description="Id of the referenced rule within the external ruleset template.",
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    ruleId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_ruleId", title="Extension field for ``ruleId``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptRulesetRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "ruleId", "param"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptRulesetRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("ruleId", "ruleId__ext")]
+        return required_fields
+
+
+class TestScriptRulesetRuleParam(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Ruleset rule parameter template.
+    Each rule template can take one or more parameters for rule evaluation.
+    """
+
+    __resource_type__ = "TestScriptRulesetRuleParam"
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Parameter name matching external assert ruleset rule parameter",
+        description=(
+            "Descriptive name for this parameter that matches the external assert "
+            "ruleset rule parameter name."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="Parameter value defined either explicitly or dynamically",
+        description=(
+            "The value for the parameter that will be passed on to the external "
+            "ruleset rule template."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptRulesetRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "name", "value"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptRulesetRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("name", "name__ext")]
+        return required_fields
+
+
+class TestScriptSetup(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    A series of required setup operations before tests are executed.
+    """
+
+    __resource_type__ = "TestScriptSetup"
+
+    action: typing.List[fhirtypes.TestScriptSetupActionType] = Field(  # type: ignore
+        default=...,
+        alias="action",
+        title="A setup operation or assert to perform",
+        description="Action would contain either an operation or an assertion.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetup`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "action"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetup`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptSetupAction(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    A setup operation or assert to perform.
+    Action would contain either an operation or an assertion.
+    """
+
+    __resource_type__ = "TestScriptSetupAction"
+
+    assert_fhir: fhirtypes.TestScriptSetupActionAssertType | None = Field(  # type: ignore
+        default=None,
+        alias="assert",
+        title="The assertion to perform",
+        description=(
+            "Evaluates the results of previous operations to determine if the "
+            "server under test behaves appropriately."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    operation: fhirtypes.TestScriptSetupActionOperationType | None = Field(  # type: ignore
+        default=None,
+        alias="operation",
+        title="The setup operation to perform",
+        description="The operation to perform.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupAction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "operation", "assert"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupAction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptSetupActionAssert(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The assertion to perform.
+    Evaluates the results of previous operations to determine if the server
+    under test behaves appropriately.
+    """
+
+    __resource_type__ = "TestScriptSetupActionAssert"
+
+    compareToSourceExpression: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="compareToSourceExpression",
+        title="The fluentpath expression to evaluate against the source fixture",
+        description=(
+            "The fluentpath expression to evaluate against the source fixture. When"
+            " compareToSourceId is defined, either compareToSourceExpression or "
+            "compareToSourcePath must be defined, but not both."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    compareToSourceExpression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_compareToSourceExpression",
+        title="Extension field for ``compareToSourceExpression``.",
+    )
+
+    compareToSourceId: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="compareToSourceId",
+        title="Id of the source fixture to be evaluated",
+        description=(
+            "Id of the source fixture used as the contents to be evaluated by "
+            'either the "source/expression" or "sourceId/path" definition.'
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    compareToSourceId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_compareToSourceId",
+        title="Extension field for ``compareToSourceId``.",
+    )
+
+    compareToSourcePath: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="compareToSourcePath",
+        title="XPath or JSONPath expression to evaluate against the source fixture",
+        description=(
+            "XPath or JSONPath expression to evaluate against the source fixture. "
+            "When compareToSourceId is defined, either compareToSourceExpression or"
+            " compareToSourcePath must be defined, but not both."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    compareToSourcePath__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_compareToSourcePath",
+        title="Extension field for ``compareToSourcePath``.",
+    )
+
+    contentType: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="contentType",
+        title="xml | json | ttl | none",
+        description=(
+            "The content-type or mime-type to use for RESTful operation in the "
+            "'Content-Type' header."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["xml", "json", "ttl", "none"],
+        },
+    )
+    contentType__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_contentType", title="Extension field for ``contentType``."
+    )
+
+    description: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="Tracking/reporting assertion description",
+        description=(
+            "The description would be used by test engines for tracking and "
+            "reporting purposes."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    direction: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="direction",
+        title="response | request",
+        description="The direction to use for the assertion.",
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["response", "request"],
+        },
+    )
+    direction__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_direction", title="Extension field for ``direction``."
+    )
+
+    expression: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="expression",
+        title="The fluentpath expression to be evaluated",
+        description=(
+            "The fluentpath expression to be evaluated against the request or "
+            "response message contents - HTTP headers and payload."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    expression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_expression", title="Extension field for ``expression``."
+    )
+
+    headerField: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="headerField",
+        title="HTTP header field name",
+        description="The HTTP header field name e.g. 'Location'.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    headerField__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_headerField", title="Extension field for ``headerField``."
+    )
+
+    label: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="label",
+        title="Tracking/logging assertion label",
+        description="The label would be used for tracking/logging purposes by test engines.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    label__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_label", title="Extension field for ``label``."
+    )
+
+    minimumId: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="minimumId",
+        title="Fixture Id of minimum content resource",
+        description=(
+            "The ID of a fixture.  Asserts that the response contains at a minimum "
+            "the fixture specified by minimumId."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    minimumId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_minimumId", title="Extension field for ``minimumId``."
+    )
+
+    navigationLinks: bool | None = Field(  # type: ignore
+        default=None,
+        alias="navigationLinks",
+        title="Perform validation on navigation links?",
+        description=(
+            "Whether or not the test execution performs validation on the bundle "
+            "navigation links."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    navigationLinks__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_navigationLinks",
+        title="Extension field for ``navigationLinks``.",
+    )
+
+    operator: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="operator",
+        title=(
+            "equals | notEquals | in | notIn | greaterThan | lessThan | empty | "
+            "notEmpty | contains | notContains | eval"
+        ),
+        description=(
+            "The operator type defines the conditional behavior of the assert. If "
+            "not defined, the default is equals."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": [
+                "equals",
+                "notEquals",
+                "in",
+                "notIn",
+                "greaterThan",
+                "lessThan",
+                "empty",
+                "notEmpty",
+                "contains",
+                "notContains",
+                "eval",
+            ],
+        },
+    )
+    operator__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_operator", title="Extension field for ``operator``."
+    )
+
+    path: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="path",
+        title="XPath or JSONPath expression",
+        description=(
+            "The XPath or JSONPath expression to be evaluated against the fixture "
+            "representing the response received from server."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_path", title="Extension field for ``path``."
+    )
+
+    requestMethod: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="requestMethod",
+        title="delete | get | options | patch | post | put",
+        description=(
+            "The request method or HTTP operation code to compare against that used"
+            " by the client system under test."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["delete", "get", "options", "patch", "post", "put"],
+        },
+    )
+    requestMethod__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_requestMethod",
+        title="Extension field for ``requestMethod``.",
+    )
+
+    requestURL: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="requestURL",
+        title="Request URL comparison value",
+        description="The value to use in a comparison against the request URL path string.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    requestURL__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_requestURL", title="Extension field for ``requestURL``."
+    )
+
+    resource: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="resource",
+        title="Resource type",
+        description=(
+            "The type of the resource.  See "
+            "http://hl7.org/fhir/STU3/resourcelist.html."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    resource__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_resource", title="Extension field for ``resource``."
+    )
+
+    response: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="response",
+        title=(
+            "okay | created | noContent | notModified | bad | forbidden | notFound "
+            "| methodNotAllowed | conflict | gone | preconditionFailed | "
+            "unprocessable"
+        ),
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": [
+                "okay",
+                "created",
+                "noContent",
+                "notModified",
+                "bad",
+                "forbidden",
+                "notFound",
+                "methodNotAllowed",
+                "conflict",
+                "gone",
+                "preconditionFailed",
+                "unprocessable",
+            ],
+        },
+    )
+    response__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_response", title="Extension field for ``response``."
+    )
+
+    responseCode: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="responseCode",
+        title="HTTP response code to test",
+        description="The value of the HTTP response code to be tested.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    responseCode__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_responseCode",
+        title="Extension field for ``responseCode``.",
+    )
+
+    rule: fhirtypes.TestScriptSetupActionAssertRuleType | None = Field(  # type: ignore
+        default=None,
+        alias="rule",
+        title="The reference to a TestScript.rule",
+        description="The TestScript.rule this assert will evaluate.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    ruleset: fhirtypes.TestScriptSetupActionAssertRulesetType | None = Field(  # type: ignore
+        default=None,
+        alias="ruleset",
+        title="The reference to a TestScript.ruleset",
+        description="The TestScript.ruleset this assert will evaluate.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    sourceId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="sourceId",
+        title="Fixture Id of source expression or headerField",
+        description=(
+            "Fixture to evaluate the XPath/JSONPath expression or the headerField  "
+            "against."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    sourceId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_sourceId", title="Extension field for ``sourceId``."
+    )
+
+    validateProfileId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="validateProfileId",
+        title="Profile Id of validation profile reference",
+        description="The ID of the Profile to validate against.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    validateProfileId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_validateProfileId",
+        title="Extension field for ``validateProfileId``.",
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="The value to compare to",
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    warningOnly: bool | None = Field(  # type: ignore
+        default=None,
+        alias="warningOnly",
+        title="Will this assert produce a warning only on error?",
+        description=(
+            "Whether or not the test execution will produce a warning only on error"
+            " for this assert."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    warningOnly__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_warningOnly", title="Extension field for ``warningOnly``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionAssert`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "label",
+            "description",
+            "direction",
+            "compareToSourceId",
+            "compareToSourceExpression",
+            "compareToSourcePath",
+            "contentType",
+            "expression",
+            "headerField",
+            "minimumId",
+            "navigationLinks",
+            "operator",
+            "path",
+            "requestMethod",
+            "requestURL",
+            "resource",
+            "response",
+            "responseCode",
+            "rule",
+            "ruleset",
+            "sourceId",
+            "validateProfileId",
+            "value",
+            "warningOnly",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionAssert`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptSetupActionAssertRule(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The reference to a TestScript.rule.
+    The TestScript.rule this assert will evaluate.
+    """
+
+    __resource_type__ = "TestScriptSetupActionAssertRule"
+
+    param: typing.List[fhirtypes.TestScriptSetupActionAssertRuleParamType] | None = Field(  # type: ignore
+        default=None,
+        alias="param",
+        title="Rule parameter template",
+        description=(
+            "Each rule template can take one or more parameters for rule " "evaluation."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    ruleId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="ruleId",
+        title="Id of the TestScript.rule",
+        description="The TestScript.rule id value this assert will evaluate.",
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    ruleId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_ruleId", title="Extension field for ``ruleId``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionAssertRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "ruleId", "param"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionAssertRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("ruleId", "ruleId__ext")]
+        return required_fields
+
+
+class TestScriptSetupActionAssertRuleParam(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Rule parameter template.
+    Each rule template can take one or more parameters for rule evaluation.
+    """
+
+    __resource_type__ = "TestScriptSetupActionAssertRuleParam"
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Parameter name matching external assert rule parameter",
+        description=(
+            "Descriptive name for this parameter that matches the external assert "
+            "rule parameter name."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="Parameter value defined either explicitly or dynamically",
+        description=(
+            "The value for the parameter that will be passed on to the external "
+            "rule template."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionAssertRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "name", "value"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionAssertRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("name", "name__ext"), ("value", "value__ext")]
+        return required_fields
+
+
+class TestScriptSetupActionAssertRuleset(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The reference to a TestScript.ruleset.
+    The TestScript.ruleset this assert will evaluate.
+    """
+
+    __resource_type__ = "TestScriptSetupActionAssertRuleset"
+
+    rule: typing.List[fhirtypes.TestScriptSetupActionAssertRulesetRuleType] | None = Field(  # type: ignore
+        default=None,
+        alias="rule",
+        title="The referenced rule within the ruleset",
+        description="The referenced rule within the external ruleset template.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    rulesetId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="rulesetId",
+        title="Id of the TestScript.ruleset",
+        description="The TestScript.ruleset id value this assert will evaluate.",
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    rulesetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_rulesetId", title="Extension field for ``rulesetId``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionAssertRuleset`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "rulesetId", "rule"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionAssertRuleset`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("rulesetId", "rulesetId__ext")]
+        return required_fields
+
+
+class TestScriptSetupActionAssertRulesetRule(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The referenced rule within the ruleset.
+    The referenced rule within the external ruleset template.
+    """
+
+    __resource_type__ = "TestScriptSetupActionAssertRulesetRule"
+
+    param: typing.List[fhirtypes.TestScriptSetupActionAssertRulesetRuleParamType] | None = Field(  # type: ignore
+        default=None,
+        alias="param",
+        title="Rule parameter template",
+        description=(
+            "Each rule template can take one or more parameters for rule " "evaluation."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    ruleId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="ruleId",
+        title="Id of referenced rule within the ruleset",
+        description="Id of the referenced rule within the external ruleset template.",
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    ruleId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_ruleId", title="Extension field for ``ruleId``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionAssertRulesetRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "ruleId", "param"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionAssertRulesetRule`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("ruleId", "ruleId__ext")]
+        return required_fields
+
+
+class TestScriptSetupActionAssertRulesetRuleParam(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Rule parameter template.
+    Each rule template can take one or more parameters for rule evaluation.
+    """
+
+    __resource_type__ = "TestScriptSetupActionAssertRulesetRuleParam"
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Parameter name matching external assert ruleset rule parameter",
+        description=(
+            "Descriptive name for this parameter that matches the external assert "
+            "ruleset rule parameter name."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="Parameter value defined either explicitly or dynamically",
+        description=(
+            "The value for the parameter that will be passed on to the external "
+            "ruleset rule template."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionAssertRulesetRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "name", "value"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionAssertRulesetRuleParam`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("name", "name__ext"), ("value", "value__ext")]
+        return required_fields
+
+
+class TestScriptSetupActionOperation(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The setup operation to perform.
+    The operation to perform.
+    """
+
+    __resource_type__ = "TestScriptSetupActionOperation"
+
+    accept: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="accept",
+        title="xml | json | ttl | none",
+        description=(
+            "The content-type or mime-type to use for RESTful operation in the "
+            "'Accept' header."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["xml", "json", "ttl", "none"],
+        },
+    )
+    accept__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_accept", title="Extension field for ``accept``."
+    )
+
+    contentType: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="contentType",
+        title="xml | json | ttl | none",
+        description=(
+            "The content-type or mime-type to use for RESTful operation in the "
+            "'Content-Type' header."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["xml", "json", "ttl", "none"],
+        },
+    )
+    contentType__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_contentType", title="Extension field for ``contentType``."
+    )
+
+    description: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="Tracking/reporting operation description",
+        description=(
+            "The description would be used by test engines for tracking and "
+            "reporting purposes."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    destination: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="destination",
+        title="Server responding to the request",
+        description=(
+            "The server where the request message is destined for.  Must be one of "
+            "the server numbers listed in TestScript.destination section."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    destination__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_destination", title="Extension field for ``destination``."
+    )
+
+    encodeRequestUrl: bool | None = Field(  # type: ignore
+        default=None,
+        alias="encodeRequestUrl",
+        title="Whether or not to send the request url in encoded format",
+        description=(
+            "Whether or not to implicitly send the request url in encoded format. "
+            "The default is true to match the standard RESTful client behavior. Set"
+            " to false when communicating with a server that does not support "
+            "encoded url paths."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    encodeRequestUrl__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_encodeRequestUrl",
+        title="Extension field for ``encodeRequestUrl``.",
+    )
+
+    label: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="label",
+        title="Tracking/logging operation label",
+        description="The label would be used for tracking/logging purposes by test engines.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    label__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_label", title="Extension field for ``label``."
+    )
+
+    origin: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="origin",
+        title="Server initiating the request",
+        description=(
+            "The server where the request message originates from.  Must be one of "
+            "the server numbers listed in TestScript.origin section."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    origin__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_origin", title="Extension field for ``origin``."
+    )
+
+    params: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="params",
+        title="Explicitly defined path parameters",
+        description=(
+            "Path plus parameters after [type].  Used to set parts of the request "
+            "URL explicitly."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    params__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_params", title="Extension field for ``params``."
+    )
+
+    requestHeader: typing.List[fhirtypes.TestScriptSetupActionOperationRequestHeaderType] | None = Field(  # type: ignore
+        default=None,
+        alias="requestHeader",
+        title="Each operation can have one or more header elements",
+        description="Header elements would be used to set HTTP headers.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    requestId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="requestId",
+        title="Fixture Id of mapped request",
+        description="The fixture id (maybe new) to map to the request.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    requestId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_requestId", title="Extension field for ``requestId``."
+    )
+
+    resource: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="resource",
+        title="Resource type",
+        description=(
+            "The type of the resource.  See "
+            "http://hl7.org/fhir/STU3/resourcelist.html."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    resource__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_resource", title="Extension field for ``resource``."
+    )
+
+    responseId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="responseId",
+        title="Fixture Id of mapped response",
+        description="The fixture id (maybe new) to map to the response.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    responseId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_responseId", title="Extension field for ``responseId``."
+    )
+
+    sourceId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="sourceId",
+        title="Fixture Id of body for PUT and POST requests",
+        description="The id of the fixture used as the body of a PUT or POST request.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    sourceId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_sourceId", title="Extension field for ``sourceId``."
+    )
+
+    targetId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="targetId",
+        title=(
+            "Id of fixture used for extracting the [id],  [type], and [vid] for GET"
+            " requests"
+        ),
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    targetId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_targetId", title="Extension field for ``targetId``."
+    )
+
+    type: fhirtypes.CodingType | None = Field(  # type: ignore
+        default=None,
+        alias="type",
+        title="The operation code type that will be executed",
+        description="Server interaction or operation type.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    url: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="url",
+        title="Request URL",
+        description="Complete request URL.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    url__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_url", title="Extension field for ``url``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionOperation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "type",
+            "resource",
+            "label",
+            "description",
+            "accept",
+            "contentType",
+            "destination",
+            "encodeRequestUrl",
+            "origin",
+            "params",
+            "requestHeader",
+            "requestId",
+            "responseId",
+            "sourceId",
+            "targetId",
+            "url",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionOperation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptSetupActionOperationRequestHeader(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Each operation can have one or more header elements.
+    Header elements would be used to set HTTP headers.
+    """
+
+    __resource_type__ = "TestScriptSetupActionOperationRequestHeader"
+
+    field: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="field",
+        title="HTTP header field name",
+        description='The HTTP header field e.g. "Accept".',
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    field__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_field", title="Extension field for ``field``."
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="HTTP headerfield value",
+        description='The value of the header e.g. "application/fhir+xml".',
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptSetupActionOperationRequestHeader`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "field", "value"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptSetupActionOperationRequestHeader`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("field", "field__ext"), ("value", "value__ext")]
+        return required_fields
+
+
+class TestScriptTeardown(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    A series of required clean up steps.
+    A series of operations required to clean up after the all the tests are
+    executed (successfully or otherwise).
+    """
+
+    __resource_type__ = "TestScriptTeardown"
+
+    action: typing.List[fhirtypes.TestScriptTeardownActionType] = Field(  # type: ignore
+        default=...,
+        alias="action",
+        title="One or more teardown operations to perform",
+        description="The teardown action will only contain an operation.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptTeardown`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "action"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptTeardown`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptTeardownAction(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    One or more teardown operations to perform.
+    The teardown action will only contain an operation.
+    """
+
+    __resource_type__ = "TestScriptTeardownAction"
+
+    operation: fhirtypes.TestScriptSetupActionOperationType = Field(  # type: ignore
+        default=...,
+        alias="operation",
+        title="The teardown operation to perform",
+        description="An operation would involve a REST request to a server.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptTeardownAction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "operation"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptTeardownAction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptTest(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    A test in this script.
+    """
+
+    __resource_type__ = "TestScriptTest"
+
+    action: typing.List[fhirtypes.TestScriptTestActionType] = Field(  # type: ignore
+        default=...,
+        alias="action",
+        title="A test operation or assert to perform",
+        description="Action would contain either an operation or an assertion.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    description: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="Tracking/reporting short description of the test",
+        description=(
+            "A short description of the test used by test engines for tracking and "
+            "reporting purposes."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Tracking/logging name of this test",
+        description=(
+            "The name of this test used for tracking/logging purposes by test "
+            "engines."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptTest`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "name", "description", "action"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptTest`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptTestAction(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    A test operation or assert to perform.
+    Action would contain either an operation or an assertion.
+    """
+
+    __resource_type__ = "TestScriptTestAction"
+
+    assert_fhir: fhirtypes.TestScriptSetupActionAssertType | None = Field(  # type: ignore
+        default=None,
+        alias="assert",
+        title="The setup assertion to perform",
+        description=(
+            "Evaluates the results of previous operations to determine if the "
+            "server under test behaves appropriately."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    operation: fhirtypes.TestScriptSetupActionOperationType | None = Field(  # type: ignore
+        default=None,
+        alias="operation",
+        title="The setup operation to perform",
+        description="An operation would involve a REST request to a server.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptTestAction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "operation", "assert"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptTestAction`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class TestScriptVariable(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Placeholder for evaluated elements.
+    Variable is set based either on element value in response body or on header
+    field value in the response headers.
+    """
+
+    __resource_type__ = "TestScriptVariable"
+
+    defaultValue: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="defaultValue",
+        title="Default, hard-coded, or user-defined value for this variable",
+        description="A default, hard-coded, or user-defined value for this variable.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    defaultValue__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_defaultValue",
+        title="Extension field for ``defaultValue``.",
+    )
+
+    description: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="description",
+        title="Natural language description of the variable",
+        description=(
+            "A free text natural language description of the variable and its "
+            "purpose."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    description__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_description", title="Extension field for ``description``."
+    )
+
+    expression: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="expression",
+        title="The fluentpath expression against the fixture body",
+        description=(
+            "The fluentpath expression to evaluate against the fixture body. When "
+            "variables are defined, only one of either expression, headerField or "
+            "path must be specified."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    expression__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_expression", title="Extension field for ``expression``."
+    )
+
+    headerField: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="headerField",
+        title="HTTP header field name for source",
+        description=(
+            "Will be used to grab the HTTP header field value from the headers that"
+            " sourceId is pointing to."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    headerField__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_headerField", title="Extension field for ``headerField``."
+    )
+
+    hint: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="hint",
+        title="Hint help text for default value to enter",
+        description=(
+            "Displayable text string with hint help information to the user when "
+            "entering a default value."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    hint__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_hint", title="Extension field for ``hint``."
+    )
+
+    name: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="name",
+        title="Descriptive name for this variable",
+        description=None,
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    name__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_name", title="Extension field for ``name``."
+    )
+
+    path: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="path",
+        title="XPath or JSONPath against the fixture body",
+        description=(
+            "XPath or JSONPath to evaluate against the fixture body.  When "
+            "variables are defined, only one of either expression, headerField or "
+            "path must be specified."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    path__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_path", title="Extension field for ``path``."
+    )
+
+    sourceId: fhirtypes.IdType | None = Field(  # type: ignore
+        default=None,
+        alias="sourceId",
+        title="Fixture Id of source expression or headerField within this variable",
+        description=(
+            "Fixture to evaluate the XPath/JSONPath expression or the headerField  "
+            "against within this variable."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    sourceId__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_sourceId", title="Extension field for ``sourceId``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``TestScriptVariable`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "name",
+            "defaultValue",
+            "description",
+            "expression",
+            "headerField",
+            "hint",
+            "path",
+            "sourceId",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``TestScriptVariable`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("name", "name__ext")]
+        return required_fields

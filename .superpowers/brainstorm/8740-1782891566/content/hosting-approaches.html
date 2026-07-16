@@ -1,0 +1,91 @@
+<h2>文献综述智能体 MVP：宿主实现路径</h2>
+<p class="subtitle">目标约束：工作台型 B/S、检索+筛选型、国外优先、编排型 Agent、尽量复用现成开源、院内/私有化优先</p>
+
+<div class="cards">
+  <div class="card" data-choice="dify" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <div class="label">推荐</div>
+      <h3>A. Dify 作为 B/S 宿主</h3>
+      <p>把 Dify 当成前台工作台和编排入口，检索、去重、筛选、PRISMA 作为外部工具服务接入。</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>现成 B/S 产品完成度高</li>
+            <li>多应用、多工作流、多角色易搭建</li>
+            <li>最适合先做可演示 MVP</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>限制</h4>
+          <ul>
+            <li>不是医学科研专用工作台</li>
+            <li>题录筛选和人工复核界面需要外挂</li>
+            <li>复杂状态流不如专门业务前端自然</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="flowise" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>B. Flowise / Langflow 作为编排宿主</h3>
+      <p>更偏可视化流程编排，适合把工具链快速串起来，但产品化工作台能力弱于 Dify。</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>流程节点化直观</li>
+            <li>二次接工具方便</li>
+            <li>便于验证 agent 编排逻辑</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>限制</h4>
+          <ul>
+            <li>业务工作台感偏弱</li>
+            <li>人机协同审阅体验一般</li>
+            <li>最终往往还要补一层前端</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="card" data-choice="thin-custom" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>C. 自建轻量工作台，外接专业组件</h3>
+      <p>自己做一个很薄的任务工作台，ASReview/AiReview/GROBID 等作为后端服务接入，最贴业务，但代码量上升。</p>
+      <div class="pros-cons">
+        <div class="pros">
+          <h4>优点</h4>
+          <ul>
+            <li>最贴合筛选与复核流程</li>
+            <li>后续扩展全文抽取更顺</li>
+            <li>院内私有化控制最好</li>
+          </ul>
+        </div>
+        <div class="cons">
+          <h4>限制</h4>
+          <ul>
+            <li>不是最小开发量</li>
+            <li>第一版交付周期更长</li>
+            <li>需要自己维护任务状态与 UI</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <h3>我的建议</h3>
+  <div class="mockup">
+    <div class="mockup-header">推荐路径：A. Dify 作为 B/S 宿主</div>
+    <div class="mockup-body">
+      <p>原因不是它最专业，而是它最符合当前约束：最小代码量、现成 B/S、方便做编排型 Agent、适合快速拼接外部工具服务并先把闭环跑通。</p>
+      <p>边界要讲清楚：Dify 只做宿主与编排，不负责医学文献筛选、专业审阅和 PRISMA 这些能力本身，这些仍由外部开源组件承担。</p>
+    </div>
+  </div>
+</div>

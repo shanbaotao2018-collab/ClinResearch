@@ -1,0 +1,107 @@
+<h2>文献综述智能体 MVP：工作台页面结构</h2>
+<p class="subtitle">目标不是“大而全科研平台”，而是围绕检索与筛选做一个小闭环工作台</p>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">页面信息架构</div>
+    <div class="mockup-body">
+      <div style="display:grid;grid-template-columns:220px 1fr;gap:12px">
+        <div style="border:1px solid #ddd;border-radius:10px;padding:12px;background:#fafafa">
+          <div class="label">左侧导航</div>
+          <p>1. 项目列表</p>
+          <p>2. 新建综述项目</p>
+          <p>3. 检索与筛选工作台</p>
+          <p>4. 结果导出</p>
+          <p>5. 审计日志</p>
+        </div>
+        <div style="border:1px solid #ddd;border-radius:10px;padding:12px;background:#fff">
+          <div class="label">主工作区</div>
+          <p><strong>顶部：</strong>项目名称、研究问题、当前阶段、负责人</p>
+          <p><strong>中部：</strong>分步骤标签页</p>
+          <p><strong>底部：</strong>当前步骤结果、确认按钮、异常提示</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="cards">
+  <div class="card" data-choice="page1" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>页面 1：项目列表页</h3>
+      <p>管理多个文献综述项目，展示状态、题录数、筛选进度、最后更新时间。</p>
+      <p><strong>作用：</strong>项目管理入口</p>
+      <p><strong>不做：</strong>复杂 BI、大屏、组织级分析</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="page2" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>页面 2：新建项目页</h3>
+      <p>录入研究问题、PICO、纳排标准草稿、目标数据库范围。</p>
+      <p><strong>作用：</strong>启动一个综述任务</p>
+      <p><strong>不做：</strong>复杂表单引擎</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="page3" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>页面 3：检索与筛选工作台</h3>
+      <p>这是核心页，覆盖检索式生成、检索执行、题录导入、去重、标题摘要筛选、PRISMA 统计。</p>
+      <p><strong>作用：</strong>完成 MVP 主要业务闭环</p>
+      <p><strong>不做：</strong>全文深度抽取、偏倚评价</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="page4" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>页面 4：结果导出页</h3>
+      <p>导出题录清单、纳排结果、PRISMA 数据表、过程报告。</p>
+      <p><strong>作用：</strong>交付项目结果包</p>
+      <p><strong>不做：</strong>正式论文排版</p>
+    </div>
+  </div>
+
+  <div class="card" data-choice="page5" onclick="toggleSelect(this)">
+    <div class="card-body">
+      <h3>页面 5：审计日志页</h3>
+      <p>记录谁在什么时候修改了检索式、执行了检索、做了纳排判断、生成了 PRISMA。</p>
+      <p><strong>作用：</strong>满足科研可追溯性</p>
+      <p><strong>不做：</strong>复杂安全运营中心</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="mockup">
+    <div class="mockup-header">核心页内部结构：检索与筛选工作台</div>
+    <div class="mockup-body">
+      <p><strong>步骤 1：</strong>研究问题与纳排标准</p>
+      <p><strong>步骤 2：</strong>AI 生成检索式</p>
+      <p><strong>步骤 3：</strong>执行 PubMed / Europe PMC 检索</p>
+      <p><strong>步骤 4：</strong>导入中文题录文件</p>
+      <p><strong>步骤 5：</strong>去重与题录清洗</p>
+      <p><strong>步骤 6：</strong>标题摘要筛选</p>
+      <p><strong>步骤 7：</strong>PRISMA 统计与导出</p>
+    </div>
+  </div>
+</div>
+
+<div class="section">
+  <div class="options">
+    <div class="option" data-choice="lean" onclick="toggleSelect(this)">
+      <div class="letter">A</div>
+      <div class="content">
+        <h3>接受这版精简工作台</h3>
+        <p>继续细化 Agent 角色与工具职责</p>
+      </div>
+    </div>
+    <div class="option" data-choice="add-pages" onclick="toggleSelect(this)">
+      <div class="letter">B</div>
+      <div class="content">
+        <h3>页面还不够</h3>
+        <p>我在终端里说要补哪些页面或模块</p>
+      </div>
+    </div>
+  </div>
+</div>

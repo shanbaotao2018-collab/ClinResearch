@@ -1,0 +1,319 @@
+app:
+  description: 文献筛选决策提交与 PRISMA 统计更新工作流
+  icon: "\U0001F52C"
+  icon_background: '#FDE9D9'
+  icon_type: emoji
+  mode: workflow
+  name: 文献综述-筛选决策与PRISMA
+  use_icon_as_answer_icon: false
+dependencies: []
+kind: app
+version: 0.6.0
+workflow:
+  conversation_variables: []
+  environment_variables: []
+  features:
+    file_upload:
+      enabled: false
+    opening_statement: ''
+    retriever_resource:
+      enabled: false
+    sensitive_word_avoidance:
+      enabled: false
+    speech_to_text:
+      enabled: false
+    suggested_questions: []
+    suggested_questions_after_answer:
+      enabled: false
+    text_to_speech:
+      enabled: false
+  graph:
+    edges:
+      - data:
+          isInIteration: false
+          isInLoop: false
+          sourceType: start
+          targetType: http-request
+        id: start-to-submit-screening
+        source: 'start_node'
+        sourceHandle: source
+        target: 'submit_screening_node'
+        targetHandle: target
+        type: custom
+        zIndex: 0
+      - data:
+          isInIteration: false
+          isInLoop: false
+          sourceType: http-request
+          targetType: code
+        id: submit-screening-to-parse-decision
+        source: 'submit_screening_node'
+        sourceHandle: source
+        target: 'parse_decision_node'
+        targetHandle: target
+        type: custom
+        zIndex: 0
+      - data:
+          isInIteration: false
+          isInLoop: false
+          sourceType: code
+          targetType: http-request
+        id: parse-decision-to-get-prisma
+        source: 'parse_decision_node'
+        sourceHandle: source
+        target: 'get_prisma_node'
+        targetHandle: target
+        type: custom
+        zIndex: 0
+      - data:
+          isInIteration: false
+          isInLoop: false
+          sourceType: http-request
+          targetType: code
+        id: get-prisma-to-parse-prisma
+        source: 'get_prisma_node'
+        sourceHandle: source
+        target: 'parse_prisma_node'
+        targetHandle: target
+        type: custom
+        zIndex: 0
+      - data:
+          isInIteration: false
+          isInLoop: false
+          sourceType: code
+          targetType: end
+        id: parse-prisma-to-end
+        source: 'parse_prisma_node'
+        sourceHandle: source
+        target: 'end_node'
+        targetHandle: target
+        type: custom
+        zIndex: 0
+    nodes:
+      - data:
+          desc: ''
+          selected: false
+          title: User Input
+          type: start
+          variables:
+            - label: project_id
+              options: []
+              required: true
+              type: number
+              variable: project_id
+            - label: citation_id
+              options: []
+              required: true
+              type: number
+              variable: citation_id
+            - hint: ''
+              label: decision
+              options:
+                - include
+                - exclude
+              placeholder: ''
+              required: true
+              type: select
+              variable: decision
+            - label: reason
+              max_length: 1000
+              options: []
+              required: true
+              type: paragraph
+              variable: reason
+            - label: actor
+              max_length: 100
+              options: []
+              required: true
+              type: text-input
+              variable: actor
+        height: 235
+        id: 'start_node'
+        position:
+          x: 30
+          y: 210
+        positionAbsolute:
+          x: 30
+          y: 210
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          authorization:
+            type: no-auth
+          body:
+            type: json
+            data: |
+              {
+                "citation_id": {{#start_node.citation_id#}},
+                "decision": "{{#start_node.decision#}}",
+                "reason": "{{#start_node.reason#}}",
+                "actor": "{{#start_node.actor#}}"
+              }
+          desc: 提交筛选决策
+          headers: Content-Type:application/json
+          method: post
+          params: ''
+          retry_config:
+            enabled: false
+            exponential_backoff:
+              enabled: false
+              max_interval: 10000
+              multiplier: 2
+            max_retries: 1
+            retry_interval: 1000
+          ssl_verify: true
+          timeout:
+            connect: 10
+            read: 30
+            write: 30
+          title: Submit Screening Decision
+          type: http-request
+          url: http://host.docker.internal:8010/projects/{{#start_node.project_id#}}/screening-decisions
+        height: 90
+        id: 'submit_screening_node'
+        position:
+          x: 340
+          y: 210
+        positionAbsolute:
+          x: 340
+          y: 210
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          code: "\nimport json\n\ndef main(raw_body: str) -> dict:\n    return {\n        \"result\": json.loads(raw_body),\n    }\n"
+          code_language: python3
+          desc: 解析筛选结果
+          outputs:
+            result:
+              children: null
+              type: object
+          title: Parse Decision Result
+          type: code
+          variables:
+            - value_selector:
+                - 'submit_screening_node'
+                - body
+              value_type: string
+              variable: raw_body
+        height: 90
+        id: 'parse_decision_node'
+        position:
+          x: 640
+          y: 210
+        positionAbsolute:
+          x: 640
+          y: 210
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          authorization:
+            type: no-auth
+          body:
+            type: none
+            data: ''
+          desc: 拉取最新 PRISMA 统计
+          headers: ''
+          method: get
+          params: ''
+          retry_config:
+            enabled: false
+            exponential_backoff:
+              enabled: false
+              max_interval: 10000
+              multiplier: 2
+            max_retries: 1
+            retry_interval: 1000
+          ssl_verify: true
+          timeout:
+            connect: 10
+            read: 30
+            write: 30
+          title: Get Prisma
+          type: http-request
+          url: http://host.docker.internal:8010/projects/{{#start_node.project_id#}}/prisma
+        height: 90
+        id: 'get_prisma_node'
+        position:
+          x: 940
+          y: 210
+        positionAbsolute:
+          x: 940
+          y: 210
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          code: "\nimport json\n\ndef main(raw_body: str) -> dict:\n    return {\n        \"result\": json.loads(raw_body),\n    }\n"
+          code_language: python3
+          desc: 解析 PRISMA
+          outputs:
+            result:
+              children: null
+              type: object
+          title: Parse Prisma
+          type: code
+          variables:
+            - value_selector:
+                - 'get_prisma_node'
+                - body
+              value_type: string
+              variable: raw_body
+        height: 90
+        id: 'parse_prisma_node'
+        position:
+          x: 1240
+          y: 210
+        positionAbsolute:
+          x: 1240
+          y: 210
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+      - data:
+          desc: ''
+          outputs:
+            - value_selector:
+                - 'parse_decision_node'
+                - result
+                - decision_id
+              value_type: number
+              variable: decision_id
+            - value_selector:
+                - 'parse_prisma_node'
+                - result
+              value_type: object
+              variable: prisma_summary
+          selected: false
+          title: End
+          type: end
+        height: 90
+        id: 'end_node'
+        position:
+          x: 1540
+          y: 210
+        positionAbsolute:
+          x: 1540
+          y: 210
+        selected: false
+        sourcePosition: right
+        targetPosition: left
+        type: custom
+        width: 244
+    viewport:
+      x: 0
+      y: 0
+      zoom: 0.7
+  rag_pipeline_variables: []

@@ -1,0 +1,669 @@
+from __future__ import annotations as _annotations
+
+"""
+Profile: http://hl7.org/fhir/StructureDefinition/MeasureReport
+Release: STU3
+Version: 3.0.2
+Revision: 11917
+Last updated: 2019-10-24T11:53:00+11:00
+"""
+import typing
+
+from pydantic import Field
+
+from . import backboneelement, domainresource, fhirtypes
+
+
+class MeasureReport(domainresource.DomainResource):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Results of a measure evaluation.
+    The MeasureReport resource contains the results of evaluating a measure.
+    """
+
+    __resource_type__ = "MeasureReport"
+
+    date: fhirtypes.DateTimeType | None = Field(  # type: ignore
+        default=None,
+        alias="date",
+        title="When the report was generated",
+        description="The date this measure report was generated.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    date__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_date", title="Extension field for ``date``."
+    )
+
+    evaluatedResources: fhirtypes.ReferenceType | None = Field(  # type: ignore
+        default=None,
+        alias="evaluatedResources",
+        title="What data was evaluated to produce the measure score",
+        description=(
+            "A reference to a Bundle containing the Resources that were used in the"
+            " evaluation of this report."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Bundle"],
+        },
+    )
+
+    group: typing.List[fhirtypes.MeasureReportGroupType] | None = Field(  # type: ignore
+        default=None,
+        alias="group",
+        title="Measure results for each group",
+        description=(
+            "The results of the calculation, one for each population group in the "
+            "measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
+        default=None,
+        alias="identifier",
+        title="Additional identifier for the Report",
+        description=(
+            "A formal identifier that is used to identify this report when it is "
+            "represented in other formats, or referenced in a specification, model,"
+            " design or an instance."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    measure: fhirtypes.ReferenceType = Field(  # type: ignore
+        default=...,
+        alias="measure",
+        title="What measure was evaluated",
+        description="A reference to the Measure that was evaluated to produce this report.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Measure"],
+        },
+    )
+
+    patient: fhirtypes.ReferenceType | None = Field(  # type: ignore
+        default=None,
+        alias="patient",
+        title="What patient the report is for",
+        description="Optional Patient if the report was requested for a single patient.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Patient"],
+        },
+    )
+
+    period: fhirtypes.PeriodType = Field(  # type: ignore
+        default=...,
+        alias="period",
+        title="What period the report covers",
+        description="The reporting period for which the report was calculated.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    reportingOrganization: fhirtypes.ReferenceType | None = Field(  # type: ignore
+        default=None,
+        alias="reportingOrganization",
+        title="Who is reporting the data",
+        description="Reporting Organization.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["Organization"],
+        },
+    )
+
+    status: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="status",
+        title="complete | pending | error",
+        description=(
+            "The report status. No data will be available until the report status "
+            "is complete."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            "element_required": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["complete", "pending", "error"],
+        },
+    )
+    status__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_status", title="Extension field for ``status``."
+    )
+
+    type: fhirtypes.CodeType | None = Field(  # type: ignore
+        default=None,
+        alias="type",
+        title="individual | patient-list | summary",
+        description=(
+            "The type of measure report. This may be an individual report, which "
+            "provides a single patient's score for the measure; a patient listing, "
+            "which returns the list of patients that meet the various criteria in "
+            "the measure; or a summary report, which returns a population count for"
+            " each of the criteria in the measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+            "element_required": True,
+            # note: Enum values can be used in validation,
+            # but use in your own responsibilities, read official FHIR documentation.
+            "enum_values": ["individual", "patient-list", "summary"],
+        },
+    )
+    type__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_type", title="Extension field for ``type``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``MeasureReport`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "language",
+            "text",
+            "contained",
+            "extension",
+            "modifierExtension",
+            "identifier",
+            "status",
+            "type",
+            "measure",
+            "patient",
+            "date",
+            "reportingOrganization",
+            "period",
+            "group",
+            "evaluatedResources",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``MeasureReport`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "meta",
+            "implicitRules",
+            "identifier",
+            "status",
+            "type",
+            "measure",
+            "patient",
+            "date",
+            "reportingOrganization",
+            "period",
+        ]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("status", "status__ext"), ("type", "type__ext")]
+        return required_fields
+
+
+class MeasureReportGroup(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Measure results for each group.
+    The results of the calculation, one for each population group in the
+    measure.
+    """
+
+    __resource_type__ = "MeasureReportGroup"
+
+    identifier: fhirtypes.IdentifierType = Field(  # type: ignore
+        default=...,
+        alias="identifier",
+        title="What group of the measure",
+        description=(
+            "The identifier of the population group as defined in the measure "
+            "definition."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    measureScore: fhirtypes.DecimalType | None = Field(  # type: ignore
+        default=None,
+        alias="measureScore",
+        title="What score this group achieved",
+        description=(
+            "The measure score for this population group, calculated as appropriate"
+            " for the measure type and scoring method, and based on the contents of"
+            " the populations defined in the group."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    measureScore__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_measureScore",
+        title="Extension field for ``measureScore``.",
+    )
+
+    population: typing.List[fhirtypes.MeasureReportGroupPopulationType] | None = Field(  # type: ignore
+        default=None,
+        alias="population",
+        title="The populations in the group",
+        description=(
+            "The populations that make up the population group, one for each type "
+            "of population appropriate for the measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    stratifier: typing.List[fhirtypes.MeasureReportGroupStratifierType] | None = Field(  # type: ignore
+        default=None,
+        alias="stratifier",
+        title="Stratification results",
+        description=(
+            "When a measure includes multiple stratifiers, there will be a "
+            "stratifier group for each stratifier defined by the measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``MeasureReportGroup`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "identifier",
+            "population",
+            "measureScore",
+            "stratifier",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``MeasureReportGroup`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "measureScore"]
+
+
+class MeasureReportGroupPopulation(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    The populations in the group.
+    The populations that make up the population group, one for each type of
+    population appropriate for the measure.
+    """
+
+    __resource_type__ = "MeasureReportGroupPopulation"
+
+    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
+        default=None,
+        alias="code",
+        title=(
+            "initial-population | numerator | numerator-exclusion | denominator | "
+            "denominator-exclusion | denominator-exception | measure-population | "
+            "measure-population-exclusion | measure-score"
+        ),
+        description="The type of the population.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    count: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="count",
+        title="Size of the population",
+        description="The number of members of the population.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    count__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_count", title="Extension field for ``count``."
+    )
+
+    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
+        default=None,
+        alias="identifier",
+        title="Population identifier as defined in the measure",
+        description=(
+            "The identifier of the population being reported, as defined by the "
+            "population element of the measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    patients: fhirtypes.ReferenceType | None = Field(  # type: ignore
+        default=None,
+        alias="patients",
+        title="For patient-list reports, the patients in this population",
+        description=(
+            "This element refers to a List of patient level MeasureReport "
+            "resources, one for each patient in this population."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["List"],
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``MeasureReportGroupPopulation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "identifier",
+            "code",
+            "count",
+            "patients",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``MeasureReportGroupPopulation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "identifier", "code"]
+
+
+class MeasureReportGroupStratifier(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Stratification results.
+    When a measure includes multiple stratifiers, there will be a stratifier
+    group for each stratifier defined by the measure.
+    """
+
+    __resource_type__ = "MeasureReportGroupStratifier"
+
+    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
+        default=None,
+        alias="identifier",
+        title="What stratifier of the group",
+        description=(
+            "The identifier of this stratifier, as defined in the measure "
+            "definition."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    stratum: typing.List[fhirtypes.MeasureReportGroupStratifierStratumType] | None = Field(  # type: ignore
+        default=None,
+        alias="stratum",
+        title="Stratum results, one for each unique value in the stratifier",
+        description=(
+            "This element contains the results for a single stratum within the "
+            "stratifier. For example, when stratifying on administrative gender, "
+            "there will be four strata, one for each possible gender value."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``MeasureReportGroupStratifier`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["id", "extension", "modifierExtension", "identifier", "stratum"]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``MeasureReportGroupStratifier`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension"]
+
+
+class MeasureReportGroupStratifierStratum(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Stratum results, one for each unique value in the stratifier.
+    This element contains the results for a single stratum within the
+    stratifier. For example, when stratifying on administrative gender, there
+    will be four strata, one for each possible gender value.
+    """
+
+    __resource_type__ = "MeasureReportGroupStratifierStratum"
+
+    measureScore: fhirtypes.DecimalType | None = Field(  # type: ignore
+        default=None,
+        alias="measureScore",
+        title="What score this stratum achieved",
+        description=(
+            "The measure score for this stratum, calculated as appropriate for the "
+            "measure type and scoring method, and based on only the members of this"
+            " stratum."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+    measureScore__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None,
+        alias="_measureScore",
+        title="Extension field for ``measureScore``.",
+    )
+
+    population: typing.List[fhirtypes.MeasureReportGroupStratifierStratumPopulationType] | None = Field(  # type: ignore
+        default=None,
+        alias="population",
+        title="Population results in this stratum",
+        description=(
+            "The populations that make up the stratum, one for each type of "
+            "population appropriate to the measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+
+    value: fhirtypes.StringType | None = Field(  # type: ignore
+        default=None,
+        alias="value",
+        title="The stratum value, e.g. male",
+        description=(
+            "The value for this stratum, expressed as a string. When defining "
+            "stratifiers on complex values, the value must be rendered such that "
+            "the value for each stratum within the stratifier is unique."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "element_required": True,
+        },
+    )
+    value__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_value", title="Extension field for ``value``."
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``MeasureReportGroupStratifierStratum`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "value",
+            "population",
+            "measureScore",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``MeasureReportGroupStratifierStratum`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "measureScore"]
+
+    def get_required_fields(self) -> typing.List[typing.Tuple[str, str]]:
+        """https://www.hl7.org/fhir/extensibility.html#Special-Case
+        In some cases, implementers might find that they do not have appropriate data for
+        an element with minimum cardinality = 1. In this case, the element must be present,
+        but unless the resource or a profile on it has made the actual value of the primitive
+        data type mandatory, it is possible to provide an extension that explains why
+        the primitive value is not present.
+        """
+        required_fields = [("value", "value__ext")]
+        return required_fields
+
+
+class MeasureReportGroupStratifierStratumPopulation(backboneelement.BackboneElement):
+    """Disclaimer: Any field name ends with ``__ext`` doesn't part of
+    Resource StructureDefinition, instead used to enable Extensibility feature
+    for FHIR Primitive Data Types.
+
+    Population results in this stratum.
+    The populations that make up the stratum, one for each type of population
+    appropriate to the measure.
+    """
+
+    __resource_type__ = "MeasureReportGroupStratifierStratumPopulation"
+
+    code: fhirtypes.CodeableConceptType | None = Field(  # type: ignore
+        default=None,
+        alias="code",
+        title=(
+            "initial-population | numerator | numerator-exclusion | denominator | "
+            "denominator-exclusion | denominator-exception | measure-population | "
+            "measure-population-exclusion | measure-score"
+        ),
+        description="The type of the population.",
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    count: fhirtypes.IntegerType | None = Field(  # type: ignore
+        default=None,
+        alias="count",
+        title="Size of the population",
+        description="The number of members of the population in this stratum.",
+        json_schema_extra={
+            "element_property": True,
+        },
+    )
+    count__ext: fhirtypes.FHIRPrimitiveExtensionType | None = Field(  # type: ignore
+        default=None, alias="_count", title="Extension field for ``count``."
+    )
+
+    identifier: fhirtypes.IdentifierType | None = Field(  # type: ignore
+        default=None,
+        alias="identifier",
+        title="Population identifier as defined in the measure",
+        description=(
+            "The identifier of the population being reported, as defined by the "
+            "population element of the measure."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            "summary_element_property": True,
+        },
+    )
+
+    patients: fhirtypes.ReferenceType | None = Field(  # type: ignore
+        default=None,
+        alias="patients",
+        title="For patient-list reports, the patients in this population",
+        description=(
+            "This element refers to a List of patient level MeasureReport "
+            "resources, one for each patient in this population in this stratum."
+        ),
+        json_schema_extra={
+            "element_property": True,
+            # note: Listed Resource Type(s) should be allowed as Reference.
+            "enum_reference_types": ["List"],
+        },
+    )
+
+    @classmethod
+    def elements_sequence(cls):
+        """returning all element names from
+        ``MeasureReportGroupStratifierStratumPopulation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return [
+            "id",
+            "extension",
+            "modifierExtension",
+            "identifier",
+            "code",
+            "count",
+            "patients",
+        ]
+
+    @classmethod
+    def summary_elements_sequence(cls):
+        """returning all element names (those have summary mode are enabled) from ``MeasureReportGroupStratifierStratumPopulation`` according to specification,
+        with preserving the original sequence order.
+        """
+        return ["modifierExtension", "identifier", "code"]
