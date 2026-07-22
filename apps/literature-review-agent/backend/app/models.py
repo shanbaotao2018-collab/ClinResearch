@@ -273,6 +273,80 @@ class CitationSafetyCheck(SQLModel, table=True):
     checked_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
+class FullTextDocument(SQLModel, table=True):
+    """Traceable full-text source supplied by a researcher or public-source workflow."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    citation_id: int = Field(index=True)
+    source_kind: str
+    source_url: Optional[str] = None
+    content_text: str
+    content_sha256: str = Field(index=True)
+    page_count: Optional[int] = None
+    needs_human_review: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class FullTextEvidenceDetail(SQLModel, table=True):
+    """Structured baseline and outcome data explicitly tied to a full-text source."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    citation_id: int = Field(index=True)
+    full_text_document_id: int = Field(index=True)
+    baseline_json: str = "{}"
+    outcomes_json: str = "[]"
+    extraction_notes: Optional[str] = None
+    needs_human_review: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class BiasAssessment(SQLModel, table=True):
+    """Human-reviewable RoB 2, NOS, or QUADAS-2 assessment based on full text."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    citation_id: int = Field(index=True)
+    full_text_document_id: int = Field(index=True)
+    instrument: str = Field(index=True)
+    overall_judgement: str
+    domains_json: str
+    needs_human_review: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class BinaryMetaAnalysisRun(SQLModel, table=True):
+    """Persisted binary-outcome synthesis. Results are never final without review."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    workflow_run_id: str = Field(index=True)
+    outcome_label: str
+    effect_measure: str
+    model: str
+    result_json: str
+    forest_plot_svg: str
+    needs_human_review: bool = True
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class SystematicEvidenceReviewApproval(SQLModel, table=True):
+    """External researcher approval for one immutable systematic-evidence scope."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    workflow_run_id: str = Field(index=True, unique=True)
+    scope_digest: str
+    status: str = Field(default="pending")
+    requested_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    approved_by: Optional[str] = None
+    approved_at: Optional[datetime] = None
+
+
 class ResearchWritingDraft(SQLModel, table=True):
     id: Optional[int] = Field(default=None, primary_key=True)
     workflow_run_id: str = Field(index=True)

@@ -189,6 +189,37 @@ class CitationSafetyCheckRead(BaseModel):
     needs_human_review: bool
 
 
+class FullTextDocumentCreate(BaseModel):
+    citation_id: int
+    source_kind: Literal["open_access_html", "pdf_extracted_markdown", "user_provided_full_text"]
+    content_text: str
+    source_url: str | None = None
+    page_count: int | None = None
+    needs_human_review: bool = True
+
+
+class FullTextEvidenceDetailCreate(BaseModel):
+    citation_id: int
+    full_text_document_id: int
+    baseline: dict[str, str | int | float | None] = {}
+    outcomes: list[dict[str, str | int | float | None]] = []
+    extraction_notes: str | None = None
+    needs_human_review: bool = True
+
+
+class BiasAssessmentCreate(BaseModel):
+    citation_id: int
+    full_text_document_id: int
+    instrument: Literal["rob2", "nos", "quadas2"]
+    overall_judgement: str
+    domains: list[dict[str, str]]
+    needs_human_review: bool = True
+
+
+class SystematicEvidenceApprovalRequest(BaseModel):
+    approved_by: str
+
+
 class ResearchWritingDraftCreate(BaseModel):
     title: str
     target_audience: str | None = None

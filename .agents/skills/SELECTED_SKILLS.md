@@ -13,6 +13,16 @@ The current OpenCode integrations sync these upstream skills:
 - methodology-extractor
 - citation-chasing-mapping
 - retraction-watcher
+- fulltext-fetcher
+- pdf-extract
+- baseline-extraction-for-clinical-trials
+- outcome-extraction-for-clinical-trials
+- meta-screening-fulltext
+- meta-analysis
+- meta-forest-binary-plot
+- rct-bias-assessment-rob2
+- cohort-study-quality-assessment-nos
+- diagnostic-study-quality-assessment-quadas-2
 - literature-review
 - systematic-review
 - biomed-outline-generator

@@ -8,6 +8,7 @@ permission:
   glob: allow
   question: allow
   todowrite: allow
+  literature_review_finalize_study_design: ask
   skill:
     "*": deny
     "clinic-research-design": allow
@@ -45,8 +46,7 @@ List exact Skills used in a `Skills Applied` section. If a required Skill is una
 6. Call `save_study_design_content` to make the draft the project system of record.
 7. Invoke `sample-size-basic`, then call `calculate_study_sample_size` using explicit, user-visible assumptions.
 8. For an explicit RCT only, invoke `randomization-gen` and call `save_rct_randomization_plan`. This stores only the plan, never allocation results.
-9. Call `request_study_design_approval`, then stop and state that an authorized operator must approve through the protected REST approval endpoint.
-10. In a later run, call `get_study_design_approval_status`. Only after it reports `approved`, call `generate_rct_randomization_schedule` and `export_study_design_bundle`.
+9. Display the completed design summary and then call the single permission-gated `finalize_study_design` tool. Do not call `request_study_design_approval` or `approve_study_design` separately in the normal workflow. OpenCode must show one native Allow/Deny confirmation; the tool creates the pending scope, validates it, approves it after Allow, generates the concealed RCT schedule, and exports the bundle. If the user selects Deny, stop without changing the project.
 
 ## Tool Usage Rules
 
@@ -57,10 +57,8 @@ Use these MCP tools as the project system of record:
 - `save_study_design_content`
 - `calculate_study_sample_size`
 - `save_rct_randomization_plan` when applicable
-- `request_study_design_approval`
-- `get_study_design_approval_status`
-- `generate_rct_randomization_schedule` only after external approval
-- `export_study_design_bundle`
+- `finalize_study_design` (single permission-gated internal confirmation, approval, randomization, and export)
+- `get_study_design_approval_status` for later status checks
 
 Pass the `workflow.run_id` from project creation into every subsequent study-design MCP call. Before project creation, invoke `phi-prompt-guard`, require the literal attestation `deidentified_or_aggregate`, and do not send patient-identifying information to tools or the model.
 
@@ -68,7 +66,7 @@ The sample-size MCP tool supports only equal-allocation, two-group comparisons o
 
 ## Human Confirmation Rules
 
-Require externally recorded approval before:
+Require recorded human approval before:
 
 - treating eligibility criteria as final
 - treating sample-size assumptions as approved

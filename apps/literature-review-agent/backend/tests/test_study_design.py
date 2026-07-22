@@ -58,9 +58,9 @@ def test_rct_schedule_requires_external_approval_and_stays_redacted(monkeypatch,
     with Session(engine) as session:
         project = _create_rct_project(session)
         _prepare_for_approval(session, project.id)
-        with pytest.raises(ValueError, match="External human approval"):
+        with pytest.raises(ValueError, match="Internal human confirmation"):
             generate_rct_randomization_record(session, project.id, actor="test")
-        with pytest.raises(ValueError, match="External human approval"):
+        with pytest.raises(ValueError, match="Internal human confirmation"):
             build_study_design_bundle_data(session, project.id)
 
         approval = request_study_design_approval_record(session, project.id, actor="test")

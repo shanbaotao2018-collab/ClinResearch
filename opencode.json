@@ -7,25 +7,31 @@
       "command": ["bash", "scripts/opencode/run-literature-review-mcp.sh"]
     }
   },
+  "permission": {
+    "literature_review_finalize_study_design": "ask",
+    "literature_review_approve_study_design": "ask",
+    "literature_review_approve_systematic_evidence": "ask",
+    "literature_review_approve_research_writing": "ask"
+  },
   "provider": {
-    "model-port": {
+    "sensenova": {
       "npm": "@ai-sdk/openai-compatible",
-      "name": "Model Port",
+      "name": "SenseNova",
       "options": {
-        "baseURL": "https://api.model-port.xyz/v1",
-        "apiKey": "{env:MODEL_PORT_API_KEY}",
+        "baseURL": "https://token.sensenova.cn/v1",
+        "apiKey": "sk-IrWbrU7DMTF1LOnBe35H5HXIgx9El68I",
         "timeout": 90000,
         "chunkTimeout": 90000
       },
       "models": {
-        "gpt-5.4": {
-          "name": "gpt-5.4"
+        "deepseek-v4-flash": {
+          "name": "deepseek-v4-flash"
         }
       }
     }
   },
-  "model": "model-port/gpt-5.4",
-  "small_model": "model-port/gpt-5.4",
+  "model": "sensenova/deepseek-v4-flash",
+  "small_model": "sensenova/deepseek-v4-flash",
   "plugin": [
     "file:///Users/shanbaotao/Documents/agent%202/.opencode/plugins/medical-skill-receipts.mjs"
   ]

@@ -1,0 +1,42 @@
+{
+  "case_id": "mvp-study-design-hypertension-discharge-followup-internal-approval",
+  "agent": "study-design-agent",
+  "purpose": "验证全新研究设计项目从创建、样本量、随机化到 OpenCode 内部人工确认和导出的完整闭环。",
+  "data_attestation": "deidentified_or_aggregate",
+  "user_prompt": "请为全科医学科设计一项假设性随机对照研究：老年原发性高血压患者出院后，药师远程用药教育加短信提醒，相较常规出院指导，是否提高30天内按计划复诊的比例？请完成研究设计草案、PICO、纳排标准、结局、可行性、两组比例样本量、随机化方案和研究方案初稿。该案例只用于软件方法学演示，不包含患者身份信息，也不用于直接临床决策。",
+  "research_context": {
+    "department": "全科医学科",
+    "study_type_requested": "efficacy",
+    "population": "年龄不低于65岁的原发性高血压患者，计划从住院出院时纳入",
+    "intervention": "药师远程用药教育加标准化短信提醒",
+    "comparator": "常规出院指导",
+    "primary_outcome": "出院后30天内按计划完成门诊复诊",
+    "available_recruitment_capacity": 600,
+    "follow_up": "30天"
+  },
+  "sample_size_assumptions": {
+    "analysis": "equal_allocation_two_group_proportions",
+    "method": "proportions",
+    "control_event_rate": 0.55,
+    "intervention_event_rate": 0.70,
+    "alpha": 0.05,
+    "power": 0.8,
+    "two_sided": true,
+    "loss_to_follow_up_rate": 0.1,
+    "note": "以上数值均为演示假设，正式研究前必须由研究者和统计师确认。"
+  },
+  "randomization_plan": {
+    "allocation_ratio": "1:1",
+    "block_sizes": [4, 6],
+    "stratification": ["出院科室", "年龄组（65-74岁/75岁及以上）"],
+    "concealment": "由中心化系统生成并由独立操作者保管；Agent 不得输出实际分配序列。"
+  },
+  "acceptance_criteria": [
+    "创建全新的 study-design 项目和 workflow_run_id，不复用此前项目。",
+    "输出 PICO、研究类型和适用报告规范建议。",
+    "明确展示两组比例样本量的全部假设与工具计算结果。",
+    "仅保存随机化方案，不生成或展示实际受试者分配表。",
+    "请求内部人工确认后，OpenCode 弹出 Allow/Deny。",
+    "仅在 Allow 且后端审批状态为 approved 后生成受保护随机分配表并导出研究方案包。"
+  ]
+}

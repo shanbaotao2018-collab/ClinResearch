@@ -143,7 +143,7 @@ def test_research_writing_requires_signed_skills_and_external_approval(monkeypat
             session, "study_design", project.id, run.run_id, "protocol", _protocol_payload(project.id), actor="test"
         )
         assert draft.version_number == 1
-        with pytest.raises(ValueError, match="External human approval"):
+        with pytest.raises(ValueError, match="Internal human confirmation"):
             build_research_writing_bundle_data(session, draft.id, run.run_id)
         approval = request_research_writing_approval_record(session, draft.id, run.run_id, actor="test")
         assert approval.status == "pending"

@@ -2,7 +2,7 @@
 
 ## 定位
 
-`study-design-agent` 是医学科研工作台的第一个方案设计闭环。它将自然语言科研想法沉淀为一个可追踪的本地项目；由授权人员在后端完成审批后，才导出不含随机分配序列的研究方案工作包。
+`study-design-agent` 是医学科研工作台的第一个方案设计闭环。它将自然语言科研想法沉淀为一个可追踪的本地项目；由当前 OpenCode 操作者完成内部人工确认后，才导出不含随机分配序列的研究方案工作包。
 
 支持的研究类型：
 
@@ -30,11 +30,8 @@
 3. `save_study_design_content`
 4. `calculate_study_sample_size`
 5. `save_rct_randomization_plan`，仅保存明确 RCT 的分组与区组计划
-6. `request_study_design_approval`
-7. 由授权人员调用受保护 REST 接口审批
-8. `get_study_design_approval_status`
-9. `generate_rct_randomization_schedule`，仅在审批后生成且不返回分配序列
-10. `export_study_design_bundle`，导出脱敏的方案工作包
+6. `finalize_study_design`：一次受权限保护的内部确认操作；OpenCode 显示原生 Allow/Deny，允许后创建确认范围、完成批准、生成受保护 RCT 分配表并导出方案包
+7. `get_study_design_approval_status`：后续查看审批状态
 
 样本量 MVP 只支持等比例分配的两组均值比较或两组率比较。它会保存 alpha、power、效应假设和结果；生存分析、集群试验、非劣效、多臂与自适应设计尚未开放。
 
@@ -58,14 +55,14 @@ SGLT2 抑制剂联合标准治疗是否可降低 12 个月内心衰住院风险�
 
 ## 人工确认点
 
-授权研究人员必须通过后端审批接口确认以下内容后，Agent 才会导出工作包：
+授权研究人员必须在 OpenCode 原生 Allow/Deny 确认框中确认以下内容后，Agent 才会导出工作包：
 
 - 研究问题、研究类型与方案假设
 - 纳入/排除标准和结局定义
 - 样本量的效应假设、alpha、power 与适用范围
 - RCT 的分组与区组大小
 
-审批密钥仅配置在后端环境变量 `LRA_STUDY_DESIGN_APPROVAL_KEY`，不会暴露给 OpenCode、MCP 或模型。MVP 在本机受限目录保存随机分配表并校验哈希；只有持有该密钥的试验运营人员可通过 `GET /study-design-projects/{id}/randomization-schedule` 读取。导出的 Markdown 只包含随机化计划和受控状态，不包含实际分配序列。
+审批密钥仅配置在后端环境变量 `LRA_STUDY_DESIGN_APPROVAL_KEY`，不会暴露给模型上下文或工具参数。MCP 本地进程在权限确认通过后使用该配置完成后端校验。MVP 在本机受限目录保存随机分配表并校验哈希；只有持有该密钥的试验运营人员可通过 `GET /study-design-projects/{id}/randomization-schedule` 读取。导出的 Markdown 只包含随机化计划和受控状态，不包含实际分配序列。
 
 每次 MCP 调用均需携带项目创建时返回的 `workflow.run_id`，后端会记录操作及输入/输出摘要哈希，方便复核流程而不重复保存敏感内容。
 

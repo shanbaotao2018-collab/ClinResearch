@@ -1,0 +1,41 @@
+{
+  "case_id": "mvp-study-design-heart-failure-transition-care",
+  "agent": "study-design-agent",
+  "purpose": "验证临床科研方案设计、两组比例样本量、随机方案和人工审批闭环。",
+  "data_attestation": "deidentified_or_aggregate",
+  "user_prompt": "请为心内科设计一项研究：成人慢性心力衰竭患者出院后，药师主导的用药核对加电话随访，相较常规出院管理，是否降低30天全因再入院？这是用于MVP方法学演示的假设性研究，不提供任何患者身份信息，也不用于直接临床决策。请按随机对照试验完成研究设计草案、纳排标准、结局、可行性、样本量假设、随机方案和研究方案初稿，并请求外部审批后停止。",
+  "research_context": {
+    "department": "心内科",
+    "study_type_requested": "efficacy",
+    "population": "成人慢性心力衰竭患者，计划从住院出院时纳入",
+    "intervention": "药师主导的用药核对加标准化电话随访",
+    "comparator": "常规出院管理",
+    "primary_outcome": "出院后30天全因再入院",
+    "available_recruitment_capacity": 800,
+    "follow_up": "30天"
+  },
+  "sample_size_assumptions": {
+    "analysis": "equal_allocation_two_group_proportions",
+    "method": "proportions",
+    "control_event_rate": 0.18,
+    "intervention_event_rate": 0.12,
+    "alpha": 0.05,
+    "power": 0.8,
+    "two_sided": true,
+    "loss_to_follow_up_rate": 0.1,
+    "note": "以上数值为演示假设，必须在正式研究前由研究者和统计师确认。"
+  },
+  "randomization_plan": {
+    "allocation_ratio": "1:1",
+    "block_sizes": [4, 6],
+    "stratification": ["研究中心", "出院时射血分数类别"],
+    "concealment": "中心化系统生成并由独立操作者保管；Agent 不得输出分配序列。"
+  },
+  "acceptance_criteria": [
+    "创建持久化 study-design 项目和 workflow_run_id。",
+    "输出 PICO、研究类型及相应报告规范建议。",
+    "明确展示两组比例样本量的所有假设与工具计算结果。",
+    "仅保存随机方案，不生成或展示实际受试者分配表。",
+    "列出实际执行的 Skills，并在请求外部审批后停止。"
+  ]
+}

@@ -1,0 +1,66 @@
+{
+  "case_id": "mvp-evidence-extraction-hcq-covid-historical",
+  "agent": "evidence-extraction-agent",
+  "purpose": "验证摘要级证据、公开全文入库、RoB 2 初评、二分类Meta、审批锁和系统评价包。",
+  "runtime_parameters": {
+    "project_id": "{{review_project_id_from_case_02}}",
+    "citation_id_recovery": "{{local_citation_id_for_pmid_33031652}}",
+    "citation_id_solidarity": "{{local_citation_id_for_pmid_33264556}}"
+  },
+  "user_prompt_template": "对项目 {{review_project_id_from_case_02}} 执行全文系统评价。只处理下列两篇已纳入RCT，先保存摘要级证据并进行撤稿核查，再登记公开全文、抽取基线和结局、完成RoB 2初评，并以RR和random_effects运行二分类Meta。之后请求系统评价外部审批并停止，不能自行审批或导出最终包。所有结论必须绑定来源，不得给出临床用药建议。",
+  "studies": [
+    {
+      "citation_runtime_id": "{{local_citation_id_for_pmid_33031652}}",
+      "pmid": "33031652",
+      "doi": "10.1056/NEJMoa2022926",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7556338/",
+      "source_kind": "open_access_html",
+      "study_design": "Randomized, controlled, open-label platform trial",
+      "population": "Hospitalized patients with clinically suspected or laboratory-confirmed SARS-CoV-2 infection",
+      "outcome": {
+        "outcome_label": "28-day all-cause mortality",
+        "effect_measure": "rr",
+        "timepoint": "28 days",
+        "intervention_events": 421,
+        "intervention_total": 1561,
+        "comparator_events": 790,
+        "comparator_total": 3155,
+        "source_locator": "Results > Primary Outcome"
+      },
+      "rob2_overall_preliminary": "some_concerns"
+    },
+    {
+      "citation_runtime_id": "{{local_citation_id_for_pmid_33264556}}",
+      "pmid": "33264556",
+      "doi": "10.1056/NEJMoa2023184",
+      "full_text_url": "https://pmc.ncbi.nlm.nih.gov/articles/PMC7727327/",
+      "source_kind": "open_access_html",
+      "study_design": "International, randomized, open-label adaptive trial",
+      "population": "Hospital inpatients with Covid-19",
+      "outcome": {
+        "outcome_label": "28-day all-cause mortality",
+        "effect_measure": "rr",
+        "timepoint": "28 days",
+        "intervention_events": 104,
+        "intervention_total": 947,
+        "comparator_events": 84,
+        "comparator_total": 906,
+        "source_locator": "Results > Primary Outcome"
+      },
+      "rob2_overall_preliminary": "some_concerns"
+    }
+  ],
+  "meta_analysis": {
+    "outcome_label": "28-day all-cause mortality",
+    "effect_measure": "rr",
+    "model": "random_effects",
+    "expected_toolchain_result": "基于上述2x2计数的演示合并RR约为1.09，95% CI约0.99至1.20，I²约0%；仅用于回归验收，必须由研究者确认结局可比性。"
+  },
+  "acceptance_criteria": [
+    "对每条纳入文献保存摘要级 EvidenceExtraction，并完成撤稿公告核查，作为写作Agent前置条件。",
+    "两篇全文均来自给定PMC公开地址，且保存来源URL、内容校验值与章节定位。",
+    "每篇研究有完整5域RoB 2初评，所有域都有rationale和source_locator。",
+    "完成RR随机效应二分类Meta及SVG森林图，并明确needs_human_review。",
+    "请求系统评价审批；审批前最终导出必须被门禁拒绝。"
+  ]
+}

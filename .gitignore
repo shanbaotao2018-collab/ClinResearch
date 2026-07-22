@@ -1,0 +1,35 @@
+# OS and Office temporary files
+.DS_Store
+.~*
+*.inspect.ndjson
+
+# Local runtimes, secrets, receipts, and generated study allocations
+runtime/
+outputs/
+apps/literature-review-agent/backend/runtime/
+**/.venv/
+**/__pycache__/
+*.py[cod]
+
+# Local browser/build artifacts
+.playwright-mcp/
+**/node_modules/
+**/dist/
+*.tsbuildinfo
+
+# Competition media and generated submission artifacts stay outside source control
+deliverables/
+截图/
+*.mov
+*.mp4
+*.zip
+*.pptx
+*.pdf
+*.docx
+
+# Upstream Skill packaging reports are not runtime dependencies
+.agents/skills/**/POLISH_CHANGELOG.md
+.agents/skills/**/*_audit_result*.json
+.agents/skills/**/eval_report_*.json
+.agents/skills/**/report.json
+.agents/skills/**/.Rhistory

@@ -1,0 +1,57 @@
+{
+  "case_id": "mvp-literature-review-hcq-covid-historical",
+  "agent": "literature-review",
+  "purpose": "验证真实 PubMed/Europe PMC 检索、去重、子 Agent 筛选和 PRISMA 项目闭环。",
+  "safety_note": "本案例仅用于历史性公开文献的方法学测试，不形成羟氯喹或任何治疗的临床建议。",
+  "user_prompt": "请完成一项历史性系统综述工作流测试：在住院COVID-19成人患者中，羟氯喹相较常规治疗或开放对照，对28天全因死亡有何影响？请创建新的文献项目，生成检索式，使用PubMed和Europe PMC进行真实检索；只导入下方指定的两篇公开RCT作为本轮最小候选集，完成去重和标题摘要筛选，提交筛选决定并导出项目包。请在筛选标准需要锁定时，采用本测试文件给出的已确认标准。",
+  "pico": {
+    "population": "住院的成人COVID-19患者",
+    "intervention": "羟氯喹",
+    "comparator": "常规治疗、无试验药物或开放对照",
+    "outcome": "28天全因死亡"
+  },
+  "confirmed_eligibility": {
+    "include": [
+      "随机对照试验或随机化平台试验。",
+      "住院成人COVID-19患者。",
+      "包含羟氯喹与常规治疗、无试验药物或开放对照的比较。",
+      "报告死亡或可核对的28天死亡数据。"
+    ],
+    "exclude": [
+      "体外、动物、非临床研究。",
+      "非随机研究、病例报告、评论、方案论文。",
+      "重复发表或无可用死亡结局信息。"
+    ]
+  },
+  "search_seed": {
+    "pubmed_query": "(hydroxychloroquine[Title/Abstract]) AND (COVID-19[Title/Abstract] OR SARS-CoV-2[Title/Abstract]) AND (randomized controlled trial[Publication Type] OR random*[Title/Abstract])",
+    "europe_pmc_query": "(TITLE_ABS:hydroxychloroquine) AND (TITLE_ABS:(COVID-19 OR SARS-CoV-2)) AND (TITLE_ABS:random*)"
+  },
+  "selected_real_citations": [
+    {
+      "source": "pubmed",
+      "external_id": "33031652",
+      "title": "Effect of Hydroxychloroquine in Hospitalized Patients with Covid-19",
+      "doi": "10.1056/NEJMoa2022926",
+      "pmc_id": "PMC7556338",
+      "selection": "include",
+      "selection_reason": "随机、对照、住院COVID-19成人研究；报告28天死亡结局。"
+    },
+    {
+      "source": "pubmed",
+      "external_id": "33264556",
+      "title": "Repurposed Antiviral Drugs for Covid-19 - Interim WHO Solidarity Trial Results",
+      "doi": "10.1056/NEJMoa2023184",
+      "pmc_id": "PMC7727327",
+      "selection": "include",
+      "selection_reason": "随机、开放对照的住院COVID-19成人研究；包含羟氯喹比较与死亡结局。"
+    }
+  ],
+  "acceptance_criteria": [
+    "创建新的 review 项目，不复用旧项目。",
+    "真实调用 PubMed，且尽可能调用 Europe PMC；记录查询和返回数量。",
+    "只导入指定的两条真实题录，使用本地 citation_id 提交筛选决定。",
+    "执行去重、筛选、PRISMA 计数和项目包导出。",
+    "search-agent 和 screening-agent 的实际 Skills Applied 均存在。"
+  ]
+}

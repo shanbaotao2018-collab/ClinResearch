@@ -75,12 +75,17 @@ def _append_audit_log(session: Session, project_id: int, action: str, actor: str
 
 def _is_rct(project: StudyDesignProject) -> bool:
     design = project.study_design.lower()
-    return "rct" in design or "random" in design
+    return (
+        "rct" in design
+        or "random" in design
+        or "随机对照" in project.study_design
+        or ("随机" in project.study_design and "对照" in project.study_design)
+    )
 
 
 def _ensure_draft_mutable(project: StudyDesignProject) -> None:
     if project.status in {StudyDesignStatus.APPROVAL_PENDING, StudyDesignStatus.HUMAN_APPROVED, StudyDesignStatus.RANDOMIZATION_READY, StudyDesignStatus.EXPORTED}:
-        raise ValueError("This project is under or past external approval. Create a new revision before changing its design assumptions.")
+        raise ValueError("This project is under or past internal confirmation. Create a new revision before changing its design assumptions.")
 
 
 def _canonical_digest(value: Any) -> str:
@@ -208,9 +213,9 @@ def _get_approval(session: Session, project_id: int) -> StudyDesignApproval | No
 def _require_approved_scope(session: Session, project: StudyDesignProject) -> StudyDesignApproval:
     approval = _get_approval(session, project.id)
     if not approval or approval.status != StudyDesignApprovalStatus.APPROVED:
-        raise ValueError("External human approval is required before this operation.")
+        raise ValueError("Internal human confirmation is required before this operation.")
     if approval.scope_digest != _canonical_digest(_approval_scope(project, _get_plan(session, project.id))):
-        raise ValueError("Approved design scope has changed. Request a new external approval.")
+        raise ValueError("Confirmed design scope has changed. Request a new internal confirmation.")
     return approval
 
 
@@ -342,12 +347,12 @@ def save_rct_randomization_plan_record(session: Session, project_id: int, total_
 def request_study_design_approval_record(session: Session, project_id: int, actor: str = "system") -> StudyDesignApproval:
     project = _get_project_or_raise(session, project_id)
     if not project.inclusion_criteria or not project.exclusion_criteria or not project.proposal_outline:
-        raise ValueError("Save the draft study-design content before requesting external approval.")
+        raise ValueError("Save the draft study-design content before requesting internal confirmation.")
     if not project.sample_size_result_json:
-        raise ValueError("Calculate and review sample size before requesting external approval.")
+        raise ValueError("Calculate and review sample size before requesting internal confirmation.")
     plan = _get_plan(session, project_id)
     if _is_rct(project) and plan is None:
-        raise ValueError("Save an RCT randomization plan before requesting external approval.")
+        raise ValueError("Save an RCT randomization plan before requesting internal confirmation.")
     digest = _canonical_digest(_approval_scope(project, plan))
     approval = _get_approval(session, project_id)
     if approval and approval.status == StudyDesignApprovalStatus.APPROVED and approval.scope_digest == digest:
@@ -360,7 +365,7 @@ def request_study_design_approval_record(session: Session, project_id: int, acto
     project.updated_at = datetime.now(UTC)
     session.add(project)
     session.add(approval)
-    _append_audit_log(session, project_id, "study_design.external_approval_requested", actor, "Requested out-of-band human approval for the locked study-design scope")
+    _append_audit_log(session, project_id, "study_design.internal_confirmation_requested", actor, "Requested internal human confirmation for the locked study-design scope")
     session.commit()
     session.refresh(approval)
     return approval
@@ -370,7 +375,7 @@ def approve_study_design_record(session: Session, project_id: int, approved_by: 
     project = _get_project_or_raise(session, project_id)
     approval = _get_approval(session, project_id)
     if not approval or approval.status != StudyDesignApprovalStatus.PENDING:
-        raise ValueError("No pending external approval request exists for this project.")
+        raise ValueError("No pending internal confirmation request exists for this project.")
     if not approved_by.strip():
         raise ValueError("approved_by must not be empty.")
     if approval.scope_digest != _canonical_digest(_approval_scope(project, _get_plan(session, project_id))):
@@ -379,7 +384,7 @@ def approve_study_design_record(session: Session, project_id: int, approved_by: 
     project.status, project.human_confirmed_by, project.human_confirmed_at, project.updated_at = StudyDesignStatus.HUMAN_APPROVED, approved_by.strip(), approval.approved_at, datetime.now(UTC)
     session.add(approval)
     session.add(project)
-    _append_audit_log(session, project_id, "study_design.externally_approved", "approval_api", f"Study-design scope approved by {approved_by.strip()}")
+    _append_audit_log(session, project_id, "study_design.internal_confirmation_approved", "opencode", f"Study-design scope confirmed by {approved_by.strip()}")
     session.commit()
     session.refresh(approval)
     return approval

@@ -1,4 +1,7 @@
-from fastapi import Depends, FastAPI, Header, HTTPException, status
+from fastapi import Depends, FastAPI, Header, HTTPException, Query, status
+from fastapi.encoders import jsonable_encoder
+from fastapi.middleware.cors import CORSMiddleware
+from fastapi.responses import JSONResponse, PlainTextResponse
 from sqlmodel import Session, select
 
 from .config import settings
@@ -6,6 +9,7 @@ from .db import get_session, init_db
 from .models import (
     AuditLog,
     Project,
+    ResearchWritingDraft,
 )
 from .schemas import (
     AuditLogRead,
@@ -15,10 +19,11 @@ from .schemas import (
     ScreeningDecisionCreate,
     SearchStrategyRead,
     StudyDesignApprovalRequest,
+    SystematicEvidenceApprovalRequest,
     StudyDesignWorkflowEventRead,
 )
 from .services.citations import CitationImportPayload
-from .services.exporters import build_review_bundle_data
+from .services.exporters import build_review_bundle_data, render_review_bundle_markdown
 from .services.project_workflow import (
     create_project_record,
     deduplicate_project_record,
@@ -28,6 +33,8 @@ from .services.project_workflow import (
 )
 from .services.research_writing import (
     approve_research_writing_record,
+    build_research_writing_bundle_data,
+    render_research_writing_bundle_markdown,
     research_writing_approval_snapshot,
     verify_research_writing_approval_key,
 )
@@ -37,10 +44,27 @@ from .services.study_design import (
     approve_study_design_record,
     get_study_design_workflow_events,
     read_randomization_schedule_record,
+    build_study_design_bundle_data,
+    render_study_design_bundle_markdown,
     verify_approval_key,
 )
+from .services.systematic_evaluation import (
+    approve_systematic_evidence_review_record,
+    build_systematic_evidence_bundle_data,
+    render_systematic_evidence_bundle_markdown,
+    require_systematic_evidence_approval,
+    systematic_evidence_review_snapshot,
+)
+from .services.workbench import review_detail, study_design_detail, workbench_overview, writing_detail
 
 app = FastAPI(title=settings.app_name)
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173"],
+    allow_credentials=False,
+    allow_methods=["GET"],
+    allow_headers=["*"],
+)
 init_db()
 
 
@@ -181,6 +205,123 @@ def export_project_bundle(
     return bundle
 
 
+@app.get("/workbench/overview")
+def get_workbench_overview(session: Session = Depends(get_session)):
+    """Read-only summary for the B/S research workbench."""
+    return workbench_overview(session)
+
+
+@app.get("/workbench/study-design-projects/{project_id}")
+def get_workbench_study_design_detail(
+    project_id: int, session: Session = Depends(get_session)
+):
+    detail = study_design_detail(session, project_id)
+    if detail is None:
+        raise HTTPException(status_code=404, detail="Study-design project not found")
+    return detail
+
+
+@app.get("/workbench/review-projects/{project_id}")
+def get_workbench_review_detail(project_id: int, session: Session = Depends(get_session)):
+    detail = review_detail(session, project_id)
+    if detail is None:
+        raise HTTPException(status_code=404, detail="Review project not found")
+    return detail
+
+
+@app.get("/workbench/research-writing-drafts/{draft_id}")
+def get_workbench_writing_detail(draft_id: int, session: Session = Depends(get_session)):
+    detail = writing_detail(session, draft_id)
+    if detail is None:
+        raise HTTPException(status_code=404, detail="Research-writing draft not found")
+    return detail
+
+
+def _workbench_export_response(
+    payload: dict,
+    format: str,
+    filename_stem: str,
+) -> PlainTextResponse | JSONResponse:
+    if format == "markdown":
+        markdown = payload["markdown"]
+        return PlainTextResponse(
+            markdown,
+            media_type="text/markdown; charset=utf-8",
+            headers={"Content-Disposition": f'attachment; filename="{filename_stem}.md"'},
+        )
+    return JSONResponse(
+        jsonable_encoder(payload["bundle"]),
+        headers={"Content-Disposition": f'attachment; filename="{filename_stem}.json"'},
+    )
+
+
+@app.get("/workbench/review-projects/{project_id}/export")
+def download_workbench_review_bundle(
+    project_id: int,
+    format: str = Query(default="markdown", pattern="^(markdown|json)$"),
+    session: Session = Depends(get_session),
+):
+    try:
+        bundle = build_review_bundle_data(session, project_id)
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+    if bundle is None:
+        raise HTTPException(status_code=404, detail="Review project not found")
+    payload = {"markdown": render_review_bundle_markdown(bundle), "bundle": bundle}
+    return _workbench_export_response(payload, format, f"review-project-{project_id}")
+
+
+@app.get("/workbench/study-design-projects/{project_id}/export")
+def download_workbench_study_design_bundle(
+    project_id: int,
+    format: str = Query(default="markdown", pattern="^(markdown|json)$"),
+    session: Session = Depends(get_session),
+):
+    try:
+        bundle = build_study_design_bundle_data(session, project_id)
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+    if bundle is None:
+        raise HTTPException(status_code=404, detail="Study-design project not found")
+    payload = {"markdown": render_study_design_bundle_markdown(bundle), "bundle": bundle}
+    return _workbench_export_response(payload, format, f"study-design-project-{project_id}")
+
+
+@app.get("/workbench/review-projects/{project_id}/evidence-workflows/{workflow_run_id}/export")
+def download_workbench_systematic_evidence_bundle(
+    project_id: int,
+    workflow_run_id: str,
+    format: str = Query(default="markdown", pattern="^(markdown|json)$"),
+    session: Session = Depends(get_session),
+):
+    try:
+        require_systematic_evidence_approval(session, project_id, workflow_run_id)
+        bundle = build_systematic_evidence_bundle_data(session, project_id, workflow_run_id)
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+    payload = {"markdown": render_systematic_evidence_bundle_markdown(bundle), "bundle": bundle}
+    return _workbench_export_response(
+        payload, format, f"systematic-evidence-{project_id}-{workflow_run_id[:8]}"
+    )
+
+
+@app.get("/workbench/research-writing-drafts/{draft_id}/export")
+def download_workbench_research_writing_bundle(
+    draft_id: int,
+    format: str = Query(default="markdown", pattern="^(markdown|json)$"),
+    session: Session = Depends(get_session),
+):
+    draft = session.get(ResearchWritingDraft, draft_id)
+    if draft is None:
+        raise HTTPException(status_code=404, detail="Research-writing draft not found")
+    try:
+        bundle = build_research_writing_bundle_data(session, draft_id, draft.workflow_run_id)
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+    payload = {"markdown": render_research_writing_bundle_markdown(bundle), "bundle": bundle}
+    return _workbench_export_response(payload, format, f"research-writing-draft-{draft_id}")
+
+
 def _require_study_approval_key(approval_key: str | None) -> None:
     try:
         verify_approval_key(approval_key)
@@ -201,6 +342,15 @@ def _require_research_writing_approval_key(approval_key: str | None) -> None:
         verify_research_writing_approval_key(approval_key)
     except PermissionError as error:
         raise HTTPException(status_code=status.HTTP_403_FORBIDDEN, detail=str(error)) from error
+
+
+def _require_systematic_evidence_approval_key(approval_key: str | None) -> None:
+    configured = settings.systematic_evidence_approval_key
+    if not configured or approval_key != configured:
+        raise HTTPException(
+            status_code=status.HTTP_403_FORBIDDEN,
+            detail="Systematic evidence approval key is not valid or not configured.",
+        )
 
 
 @app.get("/research-writing-drafts/{draft_id}/approval")
@@ -228,6 +378,45 @@ def approve_research_writing(
                 "approved_by": approval.approved_by,
                 "approved_at": approval.approved_at,
                 "scope_digest": approval.scope_digest,
+            },
+        }
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+
+
+@app.get("/projects/{project_id}/systematic-evidence/{workflow_run_id}/approval")
+def get_systematic_evidence_approval(
+    project_id: int,
+    workflow_run_id: str,
+    session: Session = Depends(get_session),
+):
+    try:
+        return systematic_evidence_review_snapshot(session, project_id, workflow_run_id)
+    except ValueError as error:
+        raise HTTPException(status_code=409, detail=str(error)) from error
+
+
+@app.post("/projects/{project_id}/systematic-evidence/{workflow_run_id}/approve")
+def approve_systematic_evidence(
+    project_id: int,
+    workflow_run_id: str,
+    payload: SystematicEvidenceApprovalRequest,
+    x_systematic_evidence_approval_key: str | None = Header(default=None),
+    session: Session = Depends(get_session),
+):
+    _require_systematic_evidence_approval_key(x_systematic_evidence_approval_key)
+    try:
+        approval = approve_systematic_evidence_review_record(
+            session, project_id, workflow_run_id, payload.approved_by
+        )
+        return {
+            "project_id": project_id,
+            "workflow_run_id": workflow_run_id,
+            "approval": {
+                "status": approval.status,
+                "scope_digest": approval.scope_digest,
+                "approved_by": approval.approved_by,
+                "approved_at": approval.approved_at,
             },
         }
     except ValueError as error:

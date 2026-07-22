@@ -10,8 +10,12 @@ from sqlmodel import Session, select
 
 from app.config import settings
 from app.models import (
+    BiasAssessment,
+    BinaryMetaAnalysisRun,
     CitationSafetyCheck,
     EvidenceExtraction,
+    FullTextDocument,
+    FullTextEvidenceDetail,
     Project,
     ResearchWritingApproval,
     ResearchWritingDraft,
@@ -112,10 +116,51 @@ def get_research_writing_source_data(
             select(CitationSafetyCheck).where(CitationSafetyCheck.project_id == source_id)
         ).all()
     }
+    documents_by_id = {
+        item.id: item
+        for item in session.exec(
+            select(FullTextDocument).where(FullTextDocument.project_id == source_id)
+        ).all()
+    }
+    details_by_citation: dict[int, list[FullTextEvidenceDetail]] = {}
+    for item in session.exec(
+        select(FullTextEvidenceDetail).where(FullTextEvidenceDetail.project_id == source_id)
+    ).all():
+        details_by_citation.setdefault(item.citation_id, []).append(item)
+    bias_by_citation: dict[int, list[BiasAssessment]] = {}
+    for item in session.exec(
+        select(BiasAssessment).where(BiasAssessment.project_id == source_id)
+    ).all():
+        bias_by_citation.setdefault(item.citation_id, []).append(item)
+
     rows = []
     for citation in included_citations(session, source_id):
         extraction = evidence_by_citation[citation.id]
         safety = safety_by_citation.get(citation.id)
+        full_text_details = []
+        for detail in details_by_citation.get(citation.id, []):
+            document = documents_by_id.get(detail.full_text_document_id)
+            full_text_details.append(
+                {
+                    "full_text_document_id": detail.full_text_document_id,
+                    "source_kind": document.source_kind if document else "unknown",
+                    "source_url": document.source_url if document else None,
+                    "content_sha256": document.content_sha256 if document else None,
+                    "baseline": json.loads(detail.baseline_json),
+                    "outcomes": json.loads(detail.outcomes_json),
+                    "extraction_notes": detail.extraction_notes,
+                    "needs_human_review": detail.needs_human_review,
+                }
+            )
+        bias_assessments = [
+            {
+                "instrument": assessment.instrument,
+                "overall_judgement": assessment.overall_judgement,
+                "domains": json.loads(assessment.domains_json),
+                "needs_human_review": assessment.needs_human_review,
+            }
+            for assessment in bias_by_citation.get(citation.id, [])
+        ]
         rows.append(
             {
                 "citation_id": citation.id,
@@ -127,6 +172,33 @@ def get_research_writing_source_data(
                 "evidence_basis": extraction.evidence_basis,
                 "missing_fields": json.loads(extraction.missing_fields_json),
                 "safety_status": safety.status if safety else "not_checked",
+                "full_text_details": full_text_details,
+                "bias_assessments": bias_assessments,
+            }
+        )
+    # Keep the newest run for each synthesis specification. Re-running an
+    # unchanged analysis is expected during review and should not look like
+    # multiple independent meta-analyses to the writing Agent.
+    meta_analyses = []
+    seen_meta_specs: set[tuple[str, str, str]] = set()
+    for item in session.exec(
+        select(BinaryMetaAnalysisRun)
+        .where(BinaryMetaAnalysisRun.project_id == source_id)
+        .order_by(BinaryMetaAnalysisRun.created_at.desc())
+    ).all():
+        specification = (item.outcome_label, item.effect_measure, item.model)
+        if specification in seen_meta_specs:
+            continue
+        seen_meta_specs.add(specification)
+        meta_analyses.append(
+            {
+                "meta_analysis_id": item.id,
+                "workflow_run_id": item.workflow_run_id,
+                "outcome_label": item.outcome_label,
+                "effect_measure": item.effect_measure,
+                "model": item.model,
+                "result": json.loads(item.result_json),
+                "needs_human_review": item.needs_human_review,
             }
         )
     return {
@@ -141,7 +213,12 @@ def get_research_writing_source_data(
             "pico_outcome": project.pico_outcome,
         },
         "evidence_rows": rows,
-        "writing_rule": "Use only these evidence rows and their recorded basis. Do not state missing fields as findings.",
+        "binary_meta_analyses": meta_analyses,
+        "writing_rule": (
+            "Use only these saved evidence rows, full-text details, bias assessments, and meta-analysis results. "
+            "Every field marked needs_human_review remains preliminary; do not state missing fields as findings "
+            "or present preliminary synthesis as a final clinical conclusion."
+        ),
     }
 
 
@@ -319,7 +396,7 @@ def approve_research_writing_record(
         )
     ).first()
     if not approval or approval.status != "pending":
-        raise ValueError("No pending external approval request exists for this writing draft.")
+        raise ValueError("No pending internal confirmation request exists for this writing draft.")
     if not approved_by.strip():
         raise ValueError("approved_by must not be empty.")
     if approval.scope_digest != _canonical_digest(_approval_scope(draft)):
@@ -376,7 +453,7 @@ def build_research_writing_bundle_data(
         )
     ).first()
     if not approval or approval.status != "approved":
-        raise ValueError("External human approval is required before exporting a research-writing bundle.")
+        raise ValueError("Internal human confirmation is required before exporting a research-writing bundle.")
     if approval.scope_digest != _canonical_digest(_approval_scope(draft)):
         raise ValueError("Approval scope changed. Request approval again.")
     draft.status = "exported"

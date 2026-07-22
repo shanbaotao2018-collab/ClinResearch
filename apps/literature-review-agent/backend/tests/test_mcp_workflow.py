@@ -6,10 +6,11 @@ from sqlmodel import Session
 from app.config import settings
 from app.db import engine
 from app.mcp_server import (
+    _normalize_evidence_extraction_payload,
     calculate_study_sample_size, create_study_design_project, create_review_project,
     deduplicate_project_citations, export_study_design_bundle, generate_rct_randomization_schedule,
-    generate_study_design_blueprint, generate_project_search_strategy, get_study_design_approval_status,
-    import_citations_to_project, mcp, request_study_design_approval, save_rct_randomization_plan,
+    finalize_study_design, generate_study_design_blueprint, generate_project_search_strategy, get_study_design_approval_status,
+    fetch_and_save_open_access_full_text, import_citations_to_project, mcp, request_study_design_approval, save_rct_randomization_plan,
     save_study_design_content, search_pubmed, submit_screening_decisions,
 )
 from app.services.study_design import approve_study_design_record, get_study_design_workflow_events
@@ -17,22 +18,89 @@ from app.services.study_design import approve_study_design_record, get_study_des
 
 def test_mcp_workflow_tools_are_registered():
     tool_names = sorted(mcp._tool_manager._tools.keys())
-    for name in ["create_review_project", "generate_project_search_strategy", "import_citations_to_project", "deduplicate_project_citations", "submit_screening_decisions", "create_study_design_project", "generate_study_design_blueprint", "calculate_study_sample_size", "save_rct_randomization_plan", "request_study_design_approval", "get_study_design_approval_status", "generate_rct_randomization_schedule", "export_study_design_bundle"]:
+    for name in ["create_review_project", "generate_project_search_strategy", "import_citations_to_project", "deduplicate_project_citations", "submit_screening_decisions", "create_study_design_project", "generate_study_design_blueprint", "calculate_study_sample_size", "save_rct_randomization_plan", "request_study_design_approval", "approve_study_design", "finalize_study_design", "get_study_design_approval_status", "generate_rct_randomization_schedule", "export_study_design_bundle"]:
         assert name in tool_names
-    assert "confirm_study_design" not in tool_names
     for name in [
         "start_evidence_extraction_workflow",
         "save_evidence_extractions",
         "check_project_retractions",
         "export_evidence_table",
+        "save_full_text_documents",
+        "fetch_and_save_open_access_full_text",
+        "save_full_text_evidence_details",
+        "save_bias_assessments",
+        "run_binary_meta_analysis",
+        "request_systematic_evidence_review",
+        "approve_systematic_evidence",
+        "get_systematic_evidence_review_status",
+        "export_systematic_evidence_bundle",
         "start_research_writing_workflow",
         "get_research_writing_source",
         "save_research_writing_draft",
         "request_research_writing_approval",
+        "approve_research_writing",
         "get_research_writing_approval_status",
         "export_research_writing_bundle",
     ]:
         assert name in tool_names
+
+
+def test_evidence_extraction_fields_envelope_is_normalized():
+    payload = _normalize_evidence_extraction_payload(
+        {
+            "citation_id": 1,
+            "evidence_basis": "abstract",
+            "fields": {
+                "intervention": "Intervention",
+                "primary_outcome": "Primary outcome",
+                "sample_size_intervention": 10,
+                "sample_size_comparator": 12,
+            },
+        }
+    )
+    assert payload["intervention_or_exposure"] == "Intervention"
+    assert payload["outcomes"] == "Primary outcome"
+    assert payload["sample_size"] == "intervention=10; comparator=12"
+
+
+def test_controlled_open_access_fetch_binds_full_text_to_local_citation(monkeypatch):
+    monkeypatch.setattr(settings, "skill_receipt_key", None)
+    project = create_review_project("Controlled source", "Does an intervention affect an outcome?")
+    project_id = project["project"]["id"]
+    citations = import_citations_to_project(
+        project_id,
+        "pubmed",
+        [{
+            "external_id": "12345",
+            "title": "Verified source article",
+            "doi": "10.1000/example",
+            "abstract": "Randomized trial abstract.",
+        }],
+    )
+    citation_id = citations["citations"][0]["id"]
+    submit_screening_decisions(project_id, [{
+        "citation_id": citation_id,
+        "decision": "include",
+        "reason": "Eligible test study.",
+        "actor": "test",
+    }])
+    run_id = mcp._tool_manager._tools["start_evidence_extraction_workflow"].fn(project_id)["workflow"]["run_id"]
+
+    async def fake_fetch(pmid: str):
+        assert pmid == "12345"
+        return {
+            "pmid": "12345",
+            "pmcid": "PMC123",
+            "doi": "10.1000/example",
+            "title": "Verified source article",
+            "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC123/fullTextXML",
+            "content_text": "Verified public XML full text with enough source-bound detail for the test.",
+        }
+
+    monkeypatch.setattr("app.mcp_server.fetch_europepmc_open_access_full_text", fake_fetch)
+    result = asyncio.run(fetch_and_save_open_access_full_text(project_id, run_id, [citation_id]))
+    assert result["saved_count"] == 1
+    assert result["documents"][0]["citation_id"] == citation_id
 
 
 def test_mcp_study_design_workflow_requires_external_approval(monkeypatch, tmp_path):
@@ -49,7 +117,7 @@ def test_mcp_study_design_workflow_requires_external_approval(monkeypatch, tmp_p
     assert plan["randomization_plan"]["allocations_generated"] is False
     approval = request_study_design_approval(project_id, run_id)
     assert approval["approval"]["status"] == "pending"
-    with pytest.raises(ValueError, match="External human approval"):
+    with pytest.raises(ValueError, match="Internal human confirmation"):
         generate_rct_randomization_schedule(project_id, run_id)
     with Session(engine) as session:
         approve_study_design_record(session, project_id, "authorized_researcher")
@@ -60,6 +128,75 @@ def test_mcp_study_design_workflow_requires_external_approval(monkeypatch, tmp_p
     assert schedule["randomization_schedule"]["allocation_visible_to_agent"] is False
     exported = export_study_design_bundle(project_id, run_id)
     assert "Allocation sequence is withheld" in exported["markdown"]
+
+
+def test_finalize_study_design_uses_one_internal_confirmation(monkeypatch, tmp_path):
+    monkeypatch.setattr(settings, "randomization_storage_dir", str(tmp_path))
+    created = create_study_design_project(
+        title="One-step confirmation RCT",
+        research_question="Can remote follow-up improve scheduled follow-up attendance?",
+        study_type="efficacy",
+        study_design="RCT, parallel-group",
+        population="De-identified aggregate older adults with hypertension",
+        intervention="Remote pharmacist education",
+        comparator="Usual discharge guidance",
+        outcome="Scheduled follow-up completed within 30 days",
+        department="General Practice",
+        resource_summary="Aggregate MVP test input",
+        data_attestation="deidentified_or_aggregate",
+    )
+    project_id, run_id = created["project"]["id"], created["workflow"]["run_id"]
+    generate_study_design_blueprint(project_id, run_id)
+    save_study_design_content(
+        project_id,
+        run_id,
+        inclusion_criteria="Adults aged 65 years or older with documented hypertension.",
+        exclusion_criteria="Unable to complete follow-up or missing essential baseline information.",
+        primary_outcome="Scheduled follow-up completed within 30 days.",
+        proposal_outline="Background; objectives; design; participants; outcomes; analysis; ethics.",
+        secondary_outcomes="Medication reconciliation completion.",
+        innovation_notes="Structured remote transition support.",
+        feasibility_notes="Aggregate recruitment capacity is sufficient for the demonstration assumptions.",
+    )
+    calculate_study_sample_size(project_id, run_id, method="proportions", group_one_value=0.55, group_two_value=0.70)
+    save_rct_randomization_plan(project_id, run_id, 24, ["usual_care", "remote_followup"], 4)
+
+    def snapshot(_path: str):
+        from app.services.study_design import approval_snapshot
+        with Session(engine) as session:
+            return approval_snapshot(session, project_id)
+
+    def post(_path: str, header: str, _env: str, payload: dict):
+        assert header == "X-Study-Approval-Key"
+        with Session(engine) as session:
+            approval = approve_study_design_record(session, project_id, payload["approved_by"])
+            return {"project_id": project_id, "approval": {"status": approval.status}}
+
+    monkeypatch.setattr("app.mcp_server._get_human_approval_snapshot", snapshot)
+    monkeypatch.setattr("app.mcp_server._post_human_approval", post)
+    result = finalize_study_design(project_id, run_id, "current OpenCode operator")
+    assert result["approval"]["status"] == "approved"
+    assert result["randomization_schedule"]["allocation_visible_to_agent"] is False
+    assert "Allocation sequence is withheld" in result["markdown"]
+
+
+def test_chinese_randomized_controlled_design_supports_randomization_plan():
+    created = create_study_design_project(
+        title="中文随机对照试验",
+        research_question="Does a transition-care intervention reduce readmission?",
+        study_type="efficacy",
+        study_design="前瞻性、随机、对照、开放标签的实效性临床试验",
+        population="Adults discharged after heart-failure hospitalization",
+        intervention="Transition-care intervention",
+        comparator="Usual care",
+        outcome="All-cause readmission within 30 days",
+        department="Cardiology",
+        resource_summary="Aggregate MVP test input",
+        data_attestation="deidentified_or_aggregate",
+    )
+    project_id, run_id = created["project"]["id"], created["workflow"]["run_id"]
+    plan = save_rct_randomization_plan(project_id, run_id, 24, ["intervention", "usual_care"], 4)
+    assert plan["randomization_plan"]["allocations_generated"] is False
 
 
 def test_mcp_project_workflow_closes_the_basic_loop():

@@ -24,6 +24,14 @@ SKILL_PATHS=(
   "Evidence Insight/methodology-extractor"
   "Evidence Insight/citation-chasing-mapping"
   "Evidence Insight/retraction-watcher"
+  "Data Analysis/baseline-extraction-for-clinical-trials"
+  "Data Analysis/outcome-extraction-for-clinical-trials"
+  "Data Analysis/meta-screening-fulltext"
+  "Data Analysis/meta-analysis"
+  "Data Analysis/meta-forest-binary-plot"
+  "Data Analysis/rct-bias-assessment-rob2"
+  "Data Analysis/cohort-study-quality-assessment-nos"
+  "Data Analysis/diagnostic-study-quality-assessment-quadas-2"
   "Academic Writing/literature-review"
   "Academic Writing/systematic-review"
   "Academic Writing/biomed-outline-generator"
@@ -35,6 +43,8 @@ SKILL_PATHS=(
   "Protocol Design/randomization-gen"
   "Protocol Design/research-proposal-generator"
   "Other/phi-prompt-guard"
+  "Other/fulltext-fetcher"
+  "Other/pdf-extract"
 )
 
 copied=0
@@ -43,14 +53,26 @@ for relative_path in "${SKILL_PATHS[@]}"; do
   source_dir="$SOURCE_ROOT/$relative_path"
   skill_name="$(basename "$relative_path")"
   target_dir="$TARGET_ROOT/$skill_name"
+  cache_dir=""
 
   if [ ! -d "$source_dir" ]; then
     echo "Missing upstream skill directory: $source_dir" >&2
     exit 1
   fi
 
+  # A few historical skill packages accidentally tracked Python bytecode. Preserve it so
+  # running this synchronization command does not create unrelated binary deletions.
+  if [ -d "$target_dir/scripts/__pycache__" ]; then
+    cache_dir="$(mktemp -d)"
+    cp -R "$target_dir/scripts/__pycache__" "$cache_dir/__pycache__"
+  fi
   rm -rf "$target_dir"
   cp -R "$source_dir" "$target_dir"
+  if [ -n "$cache_dir" ]; then
+    mkdir -p "$target_dir/scripts"
+    cp -R "$cache_dir/__pycache__" "$target_dir/scripts/__pycache__"
+    rm -rf "$cache_dir"
+  fi
   copied=$((copied + 1))
   echo "Synced skill: $skill_name"
 done
@@ -71,6 +93,16 @@ The current OpenCode integrations sync these upstream skills:
 - methodology-extractor
 - citation-chasing-mapping
 - retraction-watcher
+- fulltext-fetcher
+- pdf-extract
+- baseline-extraction-for-clinical-trials
+- outcome-extraction-for-clinical-trials
+- meta-screening-fulltext
+- meta-analysis
+- meta-forest-binary-plot
+- rct-bias-assessment-rob
+- cohort-study-quality-assessment-nos
+- diagnostic-study-quality-assessment-quadas
 - literature-review
 - systematic-review
 - biomed-outline-generator

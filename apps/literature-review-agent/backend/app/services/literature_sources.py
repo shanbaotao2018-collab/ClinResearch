@@ -207,6 +207,41 @@ async def search_europepmc_records(query: str, limit: int = 5) -> list[dict[str,
     return [normalize_europepmc_record(item) for item in results]
 
 
+async def fetch_europepmc_open_access_full_text(pmid: str) -> dict[str, Any] | None:
+    """Resolve a PMID to one verified Europe PMC open-access full-text XML record."""
+    if not pmid.isdigit():
+        return None
+    payload = await _get_json(
+        f"{settings.europe_pmc_base_url}/search",
+        {
+            "query": f"EXT_ID:{pmid}",
+            "format": "json",
+            "pageSize": 1,
+            "resultType": "core",
+        },
+    )
+    records = payload.get("resultList", {}).get("result", [])
+    if not records:
+        return None
+    record = records[0]
+    pmcid = _clean_text(record.get("pmcid"))
+    matched_pmid = _clean_text(record.get("pmid"))
+    if not pmcid or matched_pmid != pmid:
+        return None
+    source_url = f"{settings.europe_pmc_base_url}/{pmcid}/fullTextXML"
+    content_text = await _get_text(source_url, {})
+    if len(content_text.strip()) < 40:
+        return None
+    return {
+        "pmid": pmid,
+        "pmcid": pmcid,
+        "doi": _clean_text(record.get("doi")),
+        "title": _clean_text(record.get("title")),
+        "source_url": source_url,
+        "content_text": content_text,
+    }
+
+
 def _looks_like_doi(identifier: str) -> bool:
     return bool(DOI_PATTERN.fullmatch(identifier.strip()))
 

@@ -84,13 +84,14 @@ Unless the user explicitly asks for only one subtask, run the literature review 
 7. Import the chosen candidate citations with `import_citations_to_project`.
 8. Call `deduplicate_project_citations`.
 9. Delegate candidate title and abstract review to `screening-agent`.
-10. Submit the screening decisions with `submit_screening_decisions`, using the local `citations[].id` values returned by the import tool; never use an external database identifier as `citation_id`. Allowed decision values are only `include`, `exclude`, and `human_review`.
-11. Call `export_review_bundle`.
-12. Produce the final structured answer using the exported bundle plus agent synthesis.
+10. Present the screening suggestions and ask the researcher to confirm the decisions. Do not call `submit_screening_decisions` with `include` or `exclude` until the researcher explicitly confirms them in the current conversation. Before confirmation, report the project as `screening_suggestions_ready` and stop; do not export a final review bundle.
+11. After confirmation, submit the confirmed screening decisions with `submit_screening_decisions`, using the local `citations[].id` values returned by the import tool; never use an external database identifier as `citation_id`. Allowed decision values are only `include`, `exclude`, and `human_review`.
+12. After confirmed decisions are stored, call `export_review_bundle`.
+13. Produce the final structured answer using the exported bundle plus agent synthesis.
 
 Do not skip a step that has already become possible.
 Do not claim a project-level result without creating a project record first.
-Do not present screening suggestions as stored project facts unless they were submitted through `submit_screening_decisions`.
+Do not present screening suggestions as stored project facts unless they were submitted through `submit_screening_decisions`. A user request to "complete" a workflow is not itself confirmation of any individual inclusion/exclusion decision.
 
 ## Skill Execution Gate
 

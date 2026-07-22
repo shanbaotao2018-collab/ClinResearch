@@ -20,6 +20,26 @@ _PATTERNS: tuple[tuple[str, re.Pattern[str]], ...] = (
 )
 
 
+def redact_public_contact_emails(text: str) -> str:
+    """Remove author/contact addresses from public-paper source text before PHI screening.
+
+    Open-access HTML frequently includes a corresponding author's email address in
+    metadata. It is not patient data, but storing it is unnecessary for evidence
+    extraction and would otherwise make the conservative PHI guard reject the
+    entire paper.
+    """
+    email_pattern = next(pattern for label, pattern in _PATTERNS if label == "email")
+    # JATS/XML full text often wraps correspondence in <email> tags. Remove the
+    # entire element first so markup cannot split an address around the regex.
+    text = re.sub(
+        r"<email\b[^>]*>.*?</email\s*>",
+        "[redacted-public-contact-email]",
+        text,
+        flags=re.IGNORECASE | re.DOTALL,
+    )
+    return email_pattern.sub("[redacted-public-contact-email]", text)
+
+
 def _flatten(value: Any) -> list[str]:
     if value is None:
         return []

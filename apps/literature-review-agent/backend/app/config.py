@@ -10,6 +10,7 @@ class Settings(BaseSettings):
     # This key is deliberately not exposed to MCP or the model runtime.
     study_design_approval_key: str | None = None
     research_writing_approval_key: str | None = None
+    systematic_evidence_approval_key: str | None = None
     randomization_storage_dir: str = "runtime/study-design-randomization"
     # Shared only by the OpenCode runtime plugin and this backend; never exposed to the model.
     skill_receipt_key: str | None = None

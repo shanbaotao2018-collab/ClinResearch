@@ -1,0 +1,28 @@
+{
+  "case_id": "mvp-research-writing-hcq-covid-discussion",
+  "agent": "research-writing-agent",
+  "purpose": "验证来源清单绑定的科研写作、Skill回执、写作审批和导出闭环。",
+  "runtime_parameters": {
+    "source_type": "review",
+    "source_id": "{{review_project_id_from_case_02}}",
+    "document_type": "discussion"
+  },
+  "preconditions": [
+    "案例02创建的项目中，两篇纳入文献均已有摘要级EvidenceExtraction记录。",
+    "案例03已保存全文、详细结局、RoB 2初评和Meta结果。",
+    "不得将自动初评或Meta演示结果称为最终系统评价结论。"
+  ],
+  "user_prompt_template": "使用 review 项目 {{review_project_id_from_case_02}} 已保存的证据，生成一份 document_type=discussion 的历史性系统综述讨论草稿。必须先读取 get_research_writing_source，仅使用其中的已保存事实；调用规定Skills，生成来源清单、讨论框架、局限性和待解决事项，保存草稿并请求外部审批后停止。不得编造引用、效应量或临床建议。",
+  "required_content": [
+    "来源清单中包含 source_type=review 与正确的 source_id。",
+    "讨论稿区分已验证的保存证据、解释和待验证问题。",
+    "说明开放标签研究、结局定义可比性、仅两项研究和人工复核要求等限制。",
+    "将产物标记为草稿，不得称为投稿终稿、临床结论或正式推荐。"
+  ],
+  "acceptance_criteria": [
+    "创建 research_writing workflow_run_id 并保存版本化 discussion 草稿。",
+    "实际执行 biomed-outline-generator、method-writing、discussion-section-architect。",
+    "持久化 source_manifest、limitations 和 unresolved_items。",
+    "请求写作审批；审批后才允许导出写作包。"
+  ]
+}
