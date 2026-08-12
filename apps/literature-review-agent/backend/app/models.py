@@ -26,6 +26,9 @@ class Project(SQLModel, table=True):
     pico_outcome: Optional[str] = None
     inclusion_criteria: Optional[str] = None
     exclusion_criteria: Optional[str] = None
+    # Formal review is the default. Quick exploration is explicit so its
+    # candidate-only retrieval cannot be mistaken for a PRISMA-complete review.
+    review_mode: str = Field(default="formal_review", index=True)
     status: ProjectStatus = Field(default=ProjectStatus.DRAFT)
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
@@ -38,6 +41,24 @@ class SearchStrategyVersion(SQLModel, table=True):
     source: str
     version_number: int
     rationale: Optional[str] = None
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class FormalRetrievalRun(SQLModel, table=True):
+    """One desktop-local formal database retrieval, including its completeness state."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    source: str = Field(index=True)
+    query_text: str
+    database_total_count: int
+    retrieved_count: int
+    imported_count: int
+    page_count: int
+    complete: bool
+    truncated: bool
+    max_records: int
+    retrieval_channel: str
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
@@ -128,6 +149,18 @@ class StudyDesignProject(SQLModel, table=True):
     human_confirmed_by: Optional[str] = None
     human_confirmed_at: Optional[datetime] = None
     status: StudyDesignStatus = Field(default=StudyDesignStatus.DRAFT)
+    created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+    updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
+class ResearchCase(SQLModel, table=True):
+    """A case-level link between a study-design project and its evidence-review project."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    title: str
+    description: Optional[str] = None
+    study_design_project_id: Optional[int] = Field(default=None, index=True)
+    review_project_id: Optional[int] = Field(default=None, index=True)
     created_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
     updated_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
@@ -273,6 +306,23 @@ class CitationSafetyCheck(SQLModel, table=True):
     checked_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
 
 
+class FullTextAvailability(SQLModel, table=True):
+    """Acquisition status kept separate from a scientific screening decision."""
+
+    id: Optional[int] = Field(default=None, primary_key=True)
+    project_id: int = Field(index=True)
+    citation_id: int = Field(index=True)
+    status: str = Field(index=True)
+    pmcid: Optional[str] = None
+    source_url: Optional[str] = None
+    # Written by the desktop-local connector after the public XML is cached.
+    # The backend never invents a client filesystem path.
+    local_cache_path: Optional[str] = None
+    details: Optional[str] = None
+    full_text_document_id: Optional[int] = Field(default=None, index=True)
+    checked_at: datetime = Field(default_factory=lambda: datetime.now(UTC))
+
+
 class FullTextDocument(SQLModel, table=True):
     """Traceable full-text source supplied by a researcher or public-source workflow."""
 
@@ -360,6 +410,7 @@ class ResearchWritingDraft(SQLModel, table=True):
     methods_draft: Optional[str] = None
     discussion_framework: Optional[str] = None
     proposal_draft: Optional[str] = None
+    review_draft: Optional[str] = None
     limitations: str
     unresolved_items: str
     version_number: int

@@ -1,0 +1,29 @@
+{
+  "source_note": "Offline citation import sample for servers without direct PubMed/Europe PMC access.",
+  "citations": [
+    {
+      "title": "Pharmacist-led transitional care after heart failure hospitalization",
+      "pmid": "OFFLINE-HF-001",
+      "abstract": "A de-identified example citation describing pharmacist-led discharge education and follow-up after heart failure hospitalization.",
+      "authors": ["Chen A", "Wang B"],
+      "year": "2024",
+      "doi": "10.1000/offline-hf-001"
+    },
+    {
+      "title": "Nurse telephone follow-up and readmission after discharge for chronic heart failure",
+      "pmid": "OFFLINE-HF-002",
+      "abstract": "A de-identified example citation describing nurse telephone follow-up and readmission outcomes.",
+      "authors": ["Li Q", "Zhao Y"],
+      "year": "2023",
+      "doi": "10.1000/offline-hf-002"
+    },
+    {
+      "title": "Remote monitoring after discharge for patients with heart failure",
+      "pmid": "OFFLINE-HF-003",
+      "abstract": "A de-identified example citation describing remote monitoring after discharge for patients with heart failure.",
+      "authors": ["Smith J", "Garcia M"],
+      "year": "2022",
+      "doi": "10.1000/offline-hf-003"
+    }
+  ]
+}

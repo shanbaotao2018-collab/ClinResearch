@@ -52,6 +52,6 @@
     "真实调用 PubMed，且尽可能调用 Europe PMC；记录查询和返回数量。",
     "只导入指定的两条真实题录，使用本地 citation_id 提交筛选决定。",
     "执行去重、筛选、PRISMA 计数和项目包导出。",
-    "search-agent 和 screening-agent 的实际 Skills Applied 均存在。"
+    "search 和 screening 的实际 Skills Applied 均存在。"
   ]
 }

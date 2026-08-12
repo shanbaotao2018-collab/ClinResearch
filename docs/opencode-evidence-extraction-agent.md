@@ -10,7 +10,7 @@
 
 1. 先用文献综述 Agent 建立并完成一个文献项目。
 2. 项目中至少有一篇文献已经被研究者确认或记录为 `include`。
-3. 从仓库根目录启动 OpenCode，并选择 `evidence-extraction-agent`。
+3. 从仓库根目录启动 OpenCode，并选择 `evidence-extraction`（证据抽取与系统评价）。
 
 ## 你可以这样提问
 

@@ -17,6 +17,7 @@ from app.models import (
     FullTextDocument,
     FullTextEvidenceDetail,
     Project,
+    ResearchCase,
     ResearchWritingApproval,
     ResearchWritingDraft,
     StudyDesignProject,
@@ -39,7 +40,13 @@ _BASE_SKILLS = {
     "discussion-section-architect",
 }
 _PROPOSAL_SKILL = {"research-proposal-generator"}
-_DOCUMENT_TYPES = {"protocol", "proposal", "methods", "discussion"}
+_DOCUMENT_TYPES = {"protocol", "proposal", "methods", "discussion", "review_article"}
+
+
+def _document_type_error() -> ValueError:
+    return ValueError(
+        "document_type must be protocol, proposal, methods, discussion, or review_article."
+    )
 
 
 def _canonical_digest(value: Any) -> str:
@@ -48,6 +55,15 @@ def _canonical_digest(value: Any) -> str:
 
 
 def _validate_source_ready(session: Session, source_type: str, source_id: int) -> None:
+    if source_type == "research_case":
+        case = session.get(ResearchCase, source_id)
+        if not case:
+            raise ValueError(f"Research case {source_id} not found.")
+        if case.study_design_project_id is None or case.review_project_id is None:
+            raise ValueError("Research case writing requires both a linked study-design project and review project.")
+        _validate_source_ready(session, "study_design", case.study_design_project_id)
+        _validate_source_ready(session, "review", case.review_project_id)
+        return
     if source_type == "study_design":
         project = session.get(StudyDesignProject, source_id)
         if not project:
@@ -69,7 +85,7 @@ def _validate_source_ready(session: Session, source_type: str, source_id: int) -
         if not citation_ids or not citation_ids.issubset(extracted_ids):
             raise ValueError("Review source requires a completed evidence extraction for every included citation.")
         return
-    raise ValueError("source_type must be 'study_design' or 'review'.")
+    raise ValueError("source_type must be 'study_design', 'review', or 'research_case'.")
 
 
 def get_research_writing_source_data(
@@ -77,6 +93,23 @@ def get_research_writing_source_data(
 ) -> dict[str, Any]:
     """Return the saved, source-bounded facts a writing Agent may use."""
     _validate_source_ready(session, source_type, source_id)
+    if source_type == "research_case":
+        case = session.get(ResearchCase, source_id)
+        return {
+            "source_type": source_type,
+            "source_id": source_id,
+            "case": {"title": case.title, "description": case.description},
+            "study_design_source": get_research_writing_source_data(
+                session, "study_design", case.study_design_project_id
+            ),
+            "review_source": get_research_writing_source_data(
+                session, "review", case.review_project_id
+            ),
+            "writing_rule": (
+                "Use only facts from the linked saved study-design and review sources. "
+                "The draft source_manifest must name research_case plus both linked source records."
+            ),
+        }
     if source_type == "study_design":
         project = session.get(StudyDesignProject, source_id)
         return {
@@ -201,6 +234,18 @@ def get_research_writing_source_data(
                 "needs_human_review": item.needs_human_review,
             }
         )
+    full_text_detail_ids = {
+        citation_id for citation_id, values in details_by_citation.items() if values
+    }
+    bias_ids = {citation_id for citation_id, values in bias_by_citation.items() if values}
+    included_ids = {item["citation_id"] for item in rows}
+    evaluated_full_text_ids = sorted(full_text_detail_ids & bias_ids)
+    missing_full_text_ids = sorted(included_ids - {
+        citation_id
+        for citation_id, values in details_by_citation.items()
+        if values
+    })
+    open_access_limited = bool(missing_full_text_ids or set(included_ids) - set(evaluated_full_text_ids))
     return {
         "source_type": source_type,
         "source_id": source_id,
@@ -214,10 +259,23 @@ def get_research_writing_source_data(
         },
         "evidence_rows": rows,
         "binary_meta_analyses": meta_analyses,
+        "evidence_coverage": {
+            "included_count": len(included_ids),
+            "evaluated_full_text_citation_ids": evaluated_full_text_ids,
+            "evaluated_full_text_count": len(evaluated_full_text_ids),
+            "missing_full_text_detail_citation_ids": missing_full_text_ids,
+            "synthesis_scope": "available_full_text_only" if open_access_limited else "complete_systematic_review",
+        },
         "writing_rule": (
             "Use only these saved evidence rows, full-text details, bias assessments, and meta-analysis results. "
             "Every field marked needs_human_review remains preliminary; do not state missing fields as findings "
-            "or present preliminary synthesis as a final clinical conclusion."
+            "or present preliminary synthesis as a final clinical conclusion. "
+            + (
+                "This review has partial full-text coverage: substantive evidence claims may use only rows with both "
+                "full-text details and bias assessments. State that the draft is based on available full text and list "
+                "the coverage gap in limitations."
+                if open_access_limited else ""
+            )
         ),
     }
 
@@ -230,7 +288,7 @@ def start_research_writing_workflow_record(
     actor: str = "mcp",
 ):
     if document_type not in _DOCUMENT_TYPES:
-        raise ValueError("document_type must be protocol, proposal, methods, or discussion.")
+        raise _document_type_error()
     _validate_source_ready(session, source_type, source_id)
     return start_agent_workflow_run(
         session, _WORKFLOW_TYPE, source_type, source_id, actor=actor
@@ -239,7 +297,7 @@ def start_research_writing_workflow_record(
 
 def required_writing_skills(document_type: str) -> set[str]:
     if document_type not in _DOCUMENT_TYPES:
-        raise ValueError("document_type must be protocol, proposal, methods, or discussion.")
+        raise _document_type_error()
     return _BASE_SKILLS | (_PROPOSAL_SKILL if document_type == "proposal" else set())
 
 
@@ -268,6 +326,11 @@ def save_research_writing_draft_record(
         session, workflow_run_id, _WORKFLOW_TYPE, source_type, source_id
     )
     _validate_source_ready(session, source_type, source_id)
+    if document_type == "review_article":
+        if source_type != "review":
+            raise ValueError("document_type='review_article' requires source_type='review'.")
+        if not payload.review_draft:
+            raise ValueError("review_draft is required for document_type='review_article'.")
     _validate_manifest(payload, source_type, source_id)
     if document_type == "proposal" and not payload.proposal_draft:
         raise ValueError("proposal_draft is required for document_type='proposal'.")
@@ -290,6 +353,7 @@ def save_research_writing_draft_record(
         methods_draft=payload.methods_draft.strip() if payload.methods_draft else None,
         discussion_framework=payload.discussion_framework.strip() if payload.discussion_framework else None,
         proposal_draft=payload.proposal_draft.strip() if payload.proposal_draft else None,
+        review_draft=payload.review_draft.strip() if payload.review_draft else None,
         limitations=payload.limitations.strip(),
         unresolved_items=payload.unresolved_items.strip(),
         version_number=len(prior_versions) + 1,
@@ -336,6 +400,7 @@ def _approval_scope(draft: ResearchWritingDraft) -> dict[str, Any]:
         "methods_draft": draft.methods_draft,
         "discussion_framework": draft.discussion_framework,
         "proposal_draft": draft.proposal_draft,
+        "review_draft": draft.review_draft,
         "limitations": draft.limitations,
         "unresolved_items": draft.unresolved_items,
     }
@@ -502,6 +567,8 @@ def render_research_writing_bundle_markdown(bundle: dict[str, Any]) -> str:
     lines.extend(["", "## Outline", draft.outline, "", "## Methods Draft", draft.methods_draft or "not_provided", "", "## Discussion Framework", draft.discussion_framework or "not_provided"])
     if draft.proposal_draft:
         lines.extend(["", "## Proposal Draft", draft.proposal_draft])
+    if draft.review_draft:
+        lines.extend(["", "## Review Article Draft", draft.review_draft])
     lines.extend(["", "## Limitations", draft.limitations, "", "## Unresolved Items", draft.unresolved_items, "", "## Verified Skill Execution Receipts"])
     if bundle["skill_receipts"]:
         lines.extend(

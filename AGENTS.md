@@ -79,9 +79,9 @@ For clinical study-design tasks, default to this sequence:
 
 The study-design project is the system of record once it exists. Do not claim that a protocol, sample-size calculation, or randomization schedule is final before external approval. Never place identifiable patient data in model prompts or MCP calls; provide only de-identified or aggregate research data.
 
-For evidence-extraction tasks, use `evidence-extraction-agent` only after review screening is complete. Extract only from the citation metadata, abstract, or a user-provided full-text excerpt and record the evidence basis for every row. Do not treat missing fields as negative findings. A PubMed notice lookup is a check-time status, not a permanent citation-safety guarantee. Require researcher review before any evidence row is used as a final conclusion.
+For evidence-extraction tasks, use `evidence-extraction` only after review screening is complete. Extract only from the citation metadata, abstract, or a user-provided full-text excerpt and record the evidence basis for every row. Do not treat missing fields as negative findings. A PubMed notice lookup is a check-time status, not a permanent citation-safety guarantee. Require researcher review before any evidence row is used as a final conclusion.
 
-For research-writing tasks, use `research-writing-agent` only with a saved study-design project or a review project whose included citations all have evidence-extraction records. Persist a source manifest and unresolved items with every draft. Require external approval before export; never present a generated draft as an approved protocol, grant application, manuscript, or clinical conclusion.
+For research-writing tasks, use `research-writing` only with a saved study-design project or a review project whose included citations all have evidence-extraction records. Persist a source manifest and unresolved items with every draft. Require external approval before export; never present a generated draft as an approved protocol, grant application, manuscript, or clinical conclusion.
 
 ## Output Rules
 
@@ -129,5 +129,5 @@ Use the `question` tool when the decision materially changes downstream outputs.
 - Prefer MCP literature search tools for retrieval once configured.
 - Prefer project workflow MCP tools over free-form narration when advancing project state.
 - Prefer project-local curated skills instead of loading the entire upstream skill library ad hoc.
-- For study design, use the `study-design-agent` and its MCP tools; treat the sample-size MVP as limited to equal-allocation, two-group means or proportions.
+- For study design, use the `study-design` Agent and its MCP tools; treat the sample-size MVP as limited to equal-allocation, two-group means or proportions.
 - Avoid unnecessary file edits during research-only tasks unless the user explicitly asks for generated deliverables.

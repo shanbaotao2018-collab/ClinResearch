@@ -117,10 +117,29 @@ def _protocol_payload(project_id: int) -> ResearchWritingDraftCreate:
     )
 
 
+def _review_article_payload(project_id: int) -> ResearchWritingDraftCreate:
+    return ResearchWritingDraftCreate(
+        title="Proteomics and incident diabetes: partial evidence synthesis",
+        target_audience="clinical research team",
+        source_manifest=[
+            {
+                "source_type": "review",
+                "source_id": str(project_id),
+                "description": "open_access_evidence_synthesis from saved evidence extraction records.",
+            }
+        ],
+        outline="Background; search and evidence scope; study characteristics; findings; limitations; conclusion.",
+        review_draft="This is a researcher-reviewable review article draft based on recorded evidence.",
+        limitations="Based on available full text only; not a complete systematic review.",
+        unresolved_items="Confirm all extracted effect estimates against full text before publication use.",
+    )
+
+
 def test_research_writing_requires_signed_skills_and_external_approval(monkeypatch, tmp_path):
     secret = "test-writing-receipt-key"
     monkeypatch.setattr(settings, "skill_receipt_key", secret)
     monkeypatch.setattr(settings, "skill_receipt_dir", str(tmp_path))
+    monkeypatch.setattr(settings, "skill_receipt_enforcement", "strict")
     with Session(engine) as session:
         project = _study_design_source(session)
         source = get_research_writing_source_data(session, "study_design", project.id)
@@ -164,6 +183,7 @@ def test_proposal_requires_proposal_skill_and_approval_endpoint_is_protected(mon
     secret = "test-proposal-receipt-key"
     monkeypatch.setattr(settings, "skill_receipt_key", secret)
     monkeypatch.setattr(settings, "skill_receipt_dir", str(tmp_path))
+    monkeypatch.setattr(settings, "skill_receipt_enforcement", "strict")
     monkeypatch.setattr(settings, "research_writing_approval_key", "writing-approval-key")
     with Session(engine) as session:
         project = _study_design_source(session)
@@ -200,3 +220,26 @@ def test_proposal_requires_proposal_skill_and_approval_endpoint_is_protected(mon
         json={"approved_by": "operator"},
     )
     assert approved.status_code == 200
+
+
+def test_review_article_requires_review_source_and_persists_review_content(monkeypatch, tmp_path):
+    secret = "test-review-article-receipt-key"
+    monkeypatch.setattr(settings, "skill_receipt_key", secret)
+    monkeypatch.setattr(settings, "skill_receipt_dir", str(tmp_path))
+    monkeypatch.setattr(settings, "skill_receipt_enforcement", "strict")
+    with Session(engine) as session:
+        project = _study_design_source(session)
+        run = start_research_writing_workflow_record(
+            session, "study_design", project.id, "protocol", actor="test"
+        )
+        _write_receipts(tmp_path, secret, run, BASE_WRITING_SKILLS)
+        with pytest.raises(ValueError, match="requires source_type='review'"):
+            save_research_writing_draft_record(
+                session,
+                "study_design",
+                project.id,
+                run.run_id,
+                "review_article",
+                _review_article_payload(project.id),
+                actor="test",
+            )

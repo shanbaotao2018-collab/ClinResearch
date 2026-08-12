@@ -1,10 +1,13 @@
 import pytest
 from fastapi.testclient import TestClient
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 from app.db import engine
 from app.main import app
+from app.schemas import FullTextPreflightCreate
+from app.services.full_text_preflight import save_full_text_preflight_record
 from app.services.exporters import build_review_bundle_data, render_review_bundle_markdown
+from app.models import Citation
 
 
 client = TestClient(app)
@@ -62,10 +65,14 @@ def test_review_bundle_markdown_includes_strategy_and_prisma():
         },
     )
     client.post(f"/projects/{project['id']}/deduplicate")
+    with Session(engine) as session:
+        citation = session.exec(
+            select(Citation).where(Citation.project_id == project["id"])
+        ).first()
     client.post(
         f"/projects/{project['id']}/screening-decisions",
         json={
-            "citation_id": 1,
+            "citation_id": citation.id,
             "decision": "include",
             "reason": "Directly matches the review question.",
             "actor": "test_reviewer",
@@ -73,6 +80,19 @@ def test_review_bundle_markdown_includes_strategy_and_prisma():
     )
 
     with Session(engine) as session:
+        citation = session.exec(
+            select(Citation).where(Citation.project_id == project["id"])
+        ).first()
+        save_full_text_preflight_record(
+            session,
+            project["id"],
+            [FullTextPreflightCreate(
+                citation_id=citation.id,
+                pmid="26378978",
+                status="access_unavailable",
+                details="Test fixture verified that no open full text was available.",
+            )],
+        )
         bundle = build_review_bundle_data(session, project["id"])
 
     assert bundle is not None
@@ -85,3 +105,36 @@ def test_review_bundle_markdown_includes_strategy_and_prisma():
     assert "## Search Strategies" in markdown
     assert "SGLT2 inhibitors" in markdown
     assert "## PRISMA Snapshot" in markdown
+    assert "## Full-Text Preflight" in markdown
+
+
+def test_review_bundle_rejects_included_citation_without_preflight():
+    project = client.post(
+        "/projects",
+        json={
+            "title": "Preflight export gate",
+            "research_question": "Does export require a verified full-text availability state?",
+        },
+    ).json()
+    client.post(
+        f"/projects/{project['id']}/citations/import-manual",
+        json={"source": "pubmed", "citations": [{"title": "Candidate study", "external_id": "456"}]},
+    )
+    client.post(f"/projects/{project['id']}/deduplicate")
+    with Session(engine) as session:
+        citation = session.exec(
+            select(Citation).where(Citation.project_id == project["id"])
+        ).first()
+    client.post(
+        f"/projects/{project['id']}/screening-decisions",
+        json={
+            "citation_id": citation.id,
+            "decision": "include",
+            "reason": "Directly matches the review question.",
+            "actor": "test_reviewer",
+        },
+    )
+
+    with Session(engine) as session:
+        with pytest.raises(ValueError, match="explicit full-text preflight"):
+            build_review_bundle_data(session, project["id"])

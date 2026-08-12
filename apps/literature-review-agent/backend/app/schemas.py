@@ -12,6 +12,7 @@ class ProjectCreate(BaseModel):
     pico_outcome: Optional[str] = None
     inclusion_criteria: Optional[str] = None
     exclusion_criteria: Optional[str] = None
+    review_mode: Literal["formal_review", "quick_exploration"] = "formal_review"
 
 
 class ProjectRead(ProjectCreate):
@@ -36,6 +37,19 @@ class SearchStrategyRead(BaseModel):
     query_text: str
     version_number: int
     rationale: str | None = None
+
+
+class FormalRetrievalRunCreate(BaseModel):
+    source: Literal["pubmed", "europe_pmc"]
+    query: str
+    database_total_count: int
+    retrieved_count: int
+    imported_count: int
+    page_count: int
+    complete: bool
+    truncated: bool
+    max_records: int
+    retrieval_channel: str
 
 
 class ScreeningDecisionCreate(BaseModel):
@@ -71,6 +85,12 @@ class CitationRead(BaseModel):
     doi: str | None = None
     is_deduplicated: bool
     dedup_group: str | None = None
+
+
+class CitationFileImportRequest(BaseModel):
+    file_path: str
+    source: str = "offline_file"
+    file_format: str | None = None
 
 
 class AuditLogRead(BaseModel):
@@ -189,9 +209,35 @@ class CitationSafetyCheckRead(BaseModel):
     needs_human_review: bool
 
 
+class CitationSafetyCheckCreate(BaseModel):
+    """A desktop-local PubMed notice check submitted to the project backend."""
+
+    citation_id: int
+    status: Literal["not_flagged_at_check_time", "flagged_needs_human_review", "unavailable"]
+    check_source: Literal["pubmed_publication_type_client"]
+    details: str | None = None
+
+
+class FullTextPreflightCreate(BaseModel):
+    citation_id: int
+    pmid: str | None = None
+    pmcid: str | None = None
+    status: Literal["full_text_ready", "pdf_needed", "access_unavailable", "verification_failed"]
+    source_url: str | None = None
+    local_cache_path: str | None = None
+    content_text: str | None = None
+    details: str | None = None
+
+
+class FullTextPreflightBatchCreate(BaseModel):
+    """Desktop-local full-text results sent directly to the project backend."""
+
+    results: list[FullTextPreflightCreate]
+
+
 class FullTextDocumentCreate(BaseModel):
     citation_id: int
-    source_kind: Literal["open_access_html", "pdf_extracted_markdown", "user_provided_full_text"]
+    source_kind: Literal["open_access_html", "pdf_extracted_markdown", "offline_html", "offline_pdf", "user_provided_full_text"]
     content_text: str
     source_url: str | None = None
     page_count: int | None = None
@@ -228,5 +274,6 @@ class ResearchWritingDraftCreate(BaseModel):
     methods_draft: str | None = None
     discussion_framework: str | None = None
     proposal_draft: str | None = None
+    review_draft: str | None = None
     limitations: str
     unresolved_items: str

@@ -1,9 +1,9 @@
 from fastapi.testclient import TestClient
 
 from app.main import app
-from app.models import StudyDesignProject
+from app.models import Citation, StudyDesignProject
 from app.db import engine
-from sqlmodel import Session
+from sqlmodel import Session, select
 
 
 client = TestClient(app)
@@ -58,11 +58,26 @@ def test_workbench_downloads_completed_review_as_markdown():
         f"/projects/{project['id']}/citations/import-manual",
         json={"source": "pubmed", "citations": [{"title": "Candidate", "external_id": "90"}]},
     )
+    with Session(engine) as session:
+        citation = session.exec(
+            select(Citation).where(Citation.project_id == project["id"])
+        ).one()
+    client.post(
+        f"/projects/{project['id']}/full-text-preflight",
+        json={
+            "results": [{
+                "citation_id": citation.id,
+                "pmid": "90",
+                "status": "access_unavailable",
+                "details": "Test-only availability record.",
+            }],
+        },
+    )
     client.post(f"/projects/{project['id']}/deduplicate")
     client.post(
         f"/projects/{project['id']}/screening-decisions",
         json={
-            "citation_id": 1,
+            "citation_id": citation.id,
             "decision": "include",
             "reason": "Matches.",
             "actor": "reviewer",

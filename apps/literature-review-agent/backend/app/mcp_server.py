@@ -10,23 +10,28 @@ from typing import Any
 from mcp.server.fastmcp import FastMCP
 from sqlmodel import Session, select
 
-from app.db import engine, init_db
-from app.models import Citation, ResearchWritingDraft, StudyDesignProject
+from app.db import engine
+from app.config import settings
+from app.models import Citation, Project, ResearchWritingDraft, StudyDesignProject
 from app.schemas import (
     BiasAssessmentCreate,
     EvidenceExtractionCreate,
+    CitationSafetyCheckCreate,
+    FullTextPreflightCreate,
     FullTextDocumentCreate,
     FullTextEvidenceDetailCreate,
     ProjectCreate,
     ProjectRead,
     ResearchWritingDraftCreate,
     ScreeningDecisionCreate,
+    SearchStrategyCreate,
     SearchStrategyRead,
     StudyDesignContentUpdate,
     StudyDesignProjectCreate,
     StudyDesignProjectRead,
 )
 from app.services.agent_workflows import (
+    get_agent_workflow_run,
     import_agent_skill_execution_receipts_from_session,
     record_agent_workflow_event,
     require_agent_skill_receipts,
@@ -39,6 +44,7 @@ from app.services.evidence_extraction import (
     check_project_retractions_record,
     render_evidence_table_markdown,
     save_evidence_extractions_record,
+    save_project_retraction_checks_record,
     start_evidence_extraction_workflow_record,
 )
 from app.services.systematic_evaluation import (
@@ -60,6 +66,7 @@ from app.services.systematic_evaluation import (
     systematic_evidence_review_snapshot,
 )
 from app.services.research_writing import (
+    approve_research_writing_record,
     build_research_writing_bundle_data,
     get_research_writing_source_data,
     render_research_writing_bundle_markdown,
@@ -74,20 +81,42 @@ from app.services.exporters import (
     render_review_bundle_markdown,
     write_review_bundle_markdown,
 )
+from app.services.citation_files import parse_citation_file
 from app.services.literature_sources import (
     fetch_paper_metadata_record,
     fetch_europepmc_open_access_full_text,
     search_europepmc_records,
     search_pubmed_records,
 )
+from app.services.literature_access import literature_access_status
+from app.services.full_text_preflight import (
+    get_full_text_preflight_records,
+    save_full_text_preflight_record,
+)
+from app.services.next_actions import get_next_actions as get_next_actions_record
+from app.services.offline_evidence_packages import (
+    import_offline_evidence_package_record,
+    list_offline_evidence_packages as list_offline_evidence_package_records,
+    load_offline_package_documents,
+)
 from app.services.project_workflow import (
     create_project_record,
     deduplicate_project_record,
     generate_search_strategy_record,
     import_citations_record,
+    save_search_strategy_record,
     submit_screening_decisions_record,
 )
+from app.services.formal_retrieval import formal_retrieval_readiness
+from app.services.project_context import get_agent_project_context_record
+from app.services.screening import latest_screening_decisions, list_pending_screening_batch
+from app.services.research_cases import (
+    create_research_case_record,
+    get_research_case_record,
+    link_research_case_record,
+)
 from app.services.study_design import (
+    approve_study_design_record,
     approval_snapshot,
     build_study_design_bundle_data,
     calculate_study_sample_size_record,
@@ -108,8 +137,9 @@ from app.services.phi_guard import assert_deidentified_attestation
 
 logging.basicConfig(level=logging.INFO)
 
-mcp = FastMCP("literature_review")
-init_db()
+# This server is mounted by app.main at /mcp. Keep the transport path at /
+# because the FastAPI mount already supplies the public /mcp prefix.
+mcp = FastMCP("literature_review", streamable_http_path="/")
 
 _MAX_AGENT_ABSTRACT_CHARS = 1_200
 _BACKEND_URL = os.getenv("LRA_BACKEND_URL", "http://127.0.0.1:8010").rstrip("/")
@@ -222,6 +252,15 @@ def _normalize_evidence_extraction_payload(item: dict[str, Any]) -> dict[str, An
         normalized["missing_fields"] = [
             value.strip() for value in missing_fields.split(",") if value.strip()
         ]
+    evidence_basis = normalized.get("evidence_basis")
+    if isinstance(evidence_basis, str):
+        basis = evidence_basis.strip().casefold()
+        if basis in {"pubmed摘要", "pubmed全文摘要", "摘要", "abstract"} or "摘要" in basis:
+            normalized["evidence_basis"] = "abstract"
+        elif basis in {"metadata", "元数据"} or "元数据" in basis:
+            normalized["evidence_basis"] = "metadata"
+        elif basis in {"full_text_excerpt", "全文", "全文节选", "全文摘录"} or "全文" in basis:
+            normalized["evidence_basis"] = "full_text_excerpt"
     return normalized
 
 
@@ -357,6 +396,7 @@ def create_review_project(
     pico_outcome: str | None = None,
     inclusion_criteria: str | None = None,
     exclusion_criteria: str | None = None,
+    review_mode: str = "formal_review",
 ) -> dict[str, Any]:
     """Create a literature review project in the local backend database."""
     payload = ProjectCreate(
@@ -368,6 +408,7 @@ def create_review_project(
         pico_outcome=pico_outcome,
         inclusion_criteria=inclusion_criteria,
         exclusion_criteria=exclusion_criteria,
+        review_mode=review_mode,
     )
     with Session(engine) as session:
         project = create_project_record(session, payload, actor="mcp")
@@ -378,9 +419,46 @@ def create_review_project(
 
 @mcp.tool()
 def generate_project_search_strategy(project_id: int) -> dict[str, Any]:
-    """Generate a PubMed search strategy for a project."""
+    """Generate a PICO-derived draft strategy; refine it before online execution."""
     with Session(engine) as session:
         strategy = generate_search_strategy_record(session, project_id, actor="mcp")
+    return {
+        "project_id": project_id,
+        "search_strategy": SearchStrategyRead.model_validate(strategy).model_dump(),
+    }
+
+
+@mcp.tool()
+def save_project_search_strategy(
+    project_id: int,
+    source: str,
+    query_text: str,
+    rationale: str,
+) -> dict[str, Any]:
+    """Save the Agent-refined executable PubMed or Europe PMC strategy.
+
+    Keep the generated PICO draft as an audit record, then save each actual
+    database query through this tool before client-side retrieval.
+    """
+    normalized_source = source.strip().lower()
+    if normalized_source not in {"pubmed", "europe_pmc"}:
+        raise ValueError("source must be 'pubmed' or 'europe_pmc'.")
+    if settings.literature_access_mode == "client_online" and normalized_source == "europe_pmc":
+        raise ValueError(
+            "Europe PMC retrieval is disabled in the current PubMed-only demonstration mode. "
+            "Use PubMed for retrieval; Europe PMC is reserved for open-access full-text preflight."
+        )
+    if any("\u4e00" <= character <= "\u9fff" for character in query_text):
+        raise ValueError(
+            "Executable online strategies must use database-ready English/controlled vocabulary, not raw Chinese PICO prose."
+        )
+    payload = SearchStrategyCreate(
+        source=normalized_source,
+        query_text=query_text,
+        rationale=rationale,
+    )
+    with Session(engine) as session:
+        strategy = save_search_strategy_record(session, project_id, payload, actor="mcp")
     return {
         "project_id": project_id,
         "search_strategy": SearchStrategyRead.model_validate(strategy).model_dump(),
@@ -393,7 +471,11 @@ def import_citations_to_project(
     source: str,
     citations: list[dict[str, Any]],
 ) -> dict[str, Any]:
-    """Import normalized citation records into a project."""
+    """Import a quick-exploration candidate set into a project.
+
+    Formal-review projects must use the desktop direct-handoff pagination
+    tools, so their PRISMA records cannot become a model-selected shortlist.
+    """
     payload = CitationImportPayload.model_validate(
         {
             "source": source,
@@ -401,6 +483,13 @@ def import_citations_to_project(
         }
     )
     with Session(engine) as session:
+        project = session.get(Project, project_id)
+        if project and project.review_mode == "formal_review":
+            raise ValueError(
+                "Formal-review projects reject manual candidate imports. Use "
+                "client_retrieve_pubmed_formal_review or "
+                "client_retrieve_europepmc_formal_review instead."
+            )
         imported_citations = import_citations_record(session, project_id, payload, actor="mcp")
     return {
         "project_id": project_id,
@@ -418,6 +507,67 @@ def import_citations_to_project(
 
 
 @mcp.tool()
+def import_citations_file_to_project(
+    project_id: int,
+    file_path: str,
+    source: str = "offline_file",
+    file_format: str | None = None,
+) -> dict[str, Any]:
+    """Import citation records from a server-side JSON/CSV/RIS/NBIB file.
+
+    The file must be located under LRA_LITERATURE_IMPORT_DIR. This is the
+    offline fallback when PubMed or Europe PMC cannot be reached from the server.
+    """
+    citations = parse_citation_file(file_path, file_format)
+    payload = CitationImportPayload(source=source, citations=citations)
+    with Session(engine) as session:
+        imported_citations = import_citations_record(session, project_id, payload, actor="mcp")
+    return {
+        "project_id": project_id,
+        "source": source,
+        "file_path": file_path,
+        "parsed_count": len(citations),
+        "imported_count": len(imported_citations),
+        "citations": [
+            {
+                "id": citation.id,
+                "external_id": citation.external_id,
+                "title": citation.title,
+            }
+            for citation in imported_citations
+        ],
+    }
+
+
+@mcp.tool()
+def list_offline_evidence_packages() -> dict[str, Any]:
+    """List validated raw-data evidence packages available on this offline server."""
+    packages = list_offline_evidence_package_records()
+    return {"package_count": len(packages), "packages": packages}
+
+
+@mcp.tool()
+def import_offline_evidence_package(project_id: int, package_id: str) -> dict[str, Any]:
+    """Import an offline package's raw citations into a review project without screening them."""
+    with Session(engine) as session:
+        return import_offline_evidence_package_record(session, project_id, package_id)
+
+
+@mcp.tool()
+def ingest_offline_package_full_text(
+    project_id: int,
+    workflow_run_id: str,
+    package_id: str,
+) -> dict[str, Any]:
+    """Parse raw local PDF/HTML for already-included citations during evidence extraction."""
+    with Session(engine) as session:
+        documents = load_offline_package_documents(
+            session, project_id, package_id, included_only=True
+        )
+    return save_full_text_documents(project_id, workflow_run_id, documents)
+
+
+@mcp.tool()
 def deduplicate_project_citations(project_id: int) -> dict[str, Any]:
     """Deduplicate imported citations for a project."""
     with Session(engine) as session:
@@ -429,10 +579,145 @@ def deduplicate_project_citations(project_id: int) -> dict[str, Any]:
 
 
 @mcp.tool()
+def get_formal_retrieval_status(project_id: int) -> dict[str, Any]:
+    """Show whether tracked formal retrieval is complete before downstream review steps."""
+    with Session(engine) as session:
+        readiness = formal_retrieval_readiness(session, project_id)
+    return {
+        "project_id": project_id,
+        "review_mode": readiness["review_mode"],
+        "tracked": readiness["tracked"],
+        "ready": readiness["ready"],
+        "runs": [
+            {
+                "source": item.source,
+                "database_total_count": item.database_total_count,
+                "retrieved_count": item.retrieved_count,
+                "imported_count": item.imported_count,
+                "complete": item.complete,
+                "truncated": item.truncated,
+            }
+            for item in readiness["runs"]
+        ],
+    }
+
+
+@mcp.tool()
+def list_review_citation_batch(
+    project_id: int,
+    offset: int = 0,
+    limit: int = 50,
+    include_deduplicated: bool = False,
+) -> dict[str, Any]:
+    """Read one bounded, auditable title/abstract screening batch.
+
+    Formal review retrieval can contain hundreds of records. This tool keeps
+    the raw records in the backend and exposes only one bounded batch to the
+    screening Agent, so every imported record can be reviewed without a
+    model-selected shortlist.
+    """
+    normalized_offset = max(0, offset)
+    normalized_limit = max(1, min(limit, 50))
+    with Session(engine) as session:
+        project = session.get(Project, project_id)
+        if not project:
+            raise ValueError("Project not found")
+        citations = session.exec(
+            select(Citation).where(Citation.project_id == project_id).order_by(Citation.id)
+        ).all()
+        if not include_deduplicated:
+            citations = [citation for citation in citations if not citation.is_deduplicated]
+        decisions = latest_screening_decisions(session, project_id)
+
+    batch = citations[normalized_offset : normalized_offset + normalized_limit]
+    return {
+        "project_id": project_id,
+        "total_count": len(citations),
+        "offset": normalized_offset,
+        "limit": normalized_limit,
+        "next_offset": normalized_offset + len(batch) if normalized_offset + len(batch) < len(citations) else None,
+        "citations": [
+            {
+                "id": citation.id,
+                "external_id": citation.external_id,
+                "source": citation.source,
+                "title": citation.title,
+                "abstract": citation.abstract,
+                "authors": citation.authors,
+                "publication_year": citation.publication_year,
+                "doi": citation.doi,
+                "existing_decision": decisions.get(citation.id).decision if citation.id in decisions else None,
+            }
+            for citation in batch
+        ],
+    }
+
+
+@mcp.tool()
+def list_pending_screening_citation_batch(
+    project_id: int,
+    after_id: int | None = None,
+    limit: int = 25,
+    original_research_only: bool = True,
+) -> dict[str, Any]:
+    """Read only active, unreviewed citations with high-precision rule suggestions.
+
+    Rule suggestions are non-final. They reduce model review work but must not
+    be saved as final include/exclude decisions before researcher confirmation.
+    """
+    with Session(engine) as session:
+        if not session.get(Project, project_id):
+            raise ValueError("Project not found")
+        return list_pending_screening_batch(
+            session,
+            project_id,
+            after_id=after_id,
+            limit=limit,
+            original_research_only=original_research_only,
+        )
+
+
+@mcp.tool()
+def save_project_full_text_preflight(
+    project_id: int,
+    results: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Persist desktop-local Europe PMC full-text availability and cache verified open XML.
+
+    This is an acquisition record, not a scientific include/exclude decision.
+    Call after deduplication and before title/abstract screening in demo mode.
+    """
+    # v0.3.1 desktop clients returned only found/content_text. Infer a safe
+    # status so global-Agent upgrades remain compatible until the desktop app
+    # itself is replaced with v0.3.2.
+    normalized_results = [
+        {
+            **item,
+            "status": item.get("status") or (
+                "full_text_ready" if item.get("found") and item.get("content_text")
+                else "access_unavailable"
+            ),
+        }
+        for item in results
+    ]
+    payloads = [FullTextPreflightCreate.model_validate(item) for item in normalized_results]
+    with Session(engine) as session:
+        return save_full_text_preflight_record(session, project_id, payloads)
+
+
+@mcp.tool()
+def get_project_full_text_availability(project_id: int) -> dict[str, Any]:
+    """List preflight availability for active citations, including cached full-text document IDs."""
+    with Session(engine) as session:
+        return get_full_text_preflight_records(session, project_id)
+
+
+@mcp.tool()
 def submit_screening_decisions(
     project_id: int,
     decisions: list[dict[str, Any]],
     actor: str = "mcp_reviewer",
+    original_research_only: bool = False,
 ) -> dict[str, Any]:
     """Submit one or more screening decisions and refresh PRISMA counts."""
     decision_models = [
@@ -450,6 +735,7 @@ def submit_screening_decisions(
             project_id,
             decision_models,
             actor=actor,
+            original_research_only=original_research_only,
         )
     return {
         "project_id": project_id,
@@ -458,37 +744,70 @@ def submit_screening_decisions(
 
 
 @mcp.tool()
-async def search_pubmed(query: str, limit: int = 5) -> dict[str, Any]:
-    """Search PubMed and return normalized metadata records.
-
-    Args:
-        query: PubMed search query.
-        limit: Max number of records to return, capped at 20.
-    """
-    records = await search_pubmed_records(query, limit=limit)
-    return {
-        "source": "pubmed",
-        "query": query,
-        "returned_count": len(records),
-        "records": _compact_records_for_agent(records),
-    }
+def get_literature_access_status() -> dict[str, object]:
+    """Read whether this deployment should use live databases or offline citation-file import."""
+    return literature_access_status()
 
 
 @mcp.tool()
-async def search_europepmc(query: str, limit: int = 5) -> dict[str, Any]:
-    """Search Europe PMC and return normalized metadata records.
+def get_workflow_next_actions(subject_type: str, subject_id: int) -> dict[str, Any]:
+    """Return the controlled next actions for one persisted Agent subject.
 
-    Args:
-        query: Europe PMC query syntax.
-        limit: Max number of records to return, capped at 20.
+    Use this as the final tool call in every Agent response. Render only the
+    returned action cards; do not invent additional routes or expose tool names.
     """
-    records = await search_europepmc_records(query, limit=limit)
-    return {
-        "source": "europe_pmc",
-        "query": query,
-        "returned_count": len(records),
-        "records": _compact_records_for_agent(records),
-    }
+    with Session(engine) as session:
+        return get_next_actions_record(session, subject_type, subject_id)
+
+
+@mcp.tool()
+def create_research_case(title: str, description: str | None = None) -> dict[str, object]:
+    """Create a case-level container that can link study-design and review projects."""
+    with Session(engine) as session:
+        return create_research_case_record(session, title, description)
+
+
+@mcp.tool()
+def link_research_case(
+    case_id: int,
+    study_design_project_id: int | None = None,
+    review_project_id: int | None = None,
+) -> dict[str, object]:
+    """Link independently persisted study-design and review projects to one research case."""
+    with Session(engine) as session:
+        return link_research_case_record(session, case_id, study_design_project_id, review_project_id)
+
+
+@mcp.tool()
+def get_research_case(case_id: int) -> dict[str, object]:
+    """Read the current project links and statuses for one research case."""
+    with Session(engine) as session:
+        return get_research_case_record(session, case_id)
+
+
+if settings.literature_access_mode != "client_online":
+    @mcp.tool()
+    async def search_pubmed(query: str, limit: int = 5) -> dict[str, Any]:
+        """Search PubMed and return normalized metadata records."""
+        records = await search_pubmed_records(query, limit=limit)
+        return {
+            "source": "pubmed",
+            "query": query,
+            "returned_count": len(records),
+            "records": _compact_records_for_agent(records),
+        }
+
+
+    @mcp.tool()
+    async def search_europepmc(query: str, limit: int = 5) -> dict[str, Any]:
+        """Search Europe PMC and return normalized metadata records."""
+        records = await search_europepmc_records(query, limit=limit)
+        return {
+            "source": "europe_pmc",
+            "query": query,
+            "returned_count": len(records),
+            "records": _compact_records_for_agent(records),
+        }
 
 
 @mcp.tool()
@@ -589,6 +908,34 @@ def start_evidence_extraction_workflow(
 
 
 @mcp.tool()
+def get_included_review_citations(project_id: int) -> dict[str, Any]:
+    """Return the authoritative current include set for evidence extraction.
+
+    Do not infer inclusion from a review export or conversation history. Only
+    these citation IDs may be submitted to evidence-extraction tools.
+    """
+    from app.services.evidence_extraction import included_citations
+
+    with Session(engine) as session:
+        citations = included_citations(session, project_id)
+        return {
+            "project_id": project_id,
+            "included_count": len(citations),
+            "citations": [
+                {
+                    "citation_id": item.id,
+                    "pmid": item.external_id if item.external_id and item.external_id.isdigit() else None,
+                    "source": item.source,
+                    "title": item.title,
+                    "abstract": item.abstract,
+                    "doi": item.doi,
+                }
+                for item in citations
+            ],
+        }
+
+
+@mcp.tool()
 def save_evidence_extractions(
     project_id: int,
     workflow_run_id: str,
@@ -656,6 +1003,48 @@ async def check_project_retractions(
             ],
         }
     return result
+
+
+@mcp.tool()
+def save_project_retraction_checks(
+    project_id: int,
+    workflow_run_id: str,
+    checks: list[dict[str, Any]],
+) -> dict[str, Any]:
+    """Save PubMed notice checks fetched by the desktop-local connector.
+
+    Use this instead of check_project_retractions when the backend reports
+    literature access mode client_online. The connector must check every
+    currently included citation and return pubmed_publication_type_client.
+    """
+    payloads = [CitationSafetyCheckCreate.model_validate(item) for item in checks]
+    with Session(engine) as session:
+        require_agent_skill_receipts(
+            session,
+            workflow_run_id,
+            "evidence_extraction",
+            "review",
+            project_id,
+            "retraction_check",
+            RETRACTION_SKILL,
+        )
+        records = save_project_retraction_checks_record(
+            session, project_id, workflow_run_id, payloads, actor="mcp_client"
+        )
+        return {
+            "project_id": project_id,
+            "workflow_run_id": workflow_run_id,
+            "saved_count": len(records),
+            "checks": [
+                {
+                    "citation_id": item.citation_id,
+                    "status": item.status,
+                    "check_source": item.check_source,
+                    "needs_human_review": item.needs_human_review,
+                }
+                for item in records
+            ],
+        }
 
 
 @mcp.tool()
@@ -804,6 +1193,17 @@ def save_full_text_evidence_details(
     details: list[dict[str, Any]],
 ) -> dict[str, Any]:
     """Save full-text baseline fields and binary outcome counts for included studies."""
+    missing_document_ids = [
+        item.get("citation_id")
+        for item in details
+        if not isinstance(item.get("full_text_document_id"), int)
+    ]
+    if missing_document_ids:
+        raise ValueError(
+            "Full-text evidence details require full_text_document_id values returned by "
+            "save_full_text_documents or fetch_and_save_open_access_full_text. "
+            f"Do not submit abstract-only citations: {missing_document_ids}."
+        )
     payloads = [
         FullTextEvidenceDetailCreate.model_validate(_normalize_full_text_detail_payload(item))
         for item in details
@@ -903,6 +1303,39 @@ def request_systematic_evidence_review(
             },
             "next_step": "Immediately call approve_systematic_evidence with this scope_digest. OpenCode will show its native Allow/Deny confirmation; do not stop at this request result.",
         }
+
+
+@mcp.tool()
+def confirm_systematic_evidence_phase_start(
+    project_id: int,
+    workflow_run_id: str,
+) -> dict[str, Any]:
+    """Record OpenCode-native approval before obtaining full text or running appraisal.
+
+    This tool is permission-gated by OpenCode. Its invocation presents the
+    native Allow/Deny control instead of relying on a free-text confirmation.
+    """
+    with Session(engine) as session:
+        get_agent_workflow_run(
+            session, workflow_run_id, "evidence_extraction", "review", project_id
+        )
+        result = {
+            "project_id": project_id,
+            "workflow_run_id": workflow_run_id,
+            "phase": "full_text_systematic_evaluation",
+            "status": "approved_in_opencode",
+        }
+        record_agent_workflow_event(
+            session,
+            workflow_run_id,
+            "evidence_extraction",
+            "review",
+            project_id,
+            "confirm_systematic_evidence_phase_start",
+            {},
+            result,
+        )
+        return result
 
 
 @mcp.tool()
@@ -1122,15 +1555,25 @@ def approve_research_writing(
     scope_digest: str,
     approved_by: str,
 ) -> dict[str, Any]:
-    """Request native OpenCode confirmation, then approve the current writing draft."""
-    snapshot = _get_human_approval_snapshot(f"/research-writing-drafts/{draft_id}/approval")
-    _assert_current_scope(snapshot, scope_digest)
-    return _post_human_approval(
-        f"/research-writing-drafts/{draft_id}/approve",
-        "X-Research-Writing-Approval-Key",
-        "LRA_RESEARCH_WRITING_APPROVAL_KEY",
-        {"approved_by": approved_by},
-    )
+    """Approve a draft after the OpenCode-native Allow/Deny confirmation.
+
+    This MCP tool is permission-gated by OpenCode. It writes through the local
+    service directly instead of making an HTTP request back into the same
+    backend process, which avoids deadlocking the single-process local server.
+    """
+    with Session(engine) as session:
+        snapshot = research_writing_approval_snapshot(session, draft_id)
+        _assert_current_scope(snapshot, scope_digest)
+        approval = approve_research_writing_record(session, draft_id, approved_by)
+        return {
+            "draft_id": draft_id,
+            "approval": {
+                "status": approval.status,
+                "approved_by": approval.approved_by,
+                "approved_at": approval.approved_at,
+                "scope_digest": approval.scope_digest,
+            },
+        }
 
 
 @mcp.tool()
@@ -1223,6 +1666,53 @@ def create_study_design_project(
         result = {"project": StudyDesignProjectRead.model_validate(project).model_dump(), "workflow": {"run_id": run.run_id, "project_id": project.id, "operation": "create_study_design_project"}}
         record_study_design_workflow_event(session, run.run_id, project.id, "create_study_design_project", {"data_attestation": data_attestation}, result)
     return result
+
+
+@mcp.tool()
+def get_agent_project_context(project_type: str, project_id: int) -> dict[str, Any]:
+    """Read one persisted Agent project by type and ID across OpenCode sessions.
+
+    Use references such as ``study_design:50`` or ``review:14``. Evidence
+    extraction uses its parent review ID. The result is read-only and excludes
+    concealed randomization allocations and full-text source bodies.
+    """
+    with Session(engine) as session:
+        return get_agent_project_context_record(session, project_type, project_id)
+
+
+@mcp.tool()
+def get_confirmed_study_design_context(project_id: int) -> dict[str, Any]:
+    """Read a human-confirmed study-design project's PICO for downstream evidence retrieval.
+
+    This tool exposes research-design context only. It does not expose concealed
+    allocation schedules or permit any study-design mutation.
+    """
+    with Session(engine) as session:
+        context = get_agent_project_context_record(session, "study_design", project_id)
+        if not context["is_human_confirmed"]:
+            raise ValueError(
+                f"Study-design project {project_id} is not human-confirmed; do not use it as downstream evidence context."
+            )
+        project = context["context"]["project"]
+        return {
+            "project_id": project["id"],
+            "title": project["title"],
+            "status": project["status"],
+            "research_question": project["research_question"],
+            "study_type": project["study_type"],
+            "study_design": project["study_design"],
+            "pico": {
+                "population": project["population"],
+                "intervention": project["intervention"],
+                "comparator": project["comparator"],
+                "outcome": project["outcome"],
+            },
+            "inclusion_criteria": project["inclusion_criteria"],
+            "exclusion_criteria": project["exclusion_criteria"],
+            "primary_outcome": project["primary_outcome"],
+            "secondary_outcomes": project["secondary_outcomes"],
+            "source_project_confirmed_at": project["human_confirmed_at"],
+        }
 
 
 def _record_study_tool_result(session: Session, workflow_run_id: str, project_id: int, operation: str, inputs: dict[str, Any], result: dict[str, Any]) -> dict[str, Any]:
@@ -1347,9 +1837,9 @@ def finalize_study_design(
 ) -> dict[str, Any]:
     """Confirm the current design once, then generate the concealed schedule and export bundle.
 
-    OpenCode permission-gates this single tool call. The backend still creates the
-    pending scope, validates the hidden approval key and current digest, and only
-    then performs the post-approval operations.
+    OpenCode permission-gates this single tool call. After the user selects Allow,
+    the backend records that internal confirmation directly, then performs the
+    post-approval operations. No shared approval key is used in this MCP path.
     """
     if format not in {"markdown", "json"}:
         raise ValueError("format must be 'markdown' or 'json'.")
@@ -1357,14 +1847,9 @@ def finalize_study_design(
         approval = request_study_design_approval_record(session, project_id, actor="mcp_internal")
         scope_digest = approval.scope_digest
         if approval.status.value != "approved":
-            snapshot = _get_human_approval_snapshot(f"/study-design-projects/{project_id}/approval")
-            _assert_current_scope(snapshot, scope_digest)
-            _post_human_approval(
-                f"/study-design-projects/{project_id}/approve",
-                "X-Study-Approval-Key",
-                "LRA_STUDY_DESIGN_APPROVAL_KEY",
-                {"approved_by": approved_by},
-            )
+            # OpenCode's ask permission is the single human confirmation gate for
+            # the default desktop workflow. The approval record preserves auditability.
+            approve_study_design_record(session, project_id, approved_by)
 
         session.expire_all()
         project = session.get(StudyDesignProject, project_id)

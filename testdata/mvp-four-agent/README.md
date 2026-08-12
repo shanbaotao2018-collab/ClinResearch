@@ -4,10 +4,10 @@
 
 ## 执行顺序
 
-1. 使用 `01-study-design-input.json` 运行 `study-design-agent`，独立验证研究设计闭环。
+1. 使用 `01-study-design-input.json` 运行 `study-design`，独立验证研究设计闭环。
 2. 使用 `02-literature-review-input.json` 运行 `literature-review`，创建新的文献项目、检索、导入、去重和筛选。
-3. 将步骤 2 创建的 `project_id` 写入 `03-evidence-extraction-input.json` 的运行时参数，运行 `evidence-extraction-agent`。
-4. 在步骤 3 完成摘要级与全文级证据记录后，将同一 `project_id` 写入 `04-research-writing-input.json`，运行 `research-writing-agent`。
+3. 将步骤 2 创建的 `project_id` 写入 `03-evidence-extraction-input.json` 的运行时参数，运行 `evidence-extraction`。
+4. 在步骤 3 完成摘要级与全文级证据记录后，将同一 `project_id` 写入 `04-research-writing-input.json`，运行 `research-writing`。
 
 每个 Agent 都应停在自身的“请求外部审批”节点。为演示完整导出链路，可以由本地授权演示操作者调用受保护审批端点；该行为只代表 MVP 演示审批，不代表伦理、统计或学术审批。
 

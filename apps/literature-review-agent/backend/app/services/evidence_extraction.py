@@ -7,14 +7,19 @@ from typing import Any
 from sqlmodel import Session, select
 
 from app.models import (
+    AgentWorkflowEvent,
+    BiasAssessment,
+    BinaryMetaAnalysisRun,
     Citation,
     CitationSafetyCheck,
     EvidenceExtraction,
+    FullTextDocument,
+    FullTextEvidenceDetail,
     Project,
     ProjectStatus,
     ScreeningDecision,
 )
-from app.schemas import EvidenceExtractionCreate
+from app.schemas import CitationSafetyCheckCreate, EvidenceExtractionCreate
 from app.services.agent_workflows import (
     get_agent_skill_receipts,
     get_agent_workflow_run,
@@ -23,6 +28,7 @@ from app.services.agent_workflows import (
 )
 from app.services.literature_sources import check_pubmed_retraction_status
 from app.services.phi_guard import assert_no_phi
+from app.services.screening import latest_screening_decisions
 
 
 _WORKFLOW_TYPE = "evidence_extraction"
@@ -41,13 +47,9 @@ def _project_or_raise(session: Session, project_id: int) -> Project:
 def included_citations(session: Session, project_id: int) -> list[Citation]:
     _project_or_raise(session, project_id)
     included_ids = {
-        item.citation_id
-        for item in session.exec(
-            select(ScreeningDecision).where(
-                ScreeningDecision.project_id == project_id,
-                ScreeningDecision.decision == "include",
-            )
-        ).all()
+        citation_id
+        for citation_id, item in latest_screening_decisions(session, project_id).items()
+        if item.decision == "include"
     }
     if not included_ids:
         return []
@@ -210,6 +212,76 @@ async def check_project_retractions_record(
     return checks
 
 
+def save_project_retraction_checks_record(
+    session: Session,
+    project_id: int,
+    workflow_run_id: str,
+    checks: list[CitationSafetyCheckCreate],
+    actor: str = "mcp_client",
+) -> list[CitationSafetyCheck]:
+    """Persist PubMed notice checks performed by the desktop-local connector.
+
+    The central backend intentionally does not repeat the network request in
+    client_online mode. It validates the project/citation relationship and
+    keeps the submitted result auditable instead.
+    """
+    get_agent_workflow_run(
+        session, workflow_run_id, _WORKFLOW_TYPE, _SUBJECT_TYPE, project_id
+    )
+    included_ids = {citation.id for citation in included_citations(session, project_id)}
+    submitted_ids = [item.citation_id for item in checks]
+    if len(submitted_ids) != len(set(submitted_ids)):
+        raise ValueError("Each included citation may have only one safety check per save operation.")
+    missing = sorted(included_ids - set(submitted_ids))
+    unknown = sorted(set(submitted_ids) - included_ids)
+    if missing or unknown:
+        raise ValueError(
+            "Client safety checks must cover exactly the included citations. "
+            f"Missing: {missing}; unknown: {unknown}."
+        )
+
+    saved: list[CitationSafetyCheck] = []
+    for payload in checks:
+        assert_no_phi(payload.model_dump())
+        record = session.exec(
+            select(CitationSafetyCheck).where(
+                CitationSafetyCheck.project_id == project_id,
+                CitationSafetyCheck.citation_id == payload.citation_id,
+            )
+        ).first()
+        if record is None:
+            record = CitationSafetyCheck(
+                project_id=project_id,
+                citation_id=payload.citation_id,
+                status=payload.status,
+                check_source=payload.check_source,
+                details=payload.details,
+                needs_human_review=True,
+            )
+        else:
+            record.status = payload.status
+            record.check_source = payload.check_source
+            record.details = payload.details
+            record.needs_human_review = True
+            record.checked_at = datetime.now(UTC)
+        session.add(record)
+        saved.append(record)
+    session.commit()
+    for record in saved:
+        session.refresh(record)
+    record_agent_workflow_event(
+        session,
+        workflow_run_id,
+        _WORKFLOW_TYPE,
+        _SUBJECT_TYPE,
+        project_id,
+        "save_project_retraction_checks",
+        {"citation_ids": submitted_ids, "actor": actor},
+        {"saved_count": len(saved), "citation_ids": submitted_ids},
+    )
+    return saved
+
+
 def build_evidence_table_data(
     session: Session, project_id: int, workflow_run_id: str
 ) -> dict[str, Any]:
@@ -277,15 +349,100 @@ def build_evidence_table_data(
         }
         for item in get_agent_skill_receipts(session, workflow_run_id)
     ]
+    operations = {
+        item.operation
+        for item in session.exec(
+            select(AgentWorkflowEvent).where(
+                AgentWorkflowEvent.workflow_run_id == workflow_run_id
+            )
+        ).all()
+    }
+    full_text_ids = {
+        item.citation_id
+        for item in session.exec(
+            select(FullTextDocument).where(FullTextDocument.project_id == project_id)
+        ).all()
+        if item.citation_id in citation_ids
+    }
+    detail_ids = {
+        item.citation_id
+        for item in session.exec(
+            select(FullTextEvidenceDetail).where(FullTextEvidenceDetail.project_id == project_id)
+        ).all()
+        if item.citation_id in citation_ids
+    }
+    bias_ids = {
+        item.citation_id
+        for item in session.exec(
+            select(BiasAssessment).where(BiasAssessment.project_id == project_id)
+        ).all()
+        if item.citation_id in citation_ids
+    }
+    meta_runs = [
+        {
+            "meta_analysis_id": item.id,
+            "outcome_label": item.outcome_label,
+            "effect_measure": item.effect_measure,
+            "study_count": json.loads(item.result_json).get("study_count"),
+            "needs_human_review": item.needs_human_review,
+        }
+        for item in session.exec(
+            select(BinaryMetaAnalysisRun).where(
+                BinaryMetaAnalysisRun.project_id == project_id,
+                BinaryMetaAnalysisRun.workflow_run_id == workflow_run_id,
+            )
+        ).all()
+    ]
+    missing_full_text = sorted(citation_ids - full_text_ids)
+    missing_details = sorted(citation_ids - detail_ids)
+    missing_bias = sorted(citation_ids - bias_ids)
+    available_full_text_ids = sorted(full_text_ids)
+    evaluated_full_text_ids = sorted(full_text_ids & detail_ids & bias_ids)
+    partial_full_text = bool(missing_full_text or missing_details or missing_bias)
     return {
         "project_id": project_id,
         "workflow_run_id": workflow_run_id,
         "rows": rows,
         "skill_receipts": receipts,
+        "workflow_provenance": {
+            "evidence_rows_saved_in_this_run": "save_evidence_extractions" in operations,
+            "safety_checks_saved_in_this_run": "save_project_retraction_checks" in operations,
+            "note": (
+                "Evidence rows were reused from the persisted review project in this workflow run."
+                if "save_evidence_extractions" not in operations
+                else "Evidence rows were saved or refreshed in this workflow run."
+            ),
+        },
+        "systematic_evaluation": {
+            "included_count": len(citation_ids),
+            "full_text_ready_count": len(full_text_ids),
+            "detailed_extraction_count": len(detail_ids),
+            "bias_assessment_count": len(bias_ids),
+            "available_full_text_citation_ids": available_full_text_ids,
+            "evaluated_full_text_citation_ids": evaluated_full_text_ids,
+            "evidence_synthesis_scope": (
+                "complete_systematic_review"
+                if not partial_full_text
+                else "available_full_text_only"
+            ),
+            "missing_full_text_citation_ids": missing_full_text,
+            "missing_detail_citation_ids": missing_details,
+            "missing_bias_citation_ids": missing_bias,
+            "status": (
+                "complete_full_text_assessment"
+                if not partial_full_text
+                else "partial_full_text_assessment"
+            ),
+            "meta_analyses_in_this_run": meta_runs,
+        },
         "limitations": [
             "Fields are limited to the cited metadata, abstract, or user-supplied full-text excerpt basis recorded per row.",
             "PubMed safety checks report notice flags at check time and do not guarantee future citation safety.",
             "Human review remains required for every evidence row.",
+            *( [
+                "This is an available-full-text-only synthesis. Detailed findings, bias assessments, and any meta-analysis "
+                "must be limited to citations with saved full-text details and bias assessments; unavailable full text is a coverage gap, not a scientific exclusion."
+            ] if partial_full_text else [] ),
         ],
     }
 
@@ -314,6 +471,45 @@ def render_evidence_table_markdown(bundle: dict[str, Any]) -> str:
                 review="required" if row["needs_human_review"] else "not_marked",
             )
         )
+    provenance = bundle["workflow_provenance"]
+    systematic = bundle["systematic_evaluation"]
+    lines.extend(
+        [
+            "",
+            "## Workflow Provenance",
+            f"- Evidence rows saved in this run: {'yes' if provenance['evidence_rows_saved_in_this_run'] else 'no'}",
+            f"- Safety checks saved in this run: {'yes' if provenance['safety_checks_saved_in_this_run'] else 'no'}",
+            f"- {provenance['note']}",
+            "",
+            "## Full-Text Systematic Evaluation Status",
+            f"- Status: {systematic['status']}",
+            f"- Evidence synthesis scope: {systematic['evidence_synthesis_scope']}",
+            f"- Full text ready: {systematic['full_text_ready_count']}/{systematic['included_count']}",
+            f"- Fully evaluated full-text citation IDs: {systematic['evaluated_full_text_citation_ids'] or 'none'}",
+            f"- Detailed extraction: {systematic['detailed_extraction_count']}/{systematic['included_count']}",
+            f"- Bias assessment: {systematic['bias_assessment_count']}/{systematic['included_count']}",
+            f"- Missing full text citation IDs: {systematic['missing_full_text_citation_ids'] or 'none'}",
+            f"- Missing detailed extraction citation IDs: {systematic['missing_detail_citation_ids'] or 'none'}",
+            f"- Missing bias assessment citation IDs: {systematic['missing_bias_citation_ids'] or 'none'}",
+        ]
+    )
+    if systematic["evidence_synthesis_scope"] == "available_full_text_only":
+        lines.extend([
+            "- Interpretation boundary: 基于可获取全文的部分证据综合，非完整系统评价。",
+            "- Detailed findings, quality assessments, and any Meta analysis apply only to the fully evaluated full-text citation IDs above.",
+        ])
+    if systematic["meta_analyses_in_this_run"]:
+        lines.append("")
+        lines.append("## Exploratory Binary Meta-Analysis")
+        for item in systematic["meta_analyses_in_this_run"]:
+            lines.append(
+                "- {outcome} | {measure} | {count} studies | human review required".format(
+                    outcome=item["outcome_label"],
+                    measure=item["effect_measure"].upper(),
+                    count=item["study_count"],
+                )
+            )
+        lines.append("- This is not a complete systematic review unless every included citation has full text, detailed extraction, and bias assessment.")
     lines.extend(["", "## Limitations"])
     lines.extend(f"- {item}" for item in bundle["limitations"])
     lines.extend(["", "## Verified Skill Execution Receipts"])

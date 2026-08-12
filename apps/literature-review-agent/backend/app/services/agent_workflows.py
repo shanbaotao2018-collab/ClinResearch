@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import hmac
 import json
+import logging
 from datetime import UTC, datetime
 from pathlib import Path
 from typing import Any
@@ -18,6 +19,9 @@ from app.models import (
     Project,
     StudyDesignProject,
 )
+
+
+logger = logging.getLogger(__name__)
 
 
 def _canonical_digest(value: Any) -> str:
@@ -205,6 +209,28 @@ def import_agent_skill_execution_receipts_from_session(
     return _import_receipt_payload(session, payload, workflow_run_id, workflow_type, subject_type, subject_id)
 
 
+def ingest_agent_skill_execution_receipt_journal(
+    session: Session, payload: dict[str, Any]
+) -> int:
+    """Verify and persist a journal posted directly by the OpenCode plugin."""
+    workflow_run_id = payload.get("workflow_run_id")
+    if not isinstance(workflow_run_id, str) or not workflow_run_id:
+        raise ValueError("Skill receipt journal is missing its workflow_run_id.")
+    run = session.exec(
+        select(AgentWorkflowRun).where(AgentWorkflowRun.run_id == workflow_run_id)
+    ).first()
+    if not run:
+        raise ValueError("Skill receipt journal references an unknown workflow run.")
+    return _import_receipt_payload(
+        session,
+        payload,
+        run.run_id,
+        run.workflow_type,
+        run.subject_type,
+        run.subject_id,
+    )
+
+
 def require_agent_skill_receipts(
     session: Session,
     workflow_run_id: str,
@@ -229,9 +255,12 @@ def require_agent_skill_receipts(
     }
     missing = sorted(required_skills - captured)
     if missing:
-        raise ValueError(
+        message = (
             f"Verified OpenCode Skill receipts are required before {operation}: {', '.join(missing)}."
         )
+        if settings.skill_receipt_enforcement == "strict":
+            raise ValueError(message)
+        logger.warning("%s Proceeding because skill receipt enforcement is warn.", message)
 
 
 def get_agent_skill_receipts(session: Session, workflow_run_id: str) -> list[AgentSkillExecutionReceipt]:

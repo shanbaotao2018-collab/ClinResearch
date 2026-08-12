@@ -216,6 +216,7 @@ def test_full_text_evidence_bias_and_binary_meta_analysis_require_signed_skills(
     secret = "test-systematic-receipt-key"
     monkeypatch.setattr(settings, "skill_receipt_key", secret)
     monkeypatch.setattr(settings, "skill_receipt_dir", str(tmp_path))
+    monkeypatch.setattr(settings, "skill_receipt_enforcement", "strict")
     with Session(engine) as session:
         project, citations = _screened_project(session)
         run = start_evidence_extraction_workflow_record(session, project.id, actor="test")

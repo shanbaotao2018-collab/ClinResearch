@@ -4,11 +4,11 @@ import { readFile } from "node:fs/promises";
 const root = new URL("../../", import.meta.url);
 const [primary, search, screening, studyDesign, evidenceExtraction, researchWriting] = await Promise.all([
   readFile(new URL(".opencode/agents/literature-review.md", root), "utf8"),
-  readFile(new URL(".opencode/agents/search-agent.md", root), "utf8"),
-  readFile(new URL(".opencode/agents/screening-agent.md", root), "utf8"),
-  readFile(new URL(".opencode/agents/study-design-agent.md", root), "utf8"),
-  readFile(new URL(".opencode/agents/evidence-extraction-agent.md", root), "utf8"),
-  readFile(new URL(".opencode/agents/research-writing-agent.md", root), "utf8"),
+  readFile(new URL(".opencode/agents/search.md", root), "utf8"),
+  readFile(new URL(".opencode/agents/screening.md", root), "utf8"),
+  readFile(new URL(".opencode/agents/study-design.md", root), "utf8"),
+  readFile(new URL(".opencode/agents/evidence-extraction.md", root), "utf8"),
+  readFile(new URL(".opencode/agents/research-writing.md", root), "utf8"),
 ]);
 
 for (const skill of ["pubmed-search-specialist", "reference-search"]) {

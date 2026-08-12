@@ -23,6 +23,7 @@ from app.models import (
     CitationSafetyCheck,
     EvidenceExtraction,
     FullTextDocument,
+    FullTextAvailability,
     FullTextEvidenceDetail,
     PrismaCount,
     Project,
@@ -261,6 +262,9 @@ def review_detail(session: Session, project_id: int) -> dict[str, Any] | None:
     full_text_documents = session.exec(
         select(FullTextDocument).where(FullTextDocument.project_id == project_id)
     ).all()
+    full_text_availability = session.exec(
+        select(FullTextAvailability).where(FullTextAvailability.project_id == project_id)
+    ).all()
     document_data = [
         {
             **_record(item),
@@ -297,6 +301,7 @@ def review_detail(session: Session, project_id: int) -> dict[str, Any] | None:
             ).all()
         ],
         "citations": [_record(item) for item in citations],
+        "full_text_availability": [_record(item) for item in full_text_availability],
         "prisma": _approval(
             session.exec(select(PrismaCount).where(PrismaCount.project_id == project_id)).first()
         ),

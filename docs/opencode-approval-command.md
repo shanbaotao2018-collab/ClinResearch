@@ -11,9 +11,9 @@
 - `literature_review_approve_systematic_evidence`
 - `literature_review_approve_research_writing`
 
-研究设计默认使用 `literature_review_finalize_study_design`：它把申请、确认、随机化和导出封装为一次调用。OpenCode 会在工具真正执行前显示权限确认，用户选择 Allow 时才会继续，选择 Deny 时不会修改后端审批状态。旧的分步审批工具仍保留用于兼容历史项目。MCP 工具会由本地进程携带审批密钥调用后端校验接口；密钥不会进入工具参数或模型上下文。
+研究设计默认使用 `literature_review_finalize_study_design`：它把申请、确认、随机化和导出封装为一次调用。OpenCode 会在工具真正执行前显示权限确认，用户选择 Allow 时才会继续，选择 Deny 时不会修改后端审批状态。允许后，后端直接写入内部确认审计记录，不依赖审批密钥。旧的分步审批工具仍保留用于兼容历史项目和受保护 REST 审批场景。
 
-使用 OpenCode 原生确认时，后端必须在启动时配置对应审批密钥。终端 `approve-workflow.sh` 是没有 OpenCode UI、或需要独立复核时的备用入口。
+研究设计使用 OpenCode 原生确认时，后端不需要配置研究设计审批密钥。终端 `approve-workflow.sh` 是没有 OpenCode UI、或需要独立复核时的备用入口；该备用入口仍需要后端配置相应审批密钥。
 
 ## 使用方式
 

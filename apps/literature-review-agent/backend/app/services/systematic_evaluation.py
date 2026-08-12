@@ -104,7 +104,7 @@ def validate_full_text_documents(
             raise ValueError("Full-text content exceeds the 2,000,000 character safety limit.")
         if item.page_count is not None and item.page_count < 1:
             raise ValueError("page_count must be positive when supplied.")
-        if item.source_kind != "user_provided_full_text" and not item.source_url:
+        if item.source_kind in {"open_access_html", "pdf_extracted_markdown"} and not item.source_url:
             raise ValueError("Public HTML and PDF sources require an HTTPS source_url.")
         if item.source_url and not item.source_url.startswith("https://"):
             raise ValueError("source_url must use HTTPS when supplied.")

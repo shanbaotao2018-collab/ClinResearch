@@ -1,5 +1,6 @@
 from __future__ import annotations
 
+import asyncio
 import re
 from typing import Any
 from xml.etree import ElementTree
@@ -7,6 +8,10 @@ from xml.etree import ElementTree
 import httpx
 
 from app.config import settings
+from app.services.literature_access import (
+    require_live_literature_access,
+    translate_literature_request_error,
+)
 
 PUBMED_USER_AGENT = "literature-review-agent/0.1"
 DOI_PATTERN = re.compile(r"10\.\d{4,9}/\S+", re.IGNORECASE)
@@ -104,35 +109,84 @@ def normalize_europepmc_record(record: dict[str, Any]) -> dict[str, Any]:
     }
 
 
-async def _get_json(url: str, params: dict[str, Any]) -> dict[str, Any]:
+async def _get_json(url: str, params: dict[str, Any], source: str) -> dict[str, Any]:
+    require_live_literature_access(source)
     headers = {"User-Agent": PUBMED_USER_AGENT}
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.get(url, params=params, headers=headers)
-        response.raise_for_status()
-        return response.json()
+    error: httpx.HTTPError | None = None
+    for attempt in range(3):
+        try:
+            # Desktop connectors use the user's direct public-network path,
+            # not stale shell proxy variables inherited by OpenCode.
+            async with httpx.AsyncClient(timeout=30.0, trust_env=False) as client:
+                response = await client.get(url, params=params, headers=headers)
+                response.raise_for_status()
+                return response.json()
+        except httpx.HTTPError as request_error:
+            error = request_error
+            if attempt < 2:
+                await asyncio.sleep(0.4 * (attempt + 1))
+    assert error is not None
+    fallback = translate_literature_request_error(source, error)
+    if fallback:
+        raise fallback from error
+    raise error
 
 
-async def _get_text(url: str, params: dict[str, Any]) -> str:
+async def _get_text(url: str, params: dict[str, Any], source: str) -> str:
+    require_live_literature_access(source)
     headers = {"User-Agent": PUBMED_USER_AGENT}
-    async with httpx.AsyncClient(timeout=30.0) as client:
-        response = await client.get(url, params=params, headers=headers)
-        response.raise_for_status()
-        return response.text
+    error: httpx.HTTPError | None = None
+    for attempt in range(3):
+        try:
+            async with httpx.AsyncClient(timeout=30.0, trust_env=False) as client:
+                response = await client.get(url, params=params, headers=headers)
+                response.raise_for_status()
+                return response.text
+        except httpx.HTTPError as request_error:
+            error = request_error
+            if attempt < 2:
+                await asyncio.sleep(0.4 * (attempt + 1))
+    assert error is not None
+    fallback = translate_literature_request_error(source, error)
+    if fallback:
+        raise fallback from error
+    raise error
 
 
-async def search_pubmed_records(query: str, limit: int = 5) -> list[dict[str, Any]]:
+async def search_pubmed_records_page(
+    query: str,
+    *,
+    page_size: int = 20,
+    offset: int = 0,
+) -> dict[str, Any]:
+    """Retrieve one stable PubMed result page with the source hit count."""
+    normalized_page_size = max(1, min(page_size, 100))
+    normalized_offset = max(0, offset)
     esearch_payload = await _get_json(
         f"{settings.pubmed_base_url}/esearch.fcgi",
         {
             "db": "pubmed",
             "retmode": "json",
-            "retmax": max(1, min(limit, 20)),
+            "retmax": normalized_page_size,
+            "retstart": normalized_offset,
             "term": query,
         },
+        "pubmed",
     )
-    ids = esearch_payload.get("esearchresult", {}).get("idlist", [])
+    result = esearch_payload.get("esearchresult", {})
+    ids = result.get("idlist", [])
+    try:
+        total_count = int(result.get("count", 0))
+    except (TypeError, ValueError):
+        total_count = 0
     if not ids:
-        return []
+        return {
+            "records": [],
+            "total_count": total_count,
+            "offset": normalized_offset,
+            "page_size": normalized_page_size,
+            "has_more": False,
+        }
 
     xml_text = await _get_text(
         f"{settings.pubmed_base_url}/efetch.fcgi",
@@ -141,11 +195,25 @@ async def search_pubmed_records(query: str, limit: int = 5) -> list[dict[str, An
             "retmode": "xml",
             "id": ",".join(ids),
         },
+        "pubmed",
     )
     root = ElementTree.fromstring(xml_text)
     articles = [normalize_pubmed_article(article) for article in root.findall(".//PubmedArticle")]
     article_by_id = {item.get("external_id"): item for item in articles}
-    return [article_by_id[item_id] for item_id in ids if item_id in article_by_id]
+    records = [article_by_id[item_id] for item_id in ids if item_id in article_by_id]
+    return {
+        "records": records,
+        "total_count": total_count,
+        "offset": normalized_offset,
+        "page_size": normalized_page_size,
+        "has_more": normalized_offset + len(ids) < total_count,
+    }
+
+
+async def search_pubmed_records(query: str, limit: int = 5) -> list[dict[str, Any]]:
+    """Retrieve the first small PubMed result page for interactive exploration."""
+    page = await search_pubmed_records_page(query, page_size=max(1, min(limit, 20)))
+    return page["records"]
 
 
 async def fetch_pubmed_record(pmid: str) -> dict[str, Any] | None:
@@ -178,6 +246,7 @@ async def check_pubmed_retraction_status(pmid: str) -> dict[str, str]:
                 "OR \"Published Erratum\"[Publication Type])"
             ),
         },
+        "pubmed",
     )
     ids = payload.get("esearchresult", {}).get("idlist", [])
     if pmid in ids:
@@ -193,18 +262,44 @@ async def check_pubmed_retraction_status(pmid: str) -> dict[str, str]:
     }
 
 
-async def search_europepmc_records(query: str, limit: int = 5) -> list[dict[str, Any]]:
+async def search_europepmc_records_page(
+    query: str,
+    *,
+    page_size: int = 20,
+    cursor_mark: str = "*",
+) -> dict[str, Any]:
+    """Retrieve one Europe PMC cursor page without losing the total hit count."""
+    normalized_page_size = max(1, min(page_size, 100))
     payload = await _get_json(
         f"{settings.europe_pmc_base_url}/search",
         {
             "query": query,
             "format": "json",
-            "pageSize": max(1, min(limit, 20)),
+            "pageSize": normalized_page_size,
             "resultType": "core",
+            "cursorMark": cursor_mark or "*",
         },
+        "europe_pmc",
     )
     results = payload.get("resultList", {}).get("result", [])
-    return [normalize_europepmc_record(item) for item in results]
+    try:
+        total_count = int(payload.get("hitCount", 0))
+    except (TypeError, ValueError):
+        total_count = 0
+    next_cursor_mark = payload.get("nextCursorMark")
+    return {
+        "records": [normalize_europepmc_record(item) for item in results],
+        "total_count": total_count,
+        "cursor_mark": cursor_mark or "*",
+        "next_cursor_mark": next_cursor_mark,
+        "has_more": bool(results) and bool(next_cursor_mark) and next_cursor_mark != cursor_mark,
+    }
+
+
+async def search_europepmc_records(query: str, limit: int = 5) -> list[dict[str, Any]]:
+    """Retrieve the first small Europe PMC page for interactive exploration."""
+    page = await search_europepmc_records_page(query, page_size=max(1, min(limit, 20)))
+    return page["records"]
 
 
 async def fetch_europepmc_open_access_full_text(pmid: str) -> dict[str, Any] | None:
@@ -219,6 +314,7 @@ async def fetch_europepmc_open_access_full_text(pmid: str) -> dict[str, Any] | N
             "pageSize": 1,
             "resultType": "core",
         },
+        "europe_pmc",
     )
     records = payload.get("resultList", {}).get("result", [])
     if not records:
@@ -229,8 +325,8 @@ async def fetch_europepmc_open_access_full_text(pmid: str) -> dict[str, Any] | N
     if not pmcid or matched_pmid != pmid:
         return None
     source_url = f"{settings.europe_pmc_base_url}/{pmcid}/fullTextXML"
-    content_text = await _get_text(source_url, {})
-    if len(content_text.strip()) < 40:
+    content_text = await _get_text(source_url, {}, "europe_pmc")
+    if len(content_text.encode("utf-8")) < 10_000 or "<article" not in content_text[:2_000].lower():
         return None
     return {
         "pmid": pmid,

@@ -131,22 +131,24 @@ bash scripts/opencode/sync-medical-research-skills.sh
 
 ## 8. 已经落地的 MCP tools
 
-目前这版 OpenCode 路线除了 skills 之外，已经补上了一层本地 MCP server：
+目前这版 OpenCode 路线除了 skills 之外，已经补上了一层由统一后端托管的 MCP endpoint：
 
 - `apps/literature-review-agent/backend/app/mcp_server.py`
 - `apps/literature-review-agent/backend/app/services/project_workflow.py`
-- `scripts/opencode/run-literature-review-mcp.sh`
-- `opencode.json` 里的本地 `literature_review` MCP 配置
+- `apps/literature-review-agent/backend/app/main.py` 挂载的 `/mcp/`
+- `opencode.json` 里的远程 `literature_review` MCP 配置（默认 `http://127.0.0.1:8010/mcp/`）
 
-当前已经暴露 9 个工具。
+当前已经暴露 11 个工具。
 
 ### 8.1 工作流推进类工具
 
 1. `create_review_project`
 2. `generate_project_search_strategy`
-3. `import_citations_to_project`
-4. `deduplicate_project_citations`
-5. `submit_screening_decisions`
+3. `get_literature_access_status`
+4. `import_citations_to_project`
+5. `import_citations_file_to_project`
+6. `deduplicate_project_citations`
+7. `submit_screening_decisions`
 
 ### 8.2 检索与导出类工具
 
@@ -270,7 +272,21 @@ bash scripts/opencode/sync-medical-research-skills.sh
 
 - `imported_count`
 
-### 10.4 `deduplicate_project_citations`
+### 10.4 `import_citations_file_to_project`
+
+作用：
+
+- 当服务器无法直接访问 PubMed、Europe PMC 等医学数据库时，从服务器本地题录文件导入文献
+- 支持 `JSON`、`CSV`、`RIS`、`NBIB`
+- 文件必须位于 `LRA_LITERATURE_IMPORT_DIR` 配置目录内
+
+输出：
+
+- `parsed_count`
+- `imported_count`
+- 导入后的本地 `citation_id`
+
+### 10.5 `deduplicate_project_citations`
 
 作用：
 
@@ -308,14 +324,15 @@ bash scripts/opencode/sync-medical-research-skills.sh
 4. 主 agent 调 `generate_project_search_strategy`
 5. 主 agent 调 `search-agent`
 6. `search-agent` 产出检索式优化建议和数据库建议
-7. 主 agent 调 `search_pubmed` / `search_europepmc`
-8. 主 agent 调 `import_citations_to_project`
-9. 主 agent 调 `deduplicate_project_citations`
-10. 主 agent 调 `screening-agent`
-11. `screening-agent` 对候选文献给出纳入/排除建议
-12. 主 agent 调 `submit_screening_decisions`
-13. 主 agent 调 `export_review_bundle`
-14. 主 agent 汇总输出：
+7. 主 agent 调 `get_literature_access_status`
+8. 通过统一后端的 MCP 端点读取访问模式。在线或自动模式下，主 agent 调 `search_pubmed` / `search_europepmc`；离线模式优先调 `list_offline_evidence_packages` 后用 `import_offline_evidence_package`，只有散题录文件时才用 `import_citations_file_to_project`
+9. 主 agent 调 `import_citations_to_project`，或确认离线证据包/题录文件导入已完成
+10. 主 agent 调 `deduplicate_project_citations`
+11. 主 agent 调 `screening-agent`
+12. `screening-agent` 对候选文献给出纳入/排除建议
+13. 主 agent 调 `submit_screening_decisions`
+14. 主 agent 调 `export_review_bundle`
+15. 主 agent 汇总输出：
    - Research Question
    - PICO
    - Search Strategy Draft
@@ -427,10 +444,10 @@ cd /Users/shanbaotao/Documents/agent\ 2
 - `.agents/skills/*/SKILL.md`
 - `opencode.json`
 
-其中 `opencode.json` 里已经配置了本地 MCP：
+其中 `opencode.json` 已配置统一后端暴露的远程 MCP：
 
 - server name: `literature_review`
-- launch command: `bash scripts/opencode/run-literature-review-mcp.sh`
+- endpoint: `http://127.0.0.1:8010/mcp/`
 
 ### 14.3 使用方式
 
@@ -491,6 +508,7 @@ opencode run --agent literature-review "帮我为 2 型糖尿病与 SGLT2 抑制
 2. MCP 工具注册成功
    - `create_review_project`
    - `generate_project_search_strategy`
+   - `get_literature_access_status`
    - `import_citations_to_project`
    - `deduplicate_project_citations`
    - `submit_screening_decisions`

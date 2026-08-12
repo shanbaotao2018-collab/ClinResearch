@@ -1,6 +1,6 @@
 {
   "case_id": "mvp-evidence-extraction-hcq-covid-historical",
-  "agent": "evidence-extraction-agent",
+  "agent": "evidence-extraction",
   "purpose": "验证摘要级证据、公开全文入库、RoB 2 初评、二分类Meta、审批锁和系统评价包。",
   "runtime_parameters": {
     "project_id": "{{review_project_id_from_case_02}}",

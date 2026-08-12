@@ -5,17 +5,31 @@
 
 # Local runtimes, secrets, receipts, and generated study allocations
 runtime/
+.runtime/
+.tmp/
 outputs/
 apps/literature-review-agent/backend/runtime/
 **/.venv/
 **/__pycache__/
 *.py[cod]
+*.sqlite
+*.sqlite3
+*.db-journal
+*.db-wal
+*.db-shm
+
+# The current local project database is runtime state, not source code.
+literature_review_agent.db
 
 # Local browser/build artifacts
 .playwright-mcp/
 **/node_modules/
 **/dist/
+**/out/
 *.tsbuildinfo
+
+# One-off frontend bundle emitted during desktop UI experiments.
+new-session-*.js
 
 # Competition media and generated submission artifacts stay outside source control
 deliverables/
@@ -26,6 +40,13 @@ deliverables/
 *.pptx
 *.pdf
 *.docx
+
+# Generated global-install release archives are rebuilt from source.
+packages/clinresearch-opencode-global/dist/
+
+# The branded OpenCode desktop source is maintained as a separate upstream fork.
+# Keep its multi-gigabyte clone out of the ClinResearch application repository.
+vendor/opencode-desktop-source/
 
 # Upstream Skill packaging reports are not runtime dependencies
 .agents/skills/**/POLISH_CHANGELOG.md

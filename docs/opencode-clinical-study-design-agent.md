@@ -2,7 +2,7 @@
 
 ## 定位
 
-`study-design-agent` 是医学科研工作台的第一个方案设计闭环。它将自然语言科研想法沉淀为一个可追踪的本地项目；由当前 OpenCode 操作者完成内部人工确认后，才导出不含随机分配序列的研究方案工作包。
+`study-design`（研究设计）是医学科研工作台的第一个方案设计闭环。它将自然语言科研想法沉淀为一个可追踪的本地项目；由当前 OpenCode 操作者完成内部人工确认后，才导出不含随机分配序列的研究方案工作包。
 
 支持的研究类型：
 
@@ -41,7 +41,7 @@
 
 ```bash
 bash scripts/opencode/sync-medical-research-skills.sh
-opencode --agent study-design-agent
+opencode --agent study-design
 ```
 
 示例任务：
@@ -62,7 +62,7 @@ SGLT2 抑制剂联合标准治疗是否可降低 12 个月内心衰住院风险�
 - 样本量的效应假设、alpha、power 与适用范围
 - RCT 的分组与区组大小
 
-审批密钥仅配置在后端环境变量 `LRA_STUDY_DESIGN_APPROVAL_KEY`，不会暴露给模型上下文或工具参数。MCP 本地进程在权限确认通过后使用该配置完成后端校验。MVP 在本机受限目录保存随机分配表并校验哈希；只有持有该密钥的试验运营人员可通过 `GET /study-design-projects/{id}/randomization-schedule` 读取。导出的 Markdown 只包含随机化计划和受控状态，不包含实际分配序列。
+默认 OpenCode 工作流以 `finalize_study_design` 的原生 Allow/Deny 作为唯一人工确认门禁；允许后，后端直接写入审批人与审批范围的审计记录，不需要 `LRA_STUDY_DESIGN_APPROVAL_KEY`。MVP 在本机受限目录保存随机分配表并校验哈希；旧的受保护 REST 读取接口仍要求该密钥，只有授权试验运营人员可通过 `GET /study-design-projects/{id}/randomization-schedule` 读取。导出的 Markdown 只包含随机化计划和受控状态，不包含实际分配序列。
 
 每次 MCP 调用均需携带项目创建时返回的 `workflow.run_id`，后端会记录操作及输入/输出摘要哈希，方便复核流程而不重复保存敏感内容。
 
@@ -76,7 +76,7 @@ SGLT2 抑制剂联合标准治疗是否可降低 12 个月内心衰住院风险�
 
 ```bash
 export LRA_SKILL_RECEIPT_KEY='replace-with-a-high-entropy-secret'
-opencode --agent study-design-agent
+opencode --agent study-design
 ```
 
 该机制证明 Skill 工具曾在指定 OpenCode 会话中真实运行；它不替代医院级身份认证、审计平台或密钥托管。

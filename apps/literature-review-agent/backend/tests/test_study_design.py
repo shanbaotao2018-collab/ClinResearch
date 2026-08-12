@@ -164,6 +164,7 @@ def test_signed_skill_receipts_are_required_and_tampering_is_rejected(monkeypatc
     secret = "test-skill-receipt-key"
     monkeypatch.setattr(settings, "skill_receipt_key", secret)
     monkeypatch.setattr(settings, "skill_receipt_dir", str(tmp_path))
+    monkeypatch.setattr(settings, "skill_receipt_enforcement", "strict")
     with Session(engine) as session:
         project = _create_rct_project(session)
         run = start_study_design_workflow_run(session, project.id, actor="test")

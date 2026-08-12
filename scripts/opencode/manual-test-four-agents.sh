@@ -64,16 +64,16 @@ case "$MODE" in
   check)
     echo "===== OpenCode Agent 检查 ====="
     expected_agents=(
-      "study-design-agent"
+      "study-design"
       "literature-review"
-      "evidence-extraction-agent"
-      "research-writing-agent"
-      "search-agent"
-      "screening-agent"
+      "evidence-extraction"
+      "research-writing"
+      "search"
+      "screening"
     )
     for agent in "${expected_agents[@]}"; do
       if [[ -f "$ROOT_DIR/.opencode/agents/$agent.md" ]]; then
-        if [[ "$agent" == "search-agent" || "$agent" == "screening-agent" ]]; then
+        if [[ "$agent" == "search" || "$agent" == "screening" ]]; then
           echo "**${agent}** (subagent)"
         else
           echo "**${agent}** (primary)"
@@ -89,7 +89,7 @@ case "$MODE" in
 
   study)
     require_runtime
-    run_agent "study-design-agent" \
+    run_agent "study-design" \
       "请使用 testdata/mvp-four-agent/05-study-design-internal-approval-input.json 的假设性高血压出院随访研究案例，完成临床科研方案设计 MVP。调用规定 Skills 和 MCP 工具，输出 PICO、研究类型、纳排标准、主要结局、样本量假设和随机化方案。不要生成实际受试者分配表，不提供临床决策建议。"
     ;;
 
@@ -101,13 +101,13 @@ case "$MODE" in
 
   evidence)
     require_runtime
-    run_agent "evidence-extraction-agent" \
+    run_agent "evidence-extraction" \
       "请对已经完成筛选的 review 项目 #${REVIEW_PROJECT_ID} 执行 testdata/mvp-four-agent/03-evidence-extraction-input.json 的完整证据抽取案例。对纳入研究完成摘要级证据、撤稿核查、受控公开全文获取、基线和二分类结局抽取、RoB 2、RR 随机效应 Meta 和森林图。完成后进入系统评价内部人工确认流程，不要自行确认、导出或给出临床用药建议。"
     ;;
 
   writing)
     require_runtime
-    run_agent "research-writing-agent" \
+    run_agent "research-writing" \
       "请使用 review 项目 #${REVIEW_PROJECT_ID} 中已保存的证据，执行 testdata/mvp-four-agent/04-research-writing-input.json 的 discussion 写作案例。先读取研究写作来源，只使用已保存事实；调用 biomed-outline-generator、method-writing、discussion-section-architect，保存版本化草稿并进入科研写作内部人工确认流程。不得编造引用、效应量或临床建议。"
     ;;
 

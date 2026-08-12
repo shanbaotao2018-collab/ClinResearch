@@ -3,6 +3,7 @@ from __future__ import annotations
 import hashlib
 import hmac
 import json
+import logging
 import math
 import os
 import random
@@ -29,6 +30,9 @@ from app.models import (
 )
 from app.schemas import StudyDesignContentUpdate, StudyDesignProjectCreate
 from app.services.phi_guard import assert_no_phi
+
+
+logger = logging.getLogger(__name__)
 
 
 _STUDY_TYPE_BLUEPRINTS = {
@@ -179,7 +183,10 @@ def require_skill_receipts(session: Session, workflow_run_id: str, project_id: i
     received = set(session.exec(select(StudyDesignSkillExecutionReceipt.skill_name).where(StudyDesignSkillExecutionReceipt.workflow_run_id == workflow_run_id)).all())
     missing = sorted(required - received)
     if missing:
-        raise ValueError(f"Verified OpenCode Skill receipts are required before {gate}: {', '.join(missing)}.")
+        message = f"Verified OpenCode Skill receipts are required before {gate}: {', '.join(missing)}."
+        if settings.skill_receipt_enforcement == "strict":
+            raise ValueError(message)
+        logger.warning("%s Proceeding because skill receipt enforcement is warn.", message)
 
 
 def _approval_scope(project: StudyDesignProject, plan: StudyDesignRandomizationPlan | None) -> dict[str, Any]:

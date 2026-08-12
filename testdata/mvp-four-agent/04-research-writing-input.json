@@ -1,6 +1,6 @@
 {
   "case_id": "mvp-research-writing-hcq-covid-discussion",
-  "agent": "research-writing-agent",
+  "agent": "research-writing",
   "purpose": "验证来源清单绑定的科研写作、Skill回执、写作审批和导出闭环。",
   "runtime_parameters": {
     "source_type": "review",

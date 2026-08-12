@@ -1,0 +1,25 @@
+{
+  "name": "clinresearch-opencode-global",
+  "version": "0.3.22",
+  "description": "Global OpenCode integration for the ClinResearch medical research agents.",
+  "opencode_min_version": "1.17.0",
+  "components": {
+    "primary_agents": [
+      "literature-review",
+      "study-design",
+      "evidence-extraction",
+      "research-writing"
+    ],
+    "subagents": [
+      "search",
+      "screening"
+    ],
+    "commands": [
+      "literature-review",
+      "study-design",
+      "evidence-extraction",
+      "research-writing"
+    ],
+    "mcp_name": "literature_review"
+  }
+}

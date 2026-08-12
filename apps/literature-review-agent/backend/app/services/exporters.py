@@ -5,9 +5,11 @@ from typing import Any
 
 from sqlmodel import Session, select
 
-from app.models import AuditLog, Citation, Project, ProjectStatus, SearchStrategyVersion
+from app.models import AuditLog, Citation, FullTextAvailability, Project, ProjectStatus, SearchStrategyVersion
 from app.schemas import AuditLogRead, CitationRead, PrismaRead, ProjectRead, SearchStrategyRead
 from app.services.screening import rebuild_prisma_counts
+from app.services.screening import latest_screening_decisions
+from app.services.formal_retrieval import require_formal_retrieval_ready
 
 
 def build_review_bundle_data(
@@ -18,6 +20,8 @@ def build_review_bundle_data(
     if not project:
         return None
 
+    require_formal_retrieval_ready(session, project_id)
+
     exportable_statuses = {
         ProjectStatus.SCREENING_COMPLETED,
         ProjectStatus.PRISMA_GENERATED,
@@ -25,6 +29,17 @@ def build_review_bundle_data(
     }
     if project.status not in exportable_statuses:
         raise ValueError("Screening decisions must be completed before exporting a review bundle.")
+
+    pending_human_review = sorted(
+        item.citation_id
+        for item in latest_screening_decisions(session, project_id).values()
+        if item.decision == "human_review"
+    )
+    if pending_human_review:
+        raise ValueError(
+            "Resolve every human_review decision before exporting a final review bundle. "
+            f"Pending citation IDs: {pending_human_review}."
+        )
 
     citations = session.exec(
         select(Citation).where(Citation.project_id == project_id).order_by(Citation.id)
@@ -38,6 +53,40 @@ def build_review_bundle_data(
         .order_by(SearchStrategyVersion.version_number)
     ).all()
     prisma = rebuild_prisma_counts(session, project_id)
+    availability = {
+        item.citation_id: item
+        for item in session.exec(
+            select(FullTextAvailability).where(FullTextAvailability.project_id == project_id)
+        ).all()
+    }
+    included_ids = sorted(
+        citation_id
+        for citation_id, decision in latest_screening_decisions(session, project_id).items()
+        if decision.decision == "include"
+    )
+    missing_preflight = sorted(set(included_ids) - set(availability))
+    if missing_preflight:
+        raise ValueError(
+            "Final included citations require an explicit full-text preflight record before exporting a review bundle. "
+            f"Missing citation IDs: {missing_preflight}."
+        )
+
+    included_preflight = [availability[citation_id] for citation_id in included_ids]
+    full_text_preflight = {
+        "included_count": len(included_ids),
+        "preflighted_count": len(included_preflight),
+        "full_text_ready_count": sum(item.status == "full_text_ready" for item in included_preflight),
+        "cached_full_text_count": sum(item.full_text_document_id is not None for item in included_preflight),
+        "pdf_needed_citation_ids": sorted(
+            item.citation_id for item in included_preflight if item.status == "pdf_needed"
+        ),
+        "access_unavailable_citation_ids": sorted(
+            item.citation_id for item in included_preflight if item.status == "access_unavailable"
+        ),
+        "verification_failed_citation_ids": sorted(
+            item.citation_id for item in included_preflight if item.status == "verification_failed"
+        ),
+    }
 
     project.status = ProjectStatus.EXPORTED
     session.add(project)
@@ -50,6 +99,19 @@ def build_review_bundle_data(
             SearchStrategyRead.model_validate(item).model_dump() for item in strategies
         ],
         "citations": [CitationRead.model_validate(item).model_dump() for item in citations],
+        "full_text_availability": [
+            {
+                "citation_id": citation.id,
+                "status": availability[citation.id].status if citation.id in availability else "not_checked",
+                "pmcid": availability[citation.id].pmcid if citation.id in availability else None,
+                "source_url": availability[citation.id].source_url if citation.id in availability else None,
+                "local_cache_path": availability[citation.id].local_cache_path if citation.id in availability else None,
+                "details": availability[citation.id].details if citation.id in availability else None,
+            }
+            for citation in citations
+            if not citation.is_deduplicated
+        ],
+        "full_text_preflight": full_text_preflight,
         "prisma": PrismaRead.model_validate(prisma).model_dump(),
         "audit_logs": [AuditLogRead.model_validate(item).model_dump() for item in audit_logs],
     }
@@ -61,6 +123,8 @@ def render_review_bundle_markdown(bundle: dict[str, Any]) -> str:
     citations = bundle.get("citations", [])
     prisma = bundle["prisma"]
     audit_logs = bundle.get("audit_logs", [])
+    availability = {item["citation_id"]: item for item in bundle.get("full_text_availability", [])}
+    preflight = bundle["full_text_preflight"]
 
     non_duplicate_citations = [item for item in citations if not item.get("is_deduplicated")]
     lines = [
@@ -106,7 +170,40 @@ def render_review_bundle_markdown(bundle: dict[str, Any]) -> str:
             f"- Included: {prisma['included_count']}",
             f"- Excluded: {prisma['excluded_count']}",
             "",
-            "## Included Citation Candidates",
+            "## Full-Text Preflight",
+            f"- Included citations preflighted: {preflight['preflighted_count']}/{preflight['included_count']}",
+            f"- Verified open full text cached: {preflight['full_text_ready_count']}",
+            f"- Cached full-text documents: {preflight['cached_full_text_count']}",
+            f"- Researcher PDF needed citation IDs: {preflight['pdf_needed_citation_ids'] or 'none'}",
+            f"- Access unavailable citation IDs: {preflight['access_unavailable_citation_ids'] or 'none'}",
+            f"- Verification failed citation IDs: {preflight['verification_failed_citation_ids'] or 'none'}",
+            "- This is a screening-level review bundle. Full-text extraction remains pending unless every included citation has a cached full-text document.",
+            "",
+            "## Local Full-Text Cache",
+        ]
+    )
+
+    cached_paths = [
+        (citation, availability.get(citation["id"]))
+        for citation in non_duplicate_citations
+        if availability.get(citation["id"], {}).get("local_cache_path")
+    ]
+    if cached_paths:
+        lines.extend([
+            "| Citation ID | PMID / Source ID | Full-text status | Local cached file |",
+            "| --- | --- | --- | --- |",
+        ])
+        for citation, item in cached_paths:
+            lines.append(
+                f"| {citation['id']} | {citation.get('external_id') or 'N/A'} | {item['status']} | `{item['local_cache_path']}` |"
+            )
+    else:
+        lines.append("No desktop-local full-text cache path was recorded for this export.")
+
+    lines.extend(
+        [
+            "",
+            "## Retrieved Citation Candidates",
         ]
     )
 
@@ -122,6 +219,8 @@ def render_review_bundle_markdown(bundle: dict[str, Any]) -> str:
                     f"- Year: {year}",
                     f"- DOI: {doi}",
                     f"- Source ID: {citation.get('external_id') or 'N/A'}",
+                    f"- Full Text Status: {availability.get(citation['id'], {}).get('status', 'not_checked')}",
+                    f"- Full Text URL: {availability.get(citation['id'], {}).get('source_url') or 'N/A'}",
                     "",
                 ]
             )

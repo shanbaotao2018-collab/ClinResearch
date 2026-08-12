@@ -2,27 +2,25 @@
 
 本轮重点验证 OpenCode 原生内部人工确认，而不是手工调用 REST。测试使用公开历史文献和脱敏/聚合假设数据，不形成临床建议。
 
-研究设计 Agent 已将“创建审批申请”和“批准申请”封装为一次 `finalize_study_design` 调用。用户只需要在 OpenCode 中选择一次 Allow/Deny；底层仍会校验审批密钥、审批范围 Digest 和项目状态。
+研究设计 Agent 已将“创建审批申请”和“批准申请”封装为一次 `finalize_study_design` 调用。用户只需要在 OpenCode 中选择一次 Allow/Deny；允许后后端会记录审批范围 Digest、审批人和项目状态，不需要研究设计审批密钥。
 
 ## 0. 启动两个终端
 
-终端 A 启动后端。下面的审批密钥只用于本机演示，三组值必须在两个终端保持一致。密钥按本地环境配置，不需要每个新项目重新生成：
+终端 A 启动后端。研究设计 Agent 的默认原生确认不需要审批密钥；下面两组密钥仅用于证据抽取和科研写作 Agent 的本机演示：
 
 ```bash
 cd "/Users/shanbaotao/Documents/agent 2/apps/literature-review-agent/backend"
-export LRA_STUDY_DESIGN_APPROVAL_KEY="local-demo-study-key"
 export LRA_SYSTEMATIC_EVIDENCE_APPROVAL_KEY="local-demo-evidence-key"
 export LRA_RESEARCH_WRITING_APPROVAL_KEY="local-demo-writing-key"
 .venv/bin/uvicorn app.main:app --host 127.0.0.1 --port 8010
 ```
 
-如果提示 `address already in use`，说明已有 8010 服务。不要直接启动第二个服务；先确认占用进程是否使用当前审批密钥，必要时重启旧进程后再继续。
+如果提示 `address already in use`，说明已有 8010 服务。不要直接启动第二个服务；先确认占用进程使用的是当前所需配置，必要时重启旧进程后再继续。
 
 终端 B 启动 OpenCode。测试脚本会自动生成并复用本地 Skill 回执密钥：
 
 ```bash
 cd "/Users/shanbaotao/Documents/agent 2"
-export LRA_STUDY_DESIGN_APPROVAL_KEY="local-demo-study-key"
 export LRA_SYSTEMATIC_EVIDENCE_APPROVAL_KEY="local-demo-evidence-key"
 export LRA_RESEARCH_WRITING_APPROVAL_KEY="local-demo-writing-key"
 bash scripts/opencode/manual-test-four-agents.sh check
@@ -37,7 +35,7 @@ bash scripts/opencode/manual-test-four-agents.sh check
 在终端 B 执行：
 
 ```bash
-opencode --agent study-design-agent
+opencode --agent study-design
 ```
 
 粘贴：
@@ -99,7 +97,7 @@ opencode --agent literature-review
 
 - 是否真实调用 PubMed/Europe PMC；
 - 是否创建新的 `project_id`；
-- 是否调用 `search-agent` 和 `screening-agent`；
+- 是否调用 `search` 和 `screening`；
 - 是否保留本地 citation ID、筛选理由和 PRISMA 计数。
 
 该 Agent 当前没有人工确认节点，重点验证检索、导入、去重和筛选闭环。
@@ -109,7 +107,7 @@ opencode --agent literature-review
 最小回归可复用已完成筛选的项目 `#5`：
 
 ```bash
-opencode --agent evidence-extraction-agent
+opencode --agent evidence-extraction
 ```
 
 粘贴：
@@ -135,7 +133,7 @@ bash scripts/opencode/approve-workflow.sh status evidence 5 <workflow_run_id>
 在证据抽取完成后执行：
 
 ```bash
-opencode --agent research-writing-agent
+opencode --agent research-writing
 ```
 
 粘贴：

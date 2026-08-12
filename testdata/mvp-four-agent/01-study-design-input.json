@@ -1,6 +1,6 @@
 {
   "case_id": "mvp-study-design-heart-failure-transition-care",
-  "agent": "study-design-agent",
+  "agent": "study-design",
   "purpose": "验证临床科研方案设计、两组比例样本量、随机方案和人工审批闭环。",
   "data_attestation": "deidentified_or_aggregate",
   "user_prompt": "请为心内科设计一项研究：成人慢性心力衰竭患者出院后，药师主导的用药核对加电话随访，相较常规出院管理，是否降低30天全因再入院？这是用于MVP方法学演示的假设性研究，不提供任何患者身份信息，也不用于直接临床决策。请按随机对照试验完成研究设计草案、纳排标准、结局、可行性、样本量假设、随机方案和研究方案初稿，并请求外部审批后停止。",

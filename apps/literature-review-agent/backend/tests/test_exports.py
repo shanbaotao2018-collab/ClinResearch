@@ -1,6 +1,9 @@
 from fastapi.testclient import TestClient
+from sqlmodel import Session, select
 
+from app.db import engine
 from app.main import app
+from app.models import Citation
 
 
 client = TestClient(app)
@@ -46,15 +49,29 @@ def test_export_bundle_returns_project_citations_prisma_and_audit():
         },
     )
     client.post(f"/projects/{project['id']}/deduplicate")
+    with Session(engine) as session:
+        citation = session.exec(
+            select(Citation).where(Citation.project_id == project["id"])
+        ).first()
     client.post(
         f"/projects/{project['id']}/screening-decisions",
         json={
-            "citation_id": 1,
+            "citation_id": citation.id,
             "decision": "include",
             "reason": "Matches the review question.",
             "actor": "test_reviewer",
         },
     )
+    preflight_response = client.post(
+        f"/projects/{project['id']}/full-text-preflight",
+        json={"results": [{
+            "citation_id": citation.id,
+            "pmid": "100",
+            "status": "access_unavailable",
+            "details": "Test fixture verified the public full text was unavailable.",
+        }]},
+    )
+    assert preflight_response.status_code == 200
 
     response = client.get(f"/projects/{project['id']}/export")
     assert response.status_code == 200
