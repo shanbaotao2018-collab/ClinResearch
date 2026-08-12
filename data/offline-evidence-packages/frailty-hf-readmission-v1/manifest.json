@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "package_id": "frailty-hf-readmission-v1",
+  "title": "衰弱评估预测心衰再入院：原始离线证据包",
+  "source": "offline_pubmed_pmc_export",
+  "provenance": {
+    "databases": [
+      {
+        "name": "PubMed and PubMed Central",
+        "searched_at": "2026-08-03",
+        "query": "(heart failure[Title/Abstract]) AND (frailty[Title/Abstract]) AND (readmission[Title/Abstract] OR rehospitalization[Title/Abstract]) AND (cohort[Title/Abstract] OR prospective[Title/Abstract])",
+        "exported_count": 2,
+        "retrieval_method": "NCBI E-utilities NBIB export plus original Europe PMC fullTextXML"
+      }
+    ]
+  },
+  "citation_file": {
+    "path": "citations.nbib",
+    "format": "nbib",
+    "sha256": "7a719e5878e7d86a9abd493d72893106b3b8343242e368c12b729782512b8eae"
+  },
+  "documents": [
+    {
+      "path": "fulltext/paper-01-40200138.xml",
+      "content_type": "application/xml",
+      "sha256": "7cb30440ad48aeb57fb39aa77e5b1aaaeb3b625f24070e229e5de612ab08e712",
+      "citation_match": {
+        "external_id": "40200138"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11977903/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-02-38549188.xml",
+      "content_type": "application/xml",
+      "sha256": "90ea50c3969c75ddb7d07202c3c01a74251dbbd8d0ce75f4e534ccf17584ad66",
+      "citation_match": {
+        "external_id": "38549188"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11287353/fullTextXML"
+    }
+  ]
+}

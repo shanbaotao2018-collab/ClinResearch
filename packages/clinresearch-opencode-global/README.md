@@ -13,13 +13,19 @@ and Europe PMC records into the project backend, deduplicates the full imported
 set, then screens records in bounded batches. Ask for `quick_exploration` only
 when a short curated candidate set is intended.
 
-The package deliberately excludes model credentials and does not set OpenCode's global default Agent. Configure a model using your organization's normal OpenCode setup.
+The package never stores model credentials. On a fresh installation it adds the
+SenseNova OpenAI-compatible provider using the `SENSENOVA_API_KEY` environment
+variable. Existing provider or model settings are preserved. Use
+`--skip-model-config` when an organization manages its own model configuration.
 
 ## Prerequisites
 
-1. OpenCode `1.17.0` or later.
-2. Python `3.10` or later for install scripts.
-3. A running ClinResearch unified backend. Its MCP endpoint is `<backend-url>/mcp/`.
+1. Python `3.10` or later for install scripts.
+2. A running ClinResearch unified backend. Its MCP endpoint is `<backend-url>/mcp/`.
+
+The standalone package is also usable with upstream OpenCode 1.17.0 or later.
+The complete ClinResearch repository includes and builds its own branded
+OpenCode desktop client, so a separate OpenCode installation is not required.
 
 ## Install
 
@@ -75,13 +81,19 @@ Verify the generated archive from that directory:
 
 ```bash
 cd dist
-shasum -a 256 -c clinresearch-opencode-global-0.3.22.sha256
+shasum -a 256 -c clinresearch-opencode-global-0.3.23.sha256
 ```
 
 ## Uninstall
 
 ```bash
 bash uninstall.sh
+```
+
+默认卸载会保留本地模型凭证和 Skill 回执密钥，便于安全升级。若确定需要同时清除本地秘密：
+
+```bash
+bash uninstall.sh --remove-secrets
 ```
 
 The uninstaller removes only files whose checksum still matches the installation manifest. Modified files are retained for manual review.

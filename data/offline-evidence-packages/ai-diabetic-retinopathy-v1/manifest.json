@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "package_id": "ai-diabetic-retinopathy-v1",
+  "title": "AI 眼底影像筛查糖尿病视网膜病变：原始离线证据包",
+  "source": "offline_pubmed_pmc_export",
+  "provenance": {
+    "databases": [
+      {
+        "name": "PubMed and PubMed Central",
+        "searched_at": "2026-08-03",
+        "query": "(diabetic retinopathy[Title/Abstract]) AND (artificial intelligence[Title/Abstract] OR deep learning[Title/Abstract]) AND (sensitivity[Title/Abstract] OR specificity[Title/Abstract] OR diagnostic accuracy[Title/Abstract])",
+        "exported_count": 2,
+        "retrieval_method": "NCBI E-utilities NBIB export plus original Europe PMC fullTextXML"
+      }
+    ]
+  },
+  "citation_file": {
+    "path": "citations.nbib",
+    "format": "nbib",
+    "sha256": "35f0a65411bc429a273db77b5be372cc639cdb9a2bc06dde5ca94ee453032433"
+  },
+  "documents": [
+    {
+      "path": "fulltext/paper-01-33087340.xml",
+      "content_type": "application/xml",
+      "sha256": "d7b1e2994bfa06d8c0f5585970645eeacb476350722cc6f581eb512cfea53dbf",
+      "citation_match": {
+        "external_id": "33087340"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7580048/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-02-41857844.xml",
+      "content_type": "application/xml",
+      "sha256": "ddb84bb01d3db7d9b0fd351ae8caac701119d269cdfacfce8c67351e9988dee8",
+      "citation_match": {
+        "external_id": "41857844"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC13007179/fullTextXML"
+    }
+  ]
+}

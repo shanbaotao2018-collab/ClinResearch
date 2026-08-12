@@ -6,6 +6,7 @@ from __future__ import annotations
 import argparse
 import hashlib
 import json
+import os
 import secrets
 import shutil
 import subprocess
@@ -19,12 +20,24 @@ PACKAGE_ROOT = Path(__file__).resolve().parents[1]
 PAYLOAD_ROOT = PACKAGE_ROOT / "payload"
 INSTALL_MANIFEST_NAME = "clinresearch-global-install.json"
 SKILL_RECEIPT_KEY_NAME = "clinresearch-skill-receipt-key"
+MODEL_ENV_NAME = "clinresearch.env"
 APPROVAL_PERMISSIONS = {
     "literature_review_finalize_study_design": "ask",
     "literature_review_approve_study_design": "ask",
     "literature_review_confirm_systematic_evidence_phase_start": "ask",
     "literature_review_approve_systematic_evidence": "ask",
     "literature_review_approve_research_writing": "ask",
+}
+SENSENOVA_PROVIDER = {
+    "npm": "@ai-sdk/openai-compatible",
+    "name": "SenseNova",
+    "options": {
+        "baseURL": "https://token.sensenova.cn/v1",
+        "apiKey": "{env:SENSENOVA_API_KEY}",
+        "timeout": 90000,
+        "chunkTimeout": 90000,
+    },
+    "models": {"deepseek-v4-flash": {"name": "deepseek-v4-flash"}},
 }
 LEGACY_AGENT_FILENAMES = (
     "study-design-agent.md",
@@ -90,6 +103,18 @@ def ensure_skill_receipt_key(config_dir: Path) -> Path:
     return path
 
 
+def ensure_model_env(config_dir: Path, installed: dict[str, str]) -> Path | None:
+    """Persist a supplied key for GUI launches without placing it in OpenCode JSON."""
+    api_key = os.environ.get("SENSENOVA_API_KEY", "").strip()
+    path = config_dir / MODEL_ENV_NAME
+    if path.exists() or not api_key:
+        return path if path.exists() else None
+    path.write_text(f"SENSENOVA_API_KEY={api_key}\n", encoding="utf-8")
+    path.chmod(0o600)
+    installed[str(path)] = sha256_file(path)
+    return path
+
+
 def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Install ClinResearch Agents globally for OpenCode.")
     parser.add_argument(
@@ -111,6 +136,11 @@ def parse_args() -> argparse.Namespace:
         "--upgrade",
         action="store_true",
         help="Back up conflicting ClinResearch files and replace them with this package version.",
+    )
+    parser.add_argument(
+        "--skip-model-config",
+        action="store_true",
+        help="Do not add the default SenseNova provider on a fresh installation.",
     )
     parser.add_argument("--dry-run", action="store_true", help="Validate without writing files.")
     return parser.parse_args()
@@ -146,8 +176,14 @@ def main() -> int:
     mcp = config.setdefault("mcp", {})
     permissions = config.setdefault("permission", {})
     plugins = config.setdefault("plugin", [])
-    if not isinstance(mcp, dict) or not isinstance(permissions, dict) or not isinstance(plugins, list):
-        raise ValueError("OpenCode config fields mcp, permission, and plugin must be object, object, and array.")
+    providers = config.setdefault("provider", {})
+    if (
+        not isinstance(mcp, dict)
+        or not isinstance(permissions, dict)
+        or not isinstance(plugins, list)
+        or not isinstance(providers, dict)
+    ):
+        raise ValueError("OpenCode config fields mcp, permission, provider, and plugin have invalid types.")
     if "literature_review" in mcp:
         raise ValueError("OpenCode config already defines mcp.literature_review; refusing to replace it.")
     for key in APPROVAL_PERMISSIONS:
@@ -205,6 +241,7 @@ def main() -> int:
 
     try:
         skill_receipt_key_path = ensure_skill_receipt_key(config_dir)
+        model_env_path = ensure_model_env(config_dir, files)
         for source in source_agents:
             copy_file(source, config_dir / "agents" / source.name, files)
         for source in source_commands:
@@ -222,6 +259,18 @@ def main() -> int:
         }
         permissions.update(APPROVAL_PERMISSIONS)
         plugins.append(plugin_uri)
+        model_configured = False
+        model_default_added = False
+        small_model_default_added = False
+        if not args.skip_model_config and "sensenova" not in providers:
+            providers["sensenova"] = SENSENOVA_PROVIDER
+            if "model" not in config:
+                config["model"] = "sensenova/deepseek-v4-flash"
+                model_default_added = True
+            if "small_model" not in config:
+                config["small_model"] = "sensenova/deepseek-v4-flash"
+                small_model_default_added = True
+            model_configured = True
         config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
         install_manifest_path.write_text(
             json.dumps(
@@ -236,6 +285,10 @@ def main() -> int:
                     "mcp": mcp["literature_review"],
                     "permissions": APPROVAL_PERMISSIONS,
                     "plugin_uri": plugin_uri,
+                    "model_provider": SENSENOVA_PROVIDER if model_configured else None,
+                    "model_default_added": model_default_added,
+                    "small_model_default_added": small_model_default_added,
+                    "model_env_file": str(model_env_path) if model_env_path else None,
                     "skill_receipt_key_file": str(skill_receipt_key_path),
                 },
                 ensure_ascii=False,
@@ -251,6 +304,11 @@ def main() -> int:
     print(f"Skills: {skills_dir}")
     print(f"MCP: {backend_url}/mcp/")
     print(f"Skill receipt key: {skill_receipt_key_path}")
+    if not args.skip_model_config:
+        if model_env_path:
+            print(f"Model credential file: {model_env_path}")
+        else:
+            print("Model credential is not configured. Set SENSENOVA_API_KEY and run install.sh --upgrade.")
     if upgrade_backup_dir:
         print(f"Previous conflicting files were backed up to: {upgrade_backup_dir}")
     print("Restart OpenCode, then type /literature-review followed by a research question.")

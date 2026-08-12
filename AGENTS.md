@@ -4,9 +4,10 @@ This repository contains experimental and MVP work for medical-domain agents, in
 
 - `apps/literature-review-agent/` for the FastAPI literature review backend
 - `deploy/dify/literature-review-agent/` for the existing Dify-hosted MVP
-- `vendor/medical-research-skills/` for the upstream AIPOCH skill library used in the OpenCode integration
+- `vendor/opencode-bundled/` for the bundled, branded OpenCode desktop source
 - `.opencode/agents/` for project-local OpenCode agent definitions
-- `.agents/skills/` for the curated project-local skill subset that OpenCode can discover directly
+- `.agents/skills/` for the tracked, curated medical-research skill subset that OpenCode can discover directly
+- `packages/clinresearch-opencode-global/` for the globally installable Agent/Skill capability package
 
 ## Scope
 
@@ -32,14 +33,16 @@ When evidence is missing, uncertain, or only abstract-level, state that explicit
 
 ## OpenCode Setup
 
-Before using the OpenCode medical research agents in this repo:
+For normal use on a fresh macOS computer:
 
-1. Review the curated integration guide at `docs/opencode-medical-research-skills-integration.md`
-2. Run `bash scripts/opencode/sync-medical-research-skills.sh` to populate `.agents/skills/`
-3. Start OpenCode from the repository root so it can load:
-   - this `AGENTS.md`
-   - `.opencode/agents/*.md`
-   - `.agents/skills/*/SKILL.md`
+1. Review `docs/fresh-machine-deployment.md`.
+2. Run `bash scripts/install-fresh-mac.sh` from the repository root.
+3. Open `/Applications/临床科研智能体工作台.app`.
+
+OpenCode does not need to be installed separately. The branded source, four primary Agents,
+subagents, tools, plugins, and curated Skills are tracked in this repository. The legacy
+`sync-medical-research-skills.sh` command is only for maintainers who intentionally refresh the
+curated subset from a separately obtained upstream checkout.
 
 ## Agent Workflow Rules
 
@@ -74,14 +77,21 @@ For clinical study-design tasks, default to this sequence:
 5. Save the draft content to the local project
 6. Calculate basic two-group sample size with explicit assumptions
 7. For an explicit RCT, save a randomization plan without generating allocations
-8. Request external approval and wait for the protected approval endpoint to record it
-9. After approval, generate the concealed schedule and export a redacted study-design bundle
+8. Request OpenCode native confirmation at the finalization boundary
+9. After confirmation, record the audit event, generate the concealed schedule, and export a redacted study-design bundle
 
-The study-design project is the system of record once it exists. Do not claim that a protocol, sample-size calculation, or randomization schedule is final before external approval. Never place identifiable patient data in model prompts or MCP calls; provide only de-identified or aggregate research data.
+The study-design project is the system of record once it exists. Do not claim that a protocol,
+sample-size calculation, or randomization schedule is final before OpenCode native confirmation.
+Never place identifiable patient data in model prompts or MCP calls; provide only de-identified or
+aggregate research data.
 
 For evidence-extraction tasks, use `evidence-extraction` only after review screening is complete. Extract only from the citation metadata, abstract, or a user-provided full-text excerpt and record the evidence basis for every row. Do not treat missing fields as negative findings. A PubMed notice lookup is a check-time status, not a permanent citation-safety guarantee. Require researcher review before any evidence row is used as a final conclusion.
 
-For research-writing tasks, use `research-writing` only with a saved study-design project or a review project whose included citations all have evidence-extraction records. Persist a source manifest and unresolved items with every draft. Require external approval before export; never present a generated draft as an approved protocol, grant application, manuscript, or clinical conclusion.
+For research-writing tasks, use `research-writing` only with a saved study-design project or a review
+project whose included citations have evidence-extraction records for the declared synthesis scope.
+Persist a source manifest and unresolved items with every draft. Require OpenCode native confirmation
+before final export; never present a generated draft as an approved protocol, grant application,
+manuscript, or clinical conclusion.
 
 ## Output Rules
 

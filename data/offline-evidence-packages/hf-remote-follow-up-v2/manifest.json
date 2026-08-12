@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "package_id": "hf-remote-follow-up-v2",
+  "title": "心衰出院后远程随访：原始离线证据包",
+  "source": "offline_pubmed_pmc_export",
+  "provenance": {
+    "databases": [
+      {
+        "name": "PubMed and PubMed Central",
+        "searched_at": "2026-08-06",
+        "query": "(heart failure[Title/Abstract]) AND (telephone[Title/Abstract] OR telehealth[Title/Abstract] OR telemedicine[Title/Abstract] OR text messaging[Title/Abstract]) AND randomized controlled trial[Publication Type]",
+        "exported_count": 9,
+        "retrieval_method": "NCBI E-utilities NBIB export plus original Europe PMC fullTextXML"
+      }
+    ]
+  },
+  "citation_file": {
+    "path": "citations.nbib",
+    "format": "nbib",
+    "sha256": "dde793aa59d16c9f063b94ea4bd2423b0ee9cfb0ff0a5458094d3283c106d8aa"
+  },
+  "documents": [
+    {
+      "path": "fulltext/paper-01-40055862.xml",
+      "content_type": "application/xml",
+      "sha256": "1d98a0a877fda0e77cf21c7ab19e17f33bd436351e0dc0dc8c8f49bc7adaedd8",
+      "citation_match": {
+        "external_id": "40055862"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12132665/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-02-38955396.xml",
+      "content_type": "application/xml",
+      "sha256": "177619c100b218696bcdcd5224e8499e1fb4d3bac1808fc0fa09510ca12de4de",
+      "citation_match": {
+        "external_id": "38955396"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11217996/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-03-30170422.xml",
+      "content_type": "application/xml",
+      "sha256": "50502af3bd59d009046db07e4badd1499c97f32dbb81d3d89bc43ba102c4c18e",
+      "citation_match": {
+        "external_id": "30170422"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6392598/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-04-34898447.xml",
+      "content_type": "application/xml",
+      "sha256": "ab2174920ace0ef51bd522429beb7a24ad079f96664943c973172fd7016be971",
+      "citation_match": {
+        "external_id": "34898447"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8713094/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-05-31432915.xml",
+      "content_type": "application/xml",
+      "sha256": "ccbac2e039b89e9d4752085d5b3810accbe619f9f27a96d40a07e270f4642181",
+      "citation_match": {
+        "external_id": "31432915"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6703101/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-06-30418101.xml",
+      "content_type": "application/xml",
+      "sha256": "36e2d8b99159de7dcd04e593f73241c58f2a11ddd372544b42e4c442c0bcc0dc",
+      "citation_match": {
+        "external_id": "30418101"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6784489/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-07-30169539.xml",
+      "content_type": "application/xml",
+      "sha256": "463416b54cc9b2cc4a15fe8e5f08f9982af08527d48e97ff37871f86226cb1ab",
+      "citation_match": {
+        "external_id": "30169539"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6118377/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-08-27488754.xml",
+      "content_type": "application/xml",
+      "sha256": "9b804d56d5b53a97cc1c5c704e5bd30060432f0bc53563ef165b8c12a41f8998",
+      "citation_match": {
+        "external_id": "27488754"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5336747/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-09-30478888.xml",
+      "content_type": "application/xml",
+      "sha256": "ea3b481dabf0891e4fb62df9456314386a7be1fa663e9aba284fde8ac7a9544e",
+      "citation_match": {
+        "external_id": "30478888"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6352960/fullTextXML"
+    }
+  ]
+}

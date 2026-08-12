@@ -33,7 +33,8 @@ bash scripts/release-desktop-mac.sh --install
 - `.opencode/agents/`、`.opencode/commands/`、`.opencode/plugins/` 中的 Agent 与编排定义。
 - 后端 `app/`、测试、脚本和文档。
 - `packages/clinresearch-opencode-global/` 中的安装包源文件，不含 `dist/` 档案。
-- `vendor/opencode-desktop-source/` 中实际修改过的二开源码。后续应单独确定其采用独立仓库还是 Git 子模块管理。
+- `vendor/opencode-bundled/` 中完整、可构建的 OpenCode 二开源码及上游版本记录。
+- `LICENSES/` 和 `THIRD_PARTY_NOTICES.md` 中的第三方许可与来源说明。
 
 不应提交：
 
@@ -44,8 +45,12 @@ bash scripts/release-desktop-mac.sh --install
 ## 提交前检查
 
 ```bash
+python3 scripts/opencode/sync-global-package.py
+bash scripts/verify-source-release.sh
 git status --short
 git diff --check
 ```
 
-检查时应确认：没有运行日志、数据库、构建文件或本机测试输出混入；Agent 文件的重命名以“删除旧名 + 新增新名”成组提交；桌面端源码改动与发布脚本改动一同提交。
+检查时应确认：没有 Git 子模块悬空引用，没有运行日志、数据库、构建文件或本机测试输出混入；
+能力包与项目内 Agent/Skill 单一来源一致；桌面源码可从仓库内独立构建；Agent 文件的重命名以
+“删除旧名 + 新增新名”成组提交；桌面端源码改动与发布脚本改动一同提交。

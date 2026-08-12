@@ -1,0 +1,407 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article article-type="research-article" xml:lang="en" dtd-version="1.4"><front><journal-meta><journal-id journal-id-type="nlm-ta">Rev Lat Am Enfermagem</journal-id><journal-id journal-id-type="iso-abbrev">Rev Lat Am Enfermagem</journal-id><journal-id journal-id-type="pmc-domain-id">2571</journal-id><journal-id journal-id-type="pmc-domain">rlae</journal-id><journal-id journal-id-type="nlm-id">9420934</journal-id><journal-id journal-id-type="publisher-id">rlae</journal-id><journal-title-group><journal-title>Revista Latino-Americana de Enfermagem</journal-title></journal-title-group><issn pub-type="ppub">0104-1169</issn><issn pub-type="epub">1518-8345</issn><?publisher_abbrev eerp?><publisher><publisher-name>Escola de Enfermagem de Ribeirao Preto, Universidade de Sao Paulo</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC6703101</article-id><article-id pub-id-type="pmcid-ver">PMC6703101.1</article-id><article-id pub-id-type="pmcaid">6703101</article-id><article-id pub-id-type="pmcaiid">6703101</article-id><article-id pub-id-type="pmid">31432915</article-id><article-id pub-id-type="doi">10.1590/1518-8345.2484.3159</article-id><article-id pub-id-type="other">00347</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="heading"><subject>Artigo Original</subject></subj-group></article-categories><title-group><article-title>Discharge guidance and telephone follow-up in the therapeutic
+adherence of heart failure: randomized clinical trial<xref ref-type="fn" rid="fn_ast1001">*</xref>
+</article-title><trans-title-group xml:lang="pt"><trans-title>Orientação de alta e acompanhamento telefônico na adesão
+terapêutica da insuficiência cardíaca: ensaio clínico randomizado
+</trans-title></trans-title-group><trans-title-group xml:lang="es"><trans-title>Orientación del alta y seguimiento telefónico en la adhesión
+terapéutica de la insuficiencia cardíaca: un ensayo clínico aleatorizado
+</trans-title></trans-title-group></title-group><contrib-group><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0003-3591-6855</contrib-id><name name-style="western"><surname>Oscalices</surname><given-names initials="MIL">Monica Isabelle Lopes</given-names></name><xref ref-type="aff" rid="aff1">
+<sup>1</sup>
+</xref><xref ref-type="aff" rid="aff2">
+<sup>2</sup>
+</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0003-4200-1186</contrib-id><name name-style="western"><surname>Okuno</surname><given-names initials="MFP">Meiry Fernanda Pinto</given-names></name><xref ref-type="aff" rid="aff1">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0002-8989-4404</contrib-id><name name-style="western"><surname>Lopes</surname><given-names initials="MCBT">Maria Carolina Barbosa Teixeira</given-names></name><xref ref-type="aff" rid="aff1">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0002-7688-2674</contrib-id><name name-style="western"><surname>Campanharo</surname><given-names initials="CRV">Cassia Regina Vancini</given-names></name><xref ref-type="aff" rid="aff1">
+<sup>1</sup>
+</xref></contrib><contrib contrib-type="author"><contrib-id contrib-id-type="orcid" authenticated="false">http://orcid.org/0000-0002-6416-1079</contrib-id><name name-style="western"><surname>Batista</surname><given-names initials="REA">Ruth Ester Assayag</given-names></name><xref ref-type="aff" rid="aff1">
+<sup>1</sup>
+</xref></contrib></contrib-group><aff id="aff1">
+<label>1</label>Universidade Federal de São Paulo, Escola Paulista de Enfermagem,
+São Paulo, SP, Brasil.</aff><aff id="aff2">
+<label>2</label>Instituto Dante Pazzanese de Cardiologia, Pronto Socorro, São Paulo,
+SP, Brasil.</aff><author-notes><corresp id="c01"> Autor correspondente: Monica Isabelle Lopes Oscalices E-mail:
+<email>monicaoscalices@gmail.com</email></corresp></author-notes><pub-date date-type="pub" publication-format="electronic"><day>19</day><month>8</month><year>2019</year></pub-date><pub-date date-type="collection" publication-format="electronic"><year>2019</year></pub-date><volume>27</volume><issue-id pub-id-type="pmc-issue-id">327780</issue-id><elocation-id>e3159</elocation-id><history><date date-type="received"><day>12</day><month>10</month><year>2018</year></date><date date-type="accepted"><day>23</day><month>2</month><year>2019</year></date></history><pub-history><event event-type="pmc-release"><date><day>19</day><month>08</month><year>2019</year></date></event><event event-type="pmc-live"><date><day>27</day><month>08</month><year>2019</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2024-07-18 15:25:13.530"><day>18</day><month>07</month><year>2024</year></date></event></pub-history><permissions><copyright-statement>Copyright © 2019 Revista Latino-Americana de
+Enfermagem</copyright-statement><license xmlns:xlink="http://www.w3.org/1999/xlink" license-type="open-access" xlink:href="https://creativecommons.org/licenses/by/4.0/"><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbylicense">https://creativecommons.org/licenses/by/4.0/</ali:license_ref><license-p> This is an Open Access article distributed under the terms of the
+Creative Commons Attribution License, which permits unrestricted use,
+distribution, and reproduction in any medium, provided the original work is
+properly cited. </license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="0104-1169-rlae-27-e3159.pdf"><?pdf-name 0104-1169-rlae-27-e3159.pdf?><?pdf-size 646239?><?pdf-md5 66f6770de28e090230e1fd865fd3fba7?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:4c8e/6703101/66f6770de28e/0104-1169-rlae-27-e3159.pdf?></self-uri><abstract><sec><title>Objective</title><p> to evaluate the effectiveness of the behavioral intervention of discharge
+guidance and telephone follow-up in the therapeutic adherence,
+re-hospitalization and mortality of patients with heart failure.</p></sec><sec><title>Method</title><p> randomized clinical trial without blinding, including 201 patients diagnosed
+with heart failure admitted to the emergency room, who were randomized in
+Control Group and Intervention Group. Intervention was carried out with
+specific discharge guidance in the Intervention Group, who were contacted
+for solving doubts via phone calls after 7 and 30 days, and the adherence to
+treatment was evaluated after 90 days with the Morisky test, the Brief
+Medical Questionnaire and the non-drug adherence test in both groups. The
+Generalized Estimating Equations Model was used (p&lt;0.05%).</p></sec><sec><title>Results</title><p> One-hundred and one patients were randomly sorted in the Control Group and
+in the Intervention Group, their average age being 62.6±15.2. The
+Intervention Group had higher drug and non-drug therapeutic adherence
+compared to the Control Group (p&lt;0.001) and there were lower
+re-hospitalization and death rates in the Intervention Group after 90
+days.</p></sec><sec><title>Conclusion</title><p> discharge guidance with telephone follow-up was effective and resulted in
+greater therapeutic adherence, as well as in decrease of re-hospitalization
+and death rates in patients with heart failure. Clinical Trial Registration
+(REBEC): RBR- 37n859</p></sec></abstract><trans-abstract xml:lang="pt"><sec><title>Objetivo</title><p> avaliar a efetividade da intervenção comportamental de orientação de alta e
+contato telefônico na adesão terapêutica, re-hospitalizações e mortalidade
+em pacientes com insuficiência cardíaca.</p></sec><sec><title>Método</title><p> ensaio clínico randomizado, sem cegamento, incluídos 201 pacientes,
+internados em pronto socorro, com diagnóstico de insuficiência cardíaca.
+Randomizados em Grupo Controle e Grupo Intervenção, realizada intervenção de
+orientação de alta específica no Grupo Intervenção, contatados para
+reorientação via telefonemas em 07 e 30 dias e após 90 dias avaliado a
+adesão ao tratamento através dos testes de Morisky, <italic toggle="yes">Brief Medical
+Questionnaire</italic> e teste para adesão não medicamentosa em ambos
+grupos. Utilizou-se o Modelo de Equações de Estimação Generalizadas
+(p&lt;0,05%).</p></sec><sec><title>Resultados</title><p> foram alocados aleatoriamente 101 pacientes no Grupo Controle e 100 no Grupo
+Intervenção, com média de idade de 62,6±15,2. O Grupo Intervenção apresentou
+maior adesão terapêutica medicamentosa e não medicamentosa em relação ao
+Grupo Controle (p&lt;0,001) e houve menor índice de re-hospitalização e
+morte no Grupo Intervenção após 90 dias.</p></sec><sec><title>Conclusão</title><p> a orientação de alta com acompanhamento telefônico foi efetiva e resultou em
+maior adesão terapêutica, diminuição de re-hospitalizações e óbitos em
+pacientes com insuficiência cardíaca. Registro de Ensaio Clínico (REBEC):
+RBR- 37n859</p></sec></trans-abstract><trans-abstract xml:lang="es"><sec><title>Objetivo</title><p> evaluar la efectividad de la intervención conductual de orientación del alta
+y seguimiento telefónico en la adhesión terapéutica, las rehospitalizaciones
+y la mortalidad en pacientes con insuficiencia cardíaca.</p></sec><sec><title>Método</title><p> ensayo clínico aleatorizado, no ciego, en el cual participaron 201 pacientes
+internados en la sala de urgencias, con el diagnóstico de insuficiencia
+cardíaca. Divididos al azar en Grupo Control y Grupo Intervención, se
+realizó una intervención de orientación de alta específica en el Grupo
+Intervención, siendo contactado por teléfono para la reorientación en 07 y
+30 días después del alta; y después de 90 días se evaluó la adhesión al
+tratamiento por medio de las pruebas de Morisky, <italic toggle="yes">Brief Medical
+Questionnaire</italic> y la prueba para la adhesión no medicamentosa en
+ambos grupos. Se utilizó el Modelo de Ecuaciones de Estimación Generalizadas
+(p&lt;0,05%).</p></sec><sec><title>Resultados</title><p> fueron asignados aleatoriamente 101 pacientes en el Grupo Control y 100 en
+el Grupo Intervención, con un promedio de edad de 62,6±15,2. El Grupo
+Intervención tuvo una mayor adhesión terapéutica medicamentosa y no
+medicamentosa en comparación al Grupo Control (p&lt;0,001), y hubo menores
+tasas de rehospitalizaciones y de fallecimientos en el Grupo Intervención
+después de 90 días del alta.</p></sec><sec><title>Conclusión</title><p> la orientación del alta y el seguimiento telefónico se mostraron eficaces,
+promoviendo una mayor adhesión terapéutica, una disminución de las
+rehospitalizaciones y de fallecimientos en pacientes con insuficiencia
+cardíaca. Registro de Ensayo Clínico (REBEC): RBR- 37n859</p></sec></trans-abstract><kwd-group><kwd>Heart Failure</kwd><kwd>Education</kwd><kwd>Clinical Trial</kwd><kwd>Nursing</kwd><kwd>Emergency Nursing</kwd><kwd>Patient’s Discharge</kwd></kwd-group><kwd-group xml:lang="pt"><kwd>Insuficiência Cardíaca</kwd><kwd>Educação</kwd><kwd>Ensaio Clínico</kwd><kwd>Enfermagem</kwd><kwd>Enfermagem em Emergência</kwd><kwd>Alta do Paciente</kwd></kwd-group><kwd-group xml:lang="es"><kwd>Insuficiencia Cardíaca</kwd><kwd>Educación</kwd><kwd>Ensayo Clínico</kwd><kwd>Enfermería</kwd><kwd>Enfermería de Urgencia</kwd><kwd>Alta del Paciente</kwd></kwd-group><counts><fig-count count="6"/><table-count count="9"/><equation-count count="0"/><ref-count count="20"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY</meta-value></custom-meta></custom-meta-group></article-meta></front><body><sec sec-type="intro"><title>Introduction</title><p>Heart Failure (HF) represents a problem with great magnitude, as it is the second
+most common cause of death due to cardiovascular diseases in Brazil. The demand for
+emergency services on the part of this population is frequent, and the rates of
+hospitalization due to clinical complications are high, this having been a recurring
+public health problem for almost 20 years<sup><xref rid="B1" ref-type="bibr">1</xref>-<xref rid="B3" ref-type="bibr">3</xref></sup>.</p><p>The high number of hospital admissions due to HF, nearly one million annual
+hospitalizations, is commonly associated with decompensation of the disease, which
+can be triggered by cardiovascular factors, like ischemia and arrhythmias, and
+non-cardiovascular factors, like various types of infection. Another important
+factor in the clinical decompensation of these patients is the non-adherence to the
+treatment recommended for the disease<sup><xref rid="B4" ref-type="bibr">4</xref>-<xref rid="B5" ref-type="bibr">5</xref></sup>.</p><p>It is estimated that 50% of patients with chronic diseases do not adhere to
+treatment, due to voluntary of involuntary factors such as not knowing the
+medications, not understanding the medical prescription, lack of belief in the
+treatment and the patients’ psychosocial conditions<sup><xref rid="B6" ref-type="bibr">6</xref></sup>.</p><p>Discharge guidance is an important factor in the improvement of the patient’s
+understanding of the disease and of adherence to treatment. For an effective
+discharge guidance, it is important that it is conducted individually and according
+to the patients’ understanding of their disease<sup><xref rid="B7" ref-type="bibr">7</xref>-<xref rid="B8" ref-type="bibr">8</xref></sup>.</p><p>Studies reinforce the association of education in health with the improvement of the
+patients’ knowledge about HF, and the nurse plays an important role in the patient’s
+education and adherence to treatment<sup><xref rid="B9" ref-type="bibr">9</xref>-<xref rid="B10" ref-type="bibr">10</xref></sup>.</p><p>The literature demonstrates that telephone follow-up has been efficient, because
+patients who received calls after discharge that were intended to solve doubts,
+control signs and symptoms and guide treatment, adhered more to the therapy
+proposed, and there was decrease of the demand for care in the emergency units, as
+well as of the re-hospitalization and death rates<sup><xref rid="B11" ref-type="bibr">11</xref>-<xref rid="B12" ref-type="bibr">12</xref></sup>.</p><p>The high rate of re-hospitalization due to decompensation of HF leads to large
+expenses for the health system, in addition to increasing these patients’ morbidity
+and mortality<sup><xref rid="B3" ref-type="bibr">3</xref></sup>. In this context, the use of strategies that can substantially increase these
+individuals’ adherence to treatment should be considered by the inter-professional
+health team. Individualized hospital discharge guidance and telephone follow-up
+appear as strategies in health that can be performed by the nurse to optimize self-care<sup><xref rid="B11" ref-type="bibr">11</xref>-<xref rid="B12" ref-type="bibr">12</xref></sup>, improving the therapeutic adherence of patients with HF and decreasing the
+demand for hospital care.</p><p>Given the above, the purpose of this study was to verify whether a behavioral
+strategy consisting of telephone follow-up and individualized guidance given by the
+nurse contributes to increasing the drug adherence of patients with HF in a scenario
+where national research addressing this subject is still scarce. In this context,
+this study aimed to evaluate the effectiveness of the behavioral intervention of
+discharge guidance and telephone follow-up in the therapeutic adherence,
+re-hospitalization and mortality rates of patients with heart failure.</p></sec><sec sec-type="methods"><title>Method</title><p>This was a randomized clinical trial, with 201 participants, drawn electronically and
+without blinding.</p><p>The study was conducted in 2016, between January and December of this year, in the
+emergency room of a public institution specialized in cardiology, with six emergency
+beds, 21 observation beds and 40 backup beds.</p><p>Patients admitted to the emergency room with a diagnosis of decompensated heart
+failure, registered on the medical records at the time of admission, with other
+associated diagnoses or not, over 18 years of age, who had not been subjected to
+myocardial revascularization surgery in the past 30 days and who could be contacted
+by telephone were included.</p><p>Sample size was determined with 80% power, 15% clinical difference and 5% clinical
+significance level, with statistical analysis of the questionnaires used. In this
+way, the total sample consisted of 201 patients.</p><p>The intervention encompassed specific and individualized discharge guidance for
+patients with HF on the verge of hospital discharge.</p><p>Numbers between one and 201 were electronically drawn with the aid of an online
+software, being randomly sorted in the Control Group (CG) and in the Intervention
+Group (IG). The patients were numbered sequentially at the time of hospital
+discharge in ascending order, from one to 201, and then allocated to either the CG
+or the IG according to their number, so there was no need for the use of sealed
+envelopes. The IG was composed of 100 participants and the CG, of 101.</p><p>To reduce the risk of bias, all interventions were carried out by a single
+researcher.</p><p>The sector’s nursing staff gave the CG an explanatory brochure standardized by the
+institution with the common discharge guidelines, containing information about
+dietary restrictions, recommended exercises, importance of drug adherence and return
+to the emergency service in case of worsening of the signs and symptoms. Three
+months after hospital discharge, the CG was contacted via telephone by the
+researcher, who evaluated their adherence to and the barriers to non-adherence to
+pharmacological measures, their adherence to non-pharmacological measures, as well
+as the occurrence of re-hospitalization and death in the period. The call was, on
+average, 15 minutes long.</p><p>The IG was given discharge guidance by the researcher, on the bed of the hospitalized
+patients and in the presence of whoever was accompanying them at that moment. As a
+first step, the researcher evaluated the patient’s previous knowledge regarding the
+disease and treatment, with a structured questionnaire based on the literature<sup><xref rid="B1" ref-type="bibr">1</xref>,<xref rid="B8" ref-type="bibr">8</xref>,<xref rid="B13" ref-type="bibr">13</xref></sup>.</p><p>Guidance started with the presentation to the patient of an illustrative video, of
+the Brazilian Association of Heart Failure, on the definition of HF. Then,
+individualized discharge guidance was performed according to the needs of each
+patient, with the reading of explanatory brochures. The brochures were devised
+according to the chronic heart failure guidelines of the Brazilian Society of
+Cardiology (SBC)<sup><xref rid="B1" ref-type="bibr">1</xref>,<xref rid="B9" ref-type="bibr">9</xref>,<xref rid="B13" ref-type="bibr">13</xref></sup>, and contained information about the definition of the disease, nutritional
+aspects, water restrictions and drug treatment.</p><p>The guidance in the IG followed a list of items to be addressed and was performed
+while taking into consideration the patients’ prior knowledge and their questions.
+The list was composed of the following items: i) the patient’s knowledge about the
+disease and treatment; ii) need of maintenance of water, caloric and sodium
+restriction; iii) performance of physical activity, if prescribed; iv) need to
+control weight; v) knowledge about the signs and symptoms of HF decompensation; and
+vi) importance of outpatient follow-up.</p><p>During guidance, the researcher had the medical prescription in hand to solve the
+doubts of the patients and their families regarding the use of drugs and possible
+side effects. The interviews lasted 20 minutes on average.</p><p>Thirty days after hospital discharge, the IG patients were contacted via telephone by
+the researcher to clarify doubts and to identify difficulties regarding treatment.
+In addition, it was identified if there had been cases of re-hospitalization or
+death during this period. The calls were, on average, 10 minutes long.</p><p>The evaluation of the effectiveness of the intervention in the IG was performed 90
+days after hospital discharge, by telephone.</p><p>Therapeutic adherence based on drug and non-drug adherence and on the barriers for
+non-adherence were considered as primary outcomes, and the secondary outcomes
+included the occurrence of re-hospitalization and death seven, 30 and 90 days after
+hospital discharge.</p><p>With the aim of characterizing the study’s patients, an instrument with
+sociodemographic and clinical variables was devised, including: age, sex, education,
+length of hospitalization, marital status, occupation, weight, height, waist
+circumference, past occurrences and personal habits, and physical activity.</p><p>The consumption of alcohol was considered excessive when it exceeded 30 g
+alcohol/day, the equivalent of 625 ml of beer (~6% alcohol), 312.5 ml of wine (~12%
+alcohol) or 93.7 ml of distillates (~40% alcohol)<sup><xref rid="B14" ref-type="bibr">14</xref></sup>.</p><p>Physical activity was classified as follows: physically active individuals were
+considered to be those who practiced aerobic physical activities such as walking,
+running, cycling, dancing or swimming, three to five times a week for 30 to 60 minutes<sup><xref rid="B13" ref-type="bibr">13</xref></sup>.</p><p>The Morisky Green Test (MGT) was used to assess the patient’s adherence to the drug
+treatment, and consists of four questions: 1) Do you sometimes have trouble
+remembering to take your medication? 2) Do you sometimes neglect taking your
+medication? 3) When you are feeling better, do you sometimes stop taking your
+medication? 4) Sometimes, if you feel worse while taking the medication, do you stop
+taking it? The patient was classified as having “high adherence” when the answers to
+the four questions were negative; when one or two answers were positive, the patient
+was classified as having “moderate adherence”, and with three or four positive
+answers, he/she was classified as having “low adherence”<sup><xref rid="B14" ref-type="bibr">14</xref></sup>.</p><p>To identify the barriers to adherence to treatment, from the patient’s perspective,
+the Brief Medication Questionnaire (BMQ) was used. This instrument is divided into
+three domains: The Regimen Domain, which evaluates the patient’s behavior in
+relation to his/her adherence to the prescribed treatment; the Belief Domain, which
+assesses the patient’s belief in the treatment’s effectiveness and opinions about
+the unwanted side effects; and the Memory Domain, which identifies problems
+associated with remembering to take the medication. The presence of positive answers
+in any of the domains identifies a barrier to the treatment regimen prescribed<sup><xref rid="B14" ref-type="bibr">14</xref></sup>.</p><p>To evaluate adherence to non-drug treatment, a questionnaire was devised including
+three questions: 1) Do you control your weight as instructed by the health care
+professional? 2) Do you control your salt intake as instructed by the health care
+professional? 3) Do you control your water intake as instructed by the health care
+professional? The patient was classified as having “high adherence” when the answers
+to the three questions were positive; when one or two answers were positive, the
+patient was classified as having “moderate adherence”, and with three negative
+answers, he/she was classified as having “low adherence”<sup><xref rid="B1" ref-type="bibr">1</xref></sup>.</p><p>Data collection was divided into four phases: 1) at the time of hospital discharge in
+both groups (Time 0 – T0); 2) after seven days of hospital discharge, by telephone
+in the IG, and based on the records in the CG (Time 1 – T1); 3) after 30 days of
+hospital discharge, by telephone in the IG, and based on the records in the CG (Time
+2 – T2); and 4) after 90 days of hospital discharge, by telephone in both groups
+(Time 3 – T3). The study’s data collection flowchart is presented in <xref ref-type="fig" rid="f01001">Figure 1</xref>.</p><p>
+<fig id="f01001" orientation="portrait" position="float"><label>Figure 1</label><caption><title>– Data collection flowchart. São Paulo, SP, Brazil, 2016</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="0104-1169-rlae-27-e3159-gf01.jpg"><?image-name 0104-1169-rlae-27-e3159-gf01.jpg?><?image-size 74740?><?image-md5 0bdb46b785ef85ce9c30c55a439d7a9b?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 874?><?image-original-width 1500?><?image-scaled-height 437?><?image-scaled-width 750?><?image-cloudpmc-urn urn:cdn:blobs/4c8e/6703101/0bdb46b785ef/0104-1169-rlae-27-e3159-gf01.jpg?><?thumb-name 0104-1169-rlae-27-e3159-gf01.gif?><?thumb-size 12613?><?thumb-md5 d15e362b8ff89d9c970c11544a400c6a?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 137?><?thumb-cloudpmc-urn urn:cdn:blobs/4c8e/6703101/d15e362b8ff8/0104-1169-rlae-27-e3159-gf01.gif?></graphic></fig>
+</p><p>The data were stored in spreadsheets in Excel, version 2007, and were analyzed by the
+SPSS statistical software version 19.</p><p>The independent variable was considered to be the behavioral intervention with
+discharge guidance and telephone follow-up.</p><p>The variables considered as dependent were: drug adherence, the barriers to
+non-adherence, non drug adherence, the occurrence of re-hospitalization and death.
+The control variables were: sex, age and comorbidities.</p><p>For the continuous variables, mean, standard deviation, median, minimum and maximum
+were estimated. For the categorical variables, frequency, percentage, and relative
+risk were estimated.</p><p>To compare drug adherence, the barriers to non-adherence and non-adherence 90 days
+after discharge, re-hospitalization and death seven, 30 and 90 days after discharge,
+between the groups, the following tests were used: Chi-Square Test, when necessary,
+Fisher’s Exact Test and the Generalized Estimating Equations Model, which aims to
+estimate regression parameters with correlated data, evaluate the relationship
+between the response and prediction variables in a population context, as well as
+the difference in the population’s mean response between two groups with different
+risk factors.</p><p>The homogeneity of the groups in relation to the socio-demographic and clinical
+variables was estimated using the Chi-Square Test or the Likelihood-Ratio Test and,
+for the continuous variables, the Mann-Whitney Test was used.</p><p>The significance level considered in all analyses was 5% (p-value &lt; 0.05%)</p><p>The study was approved by the Research Ethics Committee of the Federal University of
+São Paulo (Unifesp), and registered in the Brazilian Registry of Clinical Trials:
+RBR-37n859.</p><p>The flowchart of the study is shown in <xref ref-type="fig" rid="f02001">Figure
+2</xref>.</p><p>
+<fig id="f02001" orientation="portrait" position="float"><label>Figure 2</label><caption><title>– Flowchart of the study. São Paulo, SP, Brazil, 2016</title></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="float" orientation="portrait" xlink:href="0104-1169-rlae-27-e3159-gf02.jpg"><?image-name 0104-1169-rlae-27-e3159-gf02.jpg?><?image-size 131944?><?image-md5 8c43628aa6d5a898c930ff9eff37c9cf?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 1421?><?image-original-width 1500?><?image-scaled-height 711?><?image-scaled-width 750?><?image-cloudpmc-urn urn:cdn:blobs/4c8e/6703101/8c43628aa6d5/0104-1169-rlae-27-e3159-gf02.jpg?><?thumb-name 0104-1169-rlae-27-e3159-gf02.gif?><?thumb-size 16076?><?thumb-md5 a8bf8c3aee89560ea99cd553398da63a?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 95?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/4c8e/6703101/a8bf8c3aee89/0104-1169-rlae-27-e3159-gf02.gif?></graphic></fig>
+</p></sec><sec sec-type="results"><title>Results</title><p>The average age of the patients (n=201) was 62.6±15.2 years old, and the intervention
+and control groups were homogeneous with regard to the socio-demographic and
+clinical variables (p &gt; 0.05), as noted in <xref rid="t1001" ref-type="table">Table 1</xref>.</p><p>
+<table-wrap id="t1001" orientation="portrait" position="float"><label>Table 1</label><caption><title>– Demographic and clinical variables of the patients in the
+Intervention and Control Groups. São Paulo, SP, Brazil, 2016</title></caption><table frame="hsides" rules="groups"><colgroup width="25%" span="1"><col span="1"/><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" rowspan="2" colspan="1">Characteristics</th><th rowspan="1" colspan="1">Intervention Group</th><th rowspan="1" colspan="1">Control Group</th><th rowspan="2" colspan="1">P value*</th></tr><tr><th rowspan="1" colspan="1">n(%)</th><th rowspan="1" colspan="1">n(%)</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Sex</italic>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td align="center" rowspan="1" colspan="1">0.527</td></tr><tr><td rowspan="1" colspan="1">Female</td><td align="center" rowspan="1" colspan="1">57 (57)</td><td align="center" rowspan="1" colspan="1">62 (61.4)</td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Male</td><td align="center" rowspan="1" colspan="1">43 (43)</td><td align="center" rowspan="1" colspan="1">39 (38.6)</td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Nonsmoker</italic>
+</td><td align="center" rowspan="1" colspan="1">42 (42)</td><td align="center" rowspan="1" colspan="1">33 (32.6)</td><td align="center" rowspan="1" colspan="1">0.076</td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Former smoker</italic>
+</td><td align="center" rowspan="1" colspan="1">29 (29)</td><td align="center" rowspan="1" colspan="1">38 (37.7)</td><td align="center" rowspan="1" colspan="1">0.076</td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Smoker</italic>
+</td><td align="center" rowspan="1" colspan="1">29 (29)</td><td align="center" rowspan="1" colspan="1">30 (29.7)</td><td align="center" rowspan="1" colspan="1">0.076</td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Diabetes Mellitus</italic>
+</td><td align="center" rowspan="1" colspan="1">59 (59)</td><td align="center" rowspan="1" colspan="1">60 (59.4)</td><td align="center" rowspan="1" colspan="1">0.357</td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Dyslipidemias</italic>
+</td><td align="center" rowspan="1" colspan="1">76 (76)</td><td align="center" rowspan="1" colspan="1">61 (60.4)</td><td align="center" rowspan="1" colspan="1">0.142</td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">SAH</italic>
+<sup>†</sup>
+</td><td align="center" rowspan="1" colspan="1">97 (97)</td><td align="center" rowspan="1" colspan="1">101 (100)</td><td align="center" rowspan="1" colspan="1">0.316</td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Education level</italic>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td align="center" rowspan="1" colspan="1">0.768</td></tr><tr><td rowspan="1" colspan="1">Five to eight years of study</td><td align="center" rowspan="1" colspan="1">36 (36)</td><td align="center" rowspan="1" colspan="1">39 (38.6)</td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Illiterate</td><td align="center" rowspan="1" colspan="1">5 (5)</td><td align="center" rowspan="1" colspan="1">7 (6.9)</td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<italic toggle="yes">Occupation</italic>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td align="center" rowspan="1" colspan="1">0.620</td></tr><tr><td rowspan="1" colspan="1">Retirees</td><td align="center" rowspan="1" colspan="1">28 (28)</td><td align="center" rowspan="1" colspan="1">20 (19.8)</td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Homemaker</td><td align="center" rowspan="1" colspan="1">23 (23)</td><td align="center" rowspan="1" colspan="1">27 (26.7%)</td><td rowspan="1" colspan="1"> </td></tr></tbody></table><table-wrap-foot><fn id="TFN1001"><p>*P value: Chi-Square Test, Likelihood-Ratio Test, Mann-Whitney Test;
+†SAH: Systemic Arterial Hypertension</p></fn></table-wrap-foot></table-wrap>
+</p><p>The medications were defrayed integrally by 45.8% (n = 92) of the patients, and 36.8%
+(n = 74) received all medications freely.</p><p>Adherence and the barriers to drug and non-drug adherence are presented in <xref rid="t2001" ref-type="table">Table 2</xref>.</p><p>
+<table-wrap id="t2001" orientation="portrait" position="float"><label>Table 2</label><caption><title>– Drug adherence, barriers to drug and non-drug adherence between the
+intervention and control groups after 90 days of the intervention. São
+Paulo, SP, Brazil, 2016</title></caption><table frame="hsides" rules="groups"><colgroup width="14%" span="1"><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" rowspan="1" colspan="1">Adherence/Barriers</th><th rowspan="1" colspan="1">Intervention Group (n=98)/ n(%)</th><th rowspan="1" colspan="1">Control Group (n=95)/ n(%)</th><th rowspan="1" colspan="1">Total n (%)</th><th rowspan="1" colspan="1">P value*</th><th rowspan="1" colspan="1">RR<sup>†</sup>
+</th><th rowspan="1" colspan="1">95% CI<sup>‡</sup>
+</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">
+<bold>Drug Adherence</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">High adherence</td><td align="center" rowspan="1" colspan="1">24 (25.3)</td><td align="center" rowspan="1" colspan="1">7 (7.6)</td><td align="center" rowspan="1" colspan="1">31 (16.6)</td><td align="center" rowspan="1" colspan="1">
+<bold>0.0003</bold>
+</td><td align="center" rowspan="1" colspan="1">3.80</td><td align="center" rowspan="1" colspan="1">[1.77: 8.12]</td></tr><tr><td rowspan="1" colspan="1">Moderate adherence</td><td align="center" rowspan="1" colspan="1">32 (33.7)</td><td align="center" rowspan="1" colspan="1">55 (59.8)</td><td align="center" rowspan="1" colspan="1">87 (46.5)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Low adherence</td><td align="center" rowspan="1" colspan="1">39 (41.1)</td><td align="center" rowspan="1" colspan="1">30 (32.6)</td><td align="center" rowspan="1" colspan="1">69 (36.9)</td><td align="center" rowspan="1" colspan="1">0.6124</td><td align="center" rowspan="1" colspan="1">1.56</td><td align="center" rowspan="1" colspan="1">[0.09: 2.22]</td></tr><tr><td rowspan="1" colspan="1">
+<bold>Regimen Barrier</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Present</td><td align="center" rowspan="1" colspan="1">56 (58.9)</td><td align="center" rowspan="1" colspan="1">72 (78.3)</td><td align="center" rowspan="1" colspan="1">128 (68.4)</td><td align="center" rowspan="1" colspan="1">
+<bold>0.0045</bold>
+</td><td align="center" rowspan="1" colspan="1">1.89</td><td align="center" rowspan="1" colspan="1">[1.2:2.98]</td></tr><tr><td rowspan="1" colspan="1">Absent</td><td align="center" rowspan="1" colspan="1">39 (41.1)</td><td align="center" rowspan="1" colspan="1">20 (21.7)</td><td align="center" rowspan="1" colspan="1">59 (31.6)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Belief Barrier</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Present</td><td align="center" rowspan="1" colspan="1">15 (15.8)</td><td align="center" rowspan="1" colspan="1">32 (34.8)</td><td align="center" rowspan="1" colspan="1">47 (25.1)</td><td align="center" rowspan="1" colspan="1">
+<bold>0.0028</bold>
+</td><td align="center" rowspan="1" colspan="1">1.29</td><td align="center" rowspan="1" colspan="1">[1.09:1.53]</td></tr><tr><td rowspan="1" colspan="1">Absent</td><td align="center" rowspan="1" colspan="1">80 (84.2)</td><td align="center" rowspan="1" colspan="1">60 (65.2)</td><td align="center" rowspan="1" colspan="1">140 (74.9)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Memory Barrier</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Present</td><td align="center" rowspan="1" colspan="1">37 (38.9)</td><td align="center" rowspan="1" colspan="1">61 (66.3)</td><td align="center" rowspan="1" colspan="1">98 (52.4)</td><td align="center" rowspan="1" colspan="1">
+<bold>0.0002</bold>
+</td><td align="center" rowspan="1" colspan="1">1.81</td><td align="center" rowspan="1" colspan="1">[1.3:2.52]</td></tr><tr><td rowspan="1" colspan="1">Absent</td><td align="center" rowspan="1" colspan="1">58 (61.1)</td><td align="center" rowspan="1" colspan="1">31 (33.7)</td><td align="center" rowspan="1" colspan="1">89 (47.6)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Non-Drug Adherence</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">High adherence</td><td align="center" rowspan="1" colspan="1">24 (25.3)</td><td align="center" rowspan="1" colspan="1">7 (7.6)</td><td align="center" rowspan="1" colspan="1">31 (16.6)</td><td align="center" rowspan="1" colspan="1">
+<bold>0.0335</bold>
+</td><td align="center" rowspan="1" colspan="1">1.94</td><td align="center" rowspan="1" colspan="1">[1.15:3.28]</td></tr><tr><td rowspan="1" colspan="1">Moderate adherence</td><td align="center" rowspan="1" colspan="1">32 (33.7)</td><td align="center" rowspan="1" colspan="1">55 (59.8)</td><td align="center" rowspan="1" colspan="1">87 (46.5)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">Low adherence</td><td align="center" rowspan="1" colspan="1">39 (41.1)</td><td align="center" rowspan="1" colspan="1">30 (32.6)</td><td align="center" rowspan="1" colspan="1">69 (36.9)</td><td rowspan="1" colspan="1"> </td><td align="center" rowspan="1" colspan="1">1.23</td><td align="center" rowspan="1" colspan="1">[0.78:1.94]</td></tr></tbody></table><table-wrap-foot><fn id="TFN2001"><p>*P value: Generalized Estimating Equations Model; †RR: Relative Risk;
+‡CI: Confidence Interval</p></fn></table-wrap-foot></table-wrap>
+</p><p>In relation to drug adherence, there was statistically significant difference between
+the CG and the IG 90 days after hospital discharge. IG patients showed higher drug
+adherence, being 3.8 more likely to adhere when compared to patients of the CG in
+the same period.</p><p>As for the barriers to adherence in both CG and IG, the regimen barrier was the most
+prevalent, with statistically significant difference between the CG and the IG in
+relation to the presence of belief, regimen and memory barriers, which were more
+present in the CG, the IG being 1.89 times more likely to have negative barriers
+when compared to the CG.</p><p>With regard to non-drug adherence, there is a significant difference between the
+groups in relation to Adherence and Likely Adherence. The IG has a higher percentage
+of Adherence compared to the CG, being 1.2 times more likely of being Adherent than
+the CG after the intervention.</p><p>Regarding re-hospitalization, there was statistically significant difference
+(p&lt;0.0001) between the two groups 90 days after the intervention. The IG has a
+lower re-hospitalization rate when compared to the CG. As for mortality, the IG has
+a lower death rate when compared to the CG, as noted in <xref rid="t3001" ref-type="table">Table 3</xref>.</p><p>
+<table-wrap id="t3001" orientation="portrait" position="float"><label>Table 3</label><caption><title>– Re-hospitalization and deaths in the study population after seven,
+30 and 90 days of the intervention. São Paulo, SP, Brazil, 2016
+(n=201)</title></caption><table frame="hsides" rules="groups"><colgroup width="14%" span="1"><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/><col span="1"/></colgroup><thead><tr><th align="left" rowspan="1" colspan="1">Outcomes</th><th rowspan="1" colspan="1">Control Group n (%)</th><th rowspan="1" colspan="1">Intervention Group n (%)</th><th rowspan="1" colspan="1">Total n (%)</th><th rowspan="1" colspan="1">P value*</th><th rowspan="1" colspan="1">RR<sup>†</sup>
+</th><th rowspan="1" colspan="1">95% CI<sup>‡</sup>
+</th></tr></thead><tbody><tr><td rowspan="1" colspan="1">
+<bold>30 days</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Re-hospitalization</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">No</td><td align="center" rowspan="1" colspan="1">96 (95)</td><td align="center" rowspan="1" colspan="1">98 (98)</td><td align="center" rowspan="1" colspan="1">194 (96.5)</td><td align="center" rowspan="1" colspan="1">0.4448</td><td align="center" rowspan="1" colspan="1">2.48</td><td align="center" rowspan="1" colspan="1">[0.49:12.46]</td></tr><tr><td rowspan="1" colspan="1">Yes</td><td align="center" rowspan="1" colspan="1">5 (5)</td><td align="center" rowspan="1" colspan="1">2 (2)</td><td align="center" rowspan="1" colspan="1">7 (3.5)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Death</bold>
+</td><td align="center" rowspan="1" colspan="1">–</td><td align="center" rowspan="1" colspan="1">–</td><td align="center" rowspan="1" colspan="1">–</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>90 days</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Re-hospitalization</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">No</td><td align="center" rowspan="1" colspan="1">53 (52.5)</td><td align="center" rowspan="1" colspan="1">69 (69)</td><td align="center" rowspan="1" colspan="1">122 (60.7)</td><td align="center" rowspan="1" colspan="1">
+<bold>0.0310</bold>
+</td><td align="center" rowspan="1" colspan="1">1.55</td><td align="center" rowspan="1" colspan="1">[1.03:2.32]</td></tr><tr><td rowspan="1" colspan="1">Yes</td><td align="center" rowspan="1" colspan="1">39 (38.6)</td><td align="center" rowspan="1" colspan="1">26 (26)</td><td align="center" rowspan="1" colspan="1">65 (32.3)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">
+<bold>Death</bold>
+</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr><tr><td rowspan="1" colspan="1">No</td><td align="center" rowspan="1" colspan="1">92 (91.1)</td><td align="center" rowspan="1" colspan="1">95 (95)</td><td align="center" rowspan="1" colspan="1">187 (93)</td><td align="center" rowspan="1" colspan="1">0.2761</td><td align="center" rowspan="1" colspan="1">1.78</td><td align="center" rowspan="1" colspan="1">[0.62: 5.13]</td></tr><tr><td rowspan="1" colspan="1">Yes</td><td align="center" rowspan="1" colspan="1">9 (8.9)</td><td align="center" rowspan="1" colspan="1">5 (5)</td><td align="center" rowspan="1" colspan="1">14 (14)</td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td><td rowspan="1" colspan="1"> </td></tr></tbody></table><table-wrap-foot><fn id="TFN3001"><p>*P value: Generalized Estimating Equations Model; †RR: Relative Risk;
+‡CI: Confidence Interval</p></fn></table-wrap-foot></table-wrap>
+</p><p>During the study period, the losses were due to the patients’ mortality, there having
+been no other reasons for withdrawal.</p></sec><sec sec-type="discussion"><title>Discussion</title><p>The results of this study showed that there is statistically significant difference
+with regard to drug and non-drug adherence between patients undergoing specific
+discharge guidance and telephone follow-up (IG) and patients undergoing standardized
+hospital guidance (CG). The IG patients showed more adherence to drug and non-drug
+treatment when compared to the other group. These results are consistent with the
+literature, since the nurse, by implementing educational practices in health such as
+nursing consultations, home visits and telephone follow-up, can establish
+appropriate interventions for drug and non-drug treatment, improving the
+understanding of the disease, adherence to treatment, self-monitoring of
+decompensation signs and symptoms, and self-care in relation to HF<sup><xref rid="B15" ref-type="bibr">15</xref></sup>.</p><p>The main purpose of nursing education for HF patients is that they understand the
+importance of adherence to treatment and the signs and symptoms of decompensation.
+Education in health, promoted by different strategies, can positively impact the
+treatment of HF; both telephone follow-up and domiciliary visits have been proven as
+effective to increase the adherence and self-care of this population<sup><xref rid="B16" ref-type="bibr">16</xref></sup>.</p><p>With respect to barriers to drug adherence, this study showed that the main one was
+the regimen barrier, suggesting the patients’ difficulty in understanding the
+guidelines on the prescription of medicines, which is worsened by polypharmacy<sup><xref rid="B6" ref-type="bibr">6</xref></sup>.</p><p>In relation to the belief barrier, which evaluates to what extent the patient
+believes the treatment may improve or control the disease, it was evidenced that the
+CG had a higher belief barrier percentage in relation to the IG. It can be inferred
+that after the intervention, the patients had better knowledge of the disease and of
+the importance of treatment, contributing to their belief in its effectiveness,
+which can improve their self-management of the disease and increase their adherence
+to the proposed therapy<sup><xref rid="B7" ref-type="bibr">7</xref></sup>. As for the presence of the memory barrier, a higher percentage was observed
+in the CG, which suggests that, after undergoing an educational intervention on the
+importance of treatment, individuals are less likely to forget about the medications
+and how to use them.</p><p>In this study, 16.6% of the total patients had high non-drug adherence, with
+difference between the groups: 7.6% of the CG and 25.3% of the IG. Non-drug
+adherence consists in suitable water restriction when indicated, restriction of salt
+intake and daily control of weight, and can be referenced as the target that is most
+difficult to be achieved in the treatment of HF, as it is related to changes of
+behavior and life habits<sup><xref rid="B17" ref-type="bibr">17</xref></sup>. A systematic review that examined 17 studies on self-care and chronic
+diseases, including HF, corroborates the idea that the patient’s self-care in
+relation to the disease is directly related with the decrease in mortality and
+re-hospitalization rates, needing thus to be addressed in education in health<sup><xref rid="B18" ref-type="bibr">18</xref></sup>.</p><p>The adherence to treatment of chronic patients has been shown to be a critical issue
+in the field of health<sup><xref rid="B19" ref-type="bibr">19</xref></sup>, as low adherence is directly related to re-hospitalization due to HF. The
+interventions carried out in this study contributed to lower re-hospitalization
+rates 90 days after the patients had been discharged, as 38.6% of the patients in
+the CG and 26% of those in the IG were hospitalized during this period
+(p=0.0310).</p><p>In relation to mortality, in this study, 7% of the total patients died, 8.9% in the
+CG and 5% in the IG, 90 days after discharge. A study assessing the impact of
+telephone follow-up on patients with HF also showed reduction in the mortality rate
+of these individuals<sup><xref rid="B19" ref-type="bibr">19</xref></sup>. Education in health, when carried out appropriately, can directly and
+significantly influence the mortality of patients with HF by improving these
+patients’ understanding of the disease, its treatment and, consequently, their
+adherence to therapy, with increased survival rates and improvements in their
+quality of life<sup><xref rid="B19" ref-type="bibr">19</xref>-<xref rid="B20" ref-type="bibr">20</xref></sup>.</p><p>This study had as limitation the patients’ follow-up period. Although most of the
+existing studies carry out follow-up for 90 days, a longer period could elucidate
+different outcomes and enable better evaluation regarding the treatment of HF. The
+dual educational strategy, which consisted of specific discharge guidance and
+telephone follow-up, proved to be beneficial in relation to the outcomes assessed in
+this study, but their association does not allow evaluating the effectiveness of
+each individual strategy, creating the need for studies on these strategies in
+isolation, and with increased follow-up time.</p><p>This study demonstrated the important role of the guidance provided by nurse, its
+impact on the adherence to the HF treatment and on the decrease in the number of
+re-hospitalization and death rates. In addition, randomized and controlled clinical
+trials may serve as a guide and reference for decision making in nursing practice.
+These findings may contribute substantially to the implementation of an
+individualized routine of discharge guidance and follow-up of patients with HF in
+other institutions as well, decreasing the demand for emergency services, the number
+of hospitalizations and deaths, and the cost to the healthcare system.</p></sec><sec sec-type="conclusions"><title>Conclusion</title><p>This research concluded that the dual educational intervention, with guidance at the
+moment of and telephone follow-up after discharge of patients with HF in an
+emergency service is effective, and resulted in greater therapeutic adherence and
+reduction of barriers to it, in addition to decreasing re-hospitalization and
+mortality rates, as proposed.</p></sec></body><back><fn-group><fn fn-type="other" id="fn_ast1001"><label>*</label><p> Paper extracted from master’s thesis “Reinternação e adesão ao tratamento de
+pacientes com insuficiência cardíaca após orientação de alta e contato
+telefônico de enfermagem”, presented to Universidade Federal de São Paulo,
+Escola de Enfermagem, São Paulo, SP, Brazil.</p></fn></fn-group><ref-list><title>Referências</title><ref id="B1"><label>1</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Bocchi</surname><given-names>EA</given-names></name><name name-style="western"><surname>Marcondes-Braga</surname><given-names>FG</given-names></name><name name-style="western"><surname>Bacal</surname><given-names>F</given-names></name><name name-style="western"><surname>Ferraz</surname><given-names>AS</given-names></name><name name-style="western"><surname>Albuquerque</surname><given-names>D</given-names></name><name name-style="western"><surname>Rodrigues</surname><given-names>D</given-names></name><etal>et al</etal></person-group><article-title>Atualização da diretriz brasileira de insuficiência cardíaca
+crônica- 2012</article-title><source>Arq Bras Cardiol</source><comment>Internet</comment><year>2012</year><date-in-citation content-type="access-date">Acesso 30 set
+2017</date-in-citation><volume>98</volume><issue>1</issue><supplement>suppl 1</supplement><fpage>1</fpage><lpage>33</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2012000700001&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2012000700001&amp;lng=en</ext-link></comment><pub-id pub-id-type="doi">10.1590/S0066-782X2012000700001</pub-id><pub-id pub-id-type="pmid">22392082</pub-id></element-citation></ref><ref id="B2"><label>2</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Bocchi</surname><given-names>EA</given-names></name></person-group><article-title>Heart Failure in South America- 2013</article-title><source>Curr Cardiol Rev</source><year>2013</year><volume>9</volume><issue>2</issue><fpage>147</fpage><lpage>156</lpage><pub-id pub-id-type="doi">10.2174/1573403X11309020007</pub-id><pub-id pub-id-type="pmid">23597301</pub-id><pub-id pub-id-type="pmcid">PMC3682398</pub-id></element-citation></ref><ref id="B3"><label>3</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Searle</surname><given-names>J</given-names></name><name name-style="western"><surname>Frick</surname><given-names>J</given-names></name><name name-style="western"><surname>Möckel</surname><given-names>M</given-names></name></person-group><article-title>Acute heart failure facts and numbers: acute heart failure
+populations</article-title><source>Esc Heart Failure</source><year>2016</year><volume>3</volume><issue>2</issue><fpage>65</fpage><lpage>70</lpage><pub-id pub-id-type="doi">10.1002/ehf2.12092</pub-id><pub-id pub-id-type="pmid">27818780</pub-id><pub-id pub-id-type="pmcid">PMC5074292</pub-id></element-citation></ref><ref id="B4"><label>4</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Montera</surname><given-names>MW</given-names></name><name name-style="western"><surname>Almeida</surname><given-names>RA</given-names></name><name name-style="western"><surname>Tinoco</surname><given-names>EM</given-names></name><name name-style="western"><surname>Rocha</surname><given-names>RM</given-names></name><name name-style="western"><surname>Moura</surname><given-names>LZ</given-names></name><name name-style="western"><surname>Réa</surname><given-names>A</given-names><suffix>Neto</suffix></name><etal>et al</etal></person-group><article-title>II Diretriz Brasileira de Insuficiência Cardíaca
+Aguda</article-title><source>Arq Bras Cardiol</source><comment>Internet</comment><year>2009</year><date-in-citation content-type="access-date">Acesso 30 set
+2017</date-in-citation><volume>93</volume><issue>3</issue><supplement>supl.3</supplement><fpage>1</fpage><lpage>65</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2009001900001">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2009001900001</ext-link></comment><pub-id pub-id-type="pmid">20721452</pub-id></element-citation></ref><ref id="B5"><label>5</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Montera</surname><given-names>MW</given-names></name><name name-style="western"><surname>Pereira</surname><given-names>SB</given-names></name><name name-style="western"><surname>Colafranceschi</surname><given-names>AS</given-names></name><name name-style="western"><surname>Almeida</surname><given-names>DR</given-names></name><name name-style="western"><surname>Tinoco</surname><given-names>EM</given-names></name><name name-style="western"><surname>Rocha</surname><given-names>RM</given-names></name><etal>et al</etal></person-group><article-title>Sumário de atualização da II Diretriz Brasileira de Insuficiência
+Cardíaca Aguda</article-title><source>Arq Bras Cardiol</source><comment>Internet</comment><year>2012</year><date-in-citation content-type="access-date">Acesso 30 set
+2017</date-in-citation><volume>98</volume><issue>5</issue><fpage>375</fpage><lpage>383</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2012000500001&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2012000500001&amp;lng=en</ext-link></comment></element-citation></ref><ref id="B6"><label>6</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Ruppar</surname><given-names>TM</given-names></name><name name-style="western"><surname>Delgado</surname><given-names>JD</given-names></name><name name-style="western"><surname>Temple</surname><given-names>J</given-names></name></person-group><article-title>Medication adherence interventions for heart failure patients: A
+meta-analysis</article-title><source>Eur J Cardiovasc Nurs</source><comment>internet</comment><year>2015</year><date-in-citation content-type="cited-date">cited Jun 27,
+2017</date-in-citation><volume>14</volume><issue>5</issue><fpage>395</fpage><lpage>404</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://journals.sagepub.com/doi/full/10.1177/1474515115571213">http://journals.sagepub.com/doi/full/10.1177/1474515115571213</ext-link></comment><pub-id pub-id-type="doi">10.1177/1474515115571213</pub-id><pub-id pub-id-type="pmid">25669661</pub-id></element-citation></ref><ref id="B7"><label>7</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Barbosa</surname><given-names>RR</given-names></name><name name-style="western"><surname>Franklin</surname><given-names>RV</given-names></name><name name-style="western"><surname>Stefenoni</surname><given-names>AV</given-names></name><name name-style="western"><surname>Moraes</surname><given-names>VD</given-names></name><name name-style="western"><surname>Jacques</surname><given-names>TM</given-names></name><name name-style="western"><surname>Serpa</surname><given-names>RG</given-names></name><etal>et al</etal></person-group><article-title>Quality of Life Analysis among Men and Women with Heart
+Failure</article-title><source>Rev Bras Cardiol</source><comment>internet</comment><year>2014</year><date-in-citation content-type="access-date">cited Jun 27,
+2017</date-in-citation><volume>27</volume><issue>2</issue><fpage>97</fpage><lpage>103</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.onlineijcs.org/sumario/27/pdf/v27n2a05.pdf">http://www.onlineijcs.org/sumario/27/pdf/v27n2a05.pdf</ext-link></comment></element-citation></ref><ref id="B8"><label>8</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Rodríguez-Gázquez</surname><given-names>MA</given-names></name><name name-style="western"><surname>Arredondo-Holguín</surname><given-names>E</given-names></name><name name-style="western"><surname>Herrera-Cortés</surname><given-names>R</given-names></name></person-group><article-title>Effectiveness of an educational program in nursing in the
+self-care of patients with heart failure: randomized controlled
+trial</article-title><source>Rev. Latino-Am. Enfermagem</source><comment>Internet</comment><year>2012</year><date-in-citation content-type="cited-date">cited Sep 30,
+2017</date-in-citation><volume>20</volume><issue>2</issue><fpage>296</fpage><lpage>306</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692012000200012&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692012000200012&amp;lng=en</ext-link></comment><pub-id pub-id-type="doi">10.1590/S0104-11692012000200012</pub-id><pub-id pub-id-type="pmid">22699730</pub-id></element-citation></ref><ref id="B9"><label>9</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Boisvert</surname><given-names>S</given-names></name><name name-style="western"><surname>Proulx-Belhumeur</surname><given-names>A</given-names></name><name name-style="western"><surname>Gonçalves</surname><given-names>N</given-names></name><name name-style="western"><surname>Doré</surname><given-names>M</given-names></name><name name-style="western"><surname>Francoeur</surname><given-names>J</given-names></name><name name-style="western"><surname>Gallani</surname><given-names>MC</given-names></name></person-group><article-title>An integrative literature review on nursing interventions aimed
+at increasing self-care among heart failure patients</article-title><source>Rev. Latino-Am. Enfermagem</source><comment>Internet</comment><year>2015</year><month>8</month><date-in-citation content-type="cited-date">cited 2018 Mar 11</date-in-citation><volume>23</volume><issue>4</issue><fpage>753</fpage><lpage>768</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692015000400753&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692015000400753&amp;lng=en</ext-link></comment><pub-id pub-id-type="doi">10.1590/0104-1169.0370.2612</pub-id><pub-id pub-id-type="pmcid">PMC4623739</pub-id><pub-id pub-id-type="pmid">26444179</pub-id></element-citation></ref><ref id="B10"><label>10</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Mussi</surname><given-names>CM</given-names></name><name name-style="western"><surname>Ruschel</surname><given-names>K</given-names></name><name name-style="western"><surname>Souza</surname><given-names>EN</given-names></name><name name-style="western"><surname>Lopes</surname><given-names>ANM</given-names></name><name name-style="western"><surname>Trojahn</surname><given-names>MM</given-names></name><name name-style="western"><surname>Paraboni</surname><given-names>CC</given-names></name><etal>et al</etal></person-group><article-title>Home visit improves knowledge, self-care and adhesion in heart
+failure: randomized Clinical Trial HELEN-I</article-title><source>Rev. Latino-Am. Enfermagem</source><comment>Internet</comment><year>2013</year><date-in-citation content-type="cited-date">cited 2018 Mar 11</date-in-citation><volume>21</volume><issue>spe</issue><fpage>20</fpage><lpage>28</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692013000700004&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692013000700004&amp;lng=en</ext-link></comment><pub-id pub-id-type="doi">10.1590/S0104-11692013000700004</pub-id><pub-id pub-id-type="pmid">23459887</pub-id></element-citation></ref><ref id="B11"><label>11</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Domingues</surname><given-names>FB</given-names></name><name name-style="western"><surname>Clausell</surname><given-names>N</given-names></name><name name-style="western"><surname>Aliti</surname><given-names>GB</given-names></name><name name-style="western"><surname>Dominguez</surname><given-names>DR</given-names></name><name name-style="western"><surname>Rabelo</surname><given-names>ER</given-names></name></person-group><article-title>Education and telephone monitoring by nurses of patients with
+heart failure: randomized clinical trial</article-title><source>Arq Bras Cardiol</source><comment>Internet</comment><year>2011</year><date-in-citation content-type="cited-date">cited Sep 30,
+2017</date-in-citation><volume>96</volume><issue>3</issue><fpage>233</fpage><lpage>239</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2011000300010&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0066-782X2011000300010&amp;lng=en</ext-link></comment><pub-id pub-id-type="pmid">21308343</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1590/s0066-782x2011005000014</pub-id></element-citation></ref><ref id="B12"><label>12</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Ong</surname><given-names>MK</given-names></name><name name-style="western"><surname>Romano</surname><given-names>PS</given-names></name><name name-style="western"><surname>Edgington</surname><given-names>S</given-names></name><name name-style="western"><surname>Aronow</surname><given-names>HU</given-names></name><name name-style="western"><surname>Auerbach</surname><given-names>AD</given-names></name><name name-style="western"><surname>Black</surname><given-names>JD</given-names></name><etal>et al</etal></person-group><article-title>Effectiveness of Remote Patient Monitoring After Discharge of
+Hospitalized Patients With Heart Failure: The Better Effectiveness After
+Transition–Heart Failure (BEAT-HF) Randomized Clinical Trial</article-title><source>JAMA</source><comment>Internet</comment><year>2016</year><date-in-citation content-type="cited-date">cited Sep 30,
+2017</date-in-citation><volume>176</volume><issue>3</issue><fpage>310</fpage><lpage>318</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2488923">https://jamanetwork.com/journals/jamainternalmedicine/fullarticle/2488923</ext-link></comment><pub-id pub-id-type="doi" assigning-authority="pmc">10.1001/jamainternmed.2015.7712</pub-id><pub-id pub-id-type="pmcid">PMC4827701</pub-id><pub-id pub-id-type="pmid">26857383</pub-id></element-citation></ref><ref id="B13"><label>13</label><element-citation publication-type="journal"><person-group person-group-type="author"><collab>Sociedade Brasileira de Cardiologia</collab><collab>Sociedade Brasileira de Hipertensão Arterial</collab><collab>Sociedade Brasileira de Nefrologia</collab></person-group><article-title>7ª Diretrizes Brasileiras de Hipertensão</article-title><source>Arq Bras Cardiol</source><comment>Internet</comment><year>2016</year><date-in-citation content-type="access-date">Acesso 30 set
+2017</date-in-citation><volume>95</volume><issue>supl 1</issue><fpage>1</fpage><lpage>51</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://publicacoes.cardiol.br/2014/diretrizes/2016/05_HIPERTENSAO_ARTERIAL.pdf">http://publicacoes.cardiol.br/2014/diretrizes/2016/05_HIPERTENSAO_ARTERIAL.pdf</ext-link></comment><pub-id pub-id-type="pmid">21085756</pub-id></element-citation></ref><ref id="B14"><label>14</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Ben</surname><given-names>AJ</given-names></name><name name-style="western"><surname>Neumann</surname><given-names>CR</given-names></name><name name-style="western"><surname>Mengue</surname><given-names>SS</given-names></name></person-group><article-title>The Brief Medication Questionnaire and Morisky Green Test to
+evaluate medication adherence</article-title><source>Rev Saúde Pública</source><comment>Internet</comment><year>2012</year><date-in-citation content-type="cited-date">cited Sep 30,
+2017</date-in-citation><volume>46</volume><issue>2</issue><fpage>279</fpage><lpage>289</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0034-89102012000200010&amp;lng=en">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0034-89102012000200010&amp;lng=en</ext-link></comment><pub-id pub-id-type="pmid">22331180</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1590/s0034-89102012005000013</pub-id></element-citation></ref><ref id="B15"><label>15</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Costa</surname><given-names>YF</given-names></name><name name-style="western"><surname>Araújo</surname><given-names>OC</given-names></name><name name-style="western"><surname>Almeida</surname><given-names>LBM</given-names></name><name name-style="western"><surname>Viegas</surname><given-names>SMG</given-names></name></person-group><article-title>Educational role of nurses in joining the treatment of Systemic
+Arterial Hypertension: integrative literature review</article-title><source>Mundo da Saúde</source><year>2014</year><volume>38</volume><issue>4</issue><fpage>473</fpage><lpage>481</lpage><pub-id pub-id-type="doi">10.15343/0104-7809.20143804473481</pub-id></element-citation></ref><ref id="B16"><label>16</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Mantovani</surname><given-names>VM</given-names></name><name name-style="western"><surname>Ruschel</surname><given-names>KB</given-names></name><name name-style="western"><surname>Souza</surname><given-names>EN</given-names></name><name name-style="western"><surname>Mussi</surname><given-names>C</given-names></name><name name-style="western"><surname>Rabelo-Silva</surname><given-names>ER</given-names></name></person-group><article-title>Treatment adherence in patients with heart failure receiving
+nurse-assisted home visits</article-title><source>Acta Paul Enferm</source><comment>internet</comment><year>2015</year><date-in-citation content-type="cited-date">cited Sep 30,
+2017</date-in-citation><volume>28</volume><issue>1</issue><fpage>41</fpage><lpage>47</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/pdf/ape/v28n1/en_1982-0194-ape-028-001-0041.pdf">http://www.scielo.br/pdf/ape/v28n1/en_1982-0194-ape-028-001-0041.pdf</ext-link></comment><pub-id pub-id-type="doi">10.1590/1982-0194201500008</pub-id></element-citation></ref><ref id="B17"><label>17</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Azzolin</surname><given-names>KO</given-names></name><name name-style="western"><surname>Lemos</surname><given-names>DM</given-names></name><name name-style="western"><surname>Lucena</surname><given-names>AF</given-names></name><name name-style="western"><surname>Rabelo-Silva</surname><given-names>ER</given-names></name></person-group><article-title>Home-based nursing interventions improve knowledge of disease and
+management in patients with heart failure</article-title><source>Rev. Latino-Am. Enfermagem</source><comment>Internet</comment><year>2015</year><date-in-citation content-type="cited-date">cited Sep 30,
+2017</date-in-citation><volume>23</volume><issue>1</issue><fpage>44</fpage><lpage>50</lpage><comment><ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692015000100044">http://www.scielo.br/scielo.php?script=sci_arttext&amp;pid=S0104-11692015000100044</ext-link></comment><pub-id pub-id-type="doi">10.1590/0104-1169.0144.2523</pub-id><pub-id pub-id-type="pmcid">PMC4376030</pub-id><pub-id pub-id-type="pmid">25806630</pub-id></element-citation></ref><ref id="B18"><label>18</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>McBain</surname><given-names>H</given-names></name><name name-style="western"><surname>Shipley</surname><given-names>M</given-names></name><name name-style="western"><surname>Newman</surname><given-names>S</given-names></name></person-group><article-title>The impact of self-monitoring in chronic illness on healthcare
+utilisation: a systematic review of reviews</article-title><source>BMC Health Serv Res</source><year>2015</year><volume>15</volume><fpage>565</fpage><pub-id pub-id-type="doi">10.1186/s12913-015-1221-5</pub-id><pub-id pub-id-type="pmid">26684011</pub-id><pub-id pub-id-type="pmcid">PMC4683734</pub-id></element-citation></ref><ref id="B19"><label>19</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Härter</surname><given-names>M</given-names></name><name name-style="western"><surname>Dirmaier</surname><given-names>J</given-names></name><name name-style="western"><surname>Dwinger</surname><given-names>S</given-names></name><name name-style="western"><surname>Kriston</surname><given-names>L</given-names></name><name name-style="western"><surname>Herbarth</surname><given-names>L</given-names></name><name name-style="western"><surname>Siegmund-Schultze</surname><given-names>E</given-names></name><name name-style="western"><surname>König</surname><given-names>HH</given-names></name></person-group><article-title>Effectiveness of Telephone-Based Health Coaching for Patients
+with Chronic Conditions: A Randomised Controlled Trial</article-title><source>PLoS ONE</source><year>2016</year><volume>11</volume><issue>9</issue><elocation-id>e0161269</elocation-id><pub-id pub-id-type="doi">10.1371/journal.pone.0161269</pub-id><pub-id pub-id-type="pmid">27632360</pub-id><pub-id pub-id-type="pmcid">PMC5025178</pub-id></element-citation></ref><ref id="B20"><label>20</label><element-citation publication-type="journal"><person-group person-group-type="author"><name name-style="western"><surname>Lambrinou</surname><given-names>E</given-names></name><name name-style="western"><surname>Kalogirou</surname><given-names>F</given-names></name><name name-style="western"><surname>Lamnisos</surname><given-names>D</given-names></name><name name-style="western"><surname>Sourtzi</surname><given-names>P</given-names></name></person-group><article-title>Effectiveness of heart failure management programmes with
+nurse-led discharge planning in reducing re-admissions: a systematic review
+and meta-analysis</article-title><source>Int J Nurs Stud</source><comment>Internet</comment><year>2012</year><volume>49</volume><issue>5</issue><fpage>610</fpage><lpage>624</lpage><pub-id pub-id-type="doi">10.1016/j.ijnurstu.2011.11.002</pub-id><pub-id pub-id-type="pmid">22196054</pub-id></element-citation></ref></ref-list></back></article>

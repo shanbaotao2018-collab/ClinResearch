@@ -30,6 +30,7 @@ literature_review_agent.db
 
 # One-off frontend bundle emitted during desktop UI experiments.
 new-session-*.js
+tmp/
 
 # Competition media and generated submission artifacts stay outside source control
 deliverables/
@@ -44,9 +45,13 @@ deliverables/
 # Generated global-install release archives are rebuilt from source.
 packages/clinresearch-opencode-global/dist/
 
-# The branded OpenCode desktop source is maintained as a separate upstream fork.
-# Keep its multi-gigabyte clone out of the ClinResearch application repository.
+# A local upstream worktree may still be kept for comparison. The self-contained,
+# versioned desktop source lives in vendor/opencode-bundled/.
 vendor/opencode-desktop-source/
+vendor/deliverables/
+vendor/HealthChain/
+vendor/dify/
+vendor/medical-research-skills/
 
 # Upstream Skill packaging reports are not runtime dependencies
 .agents/skills/**/POLISH_CHANGELOG.md

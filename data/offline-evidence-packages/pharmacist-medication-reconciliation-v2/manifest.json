@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "package_id": "pharmacist-medication-reconciliation-v2",
+  "title": "药师主导用药核对与出院过渡：原始离线证据包",
+  "source": "offline_pubmed_pmc_export",
+  "provenance": {
+    "databases": [
+      {
+        "name": "PubMed and PubMed Central",
+        "searched_at": "2026-08-06",
+        "query": "(medication reconciliation[Title/Abstract]) AND (pharmacist[Title/Abstract]) AND (hospital discharge[Title/Abstract] OR transition[Title/Abstract] OR readmission[Title/Abstract])",
+        "exported_count": 9,
+        "retrieval_method": "NCBI E-utilities NBIB export plus original Europe PMC fullTextXML"
+      }
+    ]
+  },
+  "citation_file": {
+    "path": "citations.nbib",
+    "format": "nbib",
+    "sha256": "42003da3ca02fb8c6e2d43aa807935ab87fc9d1fd37bf487adb6542adf161c42"
+  },
+  "documents": [
+    {
+      "path": "fulltext/paper-01-38602274.xml",
+      "content_type": "application/xml",
+      "sha256": "c674544d3d8039cf70161bad3ad9148505184543f2c98bd0ac1b4b1852c12cc8",
+      "citation_match": {
+        "external_id": "38602274"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11007753/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-02-40279301.xml",
+      "content_type": "application/xml",
+      "sha256": "a3c1f42b199a244f7e503507496dde77ea014b138f004690e0912f24ab23acaa",
+      "citation_match": {
+        "external_id": "40279301"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12027055/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-03-35241436.xml",
+      "content_type": "application/xml",
+      "sha256": "c9baa721bee1baf76ced2181e1693cd58007bdb13447c82e0819be2601104b14",
+      "citation_match": {
+        "external_id": "35241436"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8896047/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-04-35831783.xml",
+      "content_type": "application/xml",
+      "sha256": "38a1ef83f96dde0a04987ed0204e0cb4d18d915d71f18ff302be120a29d0f9fc",
+      "citation_match": {
+        "external_id": "35831783"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9281036/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-05-37312222.xml",
+      "content_type": "application/xml",
+      "sha256": "ce36aa62c53c666e28da385a32c2dced0b3f18ba75535d48b318cc63f1ea6efa",
+      "citation_match": {
+        "external_id": "37312222"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10265814/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-06-37056529.xml",
+      "content_type": "application/xml",
+      "sha256": "3fc34288d4633e12eff9308fe42a468a8d9acacc02bf526ddafc92ac2327a340",
+      "citation_match": {
+        "external_id": "37056529"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10092899/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-07-34529065.xml",
+      "content_type": "application/xml",
+      "sha256": "1f67f49de1339f24ee7430a5da2c9a36e430537a5c7f9964968280289f1f08a9",
+      "citation_match": {
+        "external_id": "34529065"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC8446815/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-08-31539073.xml",
+      "content_type": "application/xml",
+      "sha256": "f1fd1dc499aa8ff914f5c6cbb4898cbeb5b7e64aabd4111062642bbd260791ad",
+      "citation_match": {
+        "external_id": "31539073"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6755531/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-09-31592290.xml",
+      "content_type": "application/xml",
+      "sha256": "907aae7567298a1c380920587267b374949b7c2c7615ecb5c36c6d048d9d0198",
+      "citation_match": {
+        "external_id": "31592290"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6763293/fullTextXML"
+    }
+  ]
+}

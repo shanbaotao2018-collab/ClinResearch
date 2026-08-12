@@ -13,7 +13,7 @@ class Settings(BaseSettings):
     # desktop-local MCP connector to perform PubMed/Europe PMC requests.
     literature_access_mode: Literal["online", "client_online", "offline", "auto"] = "auto"
     literature_import_dir: str = str(Path(__file__).resolve().parents[4] / "runtime" / "literature-imports")
-    offline_evidence_package_dir: str = str(Path(__file__).resolve().parents[4] / "runtime" / "offline-evidence-packages")
+    offline_evidence_package_dir: str = str(Path(__file__).resolve().parents[4] / "data" / "offline-evidence-packages")
     # This key is deliberately not exposed to MCP or the model runtime.
     study_design_approval_key: str | None = None
     research_writing_approval_key: str | None = None

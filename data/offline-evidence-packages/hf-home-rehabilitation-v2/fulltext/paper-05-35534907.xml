@@ -1,0 +1,1631 @@
+
+<!DOCTYPE article
+  PUBLIC "-//NLM//DTD JATS (Z39.96) Journal Archiving and Interchange DTD with MathML3 v1.4 20241031//EN" "JATS-archivearticle1-4-mathml3.dtd">
+<article id="ehf213934" xml:lang="en" article-type="research-article" dtd-version="1.4"><?da-xref-anchor-style superscripted?><processing-meta base-tagset="archiving" mathml-version="3.0" table-model="xhtml" tagset-family="jats"><restricted-by>pmc</restricted-by></processing-meta><front><journal-meta><journal-id journal-id-type="nlm-ta">ESC Heart Fail</journal-id><journal-id journal-id-type="iso-abbrev">ESC Heart Fail</journal-id><journal-id journal-id-type="pmc-domain-id">3356</journal-id><journal-id journal-id-type="pmc-domain">escheart</journal-id><journal-id journal-id-type="nlm-id">101669191</journal-id><journal-id journal-id-type="publisher-id">EHF2</journal-id><journal-title-group><journal-title>ESC Heart Failure</journal-title></journal-title-group><issn pub-type="epub">2055-5822</issn><?publisher_abbrev oup?><publisher><publisher-name>Oxford University Press</publisher-name></publisher></journal-meta><article-meta><article-id pub-id-type="pmcid">PMC9288767</article-id><article-id pub-id-type="pmcid-ver">PMC9288767.1</article-id><article-id pub-id-type="pmcaid">9288767</article-id><article-id pub-id-type="pmcaiid">9288767</article-id><article-id pub-id-type="pmid">35534907</article-id><article-id pub-id-type="doi">10.1002/ehf2.13934</article-id><article-id pub-id-type="publisher-id">EHF213934</article-id><article-id pub-id-type="other">ESCHF-21-00904</article-id><article-version article-version-type="pmc-version">1</article-version><article-categories><subj-group subj-group-type="overline"><subject>Original Article</subject></subj-group><subj-group subj-group-type="heading"><subject>Original Articles</subject></subj-group></article-categories><title-group><article-title>Home‐based cardiac rehabilitation using information and communication technology for heart failure patients with frailty</article-title><alt-title alt-title-type="right-running-head">ICT‐based cardiac rehabilitation for frailty HF</alt-title><alt-title alt-title-type="left-running-head">Y. Nagatomi <italic toggle="yes">et al</italic>.</alt-title></title-group><contrib-group><contrib id="ehf213934-cr-0001" contrib-type="author"><name name-style="western"><surname>Nagatomi</surname><given-names initials="Y">Yuta</given-names></name><xref rid="ehf213934-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0002" contrib-type="author" corresp="yes"><name name-style="western"><surname>Ide</surname><given-names initials="T">Tomomi</given-names></name><contrib-id contrib-id-type="orcid" authenticated="false">https://orcid.org/0000-0003-3387-1550</contrib-id><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref><address><email>tomomi_i@cardiol.med.kyushu-u.ac.jp</email></address></contrib><contrib id="ehf213934-cr-0003" contrib-type="author"><name name-style="western"><surname>Higuchi</surname><given-names initials="T">Tae</given-names></name><xref rid="ehf213934-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0004" contrib-type="author"><name name-style="western"><surname>Nezu</surname><given-names initials="T">Tomoyuki</given-names></name><xref rid="ehf213934-aff-0001" ref-type="aff">
+<sup>1</sup>
+</xref><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0005" contrib-type="author"><name name-style="western"><surname>Fujino</surname><given-names initials="T">Takeo</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0006" contrib-type="author"><name name-style="western"><surname>Tohyama</surname><given-names initials="T">Takeshi</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="ehf213934-cr-0007" contrib-type="author"><name name-style="western"><surname>Nagata</surname><given-names initials="T">Takuya</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0004" ref-type="aff">
+<sup>4</sup>
+</xref></contrib><contrib id="ehf213934-cr-0008" contrib-type="author"><name name-style="western"><surname>Higo</surname><given-names initials="T">Taiki</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0009" contrib-type="author"><name name-style="western"><surname>Hashimoto</surname><given-names initials="T">Toru</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0005" ref-type="aff">
+<sup>5</sup>
+</xref></contrib><contrib id="ehf213934-cr-0010" contrib-type="author"><name name-style="western"><surname>Matsushima</surname><given-names initials="S">Shouji</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="ehf213934-cr-0011" contrib-type="author"><name name-style="western"><surname>Shinohara</surname><given-names initials="K">Keisuke</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0012" contrib-type="author"><name name-style="western"><surname>Yokoyama</surname><given-names initials="T">Tomiko</given-names></name><xref rid="ehf213934-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="ehf213934-cr-0013" contrib-type="author"><name name-style="western"><surname>Eguchi</surname><given-names initials="A">Aika</given-names></name><xref rid="ehf213934-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="ehf213934-cr-0014" contrib-type="author"><name name-style="western"><surname>Ogusu</surname><given-names initials="A">Ayumi</given-names></name><xref rid="ehf213934-aff-0006" ref-type="aff">
+<sup>6</sup>
+</xref></contrib><contrib id="ehf213934-cr-0015" contrib-type="author"><name name-style="western"><surname>Ikeda</surname><given-names initials="M">Masataka</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="ehf213934-cr-0016" contrib-type="author"><name name-style="western"><surname>Ishikawa</surname><given-names initials="Y">Yusuke</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0017" contrib-type="author"><name name-style="western"><surname>Yamashita</surname><given-names initials="F">Fumika</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref></contrib><contrib id="ehf213934-cr-0018" contrib-type="author"><name name-style="western"><surname>Kinugawa</surname><given-names initials="S">Shintaro</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib><contrib id="ehf213934-cr-0019" contrib-type="author"><name name-style="western"><surname>Tsutsui</surname><given-names initials="H">Hiroyuki</given-names></name><xref rid="ehf213934-aff-0002" ref-type="aff">
+<sup>2</sup>
+</xref><xref rid="ehf213934-aff-0003" ref-type="aff">
+<sup>3</sup>
+</xref></contrib></contrib-group><aff id="ehf213934-aff-0001">
+<label>
+<sup>1</sup>
+</label>
+<named-content content-type="organisation-division">Department of Rehabilitation Medicine</named-content>
+<institution>Kyushu University Hospital</institution>
+<city>Fukuoka</city>
+<country country="JP">Japan</country>
+</aff><aff id="ehf213934-aff-0002">
+<label>
+<sup>2</sup>
+</label>
+<named-content content-type="organisation-division">Department of Cardiovascular Medicine, Faculty of Medical Sciences</named-content>
+<institution>Kyushu University</institution>
+<named-content content-type="street">3‐1‐1 Maidashi, Higashi‐ku, Fukuoka‐shi</named-content>
+<city>Fukuoka</city>
+<postal-code>812‐8582</postal-code>
+<country country="JP">Japan</country>
+</aff><aff id="ehf213934-aff-0003">
+<label>
+<sup>3</sup>
+</label>
+<named-content content-type="organisation-division">Division of Cardiovascular Medicine, Research Institute of Angiocardiology, Faculty of Medical Sciences</named-content>
+<institution>Kyushu University</institution>
+<city>Fukuoka</city>
+<country country="JP">Japan</country>
+</aff><aff id="ehf213934-aff-0004" content-type="private-address">
+<label>
+<sup>4</sup>
+</label>
+<institution>Center for Clinical and Translational Research of Kyushu University Hospital</institution>
+<city>Fukuoka</city>
+<country country="JP">Japan</country>
+</aff><aff id="ehf213934-aff-0005">
+<label>
+<sup>5</sup>
+</label>
+<named-content content-type="organisation-division">Department of Advanced Cardiopulmonary Failure, Faculty of Medical Sciences</named-content>
+<institution>Kyushu University</institution>
+<city>Fukuoka</city>
+<country country="JP">Japan</country>
+</aff><aff id="ehf213934-aff-0006">
+<label>
+<sup>6</sup>
+</label>
+<named-content content-type="organisation-division">Department of Nutrition</named-content>
+<institution>Kyushu University Hospital</institution>
+<city>Fukuoka</city>
+<country country="JP">Japan</country>
+</aff><author-notes><corresp id="correspondenceTo">
+<label>*</label>Correspondence to: Tomomi Ide, Department of Cardiovascular Medicine, Faculty of Medical Sciences, Kyushu University, 3‐1‐1 Maidashi, Higashi‐ku, Fukuoka‐shi, Fukuoka 812‐8582, Japan. Tel: +81‐92‐642‐5360; Fax: +81‐92‐642‐5374. Email: <email>tomomi_i@cardiol.med.kyushu-u.ac.jp</email>
+</corresp></author-notes><pub-date pub-type="epub"><day>09</day><month>5</month><year>2022</year></pub-date><pub-date pub-type="collection"><month>8</month><year>2022</year></pub-date><volume>9</volume><issue seq="360">4</issue><issue-id pub-id-type="pmc-issue-id">412597</issue-id><issue-id pub-id-type="doi">10.1002/ehf2.v9.4</issue-id><fpage>2407</fpage><lpage>2418</lpage><history>
+<date date-type="rev-recd"><day>30</day><month>1</month><year>2022</year></date>
+<date date-type="received"><day>19</day><month>9</month><year>2021</year></date>
+<date date-type="accepted"><day>04</day><month>4</month><year>2022</year></date>
+</history><pub-history><event event-type="pmc-release"><date><day>09</day><month>05</month><year>2022</year></date></event><event event-type="pmc-live"><date><day>19</day><month>07</month><year>2022</year></date></event><event event-type="pmc-last-change"><date iso-8601-date="2026-08-03 22:25:18.013"><day>03</day><month>08</month><year>2026</year></date></event></pub-history><permissions><copyright-statement content-type="article-copyright">© 2022 The Authors. <italic toggle="yes">ESC Heart Failure</italic> published by John Wiley &amp; Sons Ltd on behalf of European Society of Cardiology.</copyright-statement><license><ali:license_ref xmlns:ali="http://www.niso.org/schemas/ali/1.0/" specific-use="textmining" content-type="ccbynclicense">https://creativecommons.org/licenses/by-nc/4.0/</ali:license_ref><license-p>This is an open access article under the terms of the <ext-link xmlns:xlink="http://www.w3.org/1999/xlink" ext-link-type="uri" xlink:href="https://creativecommons.org/licenses/by-nc/4.0/">http://creativecommons.org/licenses/by-nc/4.0/</ext-link> License, which permits use, distribution and reproduction in any medium, provided the original work is properly cited and is not used for commercial purposes.</license-p></license></permissions><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pmc-pdf" xlink:href="EHF2-9-2407.pdf"><?pdf-name EHF2-9-2407.pdf?><?pdf-size 580620?><?pdf-md5 ec2f52a39dbce8194a102882d2f408b2?><?pdf-image-server-status NEVER_LOAD?><?pdf-cloudpmc-urn urn:app:a4cf/9288767/ec2f52a39dbc/EHF2-9-2407.pdf?></self-uri><self-uri xmlns:xlink="http://www.w3.org/1999/xlink" content-type="pdf" xlink:href="file:EHF2-9-2407.pdf"/><abstract><title>Abstract</title><sec id="ehf213934-sec-0001"><title>Aims</title><p>Cardiac rehabilitation (CR) is an evidence‐based, secondary preventive strategy that improves mortality and morbidity rates in patients with heart failure (HF). However, the implementation and continuation of CR remains unsatisfactory, particularly for outpatients with physical frailty. This study investigated the efficacy and safety of a comprehensive home‐based cardiac rehabilitation (HBCR) programme that combines patient education, exercise guidance, and nutritional guidance using information and communication technology (ICT).</p></sec><sec id="ehf213934-sec-0002"><title>Methods and results</title><p>This study was a single‐centre, open‐label, randomized, controlled trial. Between April 2020 and November 2020, 30 outpatients with chronic HF (New York Heart Association II–III) and physical frailty were enrolled. The control group (<italic toggle="yes">n</italic> = 15) continued with standard care, while the HBCR group (<italic toggle="yes">n</italic> = 15) also received comprehensive, individualized CR, including ICT‐based exercise and nutrition guidance using ICT via a Fitbit® device for 3 months. The CR team communicated with each patient in HBCR group once a week via the application messaging tool and planned the training frequency and intensity of training individually for the next week according to each patient's symptoms and recorded pulse data during exercise. Dietitians conducted a nutritional assessment and then provided individual nutritional advice using the picture‐posting function of the application. The primary outcome was the change in the 6 min walking distance (6MWD). The participants' mean age was 63.7 ± 10.1 years, 53% were male, and 87% had non‐ischaemic heart disease. The observed change in the 6MWD was significantly greater in the HBCR group (52.1 ± 43.9 m vs. −4.3 ± 38.8 m; <italic toggle="yes">P</italic> &lt; 0.001) at a 73% of adherence rate. There was no significant change in adverse events in either group.</p></sec><sec id="ehf213934-sec-0003"><title>Conclusions</title><p>Our comprehensive HBCR programme using ICT for HF patients with physical frailty improved exercise tolerance and improved lower extremity muscle strength in our sample, suggesting management with individualized ICT‐based programmes as a safe and effective approach. Considering the increasing number of HF patients with frailty worldwide, our approach provides an efficient method to keep patients engaged in physical activity in their daily life.</p></sec></abstract><kwd-group kwd-group-type="author-generated"><kwd id="ehf213934-kwd-0001">Cardiac rehabilitation</kwd><kwd id="ehf213934-kwd-0002">Exercise tolerance</kwd><kwd id="ehf213934-kwd-0003">Frailty</kwd><kwd id="ehf213934-kwd-0004">Heart failure</kwd><kwd id="ehf213934-kwd-0005">Home rehabilitation</kwd><kwd id="ehf213934-kwd-0006">Telemedicine</kwd></kwd-group><funding-group><award-group id="funding-0001"><funding-source>Health and Labour Sciences Research</funding-source><award-id>20FC1051</award-id></award-group></funding-group><counts><fig-count count="3"/><table-count count="3"/><page-count count="12"/><word-count count="4890"/></counts><custom-meta-group><custom-meta><meta-name>pmc-status-qastatus</meta-name><meta-value>0</meta-value></custom-meta><custom-meta><meta-name>pmc-status-live</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-status-embargo</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-status-released</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-open-access</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-olf</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-manuscript</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-legally-suppressed</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-pdf</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-has-supplement</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-pdf-only</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-suppress-copyright</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-real-version</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-is-scanned-article</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-preprint</meta-name><meta-value>no</meta-value></custom-meta><custom-meta><meta-name>pmc-prop-in-epmc</meta-name><meta-value>yes</meta-value></custom-meta><custom-meta><meta-name>pmc-license-ref</meta-name><meta-value>CC BY-NC</meta-value></custom-meta><custom-meta><meta-name>source-schema-version-number</meta-name><meta-value>2.0</meta-value></custom-meta><custom-meta><meta-name>cover-date</meta-name><meta-value>August 2022</meta-value></custom-meta><custom-meta><meta-name>details-of-publishers-convertor</meta-name><meta-value>Converter:WILEY_ML3GV2_TO_JATSPMC version:6.1.7 mode:remove_FC converted:17.07.2022</meta-value></custom-meta></custom-meta-group></article-meta><notes><p content-type="self-citation">
+<mixed-citation publication-type="journal" id="ehf213934-cit-0000">
+<string-name name-style="western">
+<surname>Nagatomi</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ide</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Higuchi</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nezu</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fujino</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tohyama</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nagata</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Higo</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hashimoto</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsushima</surname>, <given-names>S.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shinohara</surname>, <given-names>K.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yokoyama</surname>, <given-names>T.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Eguchi</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ogusu</surname>, <given-names>A.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ikeda</surname>, <given-names>M.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ishikawa</surname>, <given-names>Y.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamashita</surname>, <given-names>F.</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kinugawa</surname>, <given-names>S.</given-names>
+</string-name>, and <string-name name-style="western">
+<surname>Tsutsui</surname>, <given-names>H.</given-names>
+</string-name> (<year>2022</year>) <article-title>Home‐based cardiac rehabilitation using information and communication technology for heart failure patients with frailty</article-title>. <source>ESC Heart Failure</source>, <volume>9</volume>: <fpage>2407</fpage>–<lpage>2418</lpage>. <pub-id pub-id-type="doi">10.1002/ehf2.13934</pub-id>.<pub-id pub-id-type="pmcid">PMC9288767</pub-id><pub-id pub-id-type="pmid">35534907</pub-id></mixed-citation>
+</p></notes></front><body id="ehf213934-body-0001"><sec id="ehf213934-sec-0004"><title>Introduction</title><p>The number of heart failure (HF) patients is rapidly increasing with the ageing of the global population, and it is estimated that 26 million adults live with HF worldwide.<xref rid="ehf213934-bib-0001" ref-type="bibr">
+<sup>1</sup>
+</xref> HF patients have a high incidence of physical frailty,<xref rid="ehf213934-bib-0002" ref-type="bibr">
+<sup>2</sup>
+</xref> which is defined as a syndrome of decreased physiological reserve and vulnerability to stressors.<xref rid="ehf213934-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref> Higher frailty, particularly in older adults, is related to a poor prognosis and is a predictive factor for more frequent rehosipitalization.<xref rid="ehf213934-bib-0004" ref-type="bibr">
+<sup>4</sup>
+</xref>
+</p><p>Cardiac rehabilitation (CR) for patients with HF is a comprehensive programme that includes exercise therapy, nutritional guidance, medication guidance, and patient education. CR is given a class IA recommendation in current HF guidelines to reduce cardiovascular events and improve the exercise tolerance and quality of life (QoL) of HF patients.<xref rid="ehf213934-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref>, <xref rid="ehf213934-bib-0006" ref-type="bibr">
+<sup>6</sup>
+</xref>, <xref rid="ehf213934-bib-0007" ref-type="bibr">
+<sup>7</sup>
+</xref> However, despite the strong recommendations and obvious benefits, hospital‐based CR is often underutilized or discontinued in real‐world practice.<xref rid="ehf213934-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref> Patients experiencing greater barriers to attending CR programmes are significantly less likely to enrol and are more likely to drop out of such programmes. Multi‐level barriers in both enrolment and participation prevent patients from achieving the health benefits of CR.<xref rid="ehf213934-bib-0009" ref-type="bibr">
+<sup>9</sup>
+</xref> Among other barriers to CR, accessibility, geographical location, and distance to the hospital are related to attendance rates in hospital‐based CR programmes.<xref rid="ehf213934-bib-0010" ref-type="bibr">
+<sup>10</sup>
+</xref>
+</p><p>Home‐based cardiac rehabilitation (HBCR) is an alternative delivery model that has been suggested for improving participation in CR programmes.<xref rid="ehf213934-bib-0011" ref-type="bibr">
+<sup>11</sup>
+</xref> Indeed, Anderson <italic toggle="yes">et al</italic>. reported that HBCR provided high adherence, with similar effectiveness to centre‐based CR in improving clinical outcomes.<xref rid="ehf213934-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref> With the development of information and communication technology (ICT), the availability of mobile health applications has markedly increased in recent years.<xref rid="ehf213934-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="ehf213934-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> However, the use of HBCR in previous studies has been limited to patients with coronary artery disease,<xref rid="ehf213934-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="ehf213934-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> and it is unclear whether HBCR is appropriate for HF patients with physical frailty.</p><p>The purpose of this randomized, controlled trial was to prove the efficacy and safety of a comprehensive HBCR programme for patients with HF and physical frailty. Because frailty in HF often correlates with multiple concomitants such as chronic kidney disease, anaemia, and diabetes, as well as with various physical conditions including ageing, disuse, and abnormalities in neurohumoral factors,<xref rid="ehf213934-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref> multicomponent interventions, including both exercise and nutrition interventions, are considered necessary to obtain efficient outcomes. In this study, we evaluated the effect of a comprehensive HBCR programme comprising self‐managed enhanced disease management, step‐by‐step home exercise guidance, and continuous nutrition guidance using ICT.</p></sec><sec sec-type="methods" id="ehf213934-sec-0005"><title>Methods</title><sec id="ehf213934-sec-0006"><title>Study design</title><p>This study was a single‐centre, open‐label, randomized, controlled trial. The study was conducted after obtaining approval from the Ethical Committee of Kyushu University Hospital (approval no. 2019203‐1). The purpose and method of the study were fully explained to all patients, and their consent was obtained. The protocol was registered in the University Hospital Medical Information Network (home‐rehab study; registration number UMIN000040136) before patient inclusion.</p></sec><sec id="ehf213934-sec-0007"><title>Patient population and randomization</title><p>The subjects were patients with chronic HF (New York Heart Association functional classification II–III) with physical frailty above pre‐frailty followed by Kyushu University Hospital between April and November 2020. HF was defined as NYHA class II–III chronic HF in stage C or D of the ACCF/AHA HF stage classification based on the ESC, ACCF/AHA, and JCS/JHFS guidelines.<xref rid="ehf213934-bib-0005" ref-type="bibr">
+<sup>5</sup>
+</xref> We screened for frailty using the Japanese Cardiovascular Health Study (J‐CHS) scale,<xref rid="ehf213934-bib-0003" ref-type="bibr">
+<sup>3</sup>
+</xref> which was constructed by modifying the original CHS criteria, consisting of the following five items; shrinking/weight loss, weakness, exhaustion, slowness, and low activity. Patients with more than 3 points on the J‐CHS were defined as frail and those with 1 or 2 points were defined as pre‐frail.</p><p>Patients who could not perform a 6 min walking test (6MWT) due to locomotor disorders or other reasons, patients with chronic kidney disease (estimated glomerular filtration rate &lt; 30 mL/min/1.73 m<sup>2</sup>), pericardial disease, severe valvular disease, severe cognitive decline, 6MWD ≥ 550 m, and those who participated in outpatient CR more than twice a week, were readmitted for acute exacerbation of HF within 1 month, did not have their own smartphone, or were judged by the investigator as being ineligible for other reasons were excluded. Patients with a body mass index (BMI) ≥ 25 kg/m<sup>2</sup> were also excluded because a BMI ≥ 25 kg/m<sup>2</sup> is defined as obesity according to the Japan Society for the Study of Obesity. The criteria for discontinuation included adverse events (AEs) requiring hospitalization, the subject's request for withdrawal of participation or withdrawal of consent, or other circumstances in which the investigator determined that it was difficult to continue the study.</p><p>We calculated that a total of 27 subjects would be required to detect an expected change of 50 m in the 6MWD, with a power of 80% and a significance level of 5%, based on a previous study in which the standard deviation of the change in the 6MWD was 44.5 m.<xref rid="ehf213934-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> A dropout rate of approximately10% was assumed. The target sample size was 15 patients in the HBCR group and 15 patients in the standard care group (control group), totalling 30 patients. After assessment for eligibility, patients were randomized into two groups in stratified blocks based on a 6MWD of ≥400 m. Data for each patient were managed using REDCap, an electronic data capture system.</p></sec><sec id="ehf213934-sec-0008"><title>Comprehensive cardiac rehabilitation programme</title><p>In the HBCR group, the comprehensive HBCR programme involved continuous evaluation and determination of appropriate exercise intensity and dietary guidance by the HBCR team, which consisted of physical therapists, dietitians, nurses, and cardiologists, for a period of 3 months. To participate in the HBCR programme, each participant was equipped with a Fitbit® (Inspire HR, Inc., Miami, FL, USA), worn on the non‐dominant hand.</p><p>The comprehensive HBCR programme used in this study is illustrated in <italic toggle="yes">Figure</italic>
+<xref rid="ehf213934-fig-0001" ref-type="fig">
+<italic toggle="yes">1</italic>
+</xref>. The intervention consisted of three components: (i) patient education for self‐monitoring and self‐management, (ii) exercise guidance, and (iii) nutrition guidance. The initial patient guidance was provided face‐to‐face on the first day. Patients were educated on their disease state and on symptoms of cardiac insufficiency, referring to the pocketbook for HF patients, which is distributed by The Japanese Heart Failure Society. To promote self‐management, patients were instructed before starting the programme to continue self‐monitoring of blood pressure and body weight and to call the hospital if they experienced a worsening of their HF symptoms. In terms of exercise guidance, risk management and target pulse rate monitoring during the exercise were described, according to our original basic exercise booklet.</p><fig position="float" fig-type="Figure" id="ehf213934-fig-0001" orientation="portrait"><label>Figure 1</label><caption><p>Comprehensive home‐based cardiac rehabilitation programme using information and communication technology.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-1" orientation="portrait" xlink:href="EHF2-9-2407-g002.jpg"><?image-name EHF2-9-2407-g002.jpg?><?image-size 105151?><?image-md5 52372aede62b30cbfb832bcc4852d668?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 501?><?image-original-width 1064?><?image-scaled-height 334?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/a4cf/9288767/52372aede62b/EHF2-9-2407-g002.jpg?><?thumb-name EHF2-9-2407-g002.gif?><?thumb-size 6045?><?thumb-md5 b63df09e9aaafce0f8e49d7c90600df0?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 169?><?thumb-cloudpmc-urn urn:cdn:blobs/a4cf/9288767/b63df09e9aaa/EHF2-9-2407-g002.gif?></graphic></fig><p>The physical therapists helped the patient to set up their Fitbit® and tested its connection to the patient's smartphone. As a daily‐life management tool, patients had to wear the Fitbit® device on their wrists all day, except during sleep and bathing. Patients also had to use the Fitbit® application on their smartphones.</p><p>The training menu consisted of three basic types of exercise: stretching, resistance training using weights, and ergometry or walking, for 30–40 min at a time. Exercise intensity was determined according to the report by Piepoli <italic toggle="yes">et al</italic>.,<xref rid="ehf213934-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> and physical therapists and cardiologists set exercise routines at an intensity of 11–13 on the Borg scale. The target frequency of exercise was set as three to five times per week for aerobic exercise and two to three times per week for resistance training. For aerobic exercise, ergometry and walking were recommended, and for resistance training, individual menus, such as exercises using their own weight, were prepared. Physical therapists also monitored each patient's average daily steps on the Fitbit® application during the intervention.</p><p>We communicated with each patient approximately once a week via the Fitbit® application messaging tool or by telephone if patients could not send or receive these messages for any reason and planned the training frequency and intensity for the next week according to their symptoms and recorded pulse data during exercise. Original video instructions on performing the exercises were provided via the patient's smartphone, using a QR code presented in the exercise booklet.</p><p>For nutritional guidance, dietitians conducted nutritional assessments at the start of the intervention and provided nutritional advice individually with an energy intake goal of 25–30 kcal (for standard body weight) and a protein intake goal of 1.2–1.5 g/kg body weight. In addition, the patients were required to post photographs taken of their meals once a week via the Fitbit® application. The dietician estimated the nutritional content of the posted meals and provided dietary advice to the patients.</p><p>The control group continued to receive standard medical care including pharmacological and non‐pharmacological therapy but not HBCR.</p></sec><sec id="ehf213934-sec-0009"><title>Assessments</title><p>Detailed methods of assessments are described in <xref rid="ehf213934-supitem-0001" ref-type="supplementary-material">supporting information</xref>. The primary outcome was the change in the 6MWD at 3 months from baseline. The 6MWT was carried out per the American Thoracic Society's protocol.<xref rid="ehf213934-bib-0016" ref-type="bibr">
+<sup>16</sup>
+</xref>
+</p><p>The secondary outcomes were changes in (i) brain natriuretic peptide (BNP), (ii) Kansas City Cardiomyopathy Questionnaire (KCCQ) scores, (iii) the Short Physical Performance Battery (SPPB) performance score, and (iv) the Kihon checklist (frailty evaluation) scores, as well as (v) difference in AE, and (vi) exercise adherence in the HBCR group.</p><p>Plasma BNP was measured by blood chemistry. Health‐related (HR)‐QoL was assessed using the KCCQ. For the assessment of frailty, we used the SPPB, which consist of tests that evaluate balance, a 4 m walking test, and a five‐times sit‐to‐stand test.<xref rid="ehf213934-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref> The SPPB scores were recorded according to the manual, and the change in scores between baseline and the 3 month follow‐up was used for analysis. Frailty was evaluated using the Kihon checklist as well as the J‐CHS.<xref rid="ehf213934-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="ehf213934-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> The Kihon checklist was originally developed by the Ministry of Health, Labour, and Welfare of Japan to identify older persons who are at risk of requiring support/care.<xref rid="ehf213934-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> All AEs during the trial were recorded and compared between the two groups, and causal relationships with CR were determined by attending cardiologists. Exercise adherence was defined as the percentage of patients who exercised at least 4 days per week, and the exercise performance rate was calculated by dividing the number of exercise days by the total number of intervention days for the HBCR group.</p><p>As exploratory outcomes, we measured physical function, laboratory data, and nutritional information at baseline and at 3 months. We measured handgrip strength, the maximal isometric knee extension strength and knee extension, weight ratio, femoral muscle thickness, and 5 m gait speed to assess physical function.</p><p>For laboratory data, haemoglobin, total protein, blood urea nitrogen, creatinine, estimated glomerular filtration rate, and total cholesterol were measured. Nutritional information was assessed using the Geriatric Nutritional Risk Index (GNRI) and Controlling Nutritional Status.</p></sec><sec id="ehf213934-sec-0010"><title>Statistical analysis</title><p>After collecting all data from the participants, we compared the two groups' baseline characteristics and outcome measures using unpaired <italic toggle="yes">t</italic>‐tests for continuous variables and <italic toggle="yes">χ</italic>
+<sup>2</sup> tests or logistics regression for dichotomous or categorical variables. Baseline data are reported as means ± standard deviations and percentages, and changes in outcomes are reported as means, 95% confidence intervals (95%CI), and odds ratio. The primary outcome measure was compared between the HBCR and control groups using a <italic toggle="yes">t</italic>‐test. We also verified our findings using analysis of covariance as a sensitivity analysis. Statistical significance was set at <italic toggle="yes">P</italic> &lt; 0.05. All statistical analyses were performed using JMP Pro 15 software (SAS Institute Inc., Cary, NC, USA).</p></sec></sec><sec sec-type="results" id="ehf213934-sec-0011"><title>Results</title><p>A total of 30 of all 35 eligible patients consented to participate. The flow diagram of participation is shown in <italic toggle="yes">Figure</italic>
+<xref rid="ehf213934-fig-0002" ref-type="fig">
+<italic toggle="yes">2</italic>
+</xref>. All patients were assessed at baseline and at 3 months.</p><fig position="float" fig-type="Figure" id="ehf213934-fig-0002" orientation="portrait"><label>Figure 2</label><caption><p>Study flow chart. 6MWD, 6 min walking distance; BMI, body mass index; HBCR, home‐based cardiac rehabilitation.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-3" orientation="portrait" xlink:href="EHF2-9-2407-g003.jpg"><?image-name EHF2-9-2407-g003.jpg?><?image-size 87680?><?image-md5 6d6c370e12c95877892395cb206bacc9?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 750?><?image-original-width 1064?><?image-scaled-height 500?><?image-scaled-width 709?><?image-cloudpmc-urn urn:cdn:blobs/a4cf/9288767/6d6c370e12c9/EHF2-9-2407-g003.jpg?><?thumb-name EHF2-9-2407-g003.gif?><?thumb-size 2367?><?thumb-md5 da113dbe1e81c0b400b23c154f577ebe?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 80?><?thumb-scaled-width 113?><?thumb-cloudpmc-urn urn:cdn:blobs/a4cf/9288767/da113dbe1e81/EHF2-9-2407-g003.gif?></graphic></fig><sec id="ehf213934-sec-0012"><title>Baseline patient characteristics</title><p>The mean age of the patients was 63.7 ± 10.1 years, 53% were men, 37% fell into the NYHA III category, and 87% had non‐ischaemic heart disease (<italic toggle="yes">Table</italic>
+<xref rid="ehf213934-tbl-0001" ref-type="table">
+<italic toggle="yes">1</italic>
+</xref>). The patients in the HBCR group were significantly younger than those in the control group (Control: 67.7 ± 8.9 vs. HBCR: 59.8 ± 10.0 years; <italic toggle="yes">P</italic> &lt; 0.05). There were no significant differences in sex or BMI. Patients with frailty (J‐CHS score ≥ 3) accounted for 33%, while the rest were determined as pre‐frail (J‐CHS score 1 or 2), in both groups. Aetiology, medical history, and comorbidities did not differ between the groups. Patients with HF with reduced ejection fraction, defined as ejection fraction &lt; 40%, accounted for 53% of the control group and 40% of the HBCR group. The 6MWD, BNP level, KCCQ scores, SPPB performance, Kihon checklist scores, and average steps per day were comparable between the groups at baseline.</p><table-wrap position="float" id="ehf213934-tbl-0001" content-type="Table" orientation="portrait"><label>Table 1</label><caption><p>Baseline characteristics of enrolled patients</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="center" span="1"/><col align="char" char="." span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th align="center" valign="bottom" rowspan="1" colspan="1"/><th align="center" valign="bottom" rowspan="1" colspan="1">All (<italic toggle="no">n</italic> = 30)</th><th align="center" valign="bottom" rowspan="1" colspan="1">Control (<italic toggle="no">n</italic> = 15)</th><th align="center" valign="bottom" rowspan="1" colspan="1">HBCR (<italic toggle="no">n</italic> = 15)</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="no">P</italic> value</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">Age (years)</td><td align="center" valign="top" rowspan="1" colspan="1">63.7 ± 10.1</td><td align="center" valign="top" rowspan="1" colspan="1">67.7 ± 8.9</td><td align="center" valign="top" rowspan="1" colspan="1">59.8 ± 10.0</td><td align="char" valign="top" rowspan="1" colspan="1">0.03</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Male, <italic toggle="yes">n</italic> (%)</td><td align="center" valign="top" rowspan="1" colspan="1">16 (53)</td><td align="center" valign="top" rowspan="1" colspan="1">7 (47)</td><td align="center" valign="top" rowspan="1" colspan="1">9 (60)</td><td align="char" valign="top" rowspan="1" colspan="1">0.46</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Height (cm)</td><td align="center" valign="top" rowspan="1" colspan="1">162.5 ± 7.8</td><td align="center" valign="top" rowspan="1" colspan="1">160.5 ± 7.3</td><td align="center" valign="top" rowspan="1" colspan="1">164.6 ± 7.9</td><td align="char" valign="top" rowspan="1" colspan="1">0.15</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Weight (kg)</td><td align="center" valign="top" rowspan="1" colspan="1">54.7 ± 8.8</td><td align="center" valign="top" rowspan="1" colspan="1">54.7 ± 9.2</td><td align="center" valign="top" rowspan="1" colspan="1">54.8 ± 8.7</td><td align="char" valign="top" rowspan="1" colspan="1">0.98</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">BMI (kg/m<sup>2</sup>)</td><td align="center" valign="top" rowspan="1" colspan="1">20.6 ± 2.5</td><td align="center" valign="top" rowspan="1" colspan="1">21.1 ± 2.3</td><td align="center" valign="top" rowspan="1" colspan="1">20.2 ± 2.6</td><td align="char" valign="top" rowspan="1" colspan="1">0.30</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">NYHA class, <italic toggle="yes">n</italic> (%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1">0.71</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">II</td><td align="center" valign="top" rowspan="1" colspan="1">19 (63)</td><td align="center" valign="top" rowspan="1" colspan="1">9 (60)</td><td align="center" valign="top" rowspan="1" colspan="1">10 (67)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">III</td><td align="center" valign="top" rowspan="1" colspan="1">11 (37)</td><td align="center" valign="top" rowspan="1" colspan="1">6 (40)</td><td align="center" valign="top" rowspan="1" colspan="1">5 (33)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Frailty (J‐CHS), <italic toggle="yes">n</italic> (%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1">0.99</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Frailty</td><td align="center" valign="top" rowspan="1" colspan="1">10 (33)</td><td align="center" valign="top" rowspan="1" colspan="1">5 (33)</td><td align="center" valign="top" rowspan="1" colspan="1">5 (33)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Pre‐frailty</td><td align="center" valign="top" rowspan="1" colspan="1">20 (67)</td><td align="center" valign="top" rowspan="1" colspan="1">10 (67)</td><td align="center" valign="top" rowspan="1" colspan="1">10 (67)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Aetiologies of heart failure, <italic toggle="yes">n</italic> (%)</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1">0.50</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Ischaemic heart disease</td><td align="center" valign="top" rowspan="1" colspan="1">4 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (6)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Dilated cardiomyopathy</td><td align="center" valign="top" rowspan="1" colspan="1">9 (35)</td><td align="center" valign="top" rowspan="1" colspan="1">6 (43)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (25)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Sarcoidosis</td><td align="center" valign="top" rowspan="1" colspan="1">5 (19)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (14)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (25)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Amyloidosis</td><td align="center" valign="top" rowspan="1" colspan="1">2 (8)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (7)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (8)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Hypertrophic cardiomyopathy</td><td align="center" valign="top" rowspan="1" colspan="1">2 (8)</td><td align="center" valign="top" rowspan="1" colspan="1">0 (0)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (17)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Hypertensive heart disease</td><td align="center" valign="top" rowspan="1" colspan="1">1 (4)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (7)</td><td align="center" valign="top" rowspan="1" colspan="1">0 (0)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Other</td><td align="center" valign="top" rowspan="1" colspan="1">7 (27)</td><td align="center" valign="top" rowspan="1" colspan="1">4 (29)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (25)</td><td align="char" valign="top" rowspan="1" colspan="1"/></tr><tr><td colspan="5" align="left" valign="top" rowspan="1">Medical history, <italic toggle="yes">n</italic> (%)</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">PCI</td><td align="center" valign="top" rowspan="1" colspan="1">3 (10)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (7)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="char" valign="top" rowspan="1" colspan="1">1.00</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Valvular surgery</td><td align="center" valign="top" rowspan="1" colspan="1">3 (10)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (7)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="char" valign="top" rowspan="1" colspan="1">1.00</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">PMI</td><td align="center" valign="top" rowspan="1" colspan="1">3 (10)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (7)</td><td align="char" valign="top" rowspan="1" colspan="1">1.00</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">ICD</td><td align="center" valign="top" rowspan="1" colspan="1">6 (20)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">4 (27)</td><td align="char" valign="top" rowspan="1" colspan="1">0.65</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">CRT‐P</td><td align="center" valign="top" rowspan="1" colspan="1">1 (3)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (7)</td><td align="center" valign="top" rowspan="1" colspan="1">0 (0)</td><td align="char" valign="top" rowspan="1" colspan="1">1.00</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">CRT‐D</td><td align="center" valign="top" rowspan="1" colspan="1">7 (23)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">5 (33)</td><td align="char" valign="top" rowspan="1" colspan="1">0.39</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">LVAD</td><td align="center" valign="top" rowspan="1" colspan="1">4 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="char" valign="top" rowspan="1" colspan="1">1.00</td></tr><tr><td colspan="5" align="left" valign="top" rowspan="1">Comorbidities, <italic toggle="yes">n</italic> (%)</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Hypertension</td><td align="center" valign="top" rowspan="1" colspan="1">6 (20)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">4 (27)</td><td align="char" valign="top" rowspan="1" colspan="1">0.36</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Diabetes mellitus</td><td align="center" valign="top" rowspan="1" colspan="1">5 (17)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1">0.62</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Hyperlipidaemia</td><td align="center" valign="top" rowspan="1" colspan="1">6 (20)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1">1.00</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Chronic kidney disease</td><td align="center" valign="top" rowspan="1" colspan="1">7 (23)</td><td align="center" valign="top" rowspan="1" colspan="1">4 (27)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1">0.67</td></tr><tr><td colspan="5" align="left" valign="top" rowspan="1">Physiological parameter</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">SBP (mmHg)</td><td align="center" valign="top" rowspan="1" colspan="1">99.8 ± 23.3</td><td align="center" valign="top" rowspan="1" colspan="1">105.1 ± 28.3</td><td align="center" valign="top" rowspan="1" colspan="1">94.6 ± 16.4</td><td align="char" valign="top" rowspan="1" colspan="1">0.23</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">DBP (mmHg)</td><td align="center" valign="top" rowspan="1" colspan="1">67.3 ± 15.2</td><td align="center" valign="top" rowspan="1" colspan="1">68.7 ± 17.7</td><td align="center" valign="top" rowspan="1" colspan="1">66.0 ± 12.7</td><td align="char" valign="top" rowspan="1" colspan="1">0.64</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">PR (b.p.m.)</td><td align="center" valign="top" rowspan="1" colspan="1">73.9 ± 14.1</td><td align="center" valign="top" rowspan="1" colspan="1">75.6 ± 13.4</td><td align="center" valign="top" rowspan="1" colspan="1">72.2 ± 15.1</td><td align="char" valign="top" rowspan="1" colspan="1">0.52</td></tr><tr><td colspan="5" align="left" valign="top" rowspan="1">Echocardiography</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">LVDd (mm)</td><td align="center" valign="top" rowspan="1" colspan="1">54.2 ± 11.2</td><td align="center" valign="top" rowspan="1" colspan="1">57.3 ± 12.6</td><td align="center" valign="top" rowspan="1" colspan="1">51.1 ± 8.8</td><td align="char" valign="top" rowspan="1" colspan="1">0.13</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">LVDs (mm)</td><td align="center" valign="top" rowspan="1" colspan="1">43.9 ± 14.1</td><td align="center" valign="top" rowspan="1" colspan="1">46.7 ± 16.6</td><td align="center" valign="top" rowspan="1" colspan="1">41.1 ± 11.0</td><td align="char" valign="top" rowspan="1" colspan="1">0.28</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">LVEF (%)</td><td align="center" valign="top" rowspan="1" colspan="1">42.2 ± 17.4</td><td align="center" valign="top" rowspan="1" colspan="1">44.5 ± 17.3</td><td align="center" valign="top" rowspan="1" colspan="1">39.9 ± 17.8</td><td align="char" valign="top" rowspan="1" colspan="1">0.48</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">LVEF &lt; 40%, <italic toggle="yes">n</italic> (%)</td><td align="center" valign="top" rowspan="1" colspan="1">14 (47)</td><td align="center" valign="top" rowspan="1" colspan="1">8 (53)</td><td align="center" valign="top" rowspan="1" colspan="1">6 (40)</td><td align="char" valign="top" rowspan="1" colspan="1">0.46</td></tr><tr><td colspan="5" align="left" valign="top" rowspan="1">Medication, <italic toggle="yes">n</italic> (%)</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">ACE inhibitor</td><td align="center" valign="top" rowspan="1" colspan="1">20 (67)</td><td align="center" valign="top" rowspan="1" colspan="1">9 (60)</td><td align="center" valign="top" rowspan="1" colspan="1">11 (73)</td><td align="char" valign="top" rowspan="1" colspan="1">0.44</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">ARB</td><td align="center" valign="top" rowspan="1" colspan="1">3 (10)</td><td align="center" valign="top" rowspan="1" colspan="1">2 (13)</td><td align="center" valign="top" rowspan="1" colspan="1">1 (6)</td><td align="char" valign="top" rowspan="1" colspan="1">0.54</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Beta‐blocker</td><td align="center" valign="top" rowspan="1" colspan="1">29 (97)</td><td align="center" valign="top" rowspan="1" colspan="1">15 (100)</td><td align="center" valign="top" rowspan="1" colspan="1">14 (93)</td><td align="char" valign="top" rowspan="1" colspan="1">0.31</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">MRA</td><td align="center" valign="top" rowspan="1" colspan="1">18 (60)</td><td align="center" valign="top" rowspan="1" colspan="1">8 (53)</td><td align="center" valign="top" rowspan="1" colspan="1">10 (67)</td><td align="char" valign="top" rowspan="1" colspan="1">0.46</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Calcium channel blocker</td><td align="center" valign="top" rowspan="1" colspan="1">3 (10)</td><td align="center" valign="top" rowspan="1" colspan="1">0 (0)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1">0.07</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Loop diuretic</td><td align="center" valign="top" rowspan="1" colspan="1">10 (33)</td><td align="center" valign="top" rowspan="1" colspan="1">7 (47)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1">0.12</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Inotropic agent</td><td align="center" valign="top" rowspan="1" colspan="1">7 (23)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="center" valign="top" rowspan="1" colspan="1">4 (27)</td><td align="char" valign="top" rowspan="1" colspan="1">0.67</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Statin</td><td align="center" valign="top" rowspan="1" colspan="1">8 (27)</td><td align="center" valign="top" rowspan="1" colspan="1">5 (33)</td><td align="center" valign="top" rowspan="1" colspan="1">3 (20)</td><td align="char" valign="top" rowspan="1" colspan="1">0.41</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">
+<p>Anticoagulant</p>
+</td><td align="center" valign="top" rowspan="1" colspan="1">13 (43)</td><td align="center" valign="top" rowspan="1" colspan="1">4 (27)</td><td align="center" valign="top" rowspan="1" colspan="1">9 (60)</td><td align="char" valign="top" rowspan="1" colspan="1">0.65</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Average steps a day (steps)</td><td align="center" valign="top" rowspan="1" colspan="1">4376 ± 2297</td><td align="center" valign="top" rowspan="1" colspan="1">3936 ± 2373</td><td align="center" valign="top" rowspan="1" colspan="1">4816 ± 2209</td><td align="char" valign="top" rowspan="1" colspan="1">0.30</td></tr></tbody></table><table-wrap-foot id="ehf213934-ntgp-0001"><fn id="ehf213934-note-0001"><p>Data are expressed as mean ± standard deviation and percentages. <italic toggle="yes">P</italic> values are derived by unpaired <italic toggle="yes">t</italic>‐test between the control group and the HBCR group.</p></fn><fn id="ehf213934-note-0002"><p>ACE, angiotensin converting enzyme; ARB, angiotensin II receptor blocker; BMI, body mass index; CRT, cardiac resynchronization therapy; DBP, diastolic blood pressure; HBCR, home‐base cardiac rehabilitation; ICD, implantable cardiac defibrillator; J‐CHS, Japanese version of the cardiovascular health study criteria; LVAD, left ventricular assist device; LVDd, left ventricular dimension diastole; LVDs, left ventricular dimension systole; LVEF, left ventricular ejection fraction; MRA, mineralocorticoid receptor antagonist; NYHA, New York Heart Association; PCI, percutaneous coronary intervention; PMI, pacemaker implantation; PR, pulse rate; SBP, systolic blood pressure.</p></fn></table-wrap-foot></table-wrap></sec><sec id="ehf213934-sec-0013"><title>Primary outcome</title><p>The 6MWD increased over the 3 months' observation period in the HBCR group (52.1 ± 43.9 m, <italic toggle="yes">P</italic> &lt; 0.001), whereas no significant improvements was observed in the control group (−4.3 ± 38.8 m, <italic toggle="yes">P</italic> = 0.68). The change in 6MWD at 3 months compared with baseline was significantly greater in the HBCR group than in the control group (56.4 [95%CI, 25.4 to 87.4] m, <italic toggle="yes">P</italic> &lt; 0.001) (<italic toggle="yes">Figure</italic>
+<xref rid="ehf213934-fig-0003" ref-type="fig">
+<italic toggle="yes">3</italic>
+</xref>).</p><fig position="float" fig-type="Figure" id="ehf213934-fig-0003" orientation="portrait"><label>Figure 3</label><caption><p>The change in the 6MWD from baseline. 6MWD, 6 min walking distance; HBCR, home‐based cardiac rehabilitation.</p></caption><graphic xmlns:xlink="http://www.w3.org/1999/xlink" position="anchor" id="jats-graphic-5" orientation="portrait" xlink:href="EHF2-9-2407-g001.jpg"><?image-name EHF2-9-2407-g001.jpg?><?image-size 100076?><?image-md5 57b7c79ad0ee1942a9eafad017a39bdc?><?image-image-server-status LOAD_COMPLETED?><?image-original-height 858?><?image-original-width 712?><?image-scaled-height 858?><?image-scaled-width 712?><?image-cloudpmc-urn urn:cdn:blobs/a4cf/9288767/57b7c79ad0ee/EHF2-9-2407-g001.jpg?><?thumb-name EHF2-9-2407-g001.gif?><?thumb-size 3220?><?thumb-md5 0844b97581ca1a4cfa896c6c123d91ea?><?thumb-image-server-status NEVER_LOAD?><?thumb-scaled-height 121?><?thumb-scaled-width 100?><?thumb-cloudpmc-urn urn:cdn:blobs/a4cf/9288767/0844b97581ca/EHF2-9-2407-g001.gif?></graphic></fig><p>To consider the effect of the difference in age between the groups, we performed post‐hoc analyses using an analysis of covariance with age, sex, and baseline 6MWD as covariates. We confirmed a significant positive relationship between the HBCR group and improvement in the 6MWD (24.6 [95%CI, 6.6 to 42.6] m, <italic toggle="yes">P</italic> &lt; 0.01) even after adjustment for these baseline factors.</p></sec><sec id="ehf213934-sec-0014"><title>Secondary and exploratory outcomes</title><p>
+<italic toggle="yes">Table</italic>
+<xref rid="ehf213934-tbl-0002" ref-type="table">
+<italic toggle="yes">2</italic>
+</xref> shows the secondary outcomes at baseline and at 3 months. There were no significant differences in BNP level, KCCQ scores, SPPB scores, and Kihon checklist scores. However, there were significant improvements in the HBCR group compared with the control group in knee extension strength (12.6 [95%CI, 2.4 to 22.8] Nm; <italic toggle="yes">P</italic> &lt; 0.05), and knee extension muscle strength to body weight ratio (0.1 [95%CI, −0.01 to 0.2] kgf/kg; <italic toggle="yes">P</italic> &lt; 0.05). There were significant increases in serum haemoglobin (0.7 [95%CI, 0.1 to 1.3] g/dL; <italic toggle="yes">P</italic> &lt; 0.05), and total cholesterol (15.9 [95%CI, −3.1 to 28.8] mg/dL; <italic toggle="yes">P</italic> &lt; 0.05) (<italic toggle="yes">Table</italic>
+<xref rid="ehf213934-tbl-0003" ref-type="table">
+<italic toggle="yes">3</italic>
+</xref>) in the HBCR group but no significant differences in GNRI or Controlling Nutritional Status scores between the groups. The mean number of steps per day numerically increased in the HBCR group by +678 ± 322 steps (4816 ± 2209 steps at baseline vs. 5494 ± 2366 steps at 3 months; <italic toggle="yes">P</italic> = 0.05).</p><table-wrap position="float" id="ehf213934-tbl-0002" content-type="Table" orientation="portrait"><label>Table 2</label><caption><p>Secondary outcomes: changes from baseline to 3 months</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="(" span="1"/><col align="char" char="." span="1"/><thead valign="bottom"><tr><th align="center" valign="bottom" rowspan="1" colspan="1"/><th style="border-bottom:solid 1px #000000" align="center" colspan="3" valign="bottom" rowspan="1">Control (<italic toggle="no">n</italic> = 15)</th><th style="border-bottom:solid 1px #000000" align="center" colspan="3" valign="bottom" rowspan="1">HBCR (<italic toggle="no">n</italic> = 15)</th><th style="border-bottom:solid 1px #000000" align="center" colspan="2" valign="bottom" rowspan="1">Difference between the control and HBCR groups in the changes from baseline to 3 months</th></tr><tr style="border-bottom:solid 1px #000000"><th align="center" valign="bottom" rowspan="1" colspan="1"/><th align="center" valign="bottom" rowspan="1" colspan="1">Baseline</th><th align="center" valign="bottom" rowspan="1" colspan="1">3 months</th><th align="center" valign="bottom" rowspan="1" colspan="1">Change</th><th align="center" valign="bottom" rowspan="1" colspan="1">Baseline</th><th align="center" valign="bottom" rowspan="1" colspan="1">3 months</th><th align="center" valign="bottom" rowspan="1" colspan="1">Change</th><th align="center" valign="bottom" rowspan="1" colspan="1">(95%CI)</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="no">P</italic> value</th></tr></thead><tbody valign="top"><tr><td align="left" valign="top" rowspan="1" colspan="1">BNP (pg/mL)</td><td align="char" valign="top" rowspan="1" colspan="1">192 ± 219</td><td align="char" valign="top" rowspan="1" colspan="1">188 ± 229</td><td align="char" valign="top" rowspan="1" colspan="1">−4.3 ± 44.0</td><td align="char" valign="top" rowspan="1" colspan="1">237 ± 263</td><td align="char" valign="top" rowspan="1" colspan="1">211 ± 239</td><td align="char" valign="top" rowspan="1" colspan="1">−25.1 ± 81.4</td><td align="char" valign="top" rowspan="1" colspan="1">−20.8 (−69.8 to 28.2)</td><td align="char" valign="top" rowspan="1" colspan="1">0.39</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">KCCQ</td><td align="char" valign="top" rowspan="1" colspan="1">74.1 ± 23.1</td><td align="char" valign="top" rowspan="1" colspan="1">78.0 ± 23.0</td><td align="char" valign="top" rowspan="1" colspan="1">3.9 ± 10.8</td><td align="char" valign="top" rowspan="1" colspan="1">70.2 ± 25.6</td><td align="char" valign="top" rowspan="1" colspan="1">70.3 ± 27.7</td><td align="char" valign="top" rowspan="1" colspan="1">0.04 ± 7.2</td><td align="char" valign="top" rowspan="1" colspan="1">−3.9 (−10.8 to 3.0)</td><td align="char" valign="top" rowspan="1" colspan="1">0.26</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">SPPB</td><td align="char" valign="top" rowspan="1" colspan="1">10.4 ± 2.2</td><td align="char" valign="top" rowspan="1" colspan="1">10.5 ± 2.0</td><td align="char" valign="top" rowspan="1" colspan="1">0.1 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">11.1 ± 1.2</td><td align="char" valign="top" rowspan="1" colspan="1">11.4 ± 1.1</td><td align="char" valign="top" rowspan="1" colspan="1">0.2 ± 0.1</td><td align="char" valign="top" rowspan="1" colspan="1">0.2 (−0.2 to 0.7)</td><td align="char" valign="top" rowspan="1" colspan="1">0.41</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Kihon checklist</td><td align="char" valign="top" rowspan="1" colspan="1">6.5 ± 3.7</td><td align="char" valign="top" rowspan="1" colspan="1">4.8 ± 3.1</td><td align="char" valign="top" rowspan="1" colspan="1">−1.7 ± 2.2</td><td align="char" valign="top" rowspan="1" colspan="1">6.1 ± 4.1</td><td align="char" valign="top" rowspan="1" colspan="1">5.4 ± 2.9</td><td align="char" valign="top" rowspan="1" colspan="1">−0.6 ± 2.6</td><td align="char" valign="top" rowspan="1" colspan="1">1.1 (−0.7 to 2.9)</td><td align="char" valign="top" rowspan="1" colspan="1">0.23</td></tr></tbody></table><table-wrap-foot id="ehf213934-ntgp-0002"><fn id="ehf213934-note-0003"><p>Data are expressed as mean ± standard deviation. <italic toggle="yes">P</italic> values are derived by unpaired <italic toggle="yes">t</italic>‐test.</p></fn><fn id="ehf213934-note-0004"><p>95%CI, 95% confidence interval; BNP, brain natriuretic peptide; HBCR, home‐base cardiac rehabilitation; KCCQ, Kansas City Cardiomyopathy Questionnaire; SPPB, Short Physical Performance Battery.</p></fn></table-wrap-foot></table-wrap><table-wrap position="float" id="ehf213934-tbl-0003" content-type="Table" orientation="portrait"><label>Table 3</label><caption><p>Exploratory outcomes: changes from baseline to 3 months</p></caption><table frame="hsides" rules="groups"><col align="left" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="char" char="±" span="1"/><col align="center" span="1"/><col align="char" char="." span="1"/><thead valign="bottom"><tr style="border-bottom:solid 1px #000000"><th style="border-bottom:solid 1px #000000" align="center" rowspan="2" valign="bottom" colspan="1"/><th style="border-bottom:solid 1px #000000" align="center" colspan="3" valign="bottom" rowspan="1">Control (<italic toggle="no">n</italic> = 15)</th><th style="border-bottom:solid 1px #000000" align="center" colspan="3" valign="bottom" rowspan="1">HBCR (<italic toggle="no">n</italic> = 15)</th><th style="border-bottom:solid 1px #000000" align="center" colspan="2" valign="bottom" rowspan="1">Comparison of changes from baseline to 3 months between the control and HBCR groups</th></tr><tr style="border-bottom:solid 1px #000000"><th align="center" valign="bottom" rowspan="1" colspan="1">Baseline</th><th align="center" valign="bottom" rowspan="1" colspan="1">3 months</th><th align="center" valign="bottom" rowspan="1" colspan="1">Change</th><th align="center" valign="bottom" rowspan="1" colspan="1">Baseline</th><th align="center" valign="bottom" rowspan="1" colspan="1">3 months</th><th align="center" valign="bottom" rowspan="1" colspan="1">Change</th><th align="center" valign="bottom" rowspan="1" colspan="1">(95%CI)</th><th align="center" valign="bottom" rowspan="1" colspan="1">
+<italic toggle="no">P</italic> value</th></tr></thead><tbody valign="top"><tr><td colspan="9" align="left" valign="top" rowspan="1">Physical function</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Handgrip strength (kg)</td><td align="char" valign="top" rowspan="1" colspan="1">23.3 ± 6.9</td><td align="char" valign="top" rowspan="1" colspan="1">23.5 ± 6.6</td><td align="char" valign="top" rowspan="1" colspan="1">0.15 ± 2.9</td><td align="char" valign="top" rowspan="1" colspan="1">26.5 ± 7.4</td><td align="char" valign="top" rowspan="1" colspan="1">28.5 ± 6.7</td><td align="char" valign="top" rowspan="1" colspan="1">2.0 ± 3.0</td><td align="center" valign="top" rowspan="1" colspan="1">1.8 (−0.3 to 4.0)</td><td align="char" valign="top" rowspan="1" colspan="1">0.10</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Knee extension (Nm)</td><td align="char" valign="top" rowspan="1" colspan="1">88.3 ± 37.7</td><td align="char" valign="top" rowspan="1" colspan="1">82.4 ± 32.8</td><td align="char" valign="top" rowspan="1" colspan="1">−5.9 ± 10.3</td><td align="char" valign="top" rowspan="1" colspan="1">97.7 ± 30.2</td><td align="char" valign="top" rowspan="1" colspan="1">104.3 ± 28.9</td><td align="char" valign="top" rowspan="1" colspan="1">6.7 ± 16.3</td><td align="center" valign="top" rowspan="1" colspan="1">12.6 (2.4 to 22.8)</td><td align="char" valign="top" rowspan="1" colspan="1">0.02</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Knee extension weight ratio (kgf/kg)</td><td align="char" valign="top" rowspan="1" colspan="1">0.63 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">0.60 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">−0.02 ± 0.1</td><td align="char" valign="top" rowspan="1" colspan="1">0.68 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">0.76 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">0.08 ± 0.13</td><td align="center" valign="top" rowspan="1" colspan="1">0.10 (−0.01 to 0.20)</td><td align="char" valign="top" rowspan="1" colspan="1">0.03</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Femoral thickness (mm)</td><td align="char" valign="top" rowspan="1" colspan="1">27.5 ± 6.3</td><td align="char" valign="top" rowspan="1" colspan="1">27.1 ± 5.9</td><td align="char" valign="top" rowspan="1" colspan="1">−0.5 ± 3.4</td><td align="char" valign="top" rowspan="1" colspan="1">25.1 ± 5.0</td><td align="char" valign="top" rowspan="1" colspan="1">26.7 ± 4.9</td><td align="char" valign="top" rowspan="1" colspan="1">1.6 ± 2.3</td><td align="center" valign="top" rowspan="1" colspan="1">2.1 (0.1 to 4.2)</td><td align="char" valign="top" rowspan="1" colspan="1">0.06</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Gait speed (m/s)</td><td align="char" valign="top" rowspan="1" colspan="1">0.98 ± 0.20</td><td align="char" valign="top" rowspan="1" colspan="1">0.96 ± 0.19</td><td align="char" valign="top" rowspan="1" colspan="1">−0.02 ± 0.10</td><td align="char" valign="top" rowspan="1" colspan="1">1.04 ± 0.1</td><td align="char" valign="top" rowspan="1" colspan="1">1.10 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">0.06 ± 0.1</td><td align="center" valign="top" rowspan="1" colspan="1">0.08 (−0.01 to 0.18)</td><td align="char" valign="top" rowspan="1" colspan="1">0.08</td></tr><tr><td colspan="9" align="left" valign="top" rowspan="1">Laboratory data</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Haemoglobin (g/dL)</td><td align="char" valign="top" rowspan="1" colspan="1">12.9 ± 1.9</td><td align="char" valign="top" rowspan="1" colspan="1">12.6 ± 1.9</td><td align="char" valign="top" rowspan="1" colspan="1">−0.3 ± 1.0</td><td align="char" valign="top" rowspan="1" colspan="1">12.9 ± 2.5</td><td align="char" valign="top" rowspan="1" colspan="1">13.2 ± 2.3</td><td align="char" valign="top" rowspan="1" colspan="1">0.4 ± 0.6</td><td align="center" valign="top" rowspan="1" colspan="1">0.7 (0.1 to 1.3)</td><td align="char" valign="top" rowspan="1" colspan="1">0.02</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Total protein (g/dL)</td><td align="char" valign="top" rowspan="1" colspan="1">6.8 ± 0.1</td><td align="char" valign="top" rowspan="1" colspan="1">6.8 ± 0.6</td><td align="char" valign="top" rowspan="1" colspan="1">0.03 ± 0.3</td><td align="char" valign="top" rowspan="1" colspan="1">6.9 ± 0.1</td><td align="char" valign="top" rowspan="1" colspan="1">7.2 ± 0.6</td><td align="char" valign="top" rowspan="1" colspan="1">0.2 ± 0.3</td><td align="center" valign="top" rowspan="1" colspan="1">0.2 (−0.04 to 0.4)</td><td align="char" valign="top" rowspan="1" colspan="1">0.10</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">BUN (mg/dL)</td><td align="char" valign="top" rowspan="1" colspan="1">20.7 ± 8.7</td><td align="char" valign="top" rowspan="1" colspan="1">21.3 ± 9.1</td><td align="char" valign="top" rowspan="1" colspan="1">0.5 ± 2.2</td><td align="char" valign="top" rowspan="1" colspan="1">22.3 ± 8.9</td><td align="char" valign="top" rowspan="1" colspan="1">21.2 ± 9.2</td><td align="char" valign="top" rowspan="1" colspan="1">−1.1 ± 4.1</td><td align="center" valign="top" rowspan="1" colspan="1">−1.6 (−4.1 to 0.8)</td><td align="char" valign="top" rowspan="1" colspan="1">0.18</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Creatinine (mg/dL)</td><td align="char" valign="top" rowspan="1" colspan="1">0.9 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">0.9 ± 0.2</td><td align="char" valign="top" rowspan="1" colspan="1">0.03 ± 0.1</td><td align="char" valign="top" rowspan="1" colspan="1">1.0 ± 0.3</td><td align="char" valign="top" rowspan="1" colspan="1">1.0 ± 0.4</td><td align="char" valign="top" rowspan="1" colspan="1">0.005 ± 0.1</td><td align="center" valign="top" rowspan="1" colspan="1">−0.02 (−0.1 to 0.06)</td><td align="char" valign="top" rowspan="1" colspan="1">0.60</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">eGFR (mL/min/1.73 m<sup>2</sup>)</td><td align="char" valign="top" rowspan="1" colspan="1">58.8 ± 15.7</td><td align="char" valign="top" rowspan="1" colspan="1">57.9 ± 19.4</td><td align="char" valign="top" rowspan="1" colspan="1">−0.92 ± 1.8</td><td align="char" valign="top" rowspan="1" colspan="1">58.2 ± 14.9</td><td align="char" valign="top" rowspan="1" colspan="1">58.2 ± 15.6</td><td align="char" valign="top" rowspan="1" colspan="1">0.05 ± 1.8</td><td align="center" valign="top" rowspan="1" colspan="1">1.0 (−4.2 to 6.1)</td><td align="char" valign="top" rowspan="1" colspan="1">0.70</td></tr><tr><td style="padding-left:10%" align="left" valign="top" rowspan="1" colspan="1">Total cholesterol (mg/dL)</td><td align="char" valign="top" rowspan="1" colspan="1">188.3 ± 25.2</td><td align="char" valign="top" rowspan="1" colspan="1">182.5 ± 28.3</td><td align="char" valign="top" rowspan="1" colspan="1">−5.8 ± 19.1</td><td align="char" valign="top" rowspan="1" colspan="1">170.8 ± 40.7</td><td align="char" valign="top" rowspan="1" colspan="1">180.9 ± 39.2</td><td align="char" valign="top" rowspan="1" colspan="1">10.1 ± 15.0</td><td align="center" valign="top" rowspan="1" colspan="1">15.9 (−3.1 to 28.8)</td><td align="char" valign="top" rowspan="1" colspan="1">0.02</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">GNRI score</td><td align="char" valign="top" rowspan="1" colspan="1">102.1 ± 7.0</td><td align="char" valign="top" rowspan="1" colspan="1">101.6 ± 8.7</td><td align="char" valign="top" rowspan="1" colspan="1">−0.5 ± 4.0</td><td align="char" valign="top" rowspan="1" colspan="1">99.4 ± 7.1</td><td align="char" valign="top" rowspan="1" colspan="1">99.9 ± 8.0</td><td align="char" valign="top" rowspan="1" colspan="1">0.5 ± 3.7</td><td align="center" valign="top" rowspan="1" colspan="1">0.96 (−1.92 to 3.84)</td><td align="char" valign="top" rowspan="1" colspan="1">0.50</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">CONUT score ≥ 2, <italic toggle="yes">n</italic> (%)</td><td align="center" valign="top" rowspan="1" colspan="1">7 (47)</td><td align="center" valign="top" rowspan="1" colspan="1">9 (60)</td><td align="char" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1">9 (60)</td><td align="center" valign="top" rowspan="1" colspan="1">6 (40)</td><td align="char" valign="top" rowspan="1" colspan="1"/><td align="center" valign="top" rowspan="1" colspan="1">0.15 [0.02 to 1.47]</td><td align="char" valign="top" rowspan="1" colspan="1">0.10<xref rid="ehf213934-note-0006" ref-type="table-fn">*</xref>
+</td></tr><tr><td align="left" valign="top" rowspan="1" colspan="1">Number of steps (steps/day)</td><td align="char" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1">4816 ± 2209</td><td align="char" valign="top" rowspan="1" colspan="1">5494 ± 2366</td><td align="char" valign="top" rowspan="1" colspan="1">678 ± 322</td><td align="center" valign="top" rowspan="1" colspan="1"/><td align="char" valign="top" rowspan="1" colspan="1">0.05<xref rid="ehf213934-note-0007" ref-type="table-fn">**</xref>
+</td></tr></tbody></table><table-wrap-foot id="ehf213934-ntgp-0003"><fn id="ehf213934-note-0005"><p>Data are expressed as mean ± standard deviation and percentages. Changes of CONUT score are expressed as odds ratio [95%CI]. <italic toggle="yes">P</italic> values are derived by unpaired <italic toggle="yes">t</italic>‐test or logistic regression.</p></fn><fn id="ehf213934-note-0006"><label>*</label><p>The <italic toggle="yes">P</italic> value of logistic regression between the baseline and 3 months of HBCR.</p></fn><fn id="ehf213934-note-0007"><label>**</label><p>The <italic toggle="yes">P</italic> value of paired <italic toggle="yes">t</italic>‐test between the baseline and 3 months of HBCR.</p></fn><fn id="ehf213934-note-0008"><p>95%CI, 95% confidence interval; BUN, blood urea nitrogen; CONUT, Controlling Nutritional Status; eGFR, estimated glomerular filtration rate; GNRI, Geriatric Nutritional Risk Index; HBCR, home‐base cardiac rehabilitation.</p></fn></table-wrap-foot></table-wrap><p>Overall, 16 AE occurred, seven in the control group and nine in the HBCR group (<italic toggle="yes">P</italic> = 0.456). No serious AE, such as death or cardiac arrest, occurred in either group. There were three readmissions in the control group and three in the HBCR group, which were not causally related to the intervention (<italic toggle="yes">Table</italic>
+<xref rid="ehf213934-supitem-0001" ref-type="supplementary-material">
+<italic toggle="yes">S1</italic>
+</xref>).</p><p>Exercise adherence was 73% (more than or equal to four times/week in 11 patients vs. less than four times/week in four patients), and the exercise performance rate during the intervention period was 62.4 ± 20.8%, equivalent to 4.4 ± 1.4 days per week.</p></sec></sec><sec sec-type="discussion" id="ehf213934-sec-0015"><title>Discussion</title><p>Here, we demonstrate that comprehensive CR using ICT could improve exercise tolerance in patients with HF and frailty, which has not been reported previously. Previous reports on HBCR using ICT have focused mainly on ischaemic heart disease,<xref rid="ehf213934-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="ehf213934-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref> and interventions included telephone calls,<xref rid="ehf213934-bib-0020" ref-type="bibr">
+<sup>20</sup>
+</xref> video calls,<xref rid="ehf213934-bib-0021" ref-type="bibr">
+<sup>21</sup>
+</xref> and smartphone applications with wearable devices and remote monitoring systems.<xref rid="ehf213934-bib-0013" ref-type="bibr">
+<sup>13</sup>
+</xref>, <xref rid="ehf213934-bib-0014" ref-type="bibr">
+<sup>14</sup>
+</xref> In the present study, HF patients with physical frailty who underwent comprehensive HBCR based on a smartphone application combined with a wearable device demonstrated a longer 6MWD and improved lower limb muscle strength after 3 months. The 6MWD is an important indicator of exercise tolerance in HF patients and has been reported to be a predictor of mortality.<xref rid="ehf213934-bib-0022" ref-type="bibr">
+<sup>22</sup>
+</xref>, <xref rid="ehf213934-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>, <xref rid="ehf213934-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref> The difference in the change in the 6MWD from baseline to 3 months between the two groups was 56.4 m (<italic toggle="yes">Figure</italic>
+<xref rid="ehf213934-fig-0003" ref-type="fig">
+<italic toggle="yes">3</italic>
+</xref>) in this study, suggesting that the HBCR method was effective in HF patients with frailty, because an intervention is defined as resulting in significant differences at a change of 50 m or more in this distance.<xref rid="ehf213934-bib-0023" ref-type="bibr">
+<sup>23</sup>
+</xref>, <xref rid="ehf213934-bib-0024" ref-type="bibr">
+<sup>24</sup>
+</xref>
+</p><p>One of the unique features of the intervention described here was the use of a commercially available wearable device to encourage patients to self‐manage their activity levels and to regulate the intensity of exercise through regular individual guidance and tailoring of the programme to the patients' individual performance by physical therapists (<italic toggle="yes">Figure</italic>
+<xref rid="ehf213934-fig-0001" ref-type="fig">
+<italic toggle="yes">1</italic>
+</xref>). With this method, we could set the exercise intensity according to each patient's needs and physical function at home. The key components of ICT interventions include (i) self‐monitoring, (ii) feedback by and communication with the instructor, (iii) social support, (iv) systematic programmes, and (v) tailor‐made programmes.<xref rid="ehf213934-bib-0025" ref-type="bibr">
+<sup>25</sup>
+</xref> Importantly, the present intervention included these five components. In particular, regular communication between the patients and instructors, with constant encouragement for 3 months, led the patients to continue the physical training and diet therapy and resulted in improvements in physical function in patients with HF. These results indicated that ICT applications can be useful for HBCR, by promoting continuation and facilitating self‐management.</p><p>Moreover, the average number of steps per day in patients with HF is associated with mortality,<xref rid="ehf213934-bib-0026" ref-type="bibr">
+<sup>26</sup>
+</xref> and self‐monitoring has been shown to increase physical activity effectively.<xref rid="ehf213934-bib-0027" ref-type="bibr">
+<sup>27</sup>
+</xref> Hence, the use of wearable devices to promote patient self‐monitoring and increase the average daily step count under the management and advice from healthcare practitioners is expected to reduce mortality risks. The benefits of an increased step count may be an advantage of the HBCR over a scheduled centre‐based CR.</p><p>Despite much evidence for the efficacy of CR, the implementation and continuation rate of outpatient CR programmes remain low.<xref rid="ehf213934-bib-0008" ref-type="bibr">
+<sup>8</sup>
+</xref> Among several suggested reasons, Nakayama <italic toggle="yes">et al</italic>. suggested that the distance from the patients' home to the hospital may be a barrier for participation in outpatient CR.<xref rid="ehf213934-bib-0028" ref-type="bibr">
+<sup>28</sup>
+</xref> ICT, including telerehabilitation, or the remote delivery of rehabilitation, can promote the continuation of rehabilitation programmes by combining initial face‐to‐face guidance with outpatient visits. Self‐management in patients with HF and the continuation of patient education, disease management, and nutrition and exercise guidance on a regular basis at home will thus contribute to a reduction of readmissions.</p><p>In HF patients, skeletal muscle mass is associated with exercise tolerance,<xref rid="ehf213934-bib-0029" ref-type="bibr">
+<sup>29</sup>
+</xref> and a predictor of mortality, and resistance training effectively achieves muscle hypertrophy.<xref rid="ehf213934-bib-0030" ref-type="bibr">
+<sup>30</sup>
+</xref> However, high‐intensity resistance training is not recommended for patients with HF, and it is instead recommended to start exercise at a low intensity of about 30% of maximal muscle strength.<xref rid="ehf213934-bib-0015" ref-type="bibr">
+<sup>15</sup>
+</xref> In the present study, while the initial intensity was low, the exercise intensity was individually adjusted by increasing the number of exercises and the number of sets. Because it has been reported that improvements in skeletal muscle function in older adults depends on the workload (load intensity × number of repetitions × number of sets),<xref rid="ehf213934-bib-0031" ref-type="bibr">
+<sup>31</sup>
+</xref> the gradual increase in the workload individually tailored to each patient in the current study has not only to the observed improvements in lower limb muscle strength but also seems to have been involved in maintaining the patient's motivation to continue exercising.</p><p>It has been reported that patients with HF tend to have negative energy and nitrogen balances even in the stable phase,<xref rid="ehf213934-bib-0032" ref-type="bibr">
+<sup>32</sup>
+</xref> and low blood levels of essential amino acids and branched‐chain amino acids.<xref rid="ehf213934-bib-0033" ref-type="bibr">
+<sup>33</sup>
+</xref> In addition, patients with HF and physical frailty are likely to have difficulty improving serum total protein levels and physical function because they also have advanced skeletal muscle catabolism. Because exercise and nutrition guidance were provided at the same time in the current study, it is difficult to determine which one contributed more to the increase in the 6MWD. We show that serum total cholesterol level was increased and that anaemia improved after 3 months of nutritional guidance. Because anaemia is a predictor of mortality in patients with HF,<xref rid="ehf213934-bib-0034" ref-type="bibr">
+<sup>34</sup>
+</xref> our results suggest that nutritional intervention contributing to the improvement of anaemia will be beneficial for these patients. On the other hand, we could not find any differences in total protein or the GNRI. This might be explained by the fact that our subjects were at a relatively low nutritional risk and that the number of subjects was not large enough to detect such small changes. While we speculate that encouragement from a dietitian to consume more protein may result in an increase iron intake from meat, further assessments of nutritional guidance interventions are needed.</p><p>In this nutritional intervention, the targets for energy and protein intake were set at the same level as those for older adults with any acute or chronic disease,<xref rid="ehf213934-bib-0035" ref-type="bibr">
+<sup>35</sup>
+</xref> and the dietitians provided continuous and specific interventions to each individual. In general, nutritional guidance in HF is focused on limiting salt intake and teaching a balanced diet. However, for patients with HF and physical frailty, it is considered necessary to prioritize the guidance for energy and protein intake over the guidance for salt intake.<xref rid="ehf213934-bib-0036" ref-type="bibr">
+<sup>36</sup>
+</xref> In addition, because the distribution of protein intake over the three daily meals (breakfast, lunch, and dinner) is known to affect protein synthesis, a photographic evaluation of the actual dietary habits of patients and appropriate individual advice with specific examples by nutritionists would be useful.</p><p>The effect of HBCR on QoL is controversial.<xref rid="ehf213934-bib-0012" ref-type="bibr">
+<sup>12</sup>
+</xref>, <xref rid="ehf213934-bib-0037" ref-type="bibr">
+<sup>37</sup>
+</xref> In this study, HR‐QoL did not significantly improve over the 3 month intervention period. The overall baseline KCCQ score was relatively high (the average baseline score was 72.2), which might have hindered the reflection of intervention‐based improvements in the score. The short intervention duration of 3 months may be another reason for the apparent absence of improvements in HR‐QoL based on the KCCQ scores. The SPPB and the Kihon checklist are good indicators of frailty in patients.<xref rid="ehf213934-bib-0017" ref-type="bibr">
+<sup>17</sup>
+</xref>, <xref rid="ehf213934-bib-0018" ref-type="bibr">
+<sup>18</sup>
+</xref>, <xref rid="ehf213934-bib-0019" ref-type="bibr">
+<sup>19</sup>
+</xref> The SPPB is an evaluation index with a maximum total score of 12 points. Because most of our patients were in the range of 10 to 11 points (9 points or less is defined as frailty), an improvement effect might have been difficult to detect in our small number of subjects, due to a ceiling effect. Similarly, the Kihon checklist score of 6.5 points (maximum total score of 20 points, and 10 points or more defined as frailty) might not have been suitable to detect improvements in our patients due to the small possible variation scores and small number of subjects. These potential shortcomings of the current measurements thus indicate the need for larger scale research.</p><p>In terms of safety, the extremely low frequency of cardiac accidents during monitored CR in Japan (0.26/100 000 patient hours) indicates that CR can be safely performed following exercise prescriptions.<xref rid="ehf213934-bib-0038" ref-type="bibr">
+<sup>38</sup>
+</xref> No serious AE complications occurred in the current study, and there were no readmissions due to the intervention, which emphasizes its safety. HBCR as implemented in the current study did not provide a real‐time remote exercise/coaching monitoring system but focused on achievements according to the patients' lifestyle and schedule. Non‐monitoring HBCR may be inferior in terms of safety as compared with CR with remote monitoring systems using electrocardiograms. We used the Fitbit®, a commercially available wrist‐worn device, which has a pulse rate monitoring accuracy that is superior to that of wearable devices from other companies (although it is not equivalent to that of electrocardiogram).<xref rid="ehf213934-bib-0039" ref-type="bibr">
+<sup>39</sup>
+</xref> A clinical trial using the Fitbit® is currently underway<xref rid="ehf213934-bib-0040" ref-type="bibr">
+<sup>40</sup>
+</xref>; however, the safety of HBCR using wearable devices has not yet been determined. Further safety verification through well‐designed large‐scale trials will be necessary in the future.</p><p>Introducing wearable devices in HBCR offers some advantages, such as the communication tool, we used to support our patients and to encourage them to accept more responsibility for self‐monitoring and record‐keeping in their daily life. The patients followed a personalized CR programme with an intensity that was increased according to the patients' condition, following the Borg scale and the patient's baseline clinical assessment. Consequently, 11 of 15 patients completed the CR programme, engaging more than four times per week, which we consider useful in terms of cost‐effectiveness. A tailored, progressive HBCR intervention using ICT that included physical exercise and diet therapy for 3 months resulted in a significantly greater improvement in physical function than standard care; it can thus be considered a safe means of exercise for patients with mild to moderate HF.</p><p>We utilized commercially available wearable devices for the self‐monitoring and communicating with healthcare providers. The applications of these technologies for monitoring and communicating with patients may be the key for the provision of sustainable medical care in an ageing society.</p><p>This study has several limitations. First, this was a single‐centre, open‐label study with a small sample size, and a larger‐scale validation at multiple sites is necessary. Second, the average age of our participants was relatively young (63.7 years), and older patients with a higher severity of frailty were not able to participate partly because participation in this study required the use of a smartphone. Although further research is needed to determine whether such interventions are effective for elderly patients, we believe that in the next 5 to 10 years, when the generation accustomed to using smartphones will be over 70 years old, the scope of interventions will expand to include elderly patients. Finally, the intensity of exercise during the intervention was determined according to each patient's condition and exercise capacity; ideally, it should be managed by direct individual instruction and personal education of each patient. Therefore, we could not control exercise intensity as strictly as is possible in supervised exercise therapy. However, even with our non‐supervised exercise therapy, we were able to set the exercise intensity by adjusting the frequency and number of exercises. Further studies that manage exercise more strictly in accordance with the severity of patients' frailty are necessary.</p></sec><sec sec-type="conclusions" id="ehf213934-sec-0016"><title>Conclusions</title><p>A comprehensive HBCR programme using ICT for HF patients with physical frailty improved exercise tolerance and improved lower extremity muscle strength. Management with individualized ICT‐based programmes can be a safe and effective approach for HF patients with physical frailty. Our findings provide evidence supporting this practical method for providing CR for HF patients with frailty, the number of whom is increasing in a globally ageing society, as a more efficient CR method that keep patients with HF engaged in physical activity in their daily life.</p></sec><sec sec-type="COI-statement" id="ehf213934-sec-0019"><title>Conflict of interest</title><p>H.T. reports receiving personal fees from MSD, Astellas, Pfizer, Bristol‐Myers Squibb, Otsuka Pharmaceutical, Daiichi‐Sankyo, Mitsubishi Tanabe Pharma, Nippon Boehringer Ingelheim, Takeda Pharmaceutical, Bayer Yakuhin, Novartis Pharma, Kowa Pharmaceutical, Teijin Pharma, Medical Review Co., and the Japanese Journal of Clinical Medicine; non‐financial support from Actelion Pharmaceuticals, Japan Tobacco Inc., Mitsubishi Tanabe Pharma, Nippon Boehringer Ingelheim, Daiichi‐Sankyo, IQVIA Services Japan, and Omron Healthcare Co.; and grants from Astellas, Novartis Pharma, Daiichi‐Sankyo, Takeda Pharmaceutical, Mitsubishi Tanabe Pharma, and Teijin Pharma, MSD, outside the submitted work. The other authors declare no conflicts of interest associated with this manuscript.</p></sec><sec id="ehf213934-sec-0018"><title>Funding</title><p>This work was supported by a Grant‐in‐Aid for Health and Labour Sciences Research Grant (20FC1051) for authors T.I., S.M., S.K., and H.T. The funders had no role in the design and conduct of the study or in the collection, management, analysis, and interpretation of the data, or the preparation, review, and submission of the manuscript for publication.</p></sec><sec sec-type="supplementary-material"><title>Supporting information</title><supplementary-material id="ehf213934-supitem-0001" position="float" content-type="local-data" orientation="portrait"><caption><p>
+<bold>Data S1.</bold> Supporting Information.</p></caption><media xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="EHF2-9-2407-s001.pdf" position="float" orientation="portrait"><?suppdata-name EHF2-9-2407-s001.pdf?><?suppdata-size 131429?><?suppdata-md5 df036ea720b5c47b53fc32597a9788c8?><?suppdata-image-server-status NEVER_LOAD?><?suppdata-mime-type application?><?suppdata-mime-sub-type pdf?><?suppdata-cloudpmc-urn urn:app:a4cf/9288767/df036ea720b5/EHF2-9-2407-s001.pdf?><caption><p>Click here for additional data file.</p></caption></media></supplementary-material></sec></body><back><ack id="ehf213934-sec-0017"><title>Acknowledgements</title><p>None.</p></ack><ref-list id="ehf213934-bibl-0001" content-type="cited-references"><title>References</title><ref id="ehf213934-bib-0001"><label>1</label><mixed-citation publication-type="journal" id="ehf213934-cit-0002">
+<string-name name-style="western">
+<surname>Bui</surname>
+<given-names>AL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Horwich</surname>
+<given-names>TB</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fonarow</surname>
+<given-names>GC</given-names>
+</string-name>. <article-title>Epidemiology and risk profile of heart failure</article-title>. <source>Nat Rev Cardiol</source>. <year>2011</year>; <volume>8</volume>: <fpage>30</fpage>–<lpage>41</lpage>.<pub-id pub-id-type="pmid">21060326</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1038/nrcardio.2010.165</pub-id><pub-id pub-id-type="pmcid">PMC3033496</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0002"><label>2</label><mixed-citation publication-type="journal" id="ehf213934-cit-0003">
+<string-name name-style="western">
+<surname>Denfeld</surname>
+<given-names>QE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Winters‐Stone</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mudd</surname>
+<given-names>JO</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gelow</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kurdi</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lee</surname>
+<given-names>CS</given-names>
+</string-name>. <article-title>The prevalence of frailty in heart failure: a systematic review and meta‐analysis</article-title>. <source>Int J Cardiol</source>. <year>2017</year>; <volume>236</volume>: <fpage>283</fpage>–<lpage>289</lpage>.<pub-id pub-id-type="pmid">28215466</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.ijcard.2017.01.153</pub-id><pub-id pub-id-type="pmcid">PMC5392144</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0003"><label>3</label><mixed-citation publication-type="journal" id="ehf213934-cit-0004">
+<string-name name-style="western">
+<surname>Fried</surname>
+<given-names>LP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tangen</surname>
+<given-names>CM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Walston</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Newman</surname>
+<given-names>AB</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hirsch</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gottdiener</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Seeman</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tracy</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kop</surname>
+<given-names>WJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Burke</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>McBurnie</surname>
+<given-names>MA</given-names>
+</string-name>, 
+<collab collab-type="authors">Cardiovascular Health Study Collaborative Research Group</collab>
+. <article-title>Frailty in older adults: evidence for a phenotype</article-title>. <source>J Gerontol A Biol Sci Med Sci</source>. <year>2001</year>; <volume>56</volume>: <fpage>M146</fpage>–<lpage>M156</lpage>.<pub-id pub-id-type="pmid">11253156</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/gerona/56.3.m146</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0004"><label>4</label><mixed-citation publication-type="journal" id="ehf213934-cit-0005">
+<string-name name-style="western">
+<surname>Zhang</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yuan</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gong</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tse</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Li</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Liu</surname>
+<given-names>T</given-names>
+</string-name>. <article-title>Frailty and clinical outcomes in heart failure: a systematic review and meta‐analysis</article-title>. <source>J Am Med Dir Assoc</source>. <year>2018</year>; <volume>19</volume>: <fpage>1003</fpage>–<lpage>1008.e1</lpage>.<pub-id pub-id-type="pmid">30076123</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jamda.2018.06.009</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0005"><label>5</label><mixed-citation publication-type="journal" id="ehf213934-cit-0006">
+<string-name name-style="western">
+<surname>Tsutsui</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Isobe</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ito</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ito</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Okumura</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ono</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kitakaze</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kinugawa</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kihara</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Goto</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Komuro</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Saiki</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Saito</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sakata</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sato</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sawa</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shiose</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shimizu</surname>
+<given-names>W</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shimokawa</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Seino</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Node</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Higo</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hirayama</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Makaya</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Masuyama</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Murohara</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Momomura</surname>
+<given-names>SI</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yano</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamazaki</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamamoto</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yoshikawa</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yoshimura</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Akiyama</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Anzai</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ishihara</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Inomata</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Imamura</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Iwasaki</surname>
+<given-names>YK</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ohtani</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Onishi</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kasai</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kato</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kawai</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kinugasa</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kinugawa</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kuratani</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kobayashi</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sakata</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tanaka</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Toda</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Noda</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nochioka</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hatano</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hidaka</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fujino</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Makita</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamaguchi</surname>
+<given-names>O</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ikeda</surname>
+<given-names>U</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kimura</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kohsaka</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kosuge</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamagishi</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamashina</surname>
+<given-names>A</given-names>
+</string-name>, on behalf of the 
+<collab collab-type="authors">Japanese Circulation Society and the Japanese Heart Failure Society Joint Working Group</collab>
+. <article-title>JCS 2017/JHFS 2017 guideline on diagnosis and treatment of acute and chronic heart failure</article-title>. <source>Circ J</source>. <year>2019</year>; <volume>83</volume>: <fpage>2084</fpage>–<lpage>2184</lpage>.<pub-id pub-id-type="pmid">31511439</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1253/circj.CJ-19-0342</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0006"><label>6</label><mixed-citation publication-type="journal" id="ehf213934-cit-0007">
+<string-name name-style="western">
+<surname>Gupta</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ghimire</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hage</surname>
+<given-names>FG</given-names>
+</string-name>. <article-title>Guidelines in review: 2013 ACCF/AHA guideline for the management of heart failure</article-title>. <source>J Nucl Cardiol</source>. <year>2014</year>; <volume>21</volume>: <fpage>397</fpage>–<lpage>399</lpage>.<pub-id pub-id-type="pmid">24343106</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s12350-013-9832-x</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0007"><label>7</label><mixed-citation publication-type="journal" id="ehf213934-cit-0008">
+<string-name name-style="western">
+<surname>Piepoli</surname>
+<given-names>MF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hoes</surname>
+<given-names>AW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Agewall</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Albus</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Brotons</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Catapano</surname>
+<given-names>AL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Corrà</surname>
+<given-names>U</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cooney</surname>
+<given-names>MT</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cosyns</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Deaton</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Graham</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hall</surname>
+<given-names>MS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hobbs</surname>
+<given-names>FDR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Løchen</surname>
+<given-names>ML</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Löllgen</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Marques‐Vidal</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Perk</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Prescott</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Redon</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Richter</surname>
+<given-names>DJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sattar</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Smulders</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tiberi</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>van der Worp</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>van Dis</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Verschuren</surname>
+<given-names>WMM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Binno</surname>
+<given-names>S</given-names>
+</string-name>, 
+<collab collab-type="authors">ESC Scientific Document Group</collab>
+. <article-title>2016 European guidelines on cardiovascular disease prevention in clinical practice: the Sixth Joint Task Force of the European Society of Cardiology and Other Societies on Cardiovascular Disease Prevention in Clinical Practice (constituted by representatives of 10 societies and by invited experts) developed with the special contribution of the European Association for Cardiovascular Prevention &amp; Rehabilitation (EACPR)</article-title>. <source>Eur Heart J</source>. <year>2016</year>; <volume>37</volume>: <fpage>2315</fpage>–<lpage>2381</lpage>.<pub-id pub-id-type="pmid">27222591</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/eurheartj/ehw106</pub-id><pub-id pub-id-type="pmcid">PMC4986030</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0008"><label>8</label><mixed-citation publication-type="journal" id="ehf213934-cit-0009">
+<string-name name-style="western">
+<surname>Kamiya</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamamoto</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsuchihashi‐Makaya</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ikegame</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Takahashi</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sato</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kotooka</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Saito</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsutsui</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Miyata</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Isobe</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Nationwide survey of multidisciplinary care and cardiac rehabilitation for patients with heart failure in Japan—an analysis of the AMED‐CHF study</article-title>. <source>Circ J</source>. <year>2019</year>; <volume>83</volume>: <fpage>1546</fpage>–<lpage>1552</lpage>.<pub-id pub-id-type="pmid">31189753</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1253/circj.CJ-19-0241</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0009"><label>9</label><mixed-citation publication-type="journal" id="ehf213934-cit-0010">
+<string-name name-style="western">
+<surname>Shanmugasegaram</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gagliese</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Oh</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Stewart</surname>
+<given-names>DE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Brister</surname>
+<given-names>SJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Chan</surname>
+<given-names>V</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Grace</surname>
+<given-names>SL</given-names>
+</string-name>. <article-title>Psychometric validation of the cardiac rehabilitation barriers scale</article-title>. <source>Clin Rehabil</source>. <year>2012</year>; <volume>26</volume>: <fpage>152</fpage>–<lpage>164</lpage>.<pub-id pub-id-type="pmid">21937522</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1177/0269215511410579</pub-id><pub-id pub-id-type="pmcid">PMC3351783</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0010"><label>10</label><mixed-citation publication-type="journal" id="ehf213934-cit-0011">
+<string-name name-style="western">
+<surname>Hamilton</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mills</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>McRae</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Thompson</surname>
+<given-names>S</given-names>
+</string-name>. <article-title>Evidence to service gap: cardiac rehabilitation and secondary prevention in rural and remote Western Australia</article-title>. <source>BMC Health Serv Res</source>. <year>2018</year>; <volume>18</volume>: <fpage>1</fpage>–<lpage>9</lpage>.<pub-id pub-id-type="pmid">29382343</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12913-018-2873-8</pub-id><pub-id pub-id-type="pmcid">PMC5791246</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0011"><label>11</label><mixed-citation publication-type="journal" id="ehf213934-cit-0012">
+<string-name name-style="western">
+<surname>Thomas</surname>
+<given-names>RJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Beatty</surname>
+<given-names>AL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Beckie</surname>
+<given-names>TM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Brewer</surname>
+<given-names>LC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Brown</surname>
+<given-names>TM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Forman</surname>
+<given-names>DE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Franklin</surname>
+<given-names>BA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Keteyian</surname>
+<given-names>SJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kitzman</surname>
+<given-names>DW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Regensteiner</surname>
+<given-names>JG</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sanderson</surname>
+<given-names>BK</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Whooley</surname>
+<given-names>MA</given-names>
+</string-name>. <article-title>Home‐based cardiac rehabilitation: a scientific statement from the American Association of Cardiovascular and Pulmonary Rehabilitation, the American Heart Association, and the American College of Cardiology</article-title>. <source>Circulation</source>. <year>2019</year>; <volume>140</volume>: <fpage>e69</fpage>–<lpage>e89</lpage>.<pub-id pub-id-type="pmid">31082266</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1161/CIR.0000000000000663</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0012"><label>12</label><mixed-citation publication-type="journal" id="ehf213934-cit-0013">
+<string-name name-style="western">
+<surname>Anderson</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sharp</surname>
+<given-names>GA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Norton</surname>
+<given-names>RJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dalal</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dean</surname>
+<given-names>SG</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jolly</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cowie</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zawada</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Taylor</surname>
+<given-names>RS</given-names>
+</string-name>, 
+<collab collab-type="authors">Cochrane Heart Group</collab>
+. <article-title>Home‐based versus centre‐based cardiac rehabilitation</article-title>. <source>Cochrane Database Syst Rev</source>. <year>2017</year>; <volume>6</volume>: <elocation-id>CD007130</elocation-id>.<pub-id pub-id-type="pmid">28665511</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1002/14651858.CD007130.pub4</pub-id><pub-id pub-id-type="pmcid">PMC6481471</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0013"><label>13</label><mixed-citation publication-type="journal" id="ehf213934-cit-0014">
+<string-name name-style="western">
+<surname>Maddison</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rawstorn</surname>
+<given-names>JC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Stewart</surname>
+<given-names>RAH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Benatar</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Whittaker</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rolleston</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jiang</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gao</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Moodie</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Warren</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Meads</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gant</surname>
+<given-names>N</given-names>
+</string-name>. <article-title>Effects and costs of real‐time cardiac telerehabilitation: randomised controlled non‐inferiority trial</article-title>. <source>Heart</source>. <year>2019</year>; <volume>105</volume>: <fpage>122</fpage>–<lpage>129</lpage>.<pub-id pub-id-type="pmid">30150328</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/heartjnl-2018-313189</pub-id><pub-id pub-id-type="pmcid">PMC6352408</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0014"><label>14</label><mixed-citation publication-type="journal" id="ehf213934-cit-0015">
+<string-name name-style="western">
+<surname>Varnfield</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Karunanithi</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lee</surname>
+<given-names>CK</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Honeyman</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Arnold</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ding</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Smith</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Walters</surname>
+<given-names>DL</given-names>
+</string-name>. <article-title>Smartphone‐based home care model improved use of cardiac rehabilitation in postmyocardial infarction patients: results from a randomised, controlled trial</article-title>. <source>Heart</source>. <year>2014</year>; <volume>100</volume>:<fpage>1770</fpage>–<lpage>1779</lpage>.<pub-id pub-id-type="pmid">24973083</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1136/heartjnl-2014-305783</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0015"><label>15</label><mixed-citation publication-type="journal" id="ehf213934-cit-0016">
+<string-name name-style="western">
+<surname>Piepoli</surname>
+<given-names>MF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Conraads</surname>
+<given-names>V</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Corrà</surname>
+<given-names>U</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dickstein</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Francis</surname>
+<given-names>DP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Jaarsma</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>McMurray</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pieske</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Piotrowicz</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Schmid</surname>
+<given-names>JP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Anker</surname>
+<given-names>SD</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Solal</surname>
+<given-names>AC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Filippatos</surname>
+<given-names>GS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hoes</surname>
+<given-names>AW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gielen</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Giannuzzi</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ponikowski</surname>
+<given-names>PP</given-names>
+</string-name>. <article-title>Exercise training in heart failure: from theory to practice. A consensus document of the Heart Failure Association and the European Association for Cardiovascular Prevention and Rehabilitation</article-title>. <source>Eur J Heart Fail</source>. <year>2011</year>; <volume>13</volume>: <fpage>347</fpage>–<lpage>357</lpage>.<pub-id pub-id-type="pmid">21436360</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/eurjhf/hfr017</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0016"><label>16</label><mixed-citation publication-type="journal" id="ehf213934-cit-0017">
+<collab collab-type="authors">American Thoracic Society</collab>
+. <article-title>ATS statement: Guidelines for the six‐minute walk test</article-title>. <source>Am J Respir Crit Care Med</source>. <year>2002</year>; <volume>166</volume>: <fpage>111</fpage>–<lpage>117</lpage>.<pub-id pub-id-type="pmid">12091180</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1164/ajrccm.166.1.at1102</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0017"><label>17</label><mixed-citation publication-type="journal" id="ehf213934-cit-0018">
+<string-name name-style="western">
+<surname>Guralnik</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Simonsick</surname>
+<given-names>EM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ferrucci</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Glynn</surname>
+<given-names>RJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Berkman</surname>
+<given-names>LF</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Blazer</surname>
+<given-names>DG</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Scherr</surname>
+<given-names>PA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wallace</surname>
+<given-names>RB</given-names>
+</string-name>. <article-title>A short physical performance battery assessing lower extremity function: association with self‐reported disability and prediction of mortality and nursing home admission</article-title>. <source>J Gerontol</source>. <year>1994</year>; <volume>49</volume>: <fpage>M85</fpage>–<lpage>M94</lpage>.<pub-id pub-id-type="pmid">8126356</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1093/geronj/49.2.m85</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0018"><label>18</label><mixed-citation publication-type="journal" id="ehf213934-cit-0019">
+<string-name name-style="western">
+<surname>Satake</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shimada</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamada</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kim</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yoshida</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gondo</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsubayashi</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsushita</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kuzuya</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kozaki</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sugimoto</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Senda</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sakuma</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Endo</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Arai</surname>
+<given-names>H</given-names>
+</string-name>. <article-title>Prevalence of frailty among community‐dwellers and outpatients in Japan as defined by the Japanese version of the Cardiovascular Health Study criteria</article-title>. <source>Geriatr Gerontol Int</source>. <year>2017</year>; <volume>17</volume>: <fpage>2629</fpage>–<lpage>2634</lpage>.<pub-id pub-id-type="pmid">29265757</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/ggi.13129</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0019"><label>19</label><mixed-citation publication-type="journal" id="ehf213934-cit-0020">
+<string-name name-style="western">
+<surname>Satake</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Senda</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hong</surname>
+<given-names>YJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Miura</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Endo</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sakurai</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kondo</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Toba</surname>
+<given-names>K</given-names>
+</string-name>. <article-title>Validity of the Kihon checklist for assessing frailty status</article-title>. <source>Geriatr Gerontol Int</source>. <year>2016</year>; <volume>16</volume>: <fpage>709</fpage>–<lpage>715</lpage>.<pub-id pub-id-type="pmid">26171645</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/ggi.12543</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0020"><label>20</label><mixed-citation publication-type="journal" id="ehf213934-cit-0021">
+<string-name name-style="western">
+<surname>Schopfer</surname>
+<given-names>DW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Whooley</surname>
+<given-names>MA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Allsup</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pabst</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shen</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tarasovsky</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Duvernoy</surname>
+<given-names>CS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Forman</surname>
+<given-names>DE</given-names>
+</string-name>. <article-title>Effects of home‐based cardiac rehabilitation on time to enrollment and functional status in patients with ischemic heart disease</article-title>. <source>J Am Heart Assoc</source>. <year>2020</year>; <volume>9</volume>: <elocation-id>e016456</elocation-id>.<pub-id pub-id-type="pmid">32954885</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1161/JAHA.120.016456</pub-id><pub-id pub-id-type="pmcid">PMC7792373</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0021"><label>21</label><mixed-citation publication-type="journal" id="ehf213934-cit-0022">
+<string-name name-style="western">
+<surname>Hwang</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bruning</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Morris</surname>
+<given-names>NR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mandrusiak</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Russell</surname>
+<given-names>T</given-names>
+</string-name>. <article-title>Home‐based telerehabilitation is not inferior to a centre‐based program in patients with chronic heart failure: a randomised trial</article-title>. <source>J Physiother</source>. <year>2017</year>; <volume>63</volume>: <fpage>101</fpage>–<lpage>107</lpage>.<pub-id pub-id-type="pmid">28336297</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jphys.2017.02.017</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0022"><label>22</label><mixed-citation publication-type="journal" id="ehf213934-cit-0023">
+<string-name name-style="western">
+<surname>Forman</surname>
+<given-names>DE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fleg</surname>
+<given-names>JL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kitzman</surname>
+<given-names>DW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Brawner</surname>
+<given-names>CA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Swank</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>McKelvie</surname>
+<given-names>RS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Clare</surname>
+<given-names>RM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ellis</surname>
+<given-names>SJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Dunlap</surname>
+<given-names>ME</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bittner</surname>
+<given-names>V</given-names>
+</string-name>. <article-title>6‐Min walk test provides prognostic utility comparable to cardiopulmonary exercise testing in ambulatory outpatients with systolic heart failure</article-title>. <source>J Am Coll Cardiol</source>. <year>2012</year>; <volume>60</volume>: <fpage>2653</fpage>–<lpage>2661</lpage>.<pub-id pub-id-type="pmid">23177293</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jacc.2012.08.1010</pub-id><pub-id pub-id-type="pmcid">PMC3766897</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0023"><label>23</label><mixed-citation publication-type="journal" id="ehf213934-cit-0024">
+<string-name name-style="western">
+<surname>Perera</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mody</surname>
+<given-names>SH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Woodman</surname>
+<given-names>RC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Studenski</surname>
+<given-names>SA</given-names>
+</string-name>. <article-title>Meaningful change and responsiveness in common physical performance measures in older adults</article-title>. <source>J Am Geriatr Soc</source>. <year>2006</year>; <volume>54</volume>: <fpage>743</fpage>–<lpage>749</lpage>.<pub-id pub-id-type="pmid">16696738</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/j.1532-5415.2006.00701.x</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0024"><label>24</label><mixed-citation publication-type="journal" id="ehf213934-cit-0025">
+<string-name name-style="western">
+<surname>Morley</surname>
+<given-names>JE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Abbatecola</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Argiles</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Baracos</surname>
+<given-names>V</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bauer</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bhasin</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cederholm</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Stewart Coats</surname>
+<given-names>AJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cummings</surname>
+<given-names>SR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Evans</surname>
+<given-names>WJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fearon</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ferrucci</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fielding</surname>
+<given-names>RA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Guralnik</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Harris</surname>
+<given-names>TB</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Inui</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kalantar‐Zadeh</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kirwan</surname>
+<given-names>BA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mantovani</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Muscaritoli</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Newman</surname>
+<given-names>AB</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rossi‐Fanelli</surname>
+<given-names>F</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rosano</surname>
+<given-names>GMC</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Roubenoff</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Schambelan</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sokol</surname>
+<given-names>GH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Storer</surname>
+<given-names>TW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Vellas</surname>
+<given-names>B</given-names>
+</string-name>, <string-name name-style="western">
+<surname>von Haehling</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yeh</surname>
+<given-names>SS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Anker</surname>
+<given-names>SD</given-names>
+</string-name>. <article-title>Society on sarcopenia, cachexia and wasting disorders trialist workshop. Sarcopenia with limited mobility: an international consensus</article-title>. <source>J Am Med Dir Assoc</source>. <year>2011</year>; <volume>12</volume>: <fpage>403</fpage>–<lpage>409</lpage>.<pub-id pub-id-type="pmid">21640657</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jamda.2011.04.014</pub-id><pub-id pub-id-type="pmcid">PMC5100674</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0025"><label>25</label><mixed-citation publication-type="journal" id="ehf213934-cit-0026">
+<string-name name-style="western">
+<surname>Khaylis</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yiaslas</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bergstrom</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gore‐Felton</surname>
+<given-names>C</given-names>
+</string-name>. <article-title>A review of efficacious technology‐based weight‐loss interventions: five key components</article-title>. <source>Telemed J E Health</source>. <year>2010</year>; <volume>16</volume>: <fpage>931</fpage>–<lpage>938</lpage>.<pub-id pub-id-type="pmid">21091286</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1089/tmj.2010.0065</pub-id><pub-id pub-id-type="pmcid">PMC3000900</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0026"><label>26</label><mixed-citation publication-type="journal" id="ehf213934-cit-0027">
+<string-name name-style="western">
+<surname>Izawa</surname>
+<given-names>KP</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Watanabe</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Oka</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Hiraki</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Morio</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kasahara</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Brubaker</surname>
+<given-names>PH</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Osada</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Omiya</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Shimizu</surname>
+<given-names>H</given-names>
+</string-name>. <article-title>Usefulness of step counts to predict mortality in Japanese patients with heart failure</article-title>. <source>Am J Cardiol</source>. <year>2013</year>; <volume>111</volume>: <fpage>1767</fpage>–<lpage>1771</lpage>.<pub-id pub-id-type="pmid">23540653</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.amjcard.2013.02.034</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0027"><label>27</label><mixed-citation publication-type="journal" id="ehf213934-cit-0028">
+<string-name name-style="western">
+<surname>Kanejima</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kitamura</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Izawa</surname>
+<given-names>KP</given-names>
+</string-name>. <article-title>Self‐monitoring to increase physical activity in patients with cardiovascular disease: a systematic review and meta‐analysis</article-title>. <source>Aging Clin Exp Res</source>. <year>2019</year>; <volume>31</volume>: <fpage>163</fpage>–<lpage>173</lpage>.<pub-id pub-id-type="pmid">29714027</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1007/s40520-018-0960-7</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0028"><label>28</label><mixed-citation publication-type="journal" id="ehf213934-cit-0029">
+<string-name name-style="western">
+<surname>Nakayama</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nagayama</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Morita</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kawahara</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Komuro</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Isobe</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>The use of geographical analysis in assessing the impact of patients' home addresses on their participation in outpatient cardiac rehabilitation: a prospective cohort study</article-title>. <source>Environ Health Prev Med</source>. <year>2020</year>; <volume>25</volume>: <elocation-id>76</elocation-id>.<pub-id pub-id-type="pmid">33248454</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12199-020-00917-x</pub-id><pub-id pub-id-type="pmcid">PMC7699017</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0029"><label>29</label><mixed-citation publication-type="journal" id="ehf213934-cit-0030">
+<string-name name-style="western">
+<surname>Cicoira</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zanolla</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Franceschini</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Rossi</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Golia</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zamboni</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tosoni</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Zardini</surname>
+<given-names>P</given-names>
+</string-name>. <article-title>Skeletal muscle mass independently predicts peak oxygen consumption and ventilatory response during exercise in noncachectic patients with chronic heart failure</article-title>. <source>J Am Coll Cardiol</source>. <year>2001</year>; <volume>37</volume>: <fpage>2080</fpage>–<lpage>2085</lpage>.<pub-id pub-id-type="pmid">11419891</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/s0735-1097(01)01306-7</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0030"><label>30</label><mixed-citation publication-type="journal" id="ehf213934-cit-0031">
+<string-name name-style="western">
+<surname>Straight</surname>
+<given-names>CR</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fedewa</surname>
+<given-names>MV</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Toth</surname>
+<given-names>MJ</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Miller</surname>
+<given-names>MS</given-names>
+</string-name>. <article-title>Improvements in skeletal muscle fiber size with resistance training are age‐dependent in older adults: a systematic review and meta‐analysis</article-title>. <source>J Appl Physiol (1985)</source>. <year>2020</year>; <volume>129</volume>: <fpage>392</fpage>–<lpage>403</lpage>.<pub-id pub-id-type="pmid">32702280</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1152/japplphysiol.00170.2020</pub-id><pub-id pub-id-type="pmcid">PMC7473942</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0031"><label>31</label><mixed-citation publication-type="journal" id="ehf213934-cit-0032">
+<string-name name-style="western">
+<surname>Csapo</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Alegre</surname>
+<given-names>LM</given-names>
+</string-name>. <article-title>Effects of resistance training with moderate vs heavy loads on muscle mass and strength in the elderly: a meta‐analysis</article-title>. <source>Scand J Med Sci Sports</source>. <year>2016</year>; <volume>26</volume>: <fpage>995</fpage>–<lpage>1006</lpage>.<pub-id pub-id-type="pmid">26302881</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1111/sms.12536</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0032"><label>32</label><mixed-citation publication-type="journal" id="ehf213934-cit-0033">
+<string-name name-style="western">
+<surname>Aquilani</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Opasich</surname>
+<given-names>C</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Verri</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Boschi</surname>
+<given-names>F</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Febo</surname>
+<given-names>O</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pasini</surname>
+<given-names>E</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Pastoris</surname>
+<given-names>O</given-names>
+</string-name>. <article-title>Is nutritional intake adequate in chronic heart failure patients?</article-title>
+<source>J Am Coll Cardiol</source>. <year>2003</year>; <volume>42</volume>: <fpage>1218</fpage>–<lpage>1223</lpage>.<pub-id pub-id-type="pmid">14522484</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/s0735-1097(03)00946-x</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0033"><label>33</label><mixed-citation publication-type="journal" id="ehf213934-cit-0034">
+<string-name name-style="western">
+<surname>Tsuji</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Koyama</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Taniguchi</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fujiwara</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fujiwara</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sato</surname>
+<given-names>Y</given-names>
+</string-name>. <article-title>Nutritional status of outpatients with chronic stable heart failure based on serum amino acid concentration</article-title>. <source>J Cardiol</source>. <year>2018</year>; <volume>72</volume>: <fpage>458</fpage>–<lpage>465</lpage>.<pub-id pub-id-type="pmid">29885939</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.jjcc.2018.05.007</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0034"><label>34</label><mixed-citation publication-type="journal" id="ehf213934-cit-0035">
+<string-name name-style="western">
+<surname>Nakada</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kawakami</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsushima</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ide</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kanaoka</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ueda</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ishihara</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nishida</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Onoue</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Soeda</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Okayama</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Watanabe</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Okura</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsuchihashi‐Makaya</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsutsui</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Saito</surname>
+<given-names>Y</given-names>
+</string-name>. <article-title>Simple risk score to predict survival in acute decompensated heart failure—A2B score</article-title>. <source>Circ J</source>. <year>2019</year>; <volume>83</volume>: <fpage>1019</fpage>–<lpage>1024</lpage>.<pub-id pub-id-type="pmid">30842361</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1253/circj.CJ-18-1116</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0035"><label>35</label><mixed-citation publication-type="journal" id="ehf213934-cit-0036">
+<string-name name-style="western">
+<surname>Deutz</surname>
+<given-names>NE</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bauer</surname>
+<given-names>JM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Barazzoni</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Biolo</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Boirie</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Bosy‐Westphal</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cederholm</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cruz‐Jentoft</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Krznariç</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nair</surname>
+<given-names>KS</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Singer</surname>
+<given-names>P</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Teta</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tipton</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Calder</surname>
+<given-names>PC</given-names>
+</string-name>. <article-title>Protein intake and exercise for optimal muscle function with aging: recommendations from the ESPEN Expert Group</article-title>. <source>Clin Nutr</source>. <year>2014</year>; <volume>33</volume>: <fpage>929</fpage>–<lpage>936</lpage>.<pub-id pub-id-type="pmid">24814383</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/j.clnu.2014.04.007</pub-id><pub-id pub-id-type="pmcid">PMC4208946</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0036"><label>36</label><mixed-citation publication-type="journal" id="ehf213934-cit-0037">
+<string-name name-style="western">
+<surname>Obata</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kakutani</surname>
+<given-names>N</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kinugawa</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Fukushima</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yokota</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Takada</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ono</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Sota</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kinugasa</surname>
+<given-names>Y</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Takahashi</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsuo</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Matsukawa</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yoshida</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yokota</surname>
+<given-names>I</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yamamoto</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Tsuchihashi‐Makaya</surname>
+<given-names>M</given-names>
+</string-name>. <article-title>Impact of inadequate calorie intake on mortality and hospitalization in stable patients with chronic heart failure</article-title>. <source>Nutrients</source>. <year>2021</year>; <volume>13</volume>: <fpage>1</fpage>–<lpage>10</lpage>.<pub-id pub-id-type="doi" assigning-authority="pmc">10.3390/nu13030874</pub-id><pub-id pub-id-type="pmcid">PMC7998469</pub-id><pub-id pub-id-type="pmid">33800134</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0037"><label>37</label><mixed-citation publication-type="journal" id="ehf213934-cit-0038">
+<string-name name-style="western">
+<surname>Chien</surname>
+<given-names>CL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Lee</surname>
+<given-names>CM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wu</surname>
+<given-names>YW</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Chen</surname>
+<given-names>TA</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wu</surname>
+<given-names>YT</given-names>
+</string-name>. <article-title>Home‐based exercise increases exercise capacity but not quality of life in people with chronic heart failure: a systematic review</article-title>. <source>Aust J Physiother</source>. <year>2008</year>; <volume>54</volume>: <fpage>87</fpage>–<lpage>93</lpage>.<pub-id pub-id-type="pmid">18491999</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1016/s0004-9514(08)70041-2</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0038"><label>38</label><mixed-citation publication-type="journal" id="ehf213934-cit-0039">
+<string-name name-style="western">
+<surname>Saito</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ueshima</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Saito</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Iwasaka</surname>
+<given-names>T</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Daida</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Kohzuki</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Makita</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Adachi</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yokoi</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Omiya</surname>
+<given-names>K</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mikouchi</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Yokoyama</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Goto</surname>
+<given-names>Y</given-names>
+</string-name>, 
+<collab collab-type="authors">Japanese Cardiac Rehabilitation Survey Investigators</collab>
+. <article-title>Safety of exercise‐based cardiac rehabilitation and exercise testing for cardiac patients in Japan: a nationwide survey</article-title>. <source>Circ J</source>. <year>2014</year>; <volume>78</volume>: <fpage>1646</fpage>–<lpage>1653</lpage>.<pub-id pub-id-type="pmid">24837707</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1253/circj.cj-13-1590</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0039"><label>39</label><mixed-citation publication-type="journal" id="ehf213934-cit-0040">
+<string-name name-style="western">
+<surname>Etiwy</surname>
+<given-names>M</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Akhrass</surname>
+<given-names>Z</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gillinov</surname>
+<given-names>L</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Alashi</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Wang</surname>
+<given-names>R</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Blackburn</surname>
+<given-names>G</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gillinov</surname>
+<given-names>SM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Phelan</surname>
+<given-names>D</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Gillinov</surname>
+<given-names>AM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Houghtaling</surname>
+<given-names>PL</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Javadikasgari</surname>
+<given-names>H</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Desai</surname>
+<given-names>MY</given-names>
+</string-name>. <article-title>Accuracy of wearable heart rate monitors in cardiac rehabilitation</article-title>. <source>Cardiovasc Diagn Ther</source>. <year>2019</year>; <volume>9</volume>: <fpage>262</fpage>–<lpage>271</lpage>.<pub-id pub-id-type="pmid">31275816</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.21037/cdt.2019.04.08</pub-id><pub-id pub-id-type="pmcid">PMC6603497</pub-id></mixed-citation></ref><ref id="ehf213934-bib-0040"><label>40</label><mixed-citation publication-type="journal" id="ehf213934-cit-0041">
+<string-name name-style="western">
+<surname>Nogic</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Thein</surname>
+<given-names>PM</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Cameron</surname>
+<given-names>J</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Mirzaee</surname>
+<given-names>S</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Ihdayhid</surname>
+<given-names>A</given-names>
+</string-name>, <string-name name-style="western">
+<surname>Nasis</surname>
+<given-names>A</given-names>
+</string-name>. <article-title>The utility of personal activity trackers (Fitbit Charge 2) on exercise capacity in patients post acute coronary syndrome [UP‐STEP ACS Trial]: a randomised, controlled trial protocol</article-title>. <source>BMC Cardiovasc Disord</source>. <year>2017</year>; <volume>17</volume>: <elocation-id>303</elocation-id>.<pub-id pub-id-type="pmid">29284402</pub-id><pub-id pub-id-type="doi" assigning-authority="pmc">10.1186/s12872-017-0726-8</pub-id><pub-id pub-id-type="pmcid">PMC5747185</pub-id></mixed-citation></ref></ref-list></back></article>

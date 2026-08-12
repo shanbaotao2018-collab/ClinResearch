@@ -101,7 +101,7 @@
 cd "/Users/shanbaotao/Documents/agent 2"
 apps/literature-review-agent/backend/.venv/bin/python \
   scripts/build-offline-evidence-packages.py \
-  --output-dir runtime/offline-evidence-packages
+  --output-dir data/offline-evidence-packages
 ```
 
 构建器会对 Europe PMC 请求限速与重试；若中断，可使用 `--package-id <包名>` 续跑。每份 XML 必须大于 10 KB 且含有 `<article>`，再写入带 SHA-256 的 `manifest.json`。当前三包各 9 篇、合计 27 篇，已通过本地文件和 XML 结构检查。

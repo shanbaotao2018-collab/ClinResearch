@@ -1,0 +1,3 @@
+vendor/opencode-bundled/** linguist-vendored
+data/offline-evidence-packages/** linguist-generated
+

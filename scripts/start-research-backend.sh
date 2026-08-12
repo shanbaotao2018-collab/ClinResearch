@@ -10,7 +10,6 @@ PORT="8010"
 RUN_MODE="daemon"
 LABEL="com.clinresearch.research-backend"
 RUNTIME_DIR="$ROOT_DIR/runtime/research-backend"
-PLIST_PATH="$HOME/Library/LaunchAgents/$LABEL.plist"
 
 usage() {
   cat <<'EOF'
@@ -46,6 +45,12 @@ while [[ $# -gt 0 ]]; do
     *) echo "Unknown option: $1" >&2; usage >&2; exit 2 ;;
   esac
 done
+
+if [[ "$PORT" != "8010" ]]; then
+  LABEL="${LABEL}.${PORT}"
+  RUNTIME_DIR="$ROOT_DIR/runtime/research-backend-${PORT}"
+fi
+PLIST_PATH="$HOME/Library/LaunchAgents/$LABEL.plist"
 
 if [[ "$ACCESS_MODE" != "online" && "$ACCESS_MODE" != "client_online" && "$ACCESS_MODE" != "offline" && "$ACCESS_MODE" != "auto" ]]; then
   echo "Invalid --literature-access-mode: $ACCESS_MODE (use online, client_online, offline, or auto)" >&2

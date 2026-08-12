@@ -1,6 +1,6 @@
 {
   "name": "clinresearch-opencode-global",
-  "version": "0.3.22",
+  "version": "0.3.23",
   "description": "Global OpenCode integration for the ClinResearch medical research agents.",
   "opencode_min_version": "1.17.0",
   "components": {

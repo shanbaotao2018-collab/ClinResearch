@@ -1,0 +1,287 @@
+
+PMID- 40200138
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20250414
+LR  - 20260428
+IS  - 1471-2261 (Electronic)
+IS  - 1471-2261 (Linking)
+VI  - 25
+IP  - 1
+DP  - 2025 Apr 8
+TI  - Factors influencing unplanned readmission within 30 days in patients with heart 
+      failure and their predictive value: a prospective study.
+PG  - 269
+LID - 10.1186/s12872-025-04674-z [doi]
+LID - 269
+AB  - BACKGROUND: Heart failure imposes a significant healthcare burden, with early 
+      unplanned readmissions post-discharge linked to poor outcomes. Identifying risk 
+      factors and their predictive value is crucial for targeted interventions. 
+      OBJECTIVE: To investigate gender differences in cumulative hazard function and 
+      the factors influencing 30-day unplanned readmissions in heart failure patients, 
+      and to compare their predictive value. METHODS: A prospective study of heart 
+      failure patients hospitalized in Beijing Hospital from October 2023 to March 
+      2024. Patients' nutritional status was assessed using the Mini-Nutritional 
+      Assessment Scale Short Version (MNA-SF), frailty was evaluated using the 
+      Groningen Frailty Index (GFI), and the Appendicular Skeletal Muscle Mass Index 
+      (ASMI) was calculated. Multifactorial Cox regression analysis was conducted, and 
+      ROC curves were plotted for predictive modeling. RESULTS: A total of 121 heart 
+      failure patients (60.3% males), aged (69.87 +/- 11.9) years were included. With a 
+      median follow-up duration of 30 days, 25 (20.7%) patients with readmission. COX 
+      regression analysis stratified by gender showed that age, regular smoking, 
+      nutritional status, left ventricular ejection fraction(LVEF), brain natriuretic 
+      peptide(BNP), GFI, and ASMI were independent predictors of readmission within 30 
+      days in patients with heart failure (P < 0.050). ROC curve analysis showed that 
+      age, BNP, ASMI, smoking status, LVEF, nutritional status, and GFI individually as 
+      well as in combination predicted readmission within 30 days in patients with 
+      heart failure; the joint model performed optimally, with an AUC value reaching 
+      0.877 (95%CI 0.801  approximately  0.952, P < 0.001), with a sensitivity of 0.920 and a 
+      specificity of 0.729. CONCLUSION: A multifactorial approach including age, BNP, 
+      ASMI, smoking status, LVEF, nutritional status, and GFI predicts 30-day 
+      readmission risk, offering a basis for clinical intervention strategies to 
+      improve patient outcomes.
+CI  - (c) 2025. The Author(s).
+FAU - Cui, Lingling
+AU  - Cui L
+AD  - Department of Cardiology, Beijing Hospital, National Centre of Gerontology, 
+      Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, 1 Dahua 
+      Road, Dongdan, Dongcheng District, Beijing, China.
+FAU - Wei, Xiaolei
+AU  - Wei X
+AD  - School of nursing, Chinese Academy of Medical Sciences and Peking Union Medical 
+      College, Beijing, China.
+FAU - Liang, Tao
+AU  - Liang T
+AD  - School of nursing, Chinese Academy of Medical Sciences and Peking Union Medical 
+      College, Beijing, China.
+FAU - Yan, Rui
+AU  - Yan R
+AD  - Department of Cardiology, Beijing Hospital, National Centre of Gerontology, 
+      Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, 1 Dahua 
+      Road, Dongdan, Dongcheng District, Beijing, China.
+FAU - Du, Minyu
+AU  - Du M
+AD  - Department of Cardiology, Beijing Hospital, National Centre of Gerontology, 
+      Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, 1 Dahua 
+      Road, Dongdan, Dongcheng District, Beijing, China.
+FAU - Alimire, Tusiyiti
+AU  - Alimire T
+AD  - Department of Cardiology, Beijing Hospital, National Centre of Gerontology, 
+      Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, 1 Dahua 
+      Road, Dongdan, Dongcheng District, Beijing, China.
+FAU - Huang, Yuyang
+AU  - Huang Y
+AD  - Department of Cardiology, Beijing Hospital, National Centre of Gerontology, 
+      Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, 1 Dahua 
+      Road, Dongdan, Dongcheng District, Beijing, China.
+FAU - Wang, Hua
+AU  - Wang H
+AD  - Department of Cardiology, Beijing Hospital, National Centre of Gerontology, 
+      Institute of Geriatric Medicine, Chinese Academy of Medical Sciences, 1 Dahua 
+      Road, Dongdan, Dongcheng District, Beijing, China. wh74220@aliyun.com.
+LA  - eng
+PT  - Comparative Study
+PT  - Journal Article
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20250408
+PL  - England
+TA  - BMC Cardiovasc Disord
+JT  - BMC cardiovascular disorders
+JID - 100968539
+RN  - 114471-18-0 (Natriuretic Peptide, Brain)
+SB  - IM
+EIN - BMC Cardiovasc Disord. 2026 Jan 16;26(1):43. doi: 10.1186/s12872-025-05404-1. 
+      PMID: 41545928
+MH  - Prospective Studies
+MH  - *Heart Failure/complications/diagnosis/physiopathology
+MH  - *Patient Readmission/statistics & numerical data
+MH  - Predictive Value of Tests
+MH  - Sex Factors
+MH  - Nutritional Status
+MH  - Risk Factors
+MH  - Proportional Hazards Models
+MH  - Nutrition Assessment
+MH  - Frailty/complications/epidemiology
+MH  - Muscle, Skeletal
+MH  - Area Under Curve
+MH  - Smoking/adverse effects/epidemiology
+MH  - *Severity of Illness Index
+MH  - Follow-Up Studies
+MH  - Stroke Volume
+MH  - Natriuretic Peptide, Brain/blood
+MH  - Ventricular Function, Left
+MH  - Age Factors
+MH  - *Risk Adjustment/methods/statistics & numerical data
+MH  - Humans
+MH  - Male
+MH  - Female
+MH  - Middle Aged
+MH  - Aged
+MH  - Beijing/epidemiology
+PMC - PMC11977903
+OTO - NOTNLM
+OT  - ASMI
+OT  - Frailty
+OT  - Heart failure
+OT  - Nutrition
+OT  - Readmission
+COIS- Declarations. Ethics approval and consent to participate: This study was approved 
+      by the Ethics Committee of Beijing Hospital (approval number: 2023BJYYEC-356-01). 
+      Consent for publication: Not applicable. Competing interests: The authors declare 
+      no competing interests. Conflict of interest: The authors declare that they have 
+      no known competing financial interests or personal relationships that could have 
+      influenced the work reported in this paper. All authors have access to the data 
+      and a role in writing the manuscript. There are no relationships with any 
+      industry. Footnote: Reporting Checklist: The authors have completed the STROBE 
+      reporting checklist.
+EDAT- 2025/04/09 10:14
+MHDA- 2025/04/09 10:15
+PMCR- 2025/04/08
+CRDT- 2025/04/08 23:41
+PHST- 2024/08/01 00:00 [received]
+PHST- 2025/03/17 00:00 [accepted]
+PHST- 2025/04/09 10:15 [medline]
+PHST- 2025/04/09 10:14 [pubmed]
+PHST- 2025/04/08 23:41 [entrez]
+PHST- 2025/04/08 00:00 [pmc-release]
+AID - 10.1186/s12872-025-04674-z [pii]
+AID - 4674 [pii]
+AID - 10.1186/s12872-025-04674-z [doi]
+PST - epublish
+SO  - BMC Cardiovasc Disord. 2025 Apr 8;25(1):269. doi: 10.1186/s12872-025-04674-z.
+
+PMID- 38549188
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20240730
+LR  - 20250115
+IS  - 2055-5822 (Electronic)
+IS  - 2055-5822 (Linking)
+VI  - 11
+IP  - 4
+DP  - 2024 Aug
+TI  - Prognostic impact of frailty based on a comprehensive frailty assessment in 
+      patients with heart failure.
+PG  - 2076-2085
+LID - 10.1002/ehf2.14728 [doi]
+AB  - AIMS: This study aimed to evaluate the impact of frailty and living function 
+      domains based on the Kihon Checklist (KCL), a questionnaire for a comprehensive 
+      frailty assessment, on prognosis in patients with acute heart failure (AHF). 
+      METHODS AND RESULTS: The Kochi Registry of Subjects with Acute Decompensated 
+      Heart Failure (Kochi YOSACOI) study was a prospective multicentre cohort study 
+      enrolling 1061 patients hospitalized for AHF from May 2017 to December 2019 in 
+      Japan. We divided patients into three groups according to the severity of frailty 
+      using the KCL and compared clinical outcomes after discharge. The primary 
+      endpoint was all-cause death, and the secondary outcomes were cardiovascular 
+      death, heart failure (HF) rehospitalization, and the composite event of 
+      cardiovascular death and HF rehospitalization. Of 936 patients (median age, 
+      81 years; 48.9% women) who could be assessed for frailty, we identified frailty 
+      in 501 patients (53.5%), prefrailty in 290 patients (31.0%), and non-frailty in 
+      145 patients (15.5%). Compared with prefrail and non-frail patients, frail 
+      patients were older (83 vs. 79 and 72 years, P < 0.001), were more likely to be 
+      women (53.9% vs. 43.1% and 43.4%, P = 0.005), and were more likely to have a 
+      history of previous HF hospitalization (35.4% vs. 25.3% and 19.6%, P < 0.001) and 
+      multimorbidity (90.8% vs. 81.0% and 73.8%, P < 0.001). Frail patients had a lower 
+      rate of discharge to home (79.7% vs. 94.8% and 96.5%, P < 0.001). During the 
+      2 year follow-up period, frail patients had a higher incidence rate of all-cause 
+      death, cardiovascular death, and HF rehospitalization (log-rank P < 0.001, 
+      P < 0.001, and P = 0.003, respectively). After adjusting for other prognostic 
+      factors, multivariate analysis showed that frailty was associated with all-cause 
+      death [adjusted hazard ratio (HR): 2.917, 95% confidence interval (CI): 
+      1.326-6.417, P = 0.008] and cardiovascular death (adjusted HR: 7.026, 95% CI: 
+      1.700-29.030, P = 0.007). Among all domains of the KCL, the cognitive function 
+      domain was associated with a higher risk of all-cause death (P = 0.004) and 
+      cardiovascular death (P < 0.001). The depression domain remained associated with 
+      a higher risk of HF rehospitalization (P = 0.045). The risk for all-cause death 
+      increased with an increase in total KCL score (adjusted HR: 1.819, 95% CI: 
+      1.300-2.547, P < 0.001). CONCLUSIONS: The KCL is a useful tool for risk 
+      stratification of adverse outcomes in patients with AHF. Functional declines in 
+      psycho-emotional domains including cognitive function and depressed mood 
+      contribute to adverse outcomes.
+CI  - (c) 2024 The Authors. ESC Heart Failure published by John Wiley & Sons Ltd on 
+      behalf of European Society of Cardiology.
+FAU - Hamada, Tomoyuki
+AU  - Hamada T
+AUID- ORCID: 0000-0001-5282-5037
+AD  - Department of Cardiology and Geriatrics, Kochi Medical School, Kochi University, 
+      Oko-cho, Nankoku-shi, Kochi, 783-8505, Japan.
+FAU - Kubo, Toru
+AU  - Kubo T
+AD  - Department of Cardiology and Geriatrics, Kochi Medical School, Kochi University, 
+      Oko-cho, Nankoku-shi, Kochi, 783-8505, Japan.
+FAU - Kawai, Kazuya
+AU  - Kawai K
+AD  - Department of Cardiology, Chikamori Hospital, Kochi, Japan.
+FAU - Nakaoka, Yoko
+AU  - Nakaoka Y
+AD  - Department of Cardiology, Chikamori Hospital, Kochi, Japan.
+FAU - Yabe, Toshikazu
+AU  - Yabe T
+AD  - Department of Cardiology, Kochi Prefectural Hata Kenmin Hospital, Sukumo, Japan.
+FAU - Furuno, Takashi
+AU  - Furuno T
+AD  - Department of Cardiology, Kochi Prefectural Aki General Hospital, Aki, Japan.
+FAU - Yamada, Eisuke
+AU  - Yamada E
+AD  - Department of Cardiology, Susaki Kuroshio Hospital, Susaki, Japan.
+FAU - Kitaoka, Hiroaki
+AU  - Kitaoka H
+AD  - Department of Cardiology and Geriatrics, Kochi Medical School, Kochi University, 
+      Oko-cho, Nankoku-shi, Kochi, 783-8505, Japan.
+CN  - Kochi YOSACOI study
+LA  - eng
+GR  - Kochi Prefecture Sponsorship Project/
+PT  - Journal Article
+PT  - Multicenter Study
+PT  - Observational Study
+DEP - 20240328
+PL  - England
+TA  - ESC Heart Fail
+JT  - ESC heart failure
+JID - 101669191
+SB  - IM
+MH  - Aged
+MH  - Aged, 80 and over
+MH  - Female
+MH  - Humans
+MH  - Male
+MH  - Cause of Death/trends
+MH  - Follow-Up Studies
+MH  - Frail Elderly
+MH  - *Frailty/epidemiology/diagnosis/complications
+MH  - *Geriatric Assessment/methods
+MH  - *Heart Failure/epidemiology/physiopathology
+MH  - Hospitalization/statistics & numerical data
+MH  - Japan/epidemiology
+MH  - Prognosis
+MH  - Prospective Studies
+MH  - Registries
+PMC - PMC11287353
+OTO - NOTNLM
+OT  - Acute heart failure
+OT  - Comprehensive geriatric assessment
+OT  - Frailty
+OT  - Functional ability
+OT  - Older adults
+OT  - Prognosis
+COIS- H.K. reports the receipt of personal fees from Takeda Pharmaceutical Company, 
+      Ltd., Daiichi-Sankyo Company, and Mitsubishi Tanabe Pharma Corporation, Ltd. and 
+      grants from Takeda Pharmaceutical Company, Ltd., Daiichi-Sankyo Company, Bayer 
+      Yakuhin, Ltd., and Otsuka Pharmaceutical, Ltd. The other authors declare no 
+      conflicts of interest.
+EDAT- 2024/03/29 06:46
+MHDA- 2024/07/30 12:43
+PMCR- 2024/03/28
+CRDT- 2024/03/29 00:44
+PHST- 2023/09/23 00:00 [revised]
+PHST- 2023/04/29 00:00 [received]
+PHST- 2024/01/31 00:00 [accepted]
+PHST- 2024/07/30 12:43 [medline]
+PHST- 2024/03/29 06:46 [pubmed]
+PHST- 2024/03/29 00:44 [entrez]
+PHST- 2024/03/28 00:00 [pmc-release]
+AID - EHF214728 [pii]
+AID - 10.1002/ehf2.14728 [doi]
+PST - ppublish
+SO  - ESC Heart Fail. 2024 Aug;11(4):2076-2085. doi: 10.1002/ehf2.14728. Epub 2024 Mar 
+      28.

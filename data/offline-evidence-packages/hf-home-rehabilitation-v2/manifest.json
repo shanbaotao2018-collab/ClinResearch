@@ -1,0 +1,105 @@
+{
+  "schema_version": 1,
+  "package_id": "hf-home-rehabilitation-v2",
+  "title": "心衰居家与远程心脏康复：原始离线证据包",
+  "source": "offline_pubmed_pmc_export",
+  "provenance": {
+    "databases": [
+      {
+        "name": "PubMed and PubMed Central",
+        "searched_at": "2026-08-06",
+        "query": "(heart failure[Title/Abstract]) AND (cardiac rehabilitation[Title/Abstract] OR home rehabilitation[Title/Abstract] OR telerehabilitation[Title/Abstract]) AND randomized controlled trial[Publication Type]",
+        "exported_count": 9,
+        "retrieval_method": "NCBI E-utilities NBIB export plus original Europe PMC fullTextXML"
+      }
+    ]
+  },
+  "citation_file": {
+    "path": "citations.nbib",
+    "format": "nbib",
+    "sha256": "2ed2f0049b51f42972c0b8cf92806d0f2e5685a486cf6da135723a030a9cc44c"
+  },
+  "documents": [
+    {
+      "path": "fulltext/paper-01-40736732.xml",
+      "content_type": "application/xml",
+      "sha256": "bd4879d3520af01942a8b3b1c88bcd26e81bcd0ee0d394caa95d06314bedbe53",
+      "citation_match": {
+        "external_id": "40736732"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC12311714/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-02-40159769.xml",
+      "content_type": "application/xml",
+      "sha256": "7d57ebfaf70b9dc38f6aa0493ff8b997e6f7f298dff10026e5efefd5ebb1cf42",
+      "citation_match": {
+        "external_id": "40159769"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11955713/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-03-37221704.xml",
+      "content_type": "application/xml",
+      "sha256": "d9684e26f0fa880d161169389cf1a51a0a5940b16e156749c39c98e7fccbaf7d",
+      "citation_match": {
+        "external_id": "37221704"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC10375147/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-04-38787817.xml",
+      "content_type": "application/xml",
+      "sha256": "d8d52fc4fa46926aebcb302aecefa5777bb38952136d3f8c6e2b8120cb932f9f",
+      "citation_match": {
+        "external_id": "38787817"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11125511/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-05-35534907.xml",
+      "content_type": "application/xml",
+      "sha256": "520e81c37519120d099b85608fdec561605887cad1dac4a84019a631e9b36574",
+      "citation_match": {
+        "external_id": "35534907"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9288767/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-06-35313751.xml",
+      "content_type": "application/xml",
+      "sha256": "3bbcf91bbeec1072a24d2b2526904b0bf56dcfcb4f5f308352307dffe822c247",
+      "citation_match": {
+        "external_id": "35313751"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC9082976/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-07-30304644.xml",
+      "content_type": "application/xml",
+      "sha256": "5cdbf09f9af59e46170f10820e2e73c977abda9819196d6acb296a092c1a43fa",
+      "citation_match": {
+        "external_id": "30304644"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC6376602/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-08-29369178.xml",
+      "content_type": "application/xml",
+      "sha256": "d2d9a19eda9d417a8d7a36e5876718190e84b83f1380853834e92c6cfb706e29",
+      "citation_match": {
+        "external_id": "29369178"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC5794362/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-09-33031130.xml",
+      "content_type": "application/xml",
+      "sha256": "264c4759be7f855f9364c722f2ec1682f682df72b6ac5963f3098fa6ab295966",
+      "citation_match": {
+        "external_id": "33031130"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC7808349/fullTextXML"
+    }
+  ]
+}

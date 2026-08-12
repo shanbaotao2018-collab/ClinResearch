@@ -41,7 +41,7 @@ export LRA_OFFLINE_EVIDENCE_PACKAGE_DIR="/data/clinresearch/offline-evidence-pac
 
 ```text
 runtime/literature-imports
-runtime/offline-evidence-packages
+data/offline-evidence-packages
 ```
 
 出于安全考虑，文件导入工具只允许读取该目录下的文件。

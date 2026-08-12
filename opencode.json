@@ -35,6 +35,6 @@
   "model": "sensenova/deepseek-v4-flash",
   "small_model": "sensenova/deepseek-v4-flash",
   "plugin": [
-    "file:///Users/shanbaotao/Documents/agent%202/.opencode/plugins/medical-skill-receipts.mjs"
+    "./.opencode/plugins/medical-skill-receipts.mjs"
   ]
 }

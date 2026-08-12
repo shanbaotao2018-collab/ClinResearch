@@ -1,0 +1,1287 @@
+
+PMID- 40055862
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20250318
+LR  - 20260716
+IS  - 2047-9980 (Electronic)
+IS  - 2047-9980 (Linking)
+VI  - 14
+IP  - 6
+DP  - 2025 Mar 18
+TI  - Effect of Telemedicine Interventions on Heart Failure Hospitalizations: A 
+      Randomized Trial.
+PG  - e036241
+LID - 10.1161/JAHA.124.036241 [doi]
+LID - e036241
+AB  - BACKGROUND: Telemedicine interventions (TMIs) for heart failure (HF) can reduce 
+      hospitalizations and deaths. It is unclear if low literacy and limited access to 
+      technology in low- and middle-income countries affect these benefits. We 
+      evaluated whether TMIs added to usual care could reduce HF-related 
+      rehospitalizations in patients discharged from hospitals in Brazil. METHODS: A 
+      randomized clinical trial was conducted in 6 public hospitals from September 2021 
+      to June 2022. Patients hospitalized because of HF were randomized to usual care 
+      or a multicomponent TMIs. The TMI included weekly nurse-led structured telephone 
+      support to monitor weight, blood pressure, heart rate, decompensation signs, and 
+      treatment adherence, while promoting self-care education, including diuretic dose 
+      adjustments. The nurse was linked to a cardiologist for teleconsultations, 
+      according to predefined decision trees. An educational program via text messages 
+      was also provided. The primary outcome was HF-related rehospitalizations at 
+      180 days, analyzed by intention-to-treat analysis. RESULTS: Of 127 randomized 
+      patients (TMI, n=70; usual care, n=57), mean+/-SD age was 64+/-11 years, 48% were 
+      women, 71% were Black race, 33% had <4 years of education, 65% were New York 
+      Heart Association class III/IV, and 68% had reduced ejection fraction (</=50%). At 
+      180 days, 26% of the TMI group had HF-related rehospitalizations versus 46% in 
+      usual care (relative risk [RR]=0.56, P<0.02). All-cause death or 
+      rehospitalizations occurred in 30% of the TMI group versus 47% in usual care 
+      (RR=0.63, P=0.04). Results were consistent in "per-protocol" and subgroup 
+      analyses. Enrollment was lower than expected because of COVID-19 disruptions. 
+      CONCLUSIONS: TMI reduced HF-related rehospitalizations, demonstrating its 
+      potential to improve clinical outcomes in this population. REGISTRATION: URL: 
+      https://www.ensaiosclinicos.gov.br/rg/RBR-10znr9xn; Unique Identifier: UTN 
+      U1111-1263-9802.
+FAU - Ribeiro, Edmar G
+AU  - Ribeiro EG
+AD  - School of Nursing Universidade Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Brant, Luisa C C
+AU  - Brant LCC
+AUID- ORCID: 0000-0002-7317-1367
+AD  - Faculty of Medicine and Telehealth Center, Hospital das Clinicas Universidade 
+      Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Rezende, Lilian C
+AU  - Rezende LC
+AUID- ORCID: 0000-0003-0869-0205
+AD  - School of Nursing Universidade Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Bernal, Regina
+AU  - Bernal R
+AUID- ORCID: 0000-0002-7917-3857
+AD  - School of Nursing Universidade Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Chequer, Graziela
+AU  - Chequer G
+AUID- ORCID: 0000-0002-7539-4994
+AD  - Faculty of Medicine and Telehealth Center, Hospital das Clinicas Universidade 
+      Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Temponi, Barbara V
+AU  - Temponi BV
+AUID- ORCID: 0009-0005-8040-6370
+AD  - Faculty of Medicine and Telehealth Center, Hospital das Clinicas Universidade 
+      Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Vilela, Daniel B
+AU  - Vilela DB
+AD  - Faculty of Medicine and Telehealth Center, Hospital das Clinicas Universidade 
+      Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Buback, Julia B
+AU  - Buback JB
+AD  - Faculty of Medicine and Telehealth Center, Hospital das Clinicas Universidade 
+      Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Lopes, Renato D
+AU  - Lopes RD
+AUID- ORCID: 0000-0003-2999-4961
+AD  - Duke University Medical Center Durham NC USA.
+FAU - Franco, Tulio B
+AU  - Franco TB
+AUID- ORCID: 0000-0001-7372-5262
+AD  - Public Health Institute Universidade Federal Fluminense Rio de Janeiro Brazil.
+FAU - Ribeiro, Antonio L P
+AU  - Ribeiro ALP
+AUID- ORCID: 0000-0002-2740-0042
+AD  - Faculty of Medicine and Telehealth Center, Hospital das Clinicas Universidade 
+      Federal de Minas Gerais Belo Horizonte Brazil.
+FAU - Malta, Deborah C
+AU  - Malta DC
+AUID- ORCID: 0000-0002-8214-5734
+AD  - School of Nursing Universidade Federal de Minas Gerais Belo Horizonte Brazil.
+LA  - eng
+PT  - Journal Article
+PT  - Multicenter Study
+PT  - Randomized Controlled Trial
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20250307
+PL  - England
+TA  - J Am Heart Assoc
+JT  - Journal of the American Heart Association
+JID - 101580524
+SB  - IM
+MH  - Humans
+MH  - *Heart Failure/therapy/diagnosis
+MH  - Female
+MH  - Male
+MH  - *Telemedicine
+MH  - Middle Aged
+MH  - Aged
+MH  - *Patient Readmission/statistics & numerical data
+MH  - Brazil/epidemiology
+MH  - *Hospitalization
+MH  - Patient Education as Topic
+PMC - PMC12132665
+OTO - NOTNLM
+OT  - Brazil
+OT  - digital health
+OT  - heart failure
+OT  - treatment
+COIS- Dr Lopes reports research grants or contracts from Amgen, Bristol-Myers Squibb, 
+      GlaxoSmithKline, Medtronic, Pfizer, and Sanofi-Aventis; funding for educational 
+      activities or lectures from Pfizer, Bristol-Myers Squibb, Novo Nordisk, and 
+      AstraZeneca; and funding for consulting from Bayer, Boehringer Ingelheim, 
+      Bristol-Myers Squibb, Novo Nordisk, and AstraZeneca. The remaining authors have 
+      no disclosures to report.
+EDAT- 2025/03/09 15:08
+MHDA- 2025/03/18 15:24
+PMCR- 2025/03/18
+CRDT- 2025/03/07 23:53
+PHST- 2025/03/18 15:24 [medline]
+PHST- 2025/03/09 15:08 [pubmed]
+PHST- 2025/03/07 23:53 [entrez]
+PHST- 2025/03/18 00:00 [pmc-release]
+AID - JAH310677 [pii]
+AID - 10.1161/JAHA.124.036241 [doi]
+PST - ppublish
+SO  - J Am Heart Assoc. 2025 Mar 18;14(6):e036241. doi: 10.1161/JAHA.124.036241. Epub 
+      2025 Mar 7.
+
+PMID- 38955396
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20240702
+LR  - 20260127
+IS  - 2399-6641 (Electronic)
+IS  - 2399-6641 (Linking)
+VI  - 13
+IP  - 3
+DP  - 2024 Jul 1
+TI  - Randomised pilot study comparing a coach to SMARTPhone reminders to aid the 
+      management of heart failure (HF) patients: humans or machines.
+LID - 10.1136/bmjoq-2024-002753 [doi]
+LID - e002753
+AB  - Ambulatory management of congestive heart failure (HF) continues to be a 
+      challenging clinical problem. Recent studies have focused on the role of HF 
+      clinics, nurse practitioners and disease management programmes to reduce HF 
+      readmissions. This pilot study is a pragmatic factorial study comparing a coach 
+      intervention, a SMARTPHONE REMINDER system intervention and BOTH interventions 
+      combined to Treatment as USUAL (TAU). We determined that both modalities were 
+      acceptable to patients prior to randomisation. Fifty-four patients were 
+      randomised to the four groups. The COACH group had no readmissions for HF 6 
+      months after enrolment compared with 18% for the SMARTPHONE REMINDER Group, 8% 
+      for the BOTH intervention group and 13% for TAU. Medium-to-high medication 
+      adherence was maintained in all four groups although sodium consumption was lower 
+      at 3 months for the COACH and combined (BOTH) groups. This pilot study suggests a 
+      beneficial effect on rehospitalisation with the use of support measures including 
+      coaches and telephone reminders that needs confirmation in a larger trial.
+CI  - (c) Author(s) (or their employer(s)) 2024. Re-use permitted under CC BY-NC. No 
+      commercial re-use. See rights and permissions. Published by BMJ.
+FAU - Eynan, Rahel
+AU  - Eynan R
+AD  - Schulich School of Medicine & Dentistry, Western University, London, Ontario, 
+      Canada.
+FAU - Petrella, Robert
+AU  - Petrella R
+AD  - Faculty of Medicine, The University of British Columbia, Vancouver, British 
+      Columbia, Canada.
+FAU - Forchuk, Cheryl
+AU  - Forchuk C
+AD  - Faculty of Health Sciences, Western University, London, Ontario, Canada.
+FAU - Zwarenstein, Merrick
+AU  - Zwarenstein M
+AD  - Schulich School of Medicine & Dentistry, Western University, London, Ontario, 
+      Canada.
+FAU - Calvin, James
+AU  - Calvin J
+AUID- ORCID: 0009-0003-7620-3330
+AD  - Department of Medicine, Western University Schulich School of Medicine & 
+      Dentistry, London, Ontario, Canada james.calvin@lhsc.on.ca.
+LA  - eng
+PT  - Journal Article
+PT  - Pragmatic Clinical Trial
+PT  - Randomized Controlled Trial
+DEP - 20240701
+PL  - England
+TA  - BMJ Open Qual
+JT  - BMJ open quality
+JID - 101710381
+SB  - IM
+MH  - Humans
+MH  - *Heart Failure/therapy
+MH  - Pilot Projects
+MH  - Male
+MH  - Female
+MH  - *Reminder Systems/statistics & numerical data/instrumentation
+MH  - *Smartphone/statistics & numerical data
+MH  - Aged
+MH  - Middle Aged
+MH  - Patient Readmission/statistics & numerical data
+MH  - Drug Monitoring
+PMC - PMC11217996
+OTO - NOTNLM
+OT  - Checklists
+OT  - Chronic disease management
+OT  - Healthcare quality improvement
+OT  - Mobile Applications
+OT  - Outpatients
+COIS- Competing interests: None declared.
+EDAT- 2024/07/03 00:42
+MHDA- 2024/07/03 00:43
+PMCR- 2024/07/01
+CRDT- 2024/07/02 20:43
+PHST- 2024/01/11 00:00 [received]
+PHST- 2024/05/17 00:00 [accepted]
+PHST- 2024/07/03 00:43 [medline]
+PHST- 2024/07/03 00:42 [pubmed]
+PHST- 2024/07/02 20:43 [entrez]
+PHST- 2024/07/01 00:00 [pmc-release]
+AID - bmjoq-2024-002753 [pii]
+AID - 10.1136/bmjoq-2024-002753 [doi]
+PST - epublish
+SO  - BMJ Open Qual. 2024 Jul 1;13(3):e002753. doi: 10.1136/bmjoq-2024-002753.
+
+PMID- 30170422
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20180917
+LR  - 20260127
+IS  - 1536-5964 (Electronic)
+IS  - 0025-7974 (Print)
+IS  - 0025-7974 (Linking)
+VI  - 97
+IP  - 35
+DP  - 2018 Aug
+TI  - Home-based telehealth exercise training program in Chinese patients with heart 
+      failure: A randomized controlled trial.
+PG  - e12069
+LID - 10.1097/MD.0000000000012069 [doi]
+LID - e12069
+AB  - BACKGROUND: Homed-based exercise training via telehealth is an effective method 
+      for cardiac rehabilitation in patients with heart failure (HF). However, little 
+      is known about the effects of telehealth exercise training among patients with HF 
+      in China. DESIGN: A randomized controlled design with repeated measures was 
+      adopted in this study. OBJECTIVE: To examine the effect of our telehealth 
+      exercise training program on health outcomes in patients with HF in China. 
+      METHODS: A total of 98 participants were randomly allocated to an experimental 
+      group (n = 49) and control group (n = 49) from January 2014 to February 2015 in a 
+      teaching hospital in Chengdu, People's Republic of China. Participants in the 
+      experimental group underwent an 8-week home-based telehealth exercise training 
+      program, including 32 exercise training sessions, with regular telephone or 
+      instant messaging follow-ups and consultations. Participants in the control group 
+      received usual care. The outcome variables used in this study were the Minnesota 
+      Living with Heart Failure Questionnaire, 6-minute walking distance (6MWD), 
+      resting heart rate (HR), Hospital Anxiety and Depression Scale, left ventricular 
+      ejection fraction (LVEF), and the New York Heart Association (NYHA) 
+      classification. Data were collected at baseline, post-test (2 months after 
+      discharge), and 4 months post-test (6 months after discharge). Repeated measures 
+      ANOVA was used to examine the effects of groups, changes over time, and 
+      interaction of time and group with the above variables. RESULTS: Statistically 
+      significant improvements were observed in the experimental group regarding 
+      quality of life (QOL) and 6MWD compared to the control group post-test. 
+      Significant improvements in QOL, 6MWD, and resting HR were sustained for 4 months 
+      post-test. However, no significant improvements were observed regarding the NYHA 
+      classification, LVEF, anxiety, and depression at either the post-test or 4-month 
+      post-test follow-ups. No patients experienced any significant complications or 
+      adverse outcomes during the program. CONCLUSIONS: The results reveal that 
+      telehealth exercise training is an effective alternative method for cardiac 
+      rehabilitation, especially under the conditions in China.
+FAU - Peng, Xingchen
+AU  - Peng X
+AD  - Department of Medical Oncology, Cancer Center, State Key Laboratory of 
+      Biotherapy, West China Hospital Administration Center of Medicine, Sichuan 
+      University School of Nursing, Chengdu University of Traditional Chinese Medicine, 
+      Chengdu, Sichuan XiangYa School of Medicine, Central South University, Changsha, 
+      Hunan Department of Nursing, West China Hospital, Sichuan University, Chengdu, 
+      Sichuan Frances Payne Bolton School of Nursing, Case Western Reserve University, 
+      Cleveland, OH Department of Cardiology, West China Hospital, Sichuan University, 
+      Chengdu, Sichuan, People's Republic of China.
+FAU - Su, Yonglin
+AU  - Su Y
+FAU - Hu, Zhonghua
+AU  - Hu Z
+FAU - Sun, Xiye
+AU  - Sun X
+FAU - Li, Xiaoping
+AU  - Li X
+FAU - Dolansky, Mary A
+AU  - Dolansky MA
+FAU - Qu, Moying
+AU  - Qu M
+FAU - Hu, Xiaolin
+AU  - Hu X
+LA  - eng
+PT  - Journal Article
+PT  - Randomized Controlled Trial
+PL  - United States
+TA  - Medicine (Baltimore)
+JT  - Medicine
+JID - 2985248R
+SB  - IM
+MH  - Aged
+MH  - Cardiac Rehabilitation/*methods
+MH  - China
+MH  - Exercise Therapy/*methods
+MH  - Exercise Tolerance
+MH  - Female
+MH  - Heart Failure/*rehabilitation
+MH  - Heart Rate
+MH  - Humans
+MH  - Male
+MH  - Mental Health
+MH  - Middle Aged
+MH  - Prospective Studies
+MH  - Quality of Life
+MH  - Severity of Illness Index
+MH  - Socioeconomic Factors
+MH  - Telerehabilitation/*methods
+MH  - Ventricular Function, Left
+PMC - PMC6392598
+COIS- The authors declare no conflicts of interest.
+EDAT- 2018/09/02 06:00
+MHDA- 2018/09/18 06:00
+PMCR- 2018/08/21
+CRDT- 2018/09/02 06:00
+PHST- 2018/09/02 06:00 [entrez]
+PHST- 2018/09/02 06:00 [pubmed]
+PHST- 2018/09/18 06:00 [medline]
+PHST- 2018/08/21 00:00 [pmc-release]
+AID - 00005792-201808310-00054 [pii]
+AID - MD-D-17-03432 [pii]
+AID - 10.1097/MD.0000000000012069 [doi]
+PST - ppublish
+SO  - Medicine (Baltimore). 2018 Aug;97(35):e12069. doi: 10.1097/MD.0000000000012069.
+
+PMID- 34898447
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20211220
+LR  - 20220218
+IS  - 1438-8871 (Electronic)
+IS  - 1439-4456 (Print)
+IS  - 1438-8871 (Linking)
+VI  - 23
+IP  - 12
+DP  - 2021 Dec 13
+TI  - Effects of Person-Centered Care Using a Digital Platform and Structured Telephone 
+      Support for People With Chronic Obstructive Pulmonary Disease and Chronic Heart 
+      Failure: Randomized Controlled Trial.
+PG  - e26794
+LID - 10.2196/26794 [doi]
+LID - e26794
+AB  - BACKGROUND: Chronic obstructive pulmonary disease (COPD) and chronic heart 
+      failure (CHF) are characterized by severe symptom burden and common acute 
+      worsening episodes that often require hospitalization and affect prognosis. 
+      Although many studies have shown that person-centered care (PCC) increases 
+      self-efficacy in patients with chronic conditions, studies on patients with COPD 
+      and CHF treated in primary care and the effects of PCC on the risk of 
+      hospitalization in these patients are scarce. OBJECTIVE: The aim of this study is 
+      to evaluate the effects of PCC through a combined digital platform and telephone 
+      support for people with COPD and CHF. METHODS: A multicenter randomized trial was 
+      conducted from 2018 to 2020. A total of 222 patients were recruited from 9 
+      primary care centers. Patients diagnosed with COPD, CHF, or both and with 
+      internet access were eligible. Participants were randomized into either usual 
+      care (112/222, 50.5%) or PCC combined with usual care (110/222, 49.5%). The 
+      intervention's main component was a personal health plan cocreated by the 
+      participants and assigned health care professionals. The health care 
+      professionals called the participants in the intervention group and encouraged 
+      narration to establish a partnership using PCC communication skills. A digital 
+      platform was used as a communication tool. The primary end point, divided into 2 
+      categories (improved and deteriorated or unchanged), was a composite score of 
+      change in general self-efficacy and hospitalization or death 6 months after 
+      randomization. Data from the intention-to-treat group at 3- and 6-month 
+      follow-ups were analyzed. In addition, a per-protocol analysis was conducted on 
+      the participants who used the intervention. RESULTS: No significant differences 
+      were found in composite scores between the groups at the 3- and 6-month 
+      follow-ups. However, the per-protocol analysis of the 3-month follow-up revealed 
+      a significant difference in composite scores between the study groups (P=.047), 
+      although it was not maintained until the end of the 6-month follow-up (P=.24). 
+      This effect was driven by a change in general self-efficacy from baseline. 
+      CONCLUSIONS: PCC using a combined digital platform and structured telephone 
+      support seems to be an option to increase the short-term self-efficacy of people 
+      with COPD and CHF. This study adds to the knowledge of conceptual innovations in 
+      primary care to support patients with COPD and CHF. TRIAL REGISTRATION: 
+      ClinicalTrials.gov NCT03183817; http://clinicaltrials.gov/ct2/show/NCT03183817.
+CI  - (c)Lilas Ali, Sara Wallstrom, Andreas Fors, Emmelie Barenfeld, Eva Fredholm, 
+      Michael Fu, Mahboubeh Goudarzi, Hanna Gyllensten, Irma Lindstrom Kjellberg, Karl 
+      Swedberg, Lowie E G W Vanfleteren, Inger Ekman. Originally published in the 
+      Journal of Medical Internet Research (https://www.jmir.org), 13.12.2021.
+FAU - Ali, Lilas
+AU  - Ali L
+AUID- ORCID: 0000-0001-7027-4371
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+AD  - Psychiatric Department, Sahlgrenska University Hospital, Gothenburg, Sweden.
+FAU - Wallstrom, Sara
+AU  - Wallstrom S
+AUID- ORCID: 0000-0001-7579-4974
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+FAU - Fors, Andreas
+AU  - Fors A
+AUID- ORCID: 0000-0001-8980-0538
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+AD  - Region Vastra Gotaland, Research and Development Primary Health Care, Gothenburg, 
+      Sweden.
+FAU - Barenfeld, Emmelie
+AU  - Barenfeld E
+AUID- ORCID: 0000-0002-4945-4623
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+AD  - Department of Occupational Therapy and Physiotherapy, Sahlgrenska University 
+      Hospital, Gothenburg, Sweden.
+FAU - Fredholm, Eva
+AU  - Fredholm E
+AUID- ORCID: 0000-0003-1593-8432
+AD  - The Swedish Heart & Lung Foundation, Stockholm, Sweden.
+FAU - Fu, Michael
+AU  - Fu M
+AUID- ORCID: 0000-0001-8860-1051
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Department of Molecular and Clinical Medicine, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+FAU - Goudarzi, Mahboubeh
+AU  - Goudarzi M
+AUID- ORCID: 0000-0002-2031-1717
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+FAU - Gyllensten, Hanna
+AU  - Gyllensten H
+AUID- ORCID: 0000-0001-6890-5162
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+FAU - Lindstrom Kjellberg, Irma
+AU  - Lindstrom Kjellberg I
+AUID- ORCID: 0000-0002-6040-7828
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+FAU - Swedberg, Karl
+AU  - Swedberg K
+AUID- ORCID: 0000-0002-6358-2154
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+AD  - Department of Molecular and Clinical Medicine, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+FAU - Vanfleteren, Lowie E G W
+AU  - Vanfleteren LEGW
+AUID- ORCID: 0000-0002-4387-4096
+AD  - Chronic Obstructive Pulmonary Disease Center, Department of Respiratory Medicine 
+      and Allergology, Sahlgrenska University Hospital, Gothenburg, Sweden.
+AD  - Department of Internal Medicine and Clinical Nutrition, Institute of Medicine, 
+      Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+FAU - Ekman, Inger
+AU  - Ekman I
+AUID- ORCID: 0000-0002-5559-5203
+AD  - Sahlgrenska Academy Institute of Health and Care Sciences, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care, University of Gothenburg, Gothenburg, Sweden.
+LA  - eng
+SI  - ClinicalTrials.gov/NCT03183817
+PT  - Journal Article
+PT  - Multicenter Study
+PT  - Randomized Controlled Trial
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20211213
+PL  - Canada
+TA  - J Med Internet Res
+JT  - Journal of medical Internet research
+JID - 100959882
+SB  - IM
+MH  - *Heart Failure/therapy
+MH  - Humans
+MH  - Patient-Centered Care
+MH  - *Pulmonary Disease, Chronic Obstructive/therapy
+MH  - Self Care
+MH  - Telephone
+PMC - PMC8713094
+OTO - NOTNLM
+OT  - chronic heart failure
+OT  - chronic obstructive pulmonary disease
+OT  - digital platform
+OT  - eHealth
+OT  - patient-centered care
+OT  - person-centered care
+OT  - randomized controlled trial
+OT  - telehealth
+COIS- Conflicts of Interest: None declared.
+EDAT- 2021/12/14 06:00
+MHDA- 2021/12/21 06:00
+PMCR- 2021/12/13
+CRDT- 2021/12/13 17:33
+PHST- 2021/01/15 00:00 [received]
+PHST- 2021/10/13 00:00 [accepted]
+PHST- 2021/04/15 00:00 [revised]
+PHST- 2021/12/13 17:33 [entrez]
+PHST- 2021/12/14 06:00 [pubmed]
+PHST- 2021/12/21 06:00 [medline]
+PHST- 2021/12/13 00:00 [pmc-release]
+AID - v23i12e26794 [pii]
+AID - 10.2196/26794 [doi]
+PST - epublish
+SO  - J Med Internet Res. 2021 Dec 13;23(12):e26794. doi: 10.2196/26794.
+
+PMID- 31432915
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20190903
+LR  - 20240719
+IS  - 1518-8345 (Electronic)
+IS  - 0104-1169 (Print)
+IS  - 0104-1169 (Linking)
+VI  - 27
+DP  - 2019 Aug 19
+TI  - Discharge guidance and telephone follow-up in the therapeutic adherence of heart 
+      failure: randomized clinical trial.
+PG  - e3159
+LID - S0104-11692019000100347 [pii]
+LID - 10.1590/1518-8345.2484.3159 [doi]
+LID - e3159
+AB  - OBJECTIVE: to evaluate the effectiveness of the behavioral intervention of 
+      discharge guidance and telephone follow-up in the therapeutic adherence, 
+      re-hospitalization and mortality of patients with heart failure. METHOD: 
+      randomized clinical trial without blinding, including 201 patients diagnosed with 
+      heart failure admitted to the emergency room, who were randomized in Control 
+      Group and Intervention Group. Intervention was carried out with specific 
+      discharge guidance in the Intervention Group, who were contacted for solving 
+      doubts via phone calls after 7 and 30 days, and the adherence to treatment was 
+      evaluated after 90 days with the Morisky test, the Brief Medical Questionnaire 
+      and the non-drug adherence test in both groups. The Generalized Estimating 
+      Equations Model was used (p<0.05%). RESULTS: One-hundred and one patients were 
+      randomly sorted in the Control Group and in the Intervention Group, their average 
+      age being 62.6+/-15.2. The Intervention Group had higher drug and non-drug 
+      therapeutic adherence compared to the Control Group (p<0.001) and there were 
+      lower re-hospitalization and death rates in the Intervention Group after 90 days. 
+      CONCLUSION: discharge guidance with telephone follow-up was effective and 
+      resulted in greater therapeutic adherence, as well as in decrease of 
+      re-hospitalization and death rates in patients with heart failure. Clinical Trial 
+      Registration (REBEC): RBR- 37n859.
+FAU - Oscalices, Monica Isabelle Lopes
+AU  - Oscalices MIL
+AUID- ORCID: 0000-0003-3591-6855
+AD  - Universidade Federal de Sao Paulo, Escola Paulista de Enfermagem, Sao Paulo, SP, 
+      Brasil.
+AD  - Instituto Dante Pazzanese de Cardiologia, Pronto Socorro, Sao Paulo, SP, Brasil.
+FAU - Okuno, Meiry Fernanda Pinto
+AU  - Okuno MFP
+AUID- ORCID: 0000-0003-4200-1186
+AD  - Universidade Federal de Sao Paulo, Escola Paulista de Enfermagem, Sao Paulo, SP, 
+      Brasil.
+FAU - Lopes, Maria Carolina Barbosa Teixeira
+AU  - Lopes MCBT
+AUID- ORCID: 0000-0002-8989-4404
+AD  - Universidade Federal de Sao Paulo, Escola Paulista de Enfermagem, Sao Paulo, SP, 
+      Brasil.
+FAU - Campanharo, Cassia Regina Vancini
+AU  - Campanharo CRV
+AUID- ORCID: 0000-0002-7688-2674
+AD  - Universidade Federal de Sao Paulo, Escola Paulista de Enfermagem, Sao Paulo, SP, 
+      Brasil.
+FAU - Batista, Ruth Ester Assayag
+AU  - Batista REA
+AUID- ORCID: 0000-0002-6416-1079
+AD  - Universidade Federal de Sao Paulo, Escola Paulista de Enfermagem, Sao Paulo, SP, 
+      Brasil.
+LA  - por
+LA  - eng
+LA  - spa
+PT  - Journal Article
+PT  - Randomized Controlled Trial
+TT  - Orientacao de alta e acompanhamento telefonico na adesao terapeutica da 
+      insuficiencia cardiaca: ensaio clinico randomizado.
+DEP - 20190819
+PL  - Brazil
+TA  - Rev Lat Am Enfermagem
+JT  - Revista latino-americana de enfermagem
+JID - 9420934
+MH  - Aged
+MH  - Brazil
+MH  - Female
+MH  - Follow-Up Studies
+MH  - Heart Failure/mortality/*therapy
+MH  - Humans
+MH  - Male
+MH  - Middle Aged
+MH  - Patient Discharge/*statistics & numerical data
+MH  - Patient Education as Topic/*statistics & numerical data
+MH  - Patient Readmission/statistics & numerical data
+MH  - Risk Factors
+MH  - Surveys and Questionnaires
+MH  - Telephone/*statistics & numerical data
+MH  - Time Factors
+MH  - Treatment Adherence and Compliance/*statistics & numerical data
+PMC - PMC6703101
+EDAT- 2019/08/23 06:00
+MHDA- 2019/09/04 06:00
+PMCR- 2019/08/19
+CRDT- 2019/08/22 06:00
+PHST- 2018/10/12 00:00 [received]
+PHST- 2019/02/23 00:00 [accepted]
+PHST- 2019/08/22 06:00 [entrez]
+PHST- 2019/08/23 06:00 [pubmed]
+PHST- 2019/09/04 06:00 [medline]
+PHST- 2019/08/19 00:00 [pmc-release]
+AID - S0104-11692019000100347 [pii]
+AID - 10.1590/1518-8345.2484.3159 [doi]
+PST - epublish
+SO  - Rev Lat Am Enfermagem. 2019 Aug 19;27:e3159. doi: 10.1590/1518-8345.2484.3159.
+
+PMID- 30418101
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20200918
+LR  - 20221207
+IS  - 1556-3669 (Electronic)
+IS  - 1530-5627 (Print)
+IS  - 1530-5627 (Linking)
+VI  - 25
+IP  - 10
+DP  - 2019 Oct
+TI  - A Randomized Controlled Trial Comparing Telehealth Self-Management to Standard 
+      Outpatient Management in Underserved Black and Hispanic Patients Living with 
+      Heart Failure.
+PG  - 917-925
+LID - 10.1089/tmj.2018.0219 [doi]
+AB  - Background:Although the American Heart Association promotes telehealth models to 
+      improve care access, there is limited literature on its use in underserved 
+      populations. This study is the first to compare utilization and quality of life 
+      (QoL) for underserved black and Hispanic heart failure (HF) patients assigned to 
+      telehealth self-monitoring (TSM) or comprehensive outpatient management (COM) 
+      over 90 days.Methods:This randomized controlled trial enrolled 104 patients. 
+      Outcomes included emergency department (ED) visits, hospitalizations, QoL, 
+      depression, and anxiety. Binary outcomes for utilization were analyzed using 
+      chi-square or Fisher's exact test. Poisson or negative binomial regression, 
+      repeated-measures analysis of variance, or generalized estimating equations were 
+      also used as appropriate.Results:Of 104 patients, 31% were Hispanic, 69% black, 
+      41% women, and 72% reported incomes of <$10,000/year. Groups did not differ 
+      regarding binary ED visits (relative risk [RR] = 1.37, confidence interval 
+      [CI] = 0.83-2.27), hospitalization (RR = 0.92, CI = 0.57-1.48), or length of stay 
+      in days (TSM = 0.54 vs. COM = 0.91). Number of all-cause hospitalizations was 
+      significantly lower for COM (TSM = 0.78 vs. COM = 0.55; p = 0.03). COM patients 
+      reported greater anxiety reduction from baseline to 90 days (TSM = 50-28%; 
+      COM = 57-13%; p = 0.05).Conclusions:These findings suggest that TSM is not 
+      effective in reducing utilization or improving QoL for underserved patients with 
+      HF. Future studies are needed to determine whether TSM can be effective for 
+      populations facing health care access issues.
+FAU - Pekmezaris, Renee
+AU  - Pekmezaris R
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Medicine and Department of Community Health, Zucker School of 
+      Medicine, Hempstead, New York.
+AD  - Department of Occupational Medicine Epidemiology and Prevention, Northwell 
+      Health, Great Neck, New York.
+AD  - Department of Biostatistics, The Feinstein Institute of Medical Research, 
+      Manhasset, New York.
+FAU - Nouryan, Christian N
+AU  - Nouryan CN
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Medicine and Department of Community Health, Zucker School of 
+      Medicine, Hempstead, New York.
+AD  - Department of Biostatistics, The Feinstein Institute of Medical Research, 
+      Manhasset, New York.
+FAU - Schwartz, Rebecca
+AU  - Schwartz R
+AD  - Department of Occupational Medicine Epidemiology and Prevention, Northwell 
+      Health, Great Neck, New York.
+FAU - Castillo, Stacy
+AU  - Castillo S
+AD  - Department of Cardiology, Heart Failure Center, Nassau University Medical Center, 
+      East Meadow, New York.
+FAU - Makaryus, Amgad N
+AU  - Makaryus AN
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Cardiology, Heart Failure Center, Nassau University Medical Center, 
+      East Meadow, New York.
+FAU - Ahern, Deborah
+AU  - Ahern D
+AD  - Department of Cardiology, Heart Failure Center, Nassau University Medical Center, 
+      East Meadow, New York.
+FAU - Akerman, Meredith B
+AU  - Akerman MB
+AD  - Department of Biostatistics, The Feinstein Institute of Medical Research, 
+      Manhasset, New York.
+FAU - Lesser, Martin L
+AU  - Lesser ML
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Medicine and Department of Community Health, Zucker School of 
+      Medicine, Hempstead, New York.
+AD  - Department of Biostatistics, The Feinstein Institute of Medical Research, 
+      Manhasset, New York.
+FAU - Bauer, Lorinda
+AU  - Bauer L
+AD  - Department of Cardiology, Heart Failure Center, Nassau University Medical Center, 
+      East Meadow, New York.
+FAU - Murray, Lawrence
+AU  - Murray L
+AD  - Community Advisory Board, Northwell Health, Manhasset, New York.
+FAU - Pecinka, Kathleen
+AU  - Pecinka K
+AD  - Nursing Department, Queensborough Community College, Bayside, New York.
+FAU - Zeltser, Roman
+AU  - Zeltser R
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Cardiology, Heart Failure Center, Nassau University Medical Center, 
+      East Meadow, New York.
+FAU - Zhang, Meng
+AU  - Zhang M
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Biostatistics, The Feinstein Institute of Medical Research, 
+      Manhasset, New York.
+FAU - DiMarzio, Paola
+AU  - DiMarzio P
+AD  - Department of Medicine, Northwell Health, Manhasset, New York.
+AD  - Department of Medicine and Department of Community Health, Zucker School of 
+      Medicine, Hempstead, New York.
+AD  - Department of Occupational Medicine Epidemiology and Prevention, Northwell 
+      Health, Great Neck, New York.
+AD  - Department of Biostatistics, The Feinstein Institute of Medical Research, 
+      Manhasset, New York.
+LA  - eng
+PT  - Journal Article
+PT  - Randomized Controlled Trial
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20181110
+PL  - United States
+TA  - Telemed J E Health
+JT  - Telemedicine journal and e-health : the official journal of the American 
+      Telemedicine Association
+JID - 100959949
+SB  - IM
+MH  - Adult
+MH  - *Black or African American
+MH  - Aged
+MH  - Aged, 80 and over
+MH  - *Ambulatory Care
+MH  - Female
+MH  - Heart Failure/*ethnology/*therapy
+MH  - *Hispanic or Latino
+MH  - Humans
+MH  - Male
+MH  - *Medically Underserved Area
+MH  - Middle Aged
+MH  - *Self-Management
+MH  - *Telemedicine
+MH  - Young Adult
+PMC - PMC6784489
+OTO - NOTNLM
+OT  - cardiology/cardiovascular disease
+OT  - home health monitoring
+OT  - telehealth
+OT  - telemedicine
+COIS- No competing financial interests exist.
+EDAT- 2018/11/13 06:00
+MHDA- 2020/09/20 06:00
+PMCR- 2019/10/04
+CRDT- 2018/11/13 06:00
+PHST- 2018/11/13 06:00 [pubmed]
+PHST- 2020/09/20 06:00 [medline]
+PHST- 2018/11/13 06:00 [entrez]
+PHST- 2019/10/04 00:00 [pmc-release]
+AID - 10.1089/tmj.2018.0219 [pii]
+AID - 10.1089/tmj.2018.0219 [doi]
+PST - ppublish
+SO  - Telemed J E Health. 2019 Oct;25(10):917-925. doi: 10.1089/tmj.2018.0219. Epub 
+      2018 Nov 10.
+
+PMID- 30169539
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20190214
+LR  - 20190215
+IS  - 1932-6203 (Electronic)
+IS  - 1932-6203 (Linking)
+VI  - 13
+IP  - 8
+DP  - 2018
+TI  - Effects of a person-centred telephone-support in patients with chronic 
+      obstructive pulmonary disease and/or chronic heart failure - A randomized 
+      controlled trial.
+PG  - e0203031
+LID - 10.1371/journal.pone.0203031 [doi]
+LID - e0203031
+AB  - PURPOSE: To evaluate the effects of person-centred support via telephone in two 
+      chronically ill patient groups, chronic obstructive pulmonary disease (COPD) 
+      and/or chronic heart failure (CHF). METHOD: 221 patients >/= 50 years with COPD 
+      and/or CHF were randomized to usual care vs. usual care plus a person-centred 
+      telephone-support intervention and followed for six months. Patients in the 
+      intervention group were telephoned by a registered nurse initially to co-create a 
+      person-centred health plan with the patient and subsequently to discuss and 
+      evaluate the plan. The primary outcome measure was a composite score comprising 
+      General Self-Efficacy (GSE), re-hospitalization and death. Patients were 
+      classified as deteriorated if GSE had decreased by >/= 5 points, or if they had 
+      been re-admitted to hospital for unscheduled reasons related to COPD and/or CHF 
+      or if they had died. RESULTS: At six-month follow-up no difference in the 
+      composite score was found between the two study groups (57.6%, n = 68 vs. 46.6%, 
+      n = 48; OR = 1.6, 95% CI: 0.9-2.7; P = 0.102) in the intention-to-treat analysis 
+      (n = 221); however, significantly more patients in the control group showed a 
+      clinically important decrease in GSE (>/= 5 units) (22.9%, n = 27 vs. 9.7%, n = 10; 
+      OR = 2.8, 95% CI: 1.3-6.0; P = 0.011). There were 49 clinical events (14 deaths, 
+      35 re-admissions) in the control group and 41 in the intervention group (9 
+      deaths, 32 re-admissions). Per-protocol analysis (n = 202) of the composite score 
+      showed that more patients deteriorated in the control group than in the 
+      intervention group (57.6%, n = 68 vs. 42.9%, n = 36; OR = 1.8, 95% CI 1.0-3.2; P 
+      = 0.039). CONCLUSION: Person-centred support via telephone mitigates worsening 
+      self-efficacy without increasing the risk of clinical events in chronically ill 
+      patients with CHF and/or COPD. This indicates that a patient-healthcare 
+      professional partnership may be established without the need for face-to-face 
+      consultations, even in vulnerable patient groups. TRIAL REGISTRATION: ISRCTN.com 
+      ISRCTN55562827.
+FAU - Fors, Andreas
+AU  - Fors A
+AUID- ORCID: 0000-0001-8980-0538
+AD  - Institute of Health and Care Sciences, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+AD  - Narhalsan Research and Development Primary Health Care, Region Vastra Gotaland, 
+      Gothenburg, Sweden.
+FAU - Blanck, Elin
+AU  - Blanck E
+AD  - Institute of Health and Care Sciences, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+FAU - Ali, Lilas
+AU  - Ali L
+AD  - Institute of Health and Care Sciences, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+FAU - Ekberg-Jansson, Ann
+AU  - Ekberg-Jansson A
+AD  - Department of Respiratory medicine and Allergology, Institute of Medicine, 
+      Sahlgrenska Academy, University of Gothenburg, Gothenburg, Sweden.
+AD  - Research and Development department, Region Halland, Halmstad, Sweden.
+FAU - Fu, Michael
+AU  - Fu M
+AD  - Department of Molecular and Clinical Medicine, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+FAU - Lindstrom Kjellberg, Irma
+AU  - Lindstrom Kjellberg I
+AD  - Institute of Health and Care Sciences, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+FAU - Makitalo, Asa
+AU  - Makitalo A
+AD  - Department of Education, Communication and Learning, University of Gothenburg, 
+      Gothenburg, Sweden.
+FAU - Swedberg, Karl
+AU  - Swedberg K
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+AD  - Department of Molecular and Clinical Medicine, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - National Heart and Lung Institute, Imperial College, London, United Kingdom.
+FAU - Taft, Charles
+AU  - Taft C
+AD  - Institute of Health and Care Sciences, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+FAU - Ekman, Inger
+AU  - Ekman I
+AD  - Institute of Health and Care Sciences, Sahlgrenska Academy, University of 
+      Gothenburg, Gothenburg, Sweden.
+AD  - Centre for Person-Centred Care (GPCC), University of Gothenburg, Gothenburg, 
+      Sweden.
+LA  - eng
+PT  - Journal Article
+PT  - Randomized Controlled Trial
+PT  - Research Support, Non-U.S. Gov't
+DEP - 20180831
+PL  - United States
+TA  - PLoS One
+JT  - PloS one
+JID - 101285081
+SB  - IM
+MH  - Aged
+MH  - Chronic Disease/psychology
+MH  - Female
+MH  - Follow-Up Studies
+MH  - Heart Failure/mortality/psychology/*therapy
+MH  - Humans
+MH  - Male
+MH  - Patient Readmission
+MH  - *Patient-Centered Care/methods
+MH  - Pulmonary Disease, Chronic Obstructive/mortality/psychology/*therapy
+MH  - Self Efficacy
+MH  - *Telemedicine
+MH  - Telephone
+MH  - Treatment Outcome
+PMC - PMC6118377
+COIS- The authors have declared that no competing interests exist.
+EDAT- 2018/09/01 06:00
+MHDA- 2019/02/15 06:00
+PMCR- 2018/08/31
+CRDT- 2018/09/01 06:00
+PHST- 2017/12/06 00:00 [received]
+PHST- 2018/08/07 00:00 [accepted]
+PHST- 2018/09/01 06:00 [entrez]
+PHST- 2018/09/01 06:00 [pubmed]
+PHST- 2019/02/15 06:00 [medline]
+PHST- 2018/08/31 00:00 [pmc-release]
+AID - PONE-D-17-42543 [pii]
+AID - 10.1371/journal.pone.0203031 [doi]
+PST - epublish
+SO  - PLoS One. 2018 Aug 31;13(8):e0203031. doi: 10.1371/journal.pone.0203031. 
+      eCollection 2018.
+
+PMID- 27488754
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20190408
+LR  - 20260518
+IS  - 2149-2271 (Electronic)
+IS  - 2149-2263 (Print)
+IS  - 2149-2263 (Linking)
+VI  - 17
+IP  - 2
+DP  - 2017 Feb
+TI  - Post-discharge heart failure monitoring program in Turkey: Hit-PoinT.
+PG  - 107-112
+LID - 10.14744/AnatolJCardiol.2016.6812 [doi]
+AB  - OBJECTIVE: The aim of this study was to assess the efficacy and feasibility of an 
+      enhanced heart failure (HF) education with a 6-month telephone follow- up program 
+      in post-discharge ambulatory HF patients. METHODS: The Hit-Point trial was a 
+      multicenter, randomized, controlled trial of enhanced HF education with a 6-month 
+      telephone follow-up program (EHFP) vs routine care (RC) in patients with HF and 
+      reduced ejection fraction. A total of 248 patients from 10 centers in various 
+      geographical areas were randomized: 125 to EHFP and 123 to RC. Education included 
+      information on adherence to treatment, symptom recognition, diet and fluid 
+      intake, weight monitoring, activity and exercise training. Patients were 
+      contacted by telephone after 1, 3, and 6 months. The primary study endpoint was 
+      cardiovascular death. RESULTS: Although all-cause mortality didn't differ between 
+      the EHFP and RC groups (p=NS), the percentage of cardiovascular deaths in the 
+      EHFP group was significantly lower than in the RC group at the 6-month follow up 
+      (5.6% vs. 8.9%, p=0.04). The median number of emergency room visits was one and 
+      the median number of all cause hospitalizations and heart failure 
+      hospitalizations were zero. Twenty-tree percent of the EHFP group and 35% of the 
+      RC group had more than a median number of emergency room visits (p=0.05). There 
+      was no significant difference regarding the median number of all-cause or heart 
+      failure hospitalizations. At baseline, 60% of patients in EHFP and 61% in RC were 
+      in NYHA Class III or IV, while at the 6-month follow up only 12% in EHFP and 32% 
+      in RC were in NYHA Class III or IV (p=0.001). CONCLUSION: These results 
+      demonstrate the potential clinical benefits of an enhanced HF education and 
+      follow up program led by a cardiologist in reducing cardiovascular deaths and 
+      number of emergency room visits with an improvement in functional capacity at 6 
+      months in post-discharge ambulatory HF patients.
+FAU - Cavusoglu, Yuksel
+AU  - Cavusoglu Y
+AD  - Department of Cardiology, Faculty of Medicine, Eskisehir Osmangazi University; 
+      Eskisehir-Turkey. yukselc@ogu.edu.tr.
+FAU - Zoghi, Mehdi
+AU  - Zoghi M
+AD  - Department of Cardiology, Faculty of Medicine, Ege University; Izmir-Turkey.
+FAU - Eren, Mehmet
+AU  - Eren M
+AD  - Department of Cardiology, Dr Siyami Ersek Thoracic and Cardiovascular Surgery 
+      Education and Traning Hospital; Istanbul-Turkey.
+FAU - Bozcali, Evin
+AU  - Bozcali E
+AD  - Department of Cardiology, Sanliurfa Balikligol Hospital; Urfa-Turkey.
+FAU - Kozdag, Guliz
+AU  - Kozdag G
+AD  - Department of Cardiology, Faculty of Medicine, Kocaeli University; 
+      Kocaeli-Turkey.
+FAU - Senturk, Tunay
+AU  - Senturk T
+AD  - Department of Cardiology, Faculty of Medicine, Uludag University; Bursa-Turkey.
+FAU - Alicik, Guray
+AU  - Alicik G
+AD  - Department of Cardiology, Faculty of Medicine, Trakya University; Edirne-Turkey.
+FAU - Soylu, Korhan
+AU  - Soylu K
+AD  - Department of Cardiology, Faculty of Medicine, Ondokuz Mayis University; 
+      Samsun-Turkey.
+FAU - Sari, Ibrahim
+AU  - Sari I
+AD  - Department of Cardiology, Faculty of Medicine, Gaziantep University; 
+      Gaziantep-Turkey.
+FAU - Berilgen, Rida
+AU  - Berilgen R
+AD  - Department of Cardiology, Izmir Atatu rk Hospital; Izmir-Turkey.
+FAU - Temizhan, Ahmet
+AU  - Temizhan A
+AD  - Department of Cardiology, Ankara Yu ksek Ihtisas Hospital; Ankara-Turkey.
+FAU - Gencer, Erkan
+AU  - Gencer E
+AD  - Department of Cardiology, Faculty of Medicine, Eskisehir Osmangazi University; 
+      Eskisehir-Turkey.
+FAU - Orhan, Ahmet Lutfu
+AU  - Orhan AL
+AD  - Department of Cardiology, Dr Siyami Ersek Thoracic and Cardiovascular Surgery 
+      Education and Traning Hospital; Istanbul-Turkey.
+FAU - Polat, Veli
+AU  - Polat V
+AD  - Department of Cardiology, Sanliurfa Balikligol Hospital; Urfa-Turkey.
+FAU - Aydin Kaderli, Aysel
+AU  - Aydin Kaderli A
+AD  - Department of Cardiology, Faculty of Medicine, Uludag University; Bursa-Turkey.
+FAU - Aktoz, Meryem
+AU  - Aktoz M
+AD  - Department of Cardiology, Faculty of Medicine, Trakya University; Edirne-Turkey.
+FAU - Zengin, Halit
+AU  - Zengin H
+AD  - Department of Cardiology, Faculty of Medicine, Ondokuz Mayis University; 
+      Samsun-Turkey.
+FAU - Aksoy, Mehmet
+AU  - Aksoy M
+AD  - Department of Cardiology, Faculty of Medicine, Gaziantep University; 
+      Gaziantep-Turkey.
+FAU - Selcuk, Mehmet Timur
+AU  - Selcuk MT
+AD  - Department of Cardiology, Ankara Yu ksek Ihtisas Hospital; Ankara-Turkey.
+FAU - Ergene, Oktay
+AU  - Ergene O
+AD  - Department of Cardiology, Izmir Atatu rk Hospital; Izmir-Turkey.
+FAU - Soran, Ozlem
+AU  - Soran O
+AD  - Department of Cardiology, Faculty of Medicine, University of Pittsburgh; 
+      Pittsburgh, PA-USA.
+CN  - Hit-PoinT Investigators
+LA  - eng
+PT  - Journal Article
+PT  - Multicenter Study
+PT  - Randomized Controlled Trial
+DEP - 20160726
+PL  - Turkey
+TA  - Anatol J Cardiol
+JT  - Anatolian journal of cardiology
+JID - 101652981
+SB  - IM
+MH  - Female
+MH  - Heart Failure/mortality/*prevention & control
+MH  - Humans
+MH  - Interviews as Topic
+MH  - Male
+MH  - Middle Aged
+MH  - *Patient Discharge
+MH  - *Patient Education as Topic
+MH  - Treatment Outcome
+MH  - Turkey
+PMC - PMC5336747
+COIS- Conflict of interest: None declared.
+FIR - Cavusoglu, Yu Ksel
+IR  - Cavusoglu YK
+FIR - Gencer, Erkan
+IR  - Gencer E
+FIR - Akyol, Nilgu N
+IR  - Akyol NN
+FIR - Coskun, Julide
+IR  - Coskun J
+FIR - Zoghi, Mehdi
+IR  - Zoghi M
+FIR - Eren, Mehmet
+IR  - Eren M
+FIR - Orhan, Ahmet Lu Tfu
+IR  - Orhan ALT
+FIR - Gencoglu, Songu L
+IR  - Gencoglu SL
+FIR - Akkaya, Semra
+IR  - Akkaya S
+FIR - Bozcali, Evin
+IR  - Bozcali E
+FIR - Polat, Veli
+IR  - Polat V
+FIR - Bilgic, Leyla
+IR  - Bilgic L
+FIR - Bayrakli, Belma
+IR  - Bayrakli B
+FIR - Kozdag, Gu Liz
+IR  - Kozdag GL
+FIR - Alkaya, Nursen
+IR  - Alkaya N
+FIR - Aydin Kaderli, Aysel
+IR  - Aydin Kaderli A
+FIR - Sentu Rk, Tunay
+IR  - Sentu Rk T
+FIR - Dede, Sevil
+IR  - Dede S
+FIR - Dirik, Munise
+IR  - Dirik M
+FIR - Aktoz, Meryem
+IR  - Aktoz M
+FIR - Alicik, Gu Ray
+IR  - Alicik GR
+FIR - Dereli, Arzu
+IR  - Dereli A
+FIR - Menekse, Serpil
+IR  - Menekse S
+FIR - Zengin, Halit
+IR  - Zengin H
+FIR - Soylu, Korhan
+IR  - Soylu K
+FIR - Gu Lboy, Canan
+IR  - Gu Lboy C
+FIR - Unyeli, Soray
+IR  - Unyeli S
+FIR - Aksoy, Mehmet
+IR  - Aksoy M
+FIR - Sari, Ibrahim
+IR  - Sari I
+FIR - Cakir, Meral
+IR  - Cakir M
+FIR - Annac, Sima
+IR  - Annac S
+FIR - Temizhan, Ahmet
+IR  - Temizhan A
+FIR - Selcuk, Mehmet Timur
+IR  - Selcuk MT
+FIR - Ergene, Oktay
+IR  - Ergene O
+FIR - Berilgen, Rida
+IR  - Berilgen R
+FIR - Yurtsever, Dilek
+IR  - Yurtsever D
+FIR - Simsek, Gu Lhan
+IR  - Simsek GL
+FIR - Soran, Ozlem
+IR  - Soran O
+EDAT- 2016/08/05 06:00
+MHDA- 2019/04/09 06:00
+PMCR- 2017/02/01
+CRDT- 2016/08/05 06:00
+PHST- 2016/08/05 06:00 [pubmed]
+PHST- 2019/04/09 06:00 [medline]
+PHST- 2016/08/05 06:00 [entrez]
+PHST- 2017/02/01 00:00 [pmc-release]
+AID - AJC-17-107 [pii]
+AID - 10.14744/AnatolJCardiol.2016.6812 [doi]
+PST - ppublish
+SO  - Anatol J Cardiol. 2017 Feb;17(2):107-112. doi: 10.14744/AnatolJCardiol.2016.6812. 
+      Epub 2016 Jul 26.
+
+PMID- 30478888
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20190315
+LR  - 20260127
+IS  - 2055-5822 (Electronic)
+IS  - 2055-5822 (Linking)
+VI  - 6
+IP  - 1
+DP  - 2019 Feb
+TI  - Post-discharge short message service improves short-term clinical outcome and 
+      self-care behaviour in chronic heart failure.
+PG  - 164-173
+LID - 10.1002/ehf2.12380 [doi]
+AB  - AIMS: In addition to giving optimal medical and device therapy, promoting 
+      self-care of chronic heart failure (CHF) patients also plays an important role in 
+      comprehensive disease management for better outcomes. The study was aimed to 
+      investigate whether short message service (SMS) would help to improve death or 
+      readmission-free survival and self-care behaviour in CHF patients. METHODS AND 
+      RESULTS: This was a randomized controlled trial. Between December 2011 and 
+      September 2015, patients admitted with decompensated CHF in a tertiary referral 
+      hospital who fulfilled the inclusion criteria were enrolled and randomized to 
+      receive SMS, structured telephone support (STS), or usual care after discharge. 
+      All patients were followed up to 180 days after discharge by phone call or clinic 
+      visit. Primary endpoint was the 180 day composite event, defined as all-cause 
+      mortality or readmission. Secondary endpoints included self-care behaviour and 
+      quality of life. Seven hundred sixty-seven patients (61 +/- 15 years, 56.5% male) 
+      were finally randomized to receive SMS (n = 252), STS (n = 255), or usual care 
+      (n = 260). Baseline characteristics were similar among the three groups. Five 
+      hundred twenty-five (68.4%) patients were in New York Heart Association Class III 
+      or IV, and 472 (61.5%) patients had an ejection fraction of <50%. During a 
+      180 day follow-up, 76 (9.9%) patients died and 274 (35.7%) patients experienced 
+      at least one readmission. In a short-term follow-up of 30 days, there was no 
+      difference in mortality and the composite endpoint among the three groups (SMS 
+      vs. STS vs. usual care: 2.8% vs. 3.1% vs. 3.8% for mortality, P = 0.786; 12.3% 
+      vs. 14.5% vs. 15.4% for the composite endpoint, P = 0.588). The 180 day composite 
+      event rate was significantly lower in the SMS and STS groups (50.4% vs. 41.3% and 
+      36.5%, both P < 0.05) than in the usual care group, but no difference was 
+      observed between the two phone-based intervention groups (P = 0.268). Although 
+      there was no difference between the two groups, better self-care behaviour was 
+      reported in the SMS and STS groups than in the control group (medication 
+      compliance, 78.9% vs. 81.4% vs. 69.5%, P = 0.011; water restriction, 70.8% vs. 
+      74.5% vs. 61.5%, P = 0.013). Quality-of-life score was similar among the three 
+      groups at 180 days (P = 0.526). CONCLUSIONS: In CHF patients, post-discharge SMS, 
+      which appeared as efficient as STS, reduced the 180 day composite event and 
+      improved self-care behaviour. SMS intervention could be integrated into CHF 
+      management.
+CI  - (c) 2018 The Authors. ESC Heart Failure published by John Wiley & Sons Ltd on 
+      behalf of the European Society of Cardiology.
+FAU - Chen, Chen
+AU  - Chen C
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - Li, Xiao
+AU  - Li X
+AD  - Department of Cardiovascular Surgery, West China Hospital, Sichuan University, 
+      Chengdu, China.
+FAU - Sun, Lisha
+AU  - Sun L
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - Cao, Sha
+AU  - Cao S
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - Kang, Yu
+AU  - Kang Y
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - Hong, Liu
+AU  - Hong L
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - Liang, Yaodan
+AU  - Liang Y
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - You, Guiying
+AU  - You G
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+FAU - Zhang, Qing
+AU  - Zhang Q
+AD  - Department of Cardiology, West China Hospital, Sichuan University, No. 37 Guo Xue 
+      Xiang, Chengdu, China.
+LA  - eng
+PT  - Journal Article
+PT  - Randomized Controlled Trial
+DEP - 20181127
+PL  - England
+TA  - ESC Heart Fail
+JT  - ESC heart failure
+JID - 101669191
+SB  - IM
+MH  - Adolescent
+MH  - Adult
+MH  - Aged
+MH  - Aged, 80 and over
+MH  - *Behavior
+MH  - *Disease Management
+MH  - Female
+MH  - Follow-Up Studies
+MH  - Heart Failure/*therapy
+MH  - Humans
+MH  - Male
+MH  - Middle Aged
+MH  - Patient Discharge/*trends
+MH  - Reminder Systems
+MH  - Retrospective Studies
+MH  - Self Care/*psychology
+MH  - *Text Messaging
+MH  - Young Adult
+MH  - *Drug Monitoring
+PMC - PMC6352960
+OTO - NOTNLM
+OT  - Chronic heart failure
+OT  - Composite endpoint
+OT  - Self-care behaviour
+OT  - Short message service
+OT  - Structured telephone support
+EDAT- 2018/11/28 06:00
+MHDA- 2019/03/16 06:00
+PMCR- 2018/11/27
+CRDT- 2018/11/28 06:00
+PHST- 2018/04/19 00:00 [received]
+PHST- 2018/10/15 00:00 [accepted]
+PHST- 2018/11/28 06:00 [pubmed]
+PHST- 2019/03/16 06:00 [medline]
+PHST- 2018/11/28 06:00 [entrez]
+PHST- 2018/11/27 00:00 [pmc-release]
+AID - EHF212380 [pii]
+AID - 10.1002/ehf2.12380 [doi]
+PST - ppublish
+SO  - ESC Heart Fail. 2019 Feb;6(1):164-173. doi: 10.1002/ehf2.12380. Epub 2018 Nov 27.

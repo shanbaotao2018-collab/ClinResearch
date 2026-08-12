@@ -1,0 +1,380 @@
+
+PMID- 33087340
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20210621
+LR  - 20210621
+IS  - 2052-4897 (Electronic)
+IS  - 2052-4897 (Linking)
+VI  - 8
+IP  - 1
+DP  - 2020 Oct
+TI  - Artificial intelligence-enabled screening for diabetic retinopathy: a real-world, 
+      multicenter and prospective study.
+LID - 10.1136/bmjdrc-2020-001596 [doi]
+LID - e001596
+AB  - INTRODUCTION: Early screening for diabetic retinopathy (DR) with an efficient and 
+      scalable method is highly needed to reduce blindness, due to the growing epidemic 
+      of diabetes. The aim of the study was to validate an artificial 
+      intelligence-enabled DR screening and to investigate the prevalence of DR in 
+      adult patients with diabetes in China. RESEARCH DESIGN AND METHODS: The study was 
+      prospectively conducted at 155 diabetes centers in China. A non-mydriatic, 
+      macula-centered fundus photograph per eye was collected and graded through a deep 
+      learning (DL)-based, five-stage DR classification. Images from a randomly 
+      selected one-third of participants were used for the DL algorithm validation. 
+      RESULTS: In total, 47 269 patients (mean (SD) age, 54.29 (11.60) years) were 
+      enrolled. 15 805 randomly selected participants were reviewed by a panel of 
+      specialists for DL algorithm validation. The DR grading algorithms had a 83.3% 
+      (95% CI: 81.9% to 84.6%) sensitivity and a 92.5% (95% CI: 92.1% to 92.9%) 
+      specificity to detect referable DR. The five-stage DR classification performance 
+      (concordance: 83.0%) is comparable to the interobserver variability of 
+      specialists (concordance: 84.3%). The estimated prevalence in patients with 
+      diabetes detected by DL algorithm for any DR, referable DR and vision-threatening 
+      DR were 28.8% (95% CI: 28.4% to 29.3%), 24.4% (95% CI: 24.0% to 24.8%) and 10.8% 
+      (95% CI: 10.5% to 11.1%), respectively. The prevalence was higher in female, 
+      elderly, longer diabetes duration and higher glycated hemoglobin groups. 
+      CONCLUSION: This study performed, a nationwide, multicenter, DL-based DR 
+      screening and the results indicated the importance and feasibility of DR 
+      screening in clinical practice with this system deployed at diabetes centers. 
+      TRIAL REGISTRATION NUMBER: NCT04240652.
+CI  - (c) Author(s) (or their employer(s)) 2020. Re-use permitted under CC BY-NC. No 
+      commercial re-use. See rights and permissions. Published by BMJ.
+FAU - Zhang, Yifei
+AU  - Zhang Y
+AD  - Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine 
+      and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China; Shanghai National Clinical Research Center for 
+      metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the 
+      National Health Commission of the PR China, Shanghai National Center for 
+      Translational Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China.
+FAU - Shi, Juan
+AU  - Shi J
+AD  - Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine 
+      and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China; Shanghai National Clinical Research Center for 
+      metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the 
+      National Health Commission of the PR China, Shanghai National Center for 
+      Translational Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China.
+FAU - Peng, Ying
+AU  - Peng Y
+AD  - Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine 
+      and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China; Shanghai National Clinical Research Center for 
+      metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the 
+      National Health Commission of the PR China, Shanghai National Center for 
+      Translational Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China.
+FAU - Zhao, Zhiyun
+AU  - Zhao Z
+AD  - Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine 
+      and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China; Shanghai National Clinical Research Center for 
+      metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the 
+      National Health Commission of the PR China, Shanghai National Center for 
+      Translational Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China.
+FAU - Zheng, Qidong
+AU  - Zheng Q
+AD  - Department of Internal Medicine, The Second People's Hospital of Yuhuan, Yuhuan, 
+      China.
+FAU - Wang, Zilong
+AU  - Wang Z
+AD  - Department of Research, VoxelCloud, Shanghai, China.
+FAU - Liu, Kun
+AU  - Liu K
+AD  - Department of Ophthalmology, Shanghai General Hospital, Shanghai Jiao Tong 
+      University School of Medicine, Shanghai, China.
+FAU - Jiao, Shengyin
+AU  - Jiao S
+AD  - Department of Research, VoxelCloud, Shanghai, China.
+FAU - Qiu, Kexin
+AU  - Qiu K
+AD  - Department of Research, VoxelCloud, Shanghai, China.
+FAU - Zhou, Ziheng
+AU  - Zhou Z
+AD  - Department of Research, VoxelCloud, Shanghai, China.
+AD  - Department of Electrical Engineering, Shanghai Jiao Tong University, Shanghai, 
+      China.
+FAU - Yan, Li
+AU  - Yan L
+AD  - Department of Ophthalmology, The Third People's Hospital of Datong, Datong, 
+      China.
+FAU - Zhao, Dong
+AU  - Zhao D
+AD  - Center for Endocrine Metabolism and Immune Diseases, Beijing Luhe Hospital, 
+      Capital Medical University, Beijing, China.
+FAU - Jiang, Hongwei
+AU  - Jiang H
+AD  - Department of Endocrinology and Metabolism, The First Affiliated Hospital, and 
+      College of Clinical Medicine of Henan University of Science and Technology; 
+      Luoyang City Clinical Research Center for Endocrinology and Metabolism, Luoyang, 
+      China.
+FAU - Dai, Yuancheng
+AU  - Dai Y
+AD  - Department of Internal Medicine of Traditional Chinese Medicine, Sheyang Diabetes 
+      Hospital, Yancheng, China.
+FAU - Su, Benli
+AU  - Su B
+AD  - Department of Endocrinology, The Second Affiliated Hospital Dalian Medical 
+      University, Dalian, China.
+FAU - Gu, Pei
+AU  - Gu P
+AD  - Department of Endocrinology, Datong Coal Group Ltd. General Hospital, Datong, 
+      China.
+FAU - Su, Heng
+AU  - Su H
+AD  - Department of Endocrine and Metabolic Diseases, The First People's Hospital of 
+      Yunnan Province, Kunming, China.
+FAU - Wan, Qin
+AU  - Wan Q
+AD  - Department of Endocrinology and Metabolism, The Affiliated Hospital of Southwest 
+      Medical University, Luzhou, Sichuan, China.
+FAU - Peng, Yongde
+AU  - Peng Y
+AD  - Department of Endocrinology and Metabolism, Shanghai General Hospital, Shanghai 
+      Jiao Tong University School of Medicine, Shanghai, China.
+FAU - Liu, Jianjun
+AU  - Liu J
+AD  - Department of Endocrinology, Longkou People's Hospital, Yantai, China.
+FAU - Hu, Ling
+AU  - Hu L
+AD  - Department of Endocrinology, The Third Affiliated Hospital of Nanchang 
+      University, Nanchang, China.
+FAU - Ke, Tingyu
+AU  - Ke T
+AD  - Department of Endocrinology, The Second Affiliated Hospital of Kunming Medical 
+      University, Kunming, China.
+FAU - Chen, Lei
+AU  - Chen L
+AD  - Department of Endocrinology and Metabolism, The Affiliated Suzhou Hospital of 
+      Nanjing Medical University, Suzhou, Jiangsu, China.
+FAU - Xu, Fengmei
+AU  - Xu F
+AD  - Department of Endocrinology and Metabolism, Hebi Coal (group) Ltd. General 
+      Hospital, Hebi, China.
+FAU - Dong, Qijuan
+AU  - Dong Q
+AD  - Department of Endocrinology and Metabolism, People's Hospital of Zhengzhou, 
+      Zhengzhou, China.
+FAU - Terzopoulos, Demetri
+AU  - Terzopoulos D
+AD  - Department of Computer Science, Computer Graphics & Vision Laboratory, University 
+      of California Los Angeles, Los Angeles, California, USA.
+AD  - Department of Research, VoxelCloud, Los Angeles, California, USA.
+FAU - Ning, Guang
+AU  - Ning G
+AD  - Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine 
+      and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China; Shanghai National Clinical Research Center for 
+      metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the 
+      National Health Commission of the PR China, Shanghai National Center for 
+      Translational Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China.
+FAU - Xu, Xun
+AU  - Xu X
+AD  - Department of Ophthalmology, Shanghai General Hospital, Shanghai Jiao Tong 
+      University School of Medicine, Shanghai, China.
+FAU - Ding, Xiaowei
+AU  - Ding X
+AD  - Department of Research, VoxelCloud, Shanghai, China wqingw61@163.com 
+      dingxiaowei@sjtu.edu.cn.
+AD  - Department of Electrical Engineering, Shanghai Jiao Tong University, Shanghai, 
+      China.
+FAU - Wang, Weiqing
+AU  - Wang W
+AUID- ORCID: 0000-0001-6027-3084
+AD  - Department of Endocrine and Metabolic Diseases, Shanghai Institute of Endocrine 
+      and Metabolic Diseases, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China; Shanghai National Clinical Research Center for 
+      metabolic Diseases, Key Laboratory for Endocrine and Metabolic Diseases of the 
+      National Health Commission of the PR China, Shanghai National Center for 
+      Translational Medicine, Ruijin Hospital, Shanghai Jiao Tong University School of 
+      Medicine, Shanghai, China wqingw61@163.com dingxiaowei@sjtu.edu.cn.
+LA  - eng
+SI  - ClinicalTrials.gov/NCT04240652
+PT  - Journal Article
+PT  - Multicenter Study
+PT  - Research Support, Non-U.S. Gov't
+PL  - England
+TA  - BMJ Open Diabetes Res Care
+JT  - BMJ open diabetes research & care
+JID - 101641391
+SB  - IM
+MH  - Adult
+MH  - Aged
+MH  - Artificial Intelligence
+MH  - China/epidemiology
+MH  - *Diabetes Mellitus
+MH  - *Diabetic Retinopathy/diagnosis/epidemiology
+MH  - Female
+MH  - Humans
+MH  - Mass Screening
+MH  - Middle Aged
+MH  - Prospective Studies
+PMC - PMC7580048
+OTO - NOTNLM
+OT  - clinical study
+OT  - diabetic retinopathy
+OT  - diagnostic techniques and procedures
+OT  - epidemiology
+COIS- Competing interests: None declared.
+EDAT- 2020/10/23 06:00
+MHDA- 2021/06/22 06:00
+PMCR- 2020/10/21
+CRDT- 2020/10/22 05:28
+PHST- 2020/05/21 00:00 [received]
+PHST- 2020/07/16 00:00 [revised]
+PHST- 2020/08/13 00:00 [accepted]
+PHST- 2020/10/22 05:28 [entrez]
+PHST- 2020/10/23 06:00 [pubmed]
+PHST- 2021/06/22 06:00 [medline]
+PHST- 2020/10/21 00:00 [pmc-release]
+AID - 8/1/e001596 [pii]
+AID - bmjdrc-2020-001596 [pii]
+AID - 10.1136/bmjdrc-2020-001596 [doi]
+PST - ppublish
+SO  - BMJ Open Diabetes Res Care. 2020 Oct;8(1):e001596. doi: 
+      10.1136/bmjdrc-2020-001596.
+
+PMID- 41857844
+OWN - NLM
+STAT- MEDLINE
+DCOM- 20260711
+LR  - 20260711
+IS  - 2044-6055 (Electronic)
+IS  - 2044-6055 (Linking)
+VI  - 16
+IP  - 3
+DP  - 2026 Mar 18
+TI  - Evaluation of non-ophthalmologist-led and offline AI-assisted models for diabetic 
+      retinopathy screening in India: a pragmatic diagnostic accuracy study.
+PG  - e106397
+LID - 10.1136/bmjopen-2025-106397 [doi]
+LID - e106397
+AB  - OBJECTIVES: To assess and compare the diagnostic accuracy of 
+      non-ophthalmologist-led diabetic retinopathy screening (DRS) at health and 
+      wellness centres (HWCs) and offline artificial intelligence (AI)-assisted 
+      community-based screening, using specialist grading as the reference standard in 
+      India. DESIGN, SETTINGS AND PARTICIPANTS: Pragmatic diagnostic accuracy study in 
+      primary healthcare settings. The settings included HWCs and community-based 
+      screening sites in rural Block Boothgarh, Mohali District, Punjab, India. A total 
+      of 600 people with diabetes aged >/=30 years were enrolled across three screening 
+      models: (1) non-ophthalmologist-led DRS at the HWC, (2) AI-assisted 
+      smartphone-based DRS in the community and (3) standard referral-based care. 
+      Retinal images were captured using non-mydriatic fundus cameras and independently 
+      graded by two masked human graders; a senior retina specialist resolved any 
+      disagreements. The AI was assessed for its ability to detect diabetic retinopathy 
+      (DR) and referable diabetic retinopathy (RDR). Diagnostic performance metrics 
+      were reported. RESULTS: The non-ophthalmologist-led model demonstrated 86.4% 
+      sensitivity (95% CI 65.1% to 97.1%) and 94.3% specificity (95% CI 88.5% to 97.7%) 
+      for DR detection, with an ungradability rate of 8%. For RDR, sensitivity reached 
+      95.8% (95% CI 78.9% to 99.9%) and specificity was 93.1% (95% CI 88.0% to 96.5%). 
+      The offline AI-assisted model achieved 93.3% sensitivity (95% CI 68.1% to 
+      99.8%) and 85.1% specificity (95% CI 76.9% to 91.2%) for RDR, but with a higher 
+      ungradability rate (38%), mainly due to cataracts and poor image quality. Both 
+      approaches effectively identified referable cases; however, the 
+      non-ophthalmologist-led model demonstrated greater accuracy and operational 
+      feasibility. CONCLUSIONS: This study demonstrates that non-ophthalmologist-led 
+      DRS at HWCs can enhance access to primary care. Offline AI-enabled screening 
+      demonstrates potential for community use but is currently limited by image 
+      quality and binary classification outputs. Integrating both approaches may 
+      strengthen DRS coverage in resource-limited settings. CLINICAL TRIALS REGISTRY OF 
+      INDIA: CTRI/2022/10/046283.
+CI  - (c) Author(s) (or their employer(s)) 2026. Re-use permitted under CC BY-NC. No 
+      commercial re-use. See rights and permissions. Published by BMJ Group.
+FAU - Chauhan, Anshul
+AU  - Chauhan A
+AUID- ORCID: 0000-0002-2434-935X
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Vale, Luke
+AU  - Vale L
+AUID- ORCID: 0000-0001-8574-8429
+AD  - Global Health Economics Centre, London School of Hygiene & Tropical Medicine, 
+      London, UK.
+FAU - Kankaria, Ankita
+AU  - Kankaria A
+AUID- ORCID: 0000-0002-4641-7333
+AD  - Department of Community Medicine and School of Public Health, Post Graduate 
+      Institute of Medical Education and Research, Chandigarh, India.
+FAU - Tigari, Basavaraj
+AU  - Tigari B
+AUID- ORCID: 0000-0002-5486-263X
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Kumar, Sonam
+AU  - Kumar S
+AUID- ORCID: 0009-0008-7257-9644
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Yadav, Mitesh
+AU  - Yadav M
+AUID- ORCID: 0009-0003-3293-2152
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Kumar, Lakshay
+AU  - Kumar L
+AUID- ORCID: 0009-0007-4026-9935
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Kaur, Gagandeep
+AU  - Kaur G
+AUID- ORCID: 0009-0003-0403-8997
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Bhadada, Sanjay Kumar
+AU  - Bhadada SK
+AUID- ORCID: 0000-0002-0410-8778
+AD  - Department of Endocrinology, Post Graduate Institute of Medical Education and 
+      Research, Chandigarh, India.
+FAU - Gupta, Vishali
+AU  - Gupta V
+AD  - Advanced Eye Centre, Post Graduate Institute of Medical Education and Research, 
+      Chandigarh, India.
+FAU - Duggal, Mona
+AU  - Duggal M
+AUID- ORCID: 0000-0002-9404-2871
+AD  - National Institute for Research in Digital Health and Data Science, Indian 
+      Council of Medical Research, New Delhi, Delhi, India monaduggal2@gmail.com.
+LA  - eng
+PT  - Journal Article
+PT  - Pragmatic Clinical Trial
+DEP - 20260318
+PL  - England
+TA  - BMJ Open
+JT  - BMJ open
+JID - 101552874
+SB  - IM
+MH  - Humans
+MH  - *Diabetic Retinopathy/diagnosis
+MH  - India
+MH  - Male
+MH  - Middle Aged
+MH  - Female
+MH  - *Artificial Intelligence
+MH  - *Mass Screening/methods
+MH  - Sensitivity and Specificity
+MH  - Adult
+MH  - Primary Health Care
+MH  - Aged
+MH  - Referral and Consultation
+PMC - PMC13007179
+OTO - NOTNLM
+OT  - Diabetic retinopathy
+OT  - Epidemiology
+OT  - PUBLIC HEALTH
+COIS- Competing interests: None declared.
+EDAT- 2026/03/20 07:10
+MHDA- 2026/03/20 07:11
+PMCR- 2026/03/18
+CRDT- 2026/03/20 01:00
+PHST- 2026/03/20 07:11 [medline]
+PHST- 2026/03/20 07:10 [pubmed]
+PHST- 2026/03/20 01:00 [entrez]
+PHST- 2026/03/18 00:00 [pmc-release]
+AID - bmjopen-2025-106397 [pii]
+AID - 10.1136/bmjopen-2025-106397 [doi]
+PST - epublish
+SO  - BMJ Open. 2026 Mar 18;16(3):e106397. doi: 10.1136/bmjopen-2025-106397.

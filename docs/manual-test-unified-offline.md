@@ -289,7 +289,7 @@ research-writing bundle：<path-or-id>
 | `8010 address already in use` | 不要再启动服务；执行第 1.1 节 `/health` 检查。 |
 | `literature_review disconnected` | 确认后端仍运行，并执行 `opencode mcp list`；地址应为 `http://127.0.0.1:8010/mcp/`。 |
 | Agent 尝试在线检索 | 检查 `/health` 中 `mode` 是否为 `offline`，停止当前会话，重启后端和 OpenCode 后重新开始案例。 |
-| 找不到离线包 | 检查 `runtime/offline-evidence-packages/`；服务器部署时检查 `LRA_OFFLINE_EVIDENCE_PACKAGE_DIR`。 |
+| 找不到离线包 | 检查 `data/offline-evidence-packages/`；服务器部署时检查 `LRA_OFFLINE_EVIDENCE_PACKAGE_DIR`。 |
 | 全文解析提示没有纳入文献 | 先完成对应案例的明确筛选确认；离线全文只处理 `include` 记录。 |
 | 看不到 Agent 下拉框 | 使用 `opencode web` 打开 Web 版，或在桌面端使用四个项目斜杠命令。 |
 | 无法导出证据或写作包 | 核对是否已完成来源项目、Skill 回执和 OpenCode 原生 Allow 确认；不能用后端审批密钥替代。 |

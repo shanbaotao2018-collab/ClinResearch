@@ -9,7 +9,7 @@
 ## 目录
 
 ```text
-runtime/offline-evidence-packages/
+data/offline-evidence-packages/
   hf-transition-care-v1/
     manifest.json
     citations.nbib
@@ -18,7 +18,7 @@ runtime/offline-evidence-packages/
       paper-002.xml
 ```
 
-通过 `LRA_OFFLINE_EVIDENCE_PACKAGE_DIR` 配置根目录；默认目录为 `runtime/offline-evidence-packages`。
+通过 `LRA_OFFLINE_EVIDENCE_PACKAGE_DIR` 配置根目录；默认目录为 `data/offline-evidence-packages`。
 
 ## manifest.json
 

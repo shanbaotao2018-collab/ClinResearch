@@ -13,6 +13,7 @@ from typing import Any
 
 
 INSTALL_MANIFEST_NAME = "clinresearch-global-install.json"
+PRESERVED_SECRET_FILENAMES = {"clinresearch.env", "clinresearch-skill-receipt-key"}
 
 
 def sha256_file(path: Path) -> str:
@@ -32,6 +33,11 @@ def parse_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Uninstall ClinResearch Agents from global OpenCode config.")
     parser.add_argument("--config-dir", default=str(Path.home() / ".config" / "opencode"))
     parser.add_argument("--dry-run", action="store_true")
+    parser.add_argument(
+        "--remove-secrets",
+        action="store_true",
+        help="Also remove unchanged ClinResearch model credentials and receipt keys.",
+    )
     return parser.parse_args()
 
 
@@ -48,6 +54,9 @@ def main() -> int:
     def remove_file(path_text: str, expected_hash: str) -> None:
         path = Path(path_text)
         if not path.exists():
+            return
+        if path.name in PRESERVED_SECRET_FILENAMES and not args.remove_secrets:
+            skipped.append(f"preserved local secret: {path}")
             return
         if sha256_file(path) != expected_hash:
             skipped.append(f"modified file: {path}")
@@ -87,8 +96,30 @@ def main() -> int:
         if plugin_uri in config.get("plugin", []):
             config["plugin"].remove(plugin_uri)
             changed = True
+        model_provider = manifest.get("model_provider")
+        if model_provider and config.get("provider", {}).get("sensenova") == model_provider:
+            del config["provider"]["sensenova"]
+            changed = True
+        if manifest.get("model_default_added") and config.get("model") == "sensenova/deepseek-v4-flash":
+            del config["model"]
+            changed = True
+        if (
+            manifest.get("small_model_default_added")
+            and config.get("small_model") == "sensenova/deepseek-v4-flash"
+        ):
+            del config["small_model"]
+            changed = True
         if changed and not args.dry_run:
             config_path.write_text(json.dumps(config, ensure_ascii=False, indent=2) + "\n", encoding="utf-8")
+
+    if args.remove_secrets:
+        for filename in sorted(PRESERVED_SECRET_FILENAMES):
+            path = config_dir / filename
+            if not path.exists():
+                continue
+            if not args.dry_run:
+                path.unlink()
+            removed.append(str(path))
 
     if not args.dry_run:
         manifest_path.unlink()

@@ -6,9 +6,15 @@ set -euo pipefail
 # changing the release result.
 
 ROOT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-DESKTOP_DIR="$ROOT_DIR/vendor/opencode-desktop-source/packages/desktop"
-MODELS_SNAPSHOT="$ROOT_DIR/vendor/opencode-desktop-source/packages/opencode/test/tool/fixtures/models-api.json"
-SOURCE_APP="$DESKTOP_DIR/dist/mac-arm64/临床科研智能体工作台.app"
+OPENCODE_DIR="$ROOT_DIR/vendor/opencode-bundled"
+DESKTOP_DIR="$OPENCODE_DIR/packages/desktop"
+MODELS_SNAPSHOT="$OPENCODE_DIR/packages/opencode/test/tool/fixtures/models-api.json"
+if [[ "$(uname -m)" == "arm64" ]]; then
+  MAC_OUTPUT_DIR="mac-arm64"
+else
+  MAC_OUTPUT_DIR="mac"
+fi
+SOURCE_APP="$DESKTOP_DIR/dist/$MAC_OUTPUT_DIR/临床科研智能体工作台.app"
 TARGET_APP="/Applications/临床科研智能体工作台.app"
 BACKEND_HEALTH_URL="http://127.0.0.1:8010/health"
 INSTALL=false
@@ -37,9 +43,22 @@ if [[ ! -f "$MODELS_SNAPSHOT" ]]; then
   echo "Missing local model snapshot: $MODELS_SNAPSHOT" >&2
   exit 1
 fi
+if ! command -v bun >/dev/null 2>&1; then
+  echo "Bun 1.3.14 or later is required to build the bundled OpenCode desktop source." >&2
+  echo "Install Bun, then retry: https://bun.sh/docs/installation" >&2
+  exit 1
+fi
+
+if [[ ! -d "$OPENCODE_DIR/node_modules" ]]; then
+  echo "Installing the pinned OpenCode desktop dependencies..."
+  pushd "$OPENCODE_DIR" >/dev/null
+  HUSKY=0 bun install --frozen-lockfile
+  popd >/dev/null
+fi
 
 export OPENCODE_CHANNEL=prod
 export MODELS_DEV_API_JSON="$MODELS_SNAPSHOT"
+export CSC_IDENTITY_AUTO_DISCOVERY=false
 
 pushd "$DESKTOP_DIR" >/dev/null
 bun run build

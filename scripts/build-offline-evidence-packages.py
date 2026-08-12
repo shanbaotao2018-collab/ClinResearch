@@ -165,7 +165,7 @@ def build_case(root: Path, case: dict[str, object]) -> None:
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Download public raw source material for three offline Agent cases.")
-    parser.add_argument("--output-dir", default="runtime/offline-evidence-packages")
+    parser.add_argument("--output-dir", default="data/offline-evidence-packages")
     parser.add_argument(
         "--package-id",
         choices=[str(case["package_id"]) for case in CASES],

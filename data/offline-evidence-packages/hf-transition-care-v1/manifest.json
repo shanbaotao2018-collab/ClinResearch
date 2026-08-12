@@ -1,0 +1,42 @@
+{
+  "schema_version": 1,
+  "package_id": "hf-transition-care-v1",
+  "title": "药师主导心衰出院过渡管理：原始离线证据包",
+  "source": "offline_pubmed_pmc_export",
+  "provenance": {
+    "databases": [
+      {
+        "name": "PubMed and PubMed Central",
+        "searched_at": "2026-08-03",
+        "query": "(heart failure[Title/Abstract]) AND (pharmacist[Title/Abstract]) AND (discharge[Title/Abstract] OR transition[Title/Abstract]) AND (randomized controlled trial[Publication Type] OR random*[Title/Abstract])",
+        "exported_count": 2,
+        "retrieval_method": "NCBI E-utilities NBIB export plus original Europe PMC fullTextXML"
+      }
+    ]
+  },
+  "citation_file": {
+    "path": "citations.nbib",
+    "format": "nbib",
+    "sha256": "5937cabbe8a563f86d93cbce851a65991247dca3e514e124acbc25d4d01283c6"
+  },
+  "documents": [
+    {
+      "path": "fulltext/paper-01-20809276.xml",
+      "content_type": "application/xml",
+      "sha256": "7210cd756ac72b6aa404ff20a2808982db1114bc57c781858ab60a258e2ae474",
+      "citation_match": {
+        "external_id": "20809276"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC2993887/fullTextXML"
+    },
+    {
+      "path": "fulltext/paper-02-39705029.xml",
+      "content_type": "application/xml",
+      "sha256": "3375feac902858f5c37157151794add09c4dc099b3e46f6933bc05e53d438b41",
+      "citation_match": {
+        "external_id": "39705029"
+      },
+      "source_url": "https://www.ebi.ac.uk/europepmc/webservices/rest/PMC11662253/fullTextXML"
+    }
+  ]
+}

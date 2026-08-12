@@ -14,7 +14,9 @@
 | `hf-home-rehabilitation-v2` | 疗效 / RCT | 9 篇心衰居家、远程或早期心脏康复研究；原始 NBIB + Europe PMC 全文 XML | 研究设计（RCT）、文献综述、全文证据抽取、RoB 2、功能与再入院结局整理、科研写作 |
 | `pharmacist-medication-reconciliation-v2` | 药学服务 / 混合设计 | 9 篇药师用药核对、出院衔接或再入院结局研究；原始 NBIB + Europe PMC 全文 XML | 研究设计（实施/真实世界）、文献综述、全文证据抽取、RoB 2 或 NOS、异质性证据叙述、科研写作 |
 
-离线包实际目录为 `runtime/offline-evidence-packages/`，该目录被 Git 忽略，避免把下载材料、运行数据和潜在授权文件提交到仓库。
+本版本附带的去标识化演示离线包位于 `data/offline-evidence-packages/`，随仓库版本控制，
+用于在新电脑或隔离网络中复现实验。新增的真实业务材料、授权受限全文和运行数据不得直接
+提交，应通过 `LRA_OFFLINE_EVIDENCE_PACKAGE_DIR` 指向受控目录。
 
 ## 材料组成与来源
 
@@ -33,10 +35,10 @@
 ```bash
 apps/literature-review-agent/backend/.venv/bin/python \
   scripts/build-offline-evidence-packages.py \
-  --output-dir runtime/offline-evidence-packages
+  --output-dir data/offline-evidence-packages
 ```
 
-2. 将整个 `runtime/offline-evidence-packages/` 目录安全传输至目标服务器，例如 `/data/clinresearch/offline-evidence-packages/`。
+2. 将整个 `data/offline-evidence-packages/` 目录安全传输至目标服务器，例如 `/data/clinresearch/offline-evidence-packages/`。
 3. 启动统一后端时指定 `offline` 模式，并设置离线包目录。MCP 已挂载在同一后端的 `/mcp/`，无需再单独启动或配置模式：
 
 ```bash

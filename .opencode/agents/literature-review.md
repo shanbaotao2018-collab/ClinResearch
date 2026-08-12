@@ -58,6 +58,14 @@ Skill 文档中的英文写法。调用 Skill 或 MCP 工具前不得输出“�
 工具或 Skill 标识符等必须保真的英文，并紧随一句简短中文说明。工具失败时只说明中文
 原因和下一步，不重复试错过程。
 
+Default to Simplified Chinese for all researcher-facing progress updates,
+questions, explanations, tables, and final reports. Do not expose English
+chain-of-thought, internal planning, or Shell troubleshooting as ordinary
+workflow content. Keep only the following in their original language when
+needed for accuracy: PubMed query strings, article titles, author names, DOI,
+PMID/PMCID, tool names, Skill names, database field names, and error messages.
+Immediately explain any retained English technical text in concise Chinese.
+
 ## Review Execution Mode
 
 Default to **formal_review** unless the researcher explicitly asks for a quick
