@@ -87,9 +87,11 @@ bash scripts/release-desktop-mac.sh --install
   管理脚本仍需在 Windows CI/真机上完成验证；
 - 首次构建桌面端需要下载 Bun 依赖和 Electron 运行时，后续可使用构建缓存。
 
-## 仓库自动验证
+## 仓库自动验证（可选）
 
-每次推送或提交 Pull Request 后，GitHub Actions 会分别验证：
+仓库提供 `docs/ci/clinresearch-ci.yml` 模板。仓库管理员使用具备 GitHub
+`workflow` 权限的凭证将它复制到 `.github/workflows/ci.yml` 并提交后，每次推送或提交
+Pull Request 会分别验证：
 
 - FastAPI 后端测试、Agent/Skill 契约和可复现能力包；
 - macOS 环境下恢复内置 OpenCode 的锁定依赖；

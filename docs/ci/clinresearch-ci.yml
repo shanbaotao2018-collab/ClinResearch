@@ -1,5 +1,8 @@
 name: ClinResearch CI
 
+# To enable GitHub Actions, copy this file to .github/workflows/ci.yml using
+# credentials that have GitHub's workflow permission.
+
 on:
   push:
     branches: [main]
